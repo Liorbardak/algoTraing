@@ -1,0 +1,205 @@
+[
+    {
+        "date": "2023-08-10T17:00:00-04:00"
+    },
+    {
+        "speaker_name": null,
+        "speaker_title": null,
+        "text": "earnings call. At this time, all participants are in a listen-only mode. A question and answer session will follow the formal presentation. As a reminder, this conference call is being recorded. I will now turn the call over to Ashish Gupta with Investor Relations. Mr. Gupta, please go ahead."
+    },
+    {
+        "speaker_name": null,
+        "speaker_title": null,
+        "text": "Thank you, Operator. Good afternoon and welcome to Indy Semiconductors' second quarter 2023 earnings call. Joining me today are Dal McClimate, Indy's co-founder and CEO, and Tom Schiller, Indy's CFO and EVP of strategy. Dal will provide opening remarks and discuss business highlights, followed by Tom's review of Indy's Q2 results and Q3 outlook. Please note that we'll be making forward-looking statements based on current expectations and assumptions, which are subject to risks and uncertainties. These statements reflect our views only as of today and should not be relied upon as representative about views as of any subsequent date. These statements are subject to a variety of risks and uncertainties that could cause actual results to differ materially from expectations. For material risks and other important factors that could affect our financial results, please review our risk factors in our annual report on Form 10-K for the fiscal year ended December 31, 2022, as well as other public reports filed with the SEC. Finally, the results and guidance discussed today are based on non-GAAP financial measures. For a complete reconciliation to GAAP, please see our Q2 earnings press release, which was issued in advance of this call and can be found on our website at www.indiesemmy.com. I'll now turn the call over to Donald."
+    },
+    {
+        "speaker_name": null,
+        "speaker_title": null,
+        "text": "Thanks, Ashish, and welcome, everybody. I am delighted to report that Indy once again exceeded our top line in gross margin guidance and delivered another quarter of record performance, a testament to both the increasing demand for our innovative auto tech solutions and and our unwavering commitment to achieving operational excellence. Our demonstrable outperformance against automotive industry peers continues to be fueled by Indy's deep product portfolio and design wind pipeline, backed by over 400 patents and applications worldwide, with engagements across virtually all leading global vehicle OEMs and Tier 1s. Specifically, during the second quarter of 2023, We grew the revenue 102% year over year and 29% sequentially to $52.1 million and achieved a gross margin of 52.2%. As we'll outline, we're gaining DesignWin traction across ADAS, user experience, and electrification applications. Of special note, during the quarter, we captured our first ever program win at Bosch, one of the world's leading suppliers to the automotive industry. This particular win rounds out our Tier 1 customer base and dramatically extends our OEM reach initially at Toyota, including Lexus. At a higher level, wins like this in the hundreds of millions of dollars in potential lifetime revenue set the stage for sustained above-market growth and the generation of annuity-like free cash flow. To that end, we're making our biggest engineering investments and design win strides within ADAS, In fact, the entire automotive industry is now squarely focused on advanced vehicle safety features above all else. For instance, the National Highway Traffic Safety Administration, NHTSA, has recently proposed a regulation that would mandate all new passenger vehicles be equipped with automatic braking capabilities capable of preventing rear-end crashes with other vehicles and collisions with pedestrians. We applaud this proposal and similar safety initiatives that leverage the next generation of auto tech technologies to prevent countless injuries and save lives. Despite the incremental industry regulations and the addition of new sensors and processes within the vehicle, the incalculable benefit of safer cars and roadways certainly far outweigh the associated costs. And at INDI, we've made this our company mission, empowering vehicle OEMs and tier one suppliers with increasingly more sophisticated yet cost-effective safety semiconductors and software for the vehicles of tomorrow, and ultimately leading towards the uncrashable car. Specifically, we are following a highly differentiated sensor fusion strategy versus a discrete approach, enabling either the integration or flexible partitioning of multiple modalities, including radar, computer vision, LIDAR, and ultrasonic solutions. We apply these modalities to capture data in different environments and ranges, and to enable a comprehensive and accurate perception of the vehicle's surroundings. The potential for a sensor fusion product roadmap, amplified and expedited by our targeted acquisitions, has set INDI distinctly apart from our competition, many of whom are just trying to develop a single modality, often in the hopes of landing an exclusive customer. Contrast this with INDI. We believe that no single technology will monopolize the playing field due to the complexity and diversity of the driving environment. The combination of sensor technologies in a harmonious fusion forms the cornerstone over a robust and efficient solution for advanced safety applications. We believe this holistic sensor strategy at scale ensures the highest levels of safety and effectively meets the diverse and immediate needs of ADAS implementations and one day, further out, the autonomous vehicle market. Within the vision product area, we're proud to highlight the aforementioned milestone achieved in the past quarter, our first program win with Bosch, which was enabled by our acquisition of Jio earlier this year. This pivotal collaboration not only underscores the effectiveness and adaptability of our solutions, but also broadens our footprint in the area of driver and occupant monitoring systems. Our vision products combine the industry's leading real-time signal processing, functional safety-enabled microcontrollers, and perhaps most importantly, artificial intelligence, AI accelerators, which enable perception algorithms to instruct the vehicle to take corrective actions. As global safety initiatives continue to evolve, the demand for these monitoring systems is intensifying, positioning in-cabin sensing solutions as critical elements to enable enhanced autonomous features. S&P Global Mobility's recent forecast reinforces this view, with the market for these OMS-DMS semiconductors projected to cross the half-billion-dollar threshold by 2029. With our unique combination of vision and radar capabilities, India is well-positioned to ascend to leadership within this rapidly emerging market as we ramp at BMW, sooner Toyota speaking of radar we've similarly made significant strides in an extremely short period of time in automotive terms aided by deep R&D investments and augmented by synergistic acquisitions including the radar division of analog devices on semis radar development team and most recently silicon radar with each bringing unique and highly complementary design teams and product IP these acquisitions and have also led to concrete achievements, including our largest design win to date and a strategic supply agreement with a top-tier supplier. On the LiDAR front, we continue to make great progress with our Surya SOC, demonstrating our Frequency Modulated Continuous Wave, or FMCW, LiDAR chipset in an increasing number of leading OEMs in the US, Europe, and Japan. And more recently, we announced a strategic partnership with Silk Technologies to deliver a world-class FMCW LiDAR solution. This partnership offers a fully integrated laser scanning system deploying coherent detection and sets the high watermark for rapidly emerging LiDAR applications. By background, FMCW-based LiDAR delivers multiple real-world benefits compared to direct detection-based time-of-flight solutions, including long range with high precision, interference immunity, per point instantaneous velocity and distance measurement. This partnership combines award-winning products from Silk and Indy into reference platforms that enable an order of magnitude improvement in sensing performance, manufacturing ability, power consumption, form factor, and cost relative to competing architectures. Turning to user experience, during the quarter, we further ramped our highly integrated, power-efficient portfolio across leading global automakers as OEMs prioritize a best-in-class cabin experience more than ever. With modern cars becoming rolling entertainment centers, network hubs, and doubling as workplace environments, providing the ultimate user experience throughout the entire cabin is becoming the new car buyer paradigm. For example, OEMs are increasingly focused on unique and differentiated interior lighting, as it can drive an emotional connection with a driver while creating a strong linkage to brand recognition. Likewise, wireless charging and USB PD are now at the OEM design forefront. These features not only provide convenience and seamless integration of personal devices into the vehicle's ecosystem, but also serve as key factors in creating a tech-forward impression, thus bolstering brand affinity. And similar to interior lighting, wireless charging and USB PD are components that form an integral part of the user's interaction with the vehicle, contributing to the overall in-cabin experience and again reinforcing the brand's commitment to technology and innovation. During the quarter, we also launched a highly integrated automotive wireless power charging system on chip. This product simplifies and accelerates the development of cost-effective WPC, also known as Qi, based in-cabin mobile device charging systems. By background, in-cabin charging has become a necessity for drivers and passengers who use their smartphone to provide real-time navigation, music, voice connections, and many other services. The emerging Qi 2.0 standard, featuring the magnetic power profile, is particularly relevant to automotive designs offering faster, more reliable charging by automatically aligning smartphones with an inductive charging coil, maintaining the device in position irrespective of vehicle motion. At the same time, we embarked on a key USB PD module design collaboration with a leading tier one, facilitating the integration of power delivery functionality to a high-speed USB hub application for a rapidly emerging OEM. As these designs ramp into high volume production, we'll certainly have more details to share. Finally, in the electric vehicle area, we continue to see long-term secular tailwinds as EV sales gain momentum. According to Cox Automotive, Americans brought nearly 300,000 full battery electric vehicles in the second quarter of 2023, implying more than a million EVs annually for the first time in U.S. history. In fact, in the second quarter, EV sales were up 48% versus the prior year in the U.S., yet the EV share of the total market is still in the single digits. In other words, EV penetration remains relatively low with massive sales headroom. Further to that end, NHTSA has introduced a proposed plan for fuel economy improvements through 2032 with a target fleet average of 58 miles per gallon, clearly encouraging EVs to reach this ambitious goal. With advancements in EV technology, rapid proliferation of charging infrastructure, and declining battery costs, the expansion potential of the EV market is truly extraordinary. Given Indy's customer engagements spanning market leaders including NIO, Ford, Rivian, GM, BMW, Mercedes, Xiaopeng, BYD, Hyundai, Nissan, Li Auto, and Volkswagen, we are especially well positioned to outpace this third megatrend. I'll now turn the call over to Tom for a discussion of our Q2 results and our Q3 outlook. Thanks, Donald."
+    },
+    {
+        "speaker_name": null,
+        "speaker_title": null,
+        "text": "Indy delivered a solid second quarter, once again exceeding our top-lining gross margin guidance. In fact, this represents our ninth consecutive quarter of beating or at least meeting such targets post-Indy's IPO. Specifically, revenue for the period was on the higher end of our guidance range and up 102% year-over-year and up 29% sequentially. to $52.1 million. Gross profit was $27.2 million, translating into a 52.2% gross margin, up 363 basis points year over year, and ahead of our 52.0% guidance. R&D was $34 million, and slightly above plan given multiple tape outs and accelerated product development costs, which converged in Q2. but importantly also as the benefit of pulling in our time to revenue. Similarly, SG&A was $9.5 million, reflecting further extension of our sales and marketing reach, particularly in Asia, with near immediate results. In turn, our Q2 operating loss was $16.3 million, a 35 percentage point operating margin improvement year over year, and a further narrowing on a sequential basis. with negligible other net interest expense below the line. Our net loss was 16.4 million, and we posted 10 cent loss per share on a base of 164.1 million shares. Turning to the balance sheet, given our aggressive growth plans, during the quarter we invested 22 million in working capital, entered a multi-year supply agreement with a strategic foundry partner for four million, and expanded our internal test capacity and quality lab capabilities via $3 million in capital expenditures. To partially offset these cash outlays, we issued 1.9 million shares under our ATM program, including 1.1 million shares via block trade, for total proceeds of $18 million, enabling us to exit the quarter with $181 million in cash and equivalents. Looking forward, for the third quarter, we intend to scale into a $240 million annualized revenue run rate, up 100% year-over-year and 15% sequentially, and up more than tenfold versus our 2020 revenue base. With all of this growth, despite two OEM program pushouts and the choppy macro backdrop. At $60 million in sales, we expect gross margin expansion to the 53% range, particularly as we begin to realize operational synergies from our GEO acquisition. We're also planning $35.5 million in R&D, elevated once again from additional mass costs, and expect SG&A to remain flat sequentially. As a result, we intend to further narrow our operating loss to approximately $13 million. Below the line, we anticipate half a million dollars of net interest expense and no taxes. Assuming 167 million shares outstanding from scheduled vestings and no further ATM activity, we expect an 8 cent net loss per share. Further, we remain on track to more than double our annual revenues for a third consecutive year and reach profitability in the fourth quarter of this year. driven by sustained sales growth, gross margin expansion, and operating expense leverage. Longer term, based on the depth of Indy's new product pipeline, as Donald outlined, we plan to continue to deliver outsized top line growth over the forecast horizon towards our 60% gross and 30% operating margin target model. With that, I'll turn the call back to Donald for his closing comments."
+    },
+    {
+        "speaker_name": null,
+        "speaker_title": null,
+        "text": "Thanks, Tom. As our design wind traction, operational agility, and scalability demonstrate, Indy is effectively executing to our strategy. In fact, as a net result, we now see a clear path to over $1 billion in annual revenue by 2028. And yet, we're just getting started. Our diverse product and IP portfolio, deepening customer engagements, collaborative supplier partnerships, and innovative roadmaps, and last but not least, of course, our stellar team, are positioning us to capitalize on the 48 billion ADAS user experience and EV triple megatrend, and in the process, build an autotech powerhouse, and most importantly, create extraordinary shareholder value. That concludes our prepared remarks. Operator, let's open the call for questions."
+    },
+    {
+        "speaker_name": null,
+        "speaker_title": null,
+        "text": "Thank you, sir. Ladies and gentlemen, at this time, we'll be conducting a question and answer session. If you would like to ask a question, please press star and then one on your telephone keypad. A confirmation tone will indicate your line is in the question queue. You may press star and two if you would like to remove your question from the queue. For participants using speaker equipment, it may be necessary to pick up your handset before pressing star keys. Due to time constraints, we ask that you please limit yourself to one question and one related follow-up question. Our first question is from Sujita Silva of Roth and Kane. Please go ahead."
+    },
+    {
+        "speaker_name": null,
+        "speaker_title": null,
+        "text": "Hi, Donald. Hi, Tom. Congrats on the progress here. Thank you. Sure. I mean, obviously, looking ahead to 3Q, the guide here is a little bit behind consensus in my number. I'm just curious. You talked about two push-outs here I want to understand. maybe some color on those, and then were those Indy-specific push-outs for reasons, customer-specific reasons, or just end-market reasons? Any color there would be helpful. Thanks."
+    },
+    {
+        "speaker_name": null,
+        "speaker_title": null,
+        "text": "Hi, Suji. Sure. Yeah, so there were two significant push-outs, which were really to do with the customer's programs per se, nothing that was within our control, their own engineering execution. And I would say And it's important to note that no business has been lost here. It's just been pushed out by a few quarters in order to allow these guys to complete whatever they need to do on the engineering side."
+    },
+    {
+        "speaker_name": null,
+        "speaker_title": null,
+        "text": "Okay. That's very helpful. And then on the Bosch win for OMS, it would be helpful to understand the magnitude of that lifetime. I think it's hundreds of millions of opportunity and the timing of that, perhaps contrasted with the large radar when you had, just to kind of give a sense of maybe how the two layer on together as you start to build up a book of these."
+    },
+    {
+        "speaker_name": null,
+        "speaker_title": null,
+        "text": "Yeah, I mean, we're super excited about this. I mean, Bosch is one of the top two or three players in the industry, and they've been, I would say, largely missing from our portfolio to date. It's hard to size exactly, but given that this is one of their key platforms, which they will likely attach to multiple OEMs, then we feel it will be up there with the largest design wins that we've made in the history of the company. So we're super excited about it."
+    },
+    {
+        "speaker_name": null,
+        "speaker_title": null,
+        "text": "Thank you, sir. The next question is from Cody Acree of the benchmark company."
+    },
+    {
+        "speaker_name": null,
+        "speaker_title": null,
+        "text": "Please go ahead."
+    },
+    {
+        "speaker_name": null,
+        "speaker_title": null,
+        "text": "Yes, thank you. And thanks for taking my questions. Don, let me just go back to Suju's question. The total outlook, like you said, is a little like But how much of that is macro? We're seeing countervailing data points out of some in markets, and there's been a lot of speculation that autos are going to finally hit a bit of a softer patch. Now, if you look at this, is this more of the estimates getting ahead of themselves, or is it more to do with the changes in the in-market?"
+    },
+    {
+        "speaker_name": null,
+        "speaker_title": null,
+        "text": "Well, good question, Cody. I mean, from our side, you know, obviously we see the chop in the macro market. We're not blind to that. And of course, nobody's immune to it. But from our perspective, it's a secondary issue versus the growth rate that we've achieved as a company. In Q2, we grew 100% year on year. In Q3, we're guiding to 100% growth year on year. And likely Q4 will be that way or better. know from our perspective it's kind of hard for us to see the the macro effects translate directly into our own business so I mean from our perspective we it's it's there but I mean really that the larger effect on us is a couple of program push outs which is just a minor air pocket for us and doesn't really change anything about our long-term outlook okay so if you look at the revenue that you're getting in from"
+    },
+    {
+        "speaker_name": null,
+        "speaker_title": null,
+        "text": "longer-term prior agreements, it's making up the bulk of your $52 million here, versus those that are new programs. Can you talk about breaking up the $52 million as to what's contributed on established platforms that are shipping in volumes to customers? And therefore, you've got to take a look at total SAR vagaries. And then what's how much of that 52 is getting into new programs that may or may not be on there on your timing schedule."
+    },
+    {
+        "speaker_name": null,
+        "speaker_title": null,
+        "text": "I mean, it's a mix. Um, once we, uh, um, once we ramp our product and we've done our bit of the engineering, if you like, then there's typically still a ramp at the OEM switch, um, which contributes to our overall revenue profile. And, and of course, um, By virtue of the fact that we're a growth company, new products that are planned to ramp, we typically can mitigate those. We have a lot of ramps ongoing. And I would say there's always going to be a mix of new product starts as well as ongoing growth from existing programs. It's just the nature of the beast. We're a growing company, so there are new programs that are going to ramp in addition to running revenue."
+    },
+    {
+        "speaker_name": null,
+        "speaker_title": null,
+        "text": "Thank you, sir."
+    },
+    {
+        "speaker_name": null,
+        "speaker_title": null,
+        "text": "The next question is from Craig Evers of B Riley Securities. Please go ahead."
+    },
+    {
+        "speaker_name": null,
+        "speaker_title": null,
+        "text": "Yeah, I'll start with a longer term question for Donald. Donald, I was very intrigued by the comment that you feel like you have increased visibility to becoming a $1 billion sales company by 2028. I was just wondering if you could flesh that out a little bit more and talk about what you see in that timeframe from the user experience business broadly, the ADAS business broadly, and then what role electrification will play in getting to that billion?"
+    },
+    {
+        "speaker_name": null,
+        "speaker_title": null,
+        "text": "Yeah. Well, I mean, we've been building our, let's say, customer portfolio and design wind portfolio over the course of the last period. As you know, of course, our heaviest R&D investment is in the ADAS space, and that's going to be one of the large drivers for that growth into that timeframe. The user experience will continue to grow, but ADAS, as you can see, as you can say, would be the main engine behind that, and e-vehicle directly pertaining to the propulsion system may be a little behind that."
+    },
+    {
+        "speaker_name": null,
+        "speaker_title": null,
+        "text": "Got it. Thank you. And then, Tom, I wanted to flip it over to you and ask much more of a near-term question. So really like the renewed or reiterated target to get to operating profitability this year, can you just help us kind of bridge the gap between where we were this quarter, next quarter, which I think would be a 13 million operating loss all the way to profitability. That seems to imply either very significant sequential fourth quarter revenue growth or pretty dramatic gross margin or operating expense reduction. Just a little help there. Thank you."
+    },
+    {
+        "speaker_name": null,
+        "speaker_title": null,
+        "text": "Sure. Yeah. In fact, it's all of the above. So it's accelerating growth into Q4, continued gross margin expansion, and then operating leverage. We actually expect Q4 OPEX to tick down because we're For Q2 and Q3, we're seeing higher tape-out costs, mass costs coming through. But that'll reduce in Q4. So all those factors get us to profitability next quarter."
+    },
+    {
+        "speaker_name": null,
+        "speaker_title": null,
+        "text": "Thank you."
+    },
+    {
+        "speaker_name": null,
+        "speaker_title": null,
+        "text": "The next question is from Ross Seymour of Deutsche Bahn. Please go ahead."
+    },
+    {
+        "speaker_name": null,
+        "speaker_title": null,
+        "text": "Hi, guys. Thanks for asking the question. Just wanted to follow up Craig's question on the fourth quarter side of things, and not to sound too cynical, but considering the push-out side of things in the third quarter, what gives you the confidence in that acceleration on the revenue side in the fourth quarter?"
+    },
+    {
+        "speaker_name": null,
+        "speaker_title": null,
+        "text": "Just the situation of our backlog, where we are, where we can see things going. We feel... extremely confident about it. Otherwise, we wouldn't have called it in that sense, given it's a short-term turn. As Tom also mentioned, we do have a little help from the OPEX dropping. We have ever more, let's say, labor and R&D cost-intensive programs, which we're deploying right now. And so the middle of the year is where we spent heavily to get to tapeouts, which are going to drive the revenue in the 24, 25, 26 timeframe and beyond."
+    },
+    {
+        "speaker_name": null,
+        "speaker_title": null,
+        "text": "Got it. And then I guess if I think a little bit longer term, maybe in Wall Street terms longer term, not so much in automotive, into 2024 as a whole, Donald, what would you think would be the tailwinds and potential headwinds that you would look to as far as kind of growth ramping out of your backlog, new product ramps, different types within user experience, sensing ADAS, those sorts of things? What are the pluses and minuses that you see looking into next year?"
+    },
+    {
+        "speaker_name": null,
+        "speaker_title": null,
+        "text": "Well, in 24, you'll begin to see the thin end of the ramp of the designs that we began to win as we became a public company, which were significantly larger than the ones that we could command as a private company. And so generally speaking, that's really the beginning of that sort of second phase of the company's growth, which we expect to take us into the back half of this decade. Again, we've spent... a great deal of time in the ADAS space. The ASPs are significantly higher. The gross margins are higher in terms of mix. And that's really going to be one of the heaviest drivers in 24 and 25 and beyond."
+    },
+    {
+        "speaker_name": null,
+        "speaker_title": null,
+        "text": "Thank you."
+    },
+    {
+        "speaker_name": null,
+        "speaker_title": null,
+        "text": "The next question is from Anthony Stoss of Craig Helen Capital Group. Please go ahead."
+    },
+    {
+        "speaker_name": null,
+        "speaker_title": null,
+        "text": "Hey, guys, a couple questions. Tom, maybe you can share how much GEO was in Q2 and what you expect GEO to be in terms of your guide for Q3. And then, Donald, maybe if you can share some of the two OEM pushouts, what revenue would that have equated to?"
+    },
+    {
+        "speaker_name": null,
+        "speaker_title": null,
+        "text": "Sure. The first one, Tony, we just aren't sub-segmenting, as you may know. But at a higher level, I would convey that we're delighted with GEO as an acquisition. It's certainly bearing fruit already in terms of these large scale programs. We had mentioned Bosch, Toyota. We'll have some other names soon to be able to share on that particular front. So the long term opportunity around GEO just continues to look better and better."
+    },
+    {
+        "speaker_name": null,
+        "speaker_title": null,
+        "text": "And then I'll, on the second part. Yeah, on the second part of that, I mean, these programs are significant. And when they fully ramp, which, of course, takes a little bit of time, they're about $50 million combined annually."
+    },
+    {
+        "speaker_name": null,
+        "speaker_title": null,
+        "text": "Okay. And then shifting back to Tom, knowing what you're expecting from OPEX and Q4, when you run the math, you'd be over $70 million in revenues to break even. on a 55% gross margin for Q4. Is that kind of what you're thinking of for Q4?"
+    },
+    {
+        "speaker_name": null,
+        "speaker_title": null,
+        "text": "That's the right idea. Yeah, $75 million roughly in revenue, gross margin in the, yeah, 54% range."
+    },
+    {
+        "speaker_name": null,
+        "speaker_title": null,
+        "text": "I think that gets you there. Thank you very much."
+    },
+    {
+        "speaker_name": null,
+        "speaker_title": null,
+        "text": "Ladies and gentlemen, we have reached the end of the question and answer session, and we'd like to turn the call back to Donald McClymon for some closing remarks."
+    },
+    {
+        "speaker_name": null,
+        "speaker_title": null,
+        "text": "Thanks, everybody, for listening, and see you at the investor conferences over the next few weeks."
+    },
+    {
+        "speaker_name": null,
+        "speaker_title": null,
+        "text": "Thank you very much, sir. Ladies and gentlemen, that concludes today's conference."
+    },
+    {
+        "speaker_name": null,
+        "speaker_title": null,
+        "text": "You may disconnect your lines at this time, and thank you for your participation."
+    }
+]
