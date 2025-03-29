@@ -58,19 +58,10 @@ def trade_sim(datadir : str ,run_this_stock_only : str =None ,fix_alternative = 
 
 
 
-
-
-
-
 if __name__ == "__main__":
     datadir = "C:\work\Algobot\data\INCY"
     #trade_sim(datadir=datadir, bottype='default')
     trade_sim(datadir=datadir, fix_alternative=True)
-    #trade_sim(datadir=datadir ,  run_this_stock_only = 'IMVT',fix_alternative = True)
-    #trade_sim(datadir=datadir, run_this_stock_only='IMXI', fix_alternative=True)
-
-    #trade_sim(datadir=datadir, fix_alternative=True)
-    #trade_sim(datadir=datadir)
 
 
 
