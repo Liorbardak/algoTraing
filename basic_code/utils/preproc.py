@@ -4,17 +4,18 @@ import numpy as np
 import os
 
 
-def prerprocess_data(datadir : str )->pd.DataFrame:
+def prerprocess_data(datadir : str , minLengthtoUse :int = 300):
     '''
-    Create a common data frame  , with same dates for all stocks
-    Add some features
+    Prepare data for work -
+    - Filter out stocks that does not have enough information
+    - Take only dates that has data from all stocks
+    - Create reference index - average of all stocks
+    - Save the reference index and the common stocks data frame
     :param datadir: input directory
-    :param mas: list of moving averages to calculate
-    :param keyToUse: key to use for the ma
-    :return: Dataframe with of all data
+    :param minLengthtoUse:  Minimal number of dates in a stock file directory
+
     '''
-    # Minimal number of dates in a stock file
-    minLengthtoUse = 300
+
 
     dirnames = [d for d in os.listdir(datadir) if os.path.isdir(os.path.join(datadir, d))]
     dfs = []
@@ -30,7 +31,7 @@ def prerprocess_data(datadir : str )->pd.DataFrame:
         dfs.append(df)
     df_all = pd.concat(dfs)
 
-    # Take dates that has all stcks information
+    # Take dates that has all stocks information
     Nstocks = len(set(df_all.name))
     filtered_df = []
 
@@ -40,18 +41,30 @@ def prerprocess_data(datadir : str )->pd.DataFrame:
 
 
 
-    df_all = pd.concat(filtered_df)
-    if (len(df_all.Date) < minLengthtoUse):
+    df_all = pd.concat(filtered_df).reset_index()
+
+    if (len(set(df_all.Date)) < minLengthtoUse):
         print('Error : no enough dates')
-        return None
-    return df_all
+        return
+
+    print(f' preroc {datadir} #stocks {len(set(df_all.name))} #dates {len(set(df_all.Date))}  from {np.min(df_all.Date)} to {np.max(df_all.Date)} ')
+    # Save data
+    df_all.to_csv(os.path.join(datadir, 'all_stocks.csv'))
+    # Get & Save  average index
+    avgdata = get_average_stock(df_all)
+    avgdata.to_csv(os.path.join(datadir, 'reference_index.csv'))
+
+
 
 
 def get_average_stock(dfi : pd.DataFrame)->pd.DataFrame:
     '''
-    Barbaric normalization - for each stock the first closing price will be 100
-    :return: Data frame with of all data
+    Average all stocks with equal weights
+    Normalization - for each stock, set the first closing price will be 100
+    :return: average dataframe
     '''
+    reference_key = '4. close'
+    keys_to_average =  ['1. open', '2. high', '3. low', '4. close']
 
     # Normalize
     df = dfi.copy()
@@ -59,8 +72,8 @@ def get_average_stock(dfi : pd.DataFrame)->pd.DataFrame:
     stock_names = set(df.name)
     for stock_name in stock_names:
        # normalize so first closing price will be 100
-       normFact = 100 / df[(df.name == stock_name) & (df.Date == refData)]['4. close'].values[0]
-       for k in ['1. open', '2. high', '3. low', '4. close']:
+       normFact = 100 / df[(df.name == stock_name) & (df.Date == refData)][reference_key].values[0]
+       for k in keys_to_average:
             df.loc[df.name == stock_name, k] = df[df.name == stock_name][k] * normFact
 
     # average on all stocks per time
@@ -75,15 +88,11 @@ def get_average_stock(dfi : pd.DataFrame)->pd.DataFrame:
 
 
 
-
-
-
-
 if __name__ == "__main__":
-    datadir = "C:\work\Algobot\data\INCY"
-    df_all = prerprocess_data(datadir)
+    dataindir = "C:\work\Algobot\data\INCY"
+    prerprocess_data(dataindir)
+
     #df_all.to_csv(os.path.join(datadir, 'stocks.csv'))
 
-    avdf = get_average_stock(df_all)
 
 
