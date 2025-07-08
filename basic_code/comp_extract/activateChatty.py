@@ -23,8 +23,13 @@ import os
 import re
 class ActivateChatty:
     def __init__(self):
-
-        API_KEY_CHAT = "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"
+        # Read API key from file
+        try:
+            with open('openai_api_key.txt', 'r', encoding='utf-8') as f:
+                API_KEY_CHAT = f.read().strip()
+        except FileNotFoundError:
+            raise FileNotFoundError("OpenAI API key file 'openai_api_key.txt' not found. Please create this file with your API key.")
+        
         self.client = OpenAI(
             api_key=API_KEY_CHAT
         )
@@ -46,7 +51,13 @@ class ActivateChatty:
                 {"role": "user", "content": user_prompt}
             ],
         )
-        json_string = responseChat.choices[0].message.content.strip('```json\n').strip('\n```')
+        # Safety check for None content
+        content = responseChat.choices[0].message.content
+        if content is None:
+            print("Warning: API returned None content")
+            return []
+        
+        json_string = content.strip('```json\n').strip('\n```')
         # Remove invalid control characters using regex
         cleaned_json_string = re.sub(r'[\x00-\x1f\x7f-\x9f]', '', json_string)
 

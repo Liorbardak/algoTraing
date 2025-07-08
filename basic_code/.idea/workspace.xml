@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="2d03444b-a0d4-409d-a0fd-8c637ccc2df5" name="Default Changelist" comment="" />
+    <list default="true" id="2d03444b-a0d4-409d-a0fd-8c637ccc2df5" name="Default Changelist" comment="test">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/comp_extract/activateChatty.py" beforeDir="false" afterPath="$PROJECT_DIR$/comp_extract/activateChatty.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/comp_extract/extractComplimentsFromEarningCalls.py" beforeDir="false" afterPath="$PROJECT_DIR$/comp_extract/extractComplimentsFromEarningCalls.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,20 +21,37 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "talhadask"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/Liorbardak/algoTraing.git",
+    "accountId": "abd13133-8953-4514-9aff-54b8132e9939"
+  }
+}]]></component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 2
+}]]></component>
   <component name="ProjectId" id="2uInjG9FG056q6qn1azoVMEYQiE" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
-    <property name="settings.editor.selected.configurable" value="pyconsole" />
-  </component>
-  <component name="PyConsoleOptionsProvider">
-    <option name="myShowDebugConsoleByDefault" value="true" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "C:/Users/talha/PycharmProjects/investment_strategies/codeNew/algoTraing/basic_code"
+  }
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\work\Algobot\basic_code\utils" />
@@ -167,6 +191,14 @@
       </list>
     </option>
   </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-python-sdk-fb887030ada0-aa17d162503b-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-243.21565.199" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -178,57 +210,20 @@
       <option name="presentableId" value="Default" />
       <updated>1741945088526</updated>
     </task>
+    <task id="LOCAL-00001" summary="test">
+      <option name="closed" value="true" />
+      <created>1751691134122</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1751691134122</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
-  <component name="WindowStateProjectService">
-    <state width="1498" height="466" key="DebuggerActiveHint" timestamp="1742068248419">
-      <screen x="0" y="0" width="1920" height="1080" />
-    </state>
-    <state width="1498" height="466" key="DebuggerActiveHint/0.0.1920.1080@0.0.1920.1080" timestamp="1742068248419" />
-    <state x="740" y="296" key="FileChooserDialogImpl" timestamp="1742558281331">
-      <screen x="0" y="0" width="1920" height="1080" />
-    </state>
-    <state x="740" y="296" key="FileChooserDialogImpl/0.0.1920.1080@0.0.1920.1080" timestamp="1742558281331" />
-    <state width="1899" height="290" key="GridCell.Tab.0.bottom" timestamp="1742559436458">
-      <screen x="0" y="0" width="1920" height="1080" />
-    </state>
-    <state width="1899" height="290" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1742559436458" />
-    <state width="1899" height="290" key="GridCell.Tab.0.center" timestamp="1742559436458">
-      <screen x="0" y="0" width="1920" height="1080" />
-    </state>
-    <state width="1899" height="290" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1742559436458" />
-    <state width="1899" height="290" key="GridCell.Tab.0.left" timestamp="1742559436457">
-      <screen x="0" y="0" width="1920" height="1080" />
-    </state>
-    <state width="1899" height="290" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1742559436457" />
-    <state width="1899" height="290" key="GridCell.Tab.0.right" timestamp="1742559436458">
-      <screen x="0" y="0" width="1920" height="1080" />
-    </state>
-    <state width="1899" height="290" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1742559436458" />
-    <state width="1882" height="275" key="GridCell.Tab.1.bottom" timestamp="1742559436455">
-      <screen x="0" y="0" width="1920" height="1080" />
-    </state>
-    <state width="1882" height="275" key="GridCell.Tab.1.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1742559436455" />
-    <state width="1882" height="275" key="GridCell.Tab.1.center" timestamp="1742559436455">
-      <screen x="0" y="0" width="1920" height="1080" />
-    </state>
-    <state width="1882" height="275" key="GridCell.Tab.1.center/0.0.1920.1080@0.0.1920.1080" timestamp="1742559436455" />
-    <state width="1882" height="275" key="GridCell.Tab.1.left" timestamp="1742559436455">
-      <screen x="0" y="0" width="1920" height="1080" />
-    </state>
-    <state width="1882" height="275" key="GridCell.Tab.1.left/0.0.1920.1080@0.0.1920.1080" timestamp="1742559436455" />
-    <state width="1882" height="275" key="GridCell.Tab.1.right" timestamp="1742559436455">
-      <screen x="0" y="0" width="1920" height="1080" />
-    </state>
-    <state width="1882" height="275" key="GridCell.Tab.1.right/0.0.1920.1080@0.0.1920.1080" timestamp="1742559436455" />
-    <state x="461" y="183" key="SettingsEditor" timestamp="1741945563072">
-      <screen x="0" y="0" width="1920" height="1080" />
-    </state>
-    <state x="461" y="183" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1741945563072" />
-    <state x="92" y="92" width="1736" height="896" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1742131606706">
-      <screen x="0" y="0" width="1920" height="1080" />
-    </state>
-    <state x="92" y="92" width="1736" height="896" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1742131606706" />
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="test" />
+    <option name="LAST_COMMIT_MESSAGE" value="test" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
