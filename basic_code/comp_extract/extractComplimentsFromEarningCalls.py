@@ -712,6 +712,20 @@ def main():
             print(f"  API calls time: {stage2_api_time:.2f} seconds ({stage2_api_time/stage2_total*100:.1f}%)")
             print(f"  Processing time: {stage2_processing_time:.2f} seconds ({stage2_processing_time/stage2_total*100:.1f}%)")
             
+            # STAGE 2.5: Remove duplicate analysts (keeping only the highest level compliment per analyst)
+            print(f"\nRemoving duplicate analysts...")
+            dedup_start = time.time()
+            
+            for quarter_key, quarter_data in validated_quarter_compliments.items():
+                original_count = len(quarter_data['compliments'])
+                quarter_data['compliments'] = analyzer.remove_duplications(quarter_data['compliments'])
+                dedup_count = len(quarter_data['compliments'])
+                if original_count != dedup_count:
+                    print(f"  {quarter_key}: Removed {original_count - dedup_count} duplicate analysts")
+                    
+            dedup_end = time.time()
+            print(f"✓ Duplicate removal completed in {dedup_end - dedup_start:.2f} seconds")
+            
             # STAGE 3: Generate Output Files (only if validation was successful)
             if validation_successful:
                 print(f"\nSTAGE 3: Output Generation")
