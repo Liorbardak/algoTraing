@@ -1,7 +1,7 @@
 {
   "file_paths": {
     "file_dir": "__FILE_DIR__",
-    "base_dir": "{file_dir}/../../../",
+    "base_dir": "{file_dir}/../../../../",
     "data_dir": "{base_dir}/data",
     "results_dir": "{base_dir}/results/trading_sim",
     "tickers_dir": "{data_dir}/tickers",
