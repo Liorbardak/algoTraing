@@ -29,7 +29,7 @@ from alphavantage_api_client import AlphavantageClient, GlobalQuote, AccountingR
 import alpha_vantage
 from yahoo_fin.stock_info import get_data, get_income_statement,tickers_sp500, tickers_nasdaq, tickers_other, get_quote_table
 import time
-from polygon import RESTClient
+#from polygon import RESTClient
 import pickle
 
 
