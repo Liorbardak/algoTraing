@@ -127,7 +127,7 @@ class Portfolio:
         :param ticker: check if ticker is in the portfolio
         :return:
         """
-        return (not ticker in self.positions.keys()) or self.positions[ticker].quantity == 0
+        return not ((not ticker in self.positions.keys()) or self.positions[ticker].quantity == 0)
 
     def get_total_value(self) -> float:
         """Calculate total portfolio value"""
