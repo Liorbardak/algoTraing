@@ -581,14 +581,8 @@ def create_model_inspection_report(
     return report
 
 
-def example_inspect_model():
-    from prediction.src.networks.gnn_model import GNNModel
-
-    model = GNNModel()
-    report = create_model_inspection_report(model=model, recurse_members={"nn_net"})
-    report.show()
 
 
 if __name__ == "__main__":
-    # example_2d_histogram()
-    example_inspect_model()
+
+    pass
