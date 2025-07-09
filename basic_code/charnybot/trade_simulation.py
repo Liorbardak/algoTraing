@@ -125,7 +125,7 @@ class TrainingSimulator:
             print("Generating performance reports...")
 
             # Load trade history from the output file
-            trade_history_file = os.path.join(outputpath, 'trade_sim.csv')
+            trade_history_file = os.path.join(outputpath, 'trade_simulation_results.csv')
 
             if os.path.exists(trade_history_file):
                 trade_hist_df = pd.read_csv(trade_history_file)
@@ -191,8 +191,9 @@ if __name__ == "__main__":
     END_DATE = '2025-01-01'  # End of simulation period
 
     # Output directory for results (reports, charts, trade history)
-
-    OUTPUT_PATH = 'C:/Users/dadab/projects/algotrading/results/trading_sim/test5'
+    outname = 'test6'
+    config = ConfigManager()
+    OUTPUT_PATH =  os.path.join(config.get_path("results_dir"),outname)
 
     # Ensure output directory exists
     os.makedirs(OUTPUT_PATH, exist_ok=True)
