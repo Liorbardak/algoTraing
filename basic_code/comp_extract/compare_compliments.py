@@ -2,6 +2,10 @@ import json
 import sys
 from collections import defaultdict
 import re
+import os
+
+import pandas as pd
+
 
 # Usage: python compare_compliments.py actual.json gt.json before_validation.json output.json
 
@@ -60,6 +64,8 @@ def compare_analyst_compliments(actual, gt, before_validation):
         gt_by_name = index_compliments_by_name(gt_comps)
         matched_gt = set()
         matched_actual = set()
+        stats['n_gt_analyst'] += len(gt_comps)
+        stats['n_actual_analyst'] += len(actual_comps)
         # First, try exact and advanced matches
         for actual_name, actual_c in actual_by_name.items():
             found = False
@@ -72,10 +78,18 @@ def compare_analyst_compliments(actual, gt, before_validation):
                     before_c = find_matching_before_validation(actual_c['analyst_name'], before_validation_comps)
                     before_name = before_c['analyst_name'] if before_c else None
                     before_quoted = before_c['quoted_compliment'] if before_c else None
+                    if gt_c['level']:
+                        stats['n_positive'] += 1
+                    else:
+                        stats['n_negative'] += 1
                     if actual_c['level'] == gt_c['level']:
                         stats['correct'] += 1
                     else:
                         stats['incorrect_level'] += 1
+                        if actual_c['level'] == 0:
+                            stats['false_negative'] += 1
+                        else:
+                            stats['false_positive'] += 1
                         results.append({
                             'quarter': quarter,
                             'analyst_name': actual_c['analyst_name'],
@@ -100,10 +114,19 @@ def compare_analyst_compliments(actual, gt, before_validation):
                 before_c = find_matching_before_validation(actual_c['analyst_name'], before_validation_comps)
                 before_name = before_c['analyst_name'] if before_c else None
                 before_quoted = before_c['quoted_compliment'] if before_c else None
+                if  gt_c['level']:
+                    stats['n_positive'] += 1
+                else:
+                    stats['n_negative'] += 1
+
                 if actual_c['level'] == gt_c['level']:
                     stats['correct'] += 1
                 else:
                     stats['incorrect_level'] += 1
+                    if actual_c['level'] == 0:
+                        stats['false_negative'] += 1
+                    else:
+                        stats['false_positive'] += 1
                     results.append({
                         'quarter': quarter,
                         'analyst_name': actual_c['analyst_name'],
@@ -162,15 +185,24 @@ def compare_analyst_compliments(actual, gt, before_validation):
     return results, stats
 
 def main():
-    # if len(sys.argv) != 4:
-    #     print('Usage: python compare_compliments.py actual.json gt.json before_validation.json output.json')
-    #     sys.exit(1)
-    # actual_path, gt_path, before_validation_path, output_path = sys.argv[1:5]
-    for ticker in ['ADMA','ADM','CLBT']:
-        actual_path = f'C:/Users/dadab/projects/algotrading/data/results_20250709_101434/{ticker}_all_validated_compliments.json'
-        gt_path = f'C:/Users/dadab/projects/algotrading/data/GT/{ticker}_all_validated_compliments_4.7_GT.json'
-        before_validation_path = f'C:/Users/dadab/projects/algotrading/data/results_20250709_101434/{ticker}_detected_compliments_before_validation.json'
-        output_path = f'C:/Users/dadab/projects/algotrading/data/results_20250709_101434/{ticker}_compareToGT.json'
+
+    basepath = '../../../data/'
+
+
+    resdir = "tests1/results_nominal"
+    #resdir = "tests1/results_3_sentences"
+
+    #resdir = "results/results_20250709_101434"
+    tickers = ['ADMA', 'ADM', 'CLBT']
+    #tickers = ['ADM']
+    res = []
+    for ticker in tickers:
+        # Set paths
+        actual_path = os.path.join(basepath,f"{resdir}/{ticker}_all_validated_compliments.json")
+        gt_path = os.path.join(basepath,f"GT/{ticker}_all_validated_compliments_4.7_GT.json")
+        before_validation_path = os.path.join(basepath,f"{resdir}/{ticker}_detected_compliments_before_validation.json")
+        output_path = os.path.join(basepath,f"{resdir}/{ticker}_compareToGT.json")
+
         actual = load_json(actual_path)
         gt = load_json(gt_path)
         before_validation = load_json(before_validation_path)
@@ -179,6 +211,33 @@ def main():
             json.dump(results, f, indent=2, ensure_ascii=False)
        # print(f'Comparison complete. Results written to: {output_path}')
         print(f"Statistics for {ticker}: Correct: {stats['correct']}, Incorrect Level: {stats['incorrect_level']}, Incorrect Name: {stats['incorrect_name']}")
+        res.append({'ticker' : ticker,
+                    'n_gt_analysits': stats['n_gt_analyst'],
+                    'n_actual_analyst': stats['n_actual_analyst'],
+                    'n_analysts_matched': stats['correct']+stats['incorrect_level'],
+                    'correct': stats['correct'],
+                    'incorrect': stats['incorrect_level'],
+                    'false_positive': stats['false_positive'],
+                    'false_negative': stats['false_negative'],
+
+                    })
+    df = pd.DataFrame(res)
+    # Set option to display all columns
+    pd.set_option('display.max_columns', None)
+    pd.set_option('display.width', None)
+    pd.set_option('display.max_colwidth', None)
+    print(df)
 
 if __name__ == '__main__':
-    main() 
+    main()
+
+
+    '''
+    Statistics for ADMA: Correct: 25, Incorrect Level: 3, Incorrect Name: 0
+Statistics for ADM: Correct: 132, Incorrect Level: 8, Incorrect Name: 4
+Statistics for CLBT: Correct: 62, Incorrect Level: 7, Incorrect Name: 2
+  ticker  n_gt_analysits  n_actual_analyst  n_analysits_matched  correct  incorrect  false_positive  false_negative
+0   ADMA              29                28                   28       25          3               1               2
+1    ADM             149               151                  140      132          8               5               3
+2   CLBT              72                73                   69       62          7               7               0
+    '''

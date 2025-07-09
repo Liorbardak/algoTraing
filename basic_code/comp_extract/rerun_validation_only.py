@@ -83,7 +83,7 @@ def main():
     print("🔄 Re-running validation for all stocks...")
     
     # Find the most recent results folder
-    results_base = os.path.join('..', '..', 'data', 'results')
+    results_base = os.path.join('..','..', '..', 'data', 'results')
     
     if not os.path.exists(results_base):
         print(f"❌ Results directory not found: {results_base}")
@@ -100,27 +100,20 @@ def main():
     latest_folder = os.path.join(results_base, results_folders[0])
     print(f"📁 Using results folder: {results_folders[0]}")
     
-    # Process only ADMA
-    stock_tickers = ["ADMA"]
+    # Process tickers
+    stock_tickers = ['ADMA']
     
-    # Check if ADMA file exists
-    adma_file = os.path.join(latest_folder, "ADMA_detected_compliments_before_validation.json")
-    if not os.path.exists(adma_file):
-        print("❌ ADMA data file not found")
-        return
-    
-    print(f"🎯 Processing only ADMA")
-    
+
     # Process each stock
     successful = 0
     failed = 0
-    
+
     for ticker in stock_tickers:
         if run_validation_for_stock(ticker, latest_folder):
             successful += 1
         else:
             failed += 1
-    
+
     print(f"\n📊 Validation Summary:")
     print(f"  ✅ Successful: {successful}")
     print(f"  ❌ Failed: {failed}")
