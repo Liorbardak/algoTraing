@@ -160,6 +160,9 @@ def compare_analyst_compliments(actual, gt, before_validation):
                 'quoted_compliment_GT': None,
                 'partial_name_match': False
             })
+
+
+
         # Now, check for GT names not matched by actual
         for gt_name, gt_c in gt_by_name.items():
             if gt_name not in matched_gt:
@@ -191,7 +194,7 @@ def main():
 
     resdir = "tests1/results_nominal"
     #resdir = "tests1/results_3_sentences"
-
+    #resdir = "tests1/results_full_response"
     #resdir = "results/results_20250709_101434"
     tickers = ['ADMA', 'ADM', 'CLBT']
     #tickers = ['ADM']
@@ -219,25 +222,90 @@ def main():
                     'incorrect': stats['incorrect_level'],
                     'false_positive': stats['false_positive'],
                     'false_negative': stats['false_negative'],
+                    'n_positive' :  stats['n_positive'],
+                    'n_negative': stats['n_negative'],
+                    # 'accuracy': stats['correct'] / (stats['correct'] + stats['incorrect_level']),
+                    # 'false_positive_rate':stats['false_positive'] /  stats['n_positive'],
+                    # 'false_negative_rate': stats['false_negative'] / stats['n_negative'],
 
                     })
+
     df = pd.DataFrame(res)
+    df.loc['Total'] = df.sum()
+    df.loc['Total', 'ticker'] = 'all'
+    df['accuracy'] = df['correct'] / (df['correct'] + df['incorrect'])
+
+    TP = df['n_positive'] -  df['false_negative']
+    df['precision'] = TP/ (TP +  df['false_positive'])
+    df['recall'] = (df['n_positive'] - df['false_negative']) / df['n_positive']
+
+
     # Set option to display all columns
     pd.set_option('display.max_columns', None)
     pd.set_option('display.width', None)
     pd.set_option('display.max_colwidth', None)
-    print(df)
+
+    #print(df)
+
+    print(df[['ticker','accuracy','precision', 'recall']])
 
 if __name__ == '__main__':
     main()
 
 
-    '''
-    Statistics for ADMA: Correct: 25, Incorrect Level: 3, Incorrect Name: 0
+
+'''
+ Nominal
+Statistics for ADMA: Correct: 26, Incorrect Level: 3, Incorrect Name: 0
+Statistics for ADM: Correct: 136, Incorrect Level: 11, Incorrect Name: 2
+Statistics for CLBT: Correct: 65, Incorrect Level: 5, Incorrect Name: 0
+      ticker  accuracy  precision    recall
+0       ADMA  0.896552   0.956522  0.916667
+1        ADM  0.925170   0.791667  0.760000
+2       CLBT  0.928571   0.833333  0.952381
+Total    all  0.922764   0.859155  0.871429
+
+3 Sentences  
+Statistics for ADMA: Correct: 25, Incorrect Level: 3, Incorrect Name: 0
 Statistics for ADM: Correct: 132, Incorrect Level: 8, Incorrect Name: 4
 Statistics for CLBT: Correct: 62, Incorrect Level: 7, Incorrect Name: 2
-  ticker  n_gt_analysits  n_actual_analyst  n_analysits_matched  correct  incorrect  false_positive  false_negative
-0   ADMA              29                28                   28       25          3               1               2
-1    ADM             149               151                  140      132          8               5               3
-2   CLBT              72                73                   69       62          7               7               0
-    '''
+      ticker  accuracy  precision    recall
+0       ADMA  0.892857   0.956522  0.916667
+1        ADM  0.942857   0.807692  0.875000
+2       CLBT  0.898551   0.740741  1.000000
+Total    all  0.924051   0.828947  0.926471
+FULL 
+Statistics for ADMA: Correct: 25, Incorrect Level: 3, Incorrect Name: 0
+Statistics for ADM: Correct: 135, Incorrect Level: 9, Incorrect Name: 1
+Statistics for CLBT: Correct: 61, Incorrect Level: 11, Incorrect Name: 0
+      ticker  accuracy  precision    recall
+0       ADMA  0.892857   0.920000  0.958333
+1        ADM  0.937500   0.785714  0.880000
+2       CLBT  0.847222   0.750000  0.714286
+Total    all  0.905738   0.821918  0.857143
+
+
+Nominal
+      ticker  accuracy  precision    recall
+0       ADMA  0.896552   0.956522  0.916667
+1        ADM  0.925170   0.791667  0.760000
+2       CLBT  0.928571   0.833333  0.952381
+Total    all  0.922764   0.859155  0.871429
+
+3 Sentences  
+      ticker  accuracy  precision    recall
+0       ADMA  0.892857   0.956522  0.916667
+1        ADM  0.942857   0.807692  0.875000
+2       CLBT  0.898551   0.740741  1.000000
+Total    all  0.924051   0.828947  0.926471
+
+Full response 
+      ticker  accuracy  precision    recall
+0       ADMA  0.892857   0.920000  0.958333
+1        ADM  0.937500   0.785714  0.880000
+2       CLBT  0.847222   0.750000  0.714286
+Total    all  0.905738   0.821918  0.857143
+
+
+
+'''
