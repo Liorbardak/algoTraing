@@ -1,0 +1,14 @@
+This is an explanation text, and at the end of the explanation, there will be an earnings call transcript. I am looking to identify an analyst's compliment to the company performance. The way to do so is to check whether, during their questions (typically right at the beginning or at the end of their talk), the analysts complimented the company.
+
+After identifying all compliments (if any), please put them in a JSON structure with the following fields:
+make sure that all the analysts are written, both the analysts who gave compliments and those who did not compliment.
+Make sure that every analyst appears in the file exactly once. If the same analyst asked several questions you should count him only once. 
+
+- analyst_name: The name of the analyst
+- level: 1 if the analyst gave a compliment, 0 otherwise
+- quoted_compliment: copy the paragraph that contains the compliment exactly as it is written in the text. in case the analyst didn't give a compliment, put ''.
+
+Your response should include only JSON format with the above fields that can be loaded using json.loads(), without any further text.
+
+Here is the earnings calls text: 
+{text}

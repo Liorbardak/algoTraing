@@ -482,7 +482,7 @@ def main():
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
     results_folder_name = f"results_{timestamp}"
     #results_path = f'../../data/results/{results_folder_name}/'
-    results_path = os.path.join(data_path, results_folder_name)
+    results_path = os.path.join(data_path,'results', results_folder_name)
     prompt_path = '../../data/prompts/'
 
     # Prompt file paths
