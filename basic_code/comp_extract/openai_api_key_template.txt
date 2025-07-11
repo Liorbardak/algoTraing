@@ -1,0 +1,9 @@
+YOUR_OPENAI_API_KEY_HERE
+
+Instructions:
+1. Get your OpenAI API key from https://platform.openai.com/api-keys
+2. Copy this file to 'openai_api_key.txt'
+3. Replace 'YOUR_OPENAI_API_KEY_HERE' with your actual API key
+4. Save the file
+
+Note: The 'openai_api_key.txt' file is excluded from git to keep your API key secure. 
