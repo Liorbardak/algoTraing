@@ -204,14 +204,14 @@ def compare_analyst_compliments(actual, gt, before_validation):
 def main():
     # Set paths
     basepath = '../../../data/'
-    resdir = os.path.join(basepath, "results/results_20250709_220023")
-    #gtdir = os.path.join(basepath, "GT")
+    resdir = os.path.join(basepath, "results/results_test")
+    gtdir = os.path.join(basepath, "GT")
     gtdir = os.path.join(basepath, "GT2")
     outputdir = os.path.join(resdir,'compareToGT2')
     os.makedirs(outputdir, exist_ok=True)
     statistic_filename = os.path.join(outputdir, f"compareToGT.csv")
     tickers = ['ADMA', 'ADM', 'CLBT']
-    #tickers = ['ADM']
+    tickers = ['ADM']
     res = []
     for ticker in tickers:
         # Set paths
@@ -222,7 +222,6 @@ def main():
 
         gt_level_errors_output_file = os.path.join(outputdir,f"{ticker}_compareToGT_level_errors.json")
         name_errors_output_file = os.path.join(outputdir, f"{ticker}_compareToGT_name_errors.json")
-
 
         # Load json
         actual = load_json(compliments_file)
