@@ -56,7 +56,7 @@ def compare_analyst_compliments(actual, gt, before_validation):
     results = []
     results_incorrect_names = []
     stats = defaultdict(int)
-    all_quarters = set(actual.keys()) & set(gt.keys())
+    all_quarters = sorted(list(set(actual.keys()) & set(gt.keys())))
     for quarter in all_quarters:
         actual_comps = actual[quarter]['compliments']
         gt_comps = gt[quarter]['compliments']
@@ -187,7 +187,7 @@ def compare_analyst_compliments(actual, gt, before_validation):
                     # Do not count as error if GT level is 0
                     continue
                 stats['incorrect_name'] += 1
-                results.append({
+                results_incorrect_names.append({
                     'quarter': quarter,
                     'analyst_name': None,
                     'analyst_name_before_validation': before_name,
@@ -205,19 +205,20 @@ def main():
     # Set paths
     basepath = '../../../data/'
     resdir = os.path.join(basepath, "results/results_20250709_220023")
-    #gtdir = os.path.join(basepath, "GT")
-    gtdir = os.path.join(basepath, "GT2")
-    outputdir = os.path.join(resdir,'compareToGT2')
+    gtdir = os.path.join(basepath, "GT")
+    #gtdir = os.path.join(basepath, "GT2")
+    outputdir = os.path.join(resdir,'compareToGT')
     os.makedirs(outputdir, exist_ok=True)
 
     tickers = ['ADMA', 'ADM', 'CLBT']
+    #tickers = ['ADM']
     res = []
     for ticker in tickers:
         # Set paths
         compliments_file = os.path.join(resdir,f"{ticker}_all_validated_compliments.json")
         before_validation_file = os.path.join(resdir,f"{ticker}_detected_compliments_before_validation.json")
-        #gt_file = os.path.join(gtdir, f"{ticker}_all_validated_compliments_4.7_GT.json")
-        gt_file = os.path.join(gtdir, f"{ticker}_all_validated_compliments_4.7_GT_real_transcript.json")
+        gt_file = os.path.join(gtdir, f"{ticker}_all_validated_compliments_4.7_GT.json")
+        #gt_file = os.path.join(gtdir, f"{ticker}_all_validated_compliments_4.7_GT_real_transcript.json")
 
         gt_level_errors_output_file = os.path.join(outputdir,f"{ticker}_compareToGT_level_errors.json")
         name_errors_output_file = os.path.join(outputdir, f"{ticker}_compareToGT_name_errors.json")
@@ -237,7 +238,6 @@ def main():
         with open(name_errors_output_file, 'w', encoding='utf-8') as f:
             json.dump(results_incorrect_names, f, indent=2, ensure_ascii=False)
 
-  ##############################
        # print(f'Comparison complete. Results written to: {output_file}')
         print(f"Statistics for {ticker}: Correct: {stats['correct']}, Incorrect Level: {stats['incorrect_level']}, Incorrect Name: {stats['incorrect_name']}")
         res.append({'ticker' : ticker,
