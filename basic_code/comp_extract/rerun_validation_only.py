@@ -101,7 +101,7 @@ def main():
     print(f"📁 Using results folder: {results_folders[0]}")
     
     # Process tickers
-    stock_tickers =  ['CLBT']
+    stock_tickers =  ['ADMA' ,'ADM','CLBT']
     
 
     # Process each stock
