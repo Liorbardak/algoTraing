@@ -205,11 +205,11 @@ def main():
     # Set paths
     basepath = '../../../data/'
     resdir = os.path.join(basepath, "results/results_20250709_220023")
-    gtdir = os.path.join(basepath, "GT")
-    #gtdir = os.path.join(basepath, "GT2")
-    outputdir = os.path.join(resdir,'compareToGT')
+    #gtdir = os.path.join(basepath, "GT")
+    gtdir = os.path.join(basepath, "GT2")
+    outputdir = os.path.join(resdir,'compareToGT2')
     os.makedirs(outputdir, exist_ok=True)
-
+    statistic_filename = os.path.join(outputdir, f"compareToGT.csv")
     tickers = ['ADMA', 'ADM', 'CLBT']
     #tickers = ['ADM']
     res = []
@@ -217,12 +217,12 @@ def main():
         # Set paths
         compliments_file = os.path.join(resdir,f"{ticker}_all_validated_compliments.json")
         before_validation_file = os.path.join(resdir,f"{ticker}_detected_compliments_before_validation.json")
-        gt_file = os.path.join(gtdir, f"{ticker}_all_validated_compliments_4.7_GT.json")
-        #gt_file = os.path.join(gtdir, f"{ticker}_all_validated_compliments_4.7_GT_real_transcript.json")
+        #gt_file = os.path.join(gtdir, f"{ticker}_all_validated_compliments_4.7_GT.json")
+        gt_file = os.path.join(gtdir, f"{ticker}_all_validated_compliments_4.7_GT_real_transcript.json")
 
         gt_level_errors_output_file = os.path.join(outputdir,f"{ticker}_compareToGT_level_errors.json")
         name_errors_output_file = os.path.join(outputdir, f"{ticker}_compareToGT_name_errors.json")
-        statistic_filename = os.path.join(outputdir, f"{ticker}_compareToGT.csv")
+
 
         # Load json
         actual = load_json(compliments_file)
