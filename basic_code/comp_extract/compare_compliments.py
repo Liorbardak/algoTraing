@@ -54,6 +54,7 @@ def best_name_match(actual_name, gt_by_name):
 
 def compare_analyst_compliments(actual, gt, before_validation):
     results = []
+    results_incorrect_names = []
     stats = defaultdict(int)
     all_quarters = set(actual.keys()) & set(gt.keys())
     for quarter in all_quarters:
@@ -77,7 +78,10 @@ def compare_analyst_compliments(actual, gt, before_validation):
                     matched_actual.add(actual_name)
                     before_c = find_matching_before_validation(actual_c['analyst_name'], before_validation_comps)
                     before_name = before_c['analyst_name'] if before_c else None
-                    before_quoted = before_c['quoted_compliment'] if before_c else None
+                    try:
+                        before_quoted = before_c['quoted_compliment'] if before_c else None
+                    except:
+                        before_quoted =  "read error"
                     if gt_c['level']:
                         stats['n_positive'] += 1
                     else:
@@ -113,7 +117,10 @@ def compare_analyst_compliments(actual, gt, before_validation):
                 matched_actual.add(actual_name)
                 before_c = find_matching_before_validation(actual_c['analyst_name'], before_validation_comps)
                 before_name = before_c['analyst_name'] if before_c else None
-                before_quoted = before_c['quoted_compliment'] if before_c else None
+                try:
+                    before_quoted = before_c['quoted_compliment'] if before_c else None
+                except:
+                    before_quoted = "read error"
                 if  gt_c['level']:
                     stats['n_positive'] += 1
                 else:
@@ -127,6 +134,10 @@ def compare_analyst_compliments(actual, gt, before_validation):
                         stats['false_negative'] += 1
                     else:
                         stats['false_positive'] += 1
+                    try:
+                        actual_quoted_compliment = actual_c['quoted_compliment']
+                    except:
+                        actual_quoted_compliment = "read error"
                     results.append({
                         'quarter': quarter,
                         'analyst_name': actual_c['analyst_name'],
@@ -134,7 +145,7 @@ def compare_analyst_compliments(actual, gt, before_validation):
                         'analyst_name_GT': gt_c['analyst_name'],
                         'level': actual_c['level'],
                         'level_GT': gt_c['level'],
-                        'quoted_compliment': actual_c['quoted_compliment'],
+                        'quoted_compliment': actual_quoted_compliment,
                         'quoted_compliment_before_validation': before_quoted,
                         'quoted_compliment_GT': gt_c['quoted_compliment'],
                         'partial_name_match': True
@@ -143,12 +154,15 @@ def compare_analyst_compliments(actual, gt, before_validation):
             # No match found in GT for this actual
             before_c = find_matching_before_validation(actual_c['analyst_name'], before_validation_comps)
             before_name = before_c['analyst_name'] if before_c else None
-            before_quoted = before_c['quoted_compliment'] if before_c else None
+            try:
+                before_quoted = before_c['quoted_compliment'] if before_c else None
+            except:
+                before_quoted = "read error"
             if actual_c['level'] == 0:
                 # Do not count as error if actual level is 0
                 continue
             stats['incorrect_name'] += 1
-            results.append({
+            results_incorrect_names.append({
                 'quarter': quarter,
                 'analyst_name': actual_c['analyst_name'],
                 'analyst_name_before_validation': before_name,
@@ -185,34 +199,42 @@ def compare_analyst_compliments(actual, gt, before_validation):
                     'quoted_compliment_GT': gt_c['quoted_compliment'],
                     'partial_name_match': False
                 })
-    return results, stats
+    return results, results_incorrect_names , stats
 
 def main():
-
+    # Set paths
     basepath = '../../../data/'
+    resdir = os.path.join(basepath, "results/results_20250709_220023")
+    outputdir = os.path.join(resdir,'compareToGT')
+    os.makedirs(outputdir, exist_ok=True)
 
-
-    resdir = "tests1/results_nominal"
-    #resdir = "tests1/results_3_sentences"
-    #resdir = "tests1/results_full_response"
-    #resdir = "results/results_20250709_101434"
     tickers = ['ADMA', 'ADM', 'CLBT']
-    #tickers = ['ADM']
     res = []
     for ticker in tickers:
         # Set paths
-        actual_path = os.path.join(basepath,f"{resdir}/{ticker}_all_validated_compliments.json")
-        gt_path = os.path.join(basepath,f"GT/{ticker}_all_validated_compliments_4.7_GT.json")
-        before_validation_path = os.path.join(basepath,f"{resdir}/{ticker}_detected_compliments_before_validation.json")
-        output_path = os.path.join(basepath,f"{resdir}/{ticker}_compareToGT.json")
+        compliments_file = os.path.join(resdir,f"{ticker}_all_validated_compliments.json")
+        before_validation_file = os.path.join(resdir,f"{ticker}_detected_compliments_before_validation.json")
+        gt_file = os.path.join(basepath,f"GT/{ticker}_all_validated_compliments_4.7_GT.json")
+        gt_level_errors_output_file = os.path.join(outputdir,f"{ticker}_compareToGT_level_errors.json")
+        name_errors_output_file = os.path.join(outputdir, f"{ticker}_compareToGT_name_errors.json")
+        statistic_filename = os.path.join(outputdir, f"{ticker}_compareToGT.csv")
 
-        actual = load_json(actual_path)
-        gt = load_json(gt_path)
-        before_validation = load_json(before_validation_path)
-        results, stats = compare_analyst_compliments(actual, gt, before_validation)
-        with open(output_path, 'w', encoding='utf-8') as f:
+        # Load json
+        actual = load_json(compliments_file)
+        gt = load_json(gt_file)
+        before_validation = load_json(before_validation_file)
+
+        # Run compare
+        results,results_incorrect_names ,  stats = compare_analyst_compliments(actual, gt, before_validation)
+
+        with open(gt_level_errors_output_file, 'w', encoding='utf-8') as f:
             json.dump(results, f, indent=2, ensure_ascii=False)
-       # print(f'Comparison complete. Results written to: {output_path}')
+
+        with open(name_errors_output_file, 'w', encoding='utf-8') as f:
+            json.dump(results_incorrect_names, f, indent=2, ensure_ascii=False)
+
+
+       # print(f'Comparison complete. Results written to: {output_file}')
         print(f"Statistics for {ticker}: Correct: {stats['correct']}, Incorrect Level: {stats['incorrect_level']}, Incorrect Name: {stats['incorrect_name']}")
         res.append({'ticker' : ticker,
                     'n_gt_analysits': stats['n_gt_analyst'],
@@ -224,10 +246,6 @@ def main():
                     'false_negative': stats['false_negative'],
                     'n_positive' :  stats['n_positive'],
                     'n_negative': stats['n_negative'],
-                    # 'accuracy': stats['correct'] / (stats['correct'] + stats['incorrect_level']),
-                    # 'false_positive_rate':stats['false_positive'] /  stats['n_positive'],
-                    # 'false_negative_rate': stats['false_negative'] / stats['n_negative'],
-
                     })
 
     df = pd.DataFrame(res)
@@ -238,74 +256,15 @@ def main():
     TP = df['n_positive'] -  df['false_negative']
     df['precision'] = TP/ (TP +  df['false_positive'])
     df['recall'] = (df['n_positive'] - df['false_negative']) / df['n_positive']
-
+    df.to_csv(statistic_filename)
 
     # Set option to display all columns
     pd.set_option('display.max_columns', None)
     pd.set_option('display.width', None)
     pd.set_option('display.max_colwidth', None)
 
-    #print(df)
-
     print(df[['ticker','accuracy','precision', 'recall']])
 
 if __name__ == '__main__':
     main()
 
-
-
-'''
- Nominal
-Statistics for ADMA: Correct: 26, Incorrect Level: 3, Incorrect Name: 0
-Statistics for ADM: Correct: 136, Incorrect Level: 11, Incorrect Name: 2
-Statistics for CLBT: Correct: 65, Incorrect Level: 5, Incorrect Name: 0
-      ticker  accuracy  precision    recall
-0       ADMA  0.896552   0.956522  0.916667
-1        ADM  0.925170   0.791667  0.760000
-2       CLBT  0.928571   0.833333  0.952381
-Total    all  0.922764   0.859155  0.871429
-
-3 Sentences  
-Statistics for ADMA: Correct: 25, Incorrect Level: 3, Incorrect Name: 0
-Statistics for ADM: Correct: 132, Incorrect Level: 8, Incorrect Name: 4
-Statistics for CLBT: Correct: 62, Incorrect Level: 7, Incorrect Name: 2
-      ticker  accuracy  precision    recall
-0       ADMA  0.892857   0.956522  0.916667
-1        ADM  0.942857   0.807692  0.875000
-2       CLBT  0.898551   0.740741  1.000000
-Total    all  0.924051   0.828947  0.926471
-FULL 
-Statistics for ADMA: Correct: 25, Incorrect Level: 3, Incorrect Name: 0
-Statistics for ADM: Correct: 135, Incorrect Level: 9, Incorrect Name: 1
-Statistics for CLBT: Correct: 61, Incorrect Level: 11, Incorrect Name: 0
-      ticker  accuracy  precision    recall
-0       ADMA  0.892857   0.920000  0.958333
-1        ADM  0.937500   0.785714  0.880000
-2       CLBT  0.847222   0.750000  0.714286
-Total    all  0.905738   0.821918  0.857143
-
-
-Nominal
-      ticker  accuracy  precision    recall
-0       ADMA  0.896552   0.956522  0.916667
-1        ADM  0.925170   0.791667  0.760000
-2       CLBT  0.928571   0.833333  0.952381
-Total    all  0.922764   0.859155  0.871429
-
-3 Sentences  
-      ticker  accuracy  precision    recall
-0       ADMA  0.892857   0.956522  0.916667
-1        ADM  0.942857   0.807692  0.875000
-2       CLBT  0.898551   0.740741  1.000000
-Total    all  0.924051   0.828947  0.926471
-
-Full response 
-      ticker  accuracy  precision    recall
-0       ADMA  0.892857   0.920000  0.958333
-1        ADM  0.937500   0.785714  0.880000
-2       CLBT  0.847222   0.750000  0.714286
-Total    all  0.905738   0.821918  0.857143
-
-
-
-'''
