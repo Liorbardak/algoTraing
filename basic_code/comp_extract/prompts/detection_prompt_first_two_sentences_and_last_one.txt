@@ -1,0 +1,22 @@
+You will be given an earnings call transcript. Your task is to extract, for each analyst, the first two sentences , the last sentence they spoke during the Q&A portion , and every complement he says  (i.e., all analyst questions and comments).
+
+Instructions:
+- Identify every analyst who asks a question or makes a comment in the transcript.
+- For each analyst, extract the first two sentences and the last sentence they spoke (combine them into a single string, in order) and put it in quoted_compliment.
+- After the first two sentences and the last sentence. put a single ____ and then add  every sentence can be regarded as a complement
+-  A complement may include the words "congrats", "congratulations on the quarter", "Congratulations on a strong year end", "Congrats on the results", "Congrats on the continued progress", "Congrats on strong execution", "Congrats on the solid results", "Nice job on the quarter", "Nice results", "Great quarter", "Congrats on the robust quarter", "Congrats guys. Looks really good", "Congrats on the solid execution", "congrats to the team" ,  will be included in the quoted_compliment
+- If an analyst spoke only once or twice, include all their sentences.
+- Each analyst should appear only once in the output.
+- Do not include company management or other speakers—only analysts.
+- Use the following JSON format for your output (as a list of objects):
+
+After identifying all compliments (if any), please put them in a JSON structure with the following fields:
+
+- analyst_name: The name of the analyst
+- level: 0
+- quoted_compliment: the first two sentences and the last sentence the analyst said.  put a single ____ after that. And then add all the complements or sentence including compliments  spoken by this analyst,  or '' if none
+ ,
+Your response should be only valid JSON (no extra text), directly loadable with json.loads().
+
+Here is the earnings call transcript:
+{text}

@@ -1,0 +1,7 @@
+Please return 1 if this sentence contains either a compliment or congratulation on good performance or results. 
+Return 0 if this sentence does not contain any compliment but contains just a polite note or graditude for taking a question,
+or it is a general remark or question, or it is just best wishes on the occasion of a new CEO being appointed, or it is best wishes for a retiring CEO, or it seems to be a part of the CEO response rather than a part of the analyst question. Now here is the sentence:
+if the sentence contain a compliment and in addition a question or general remark - return 1.
+If the sentence uses first-person company language like "we are pleased", "we are proud", "our performance" - this indicates a company executive talking about their own company, so return 0.
+{text}
+    

@@ -1,0 +1,37 @@
+This is an explanation text, and at the end of the explanation, there will be an earnings call transcript. I am looking to identify an analyst's favorable reaction to the earnings results. The way to do so is to check whether, during their questions (typically right at the beginning or at the end of their talk), the analysts compliment the results.
+
+Make sure that the compliments are not just forms of gratitude for taking the question or general politeness. Examples of such remarks that should NOT be considered as compliments are: "Thanks for taking my question", "I appreciate the added color", "Thank you for your insight", "I really appreciate all that detail", "Great, thank you", "Thanks for squeezing me in", "Excellent. Very helpful", "Good afternoon, guys", "Very helpful", "Brilliant" - it is essential that these should not be quoted!!!
+
+CRITICAL: Make sure that the compliments you account for were given by the ANALYST himself! DO NOT pick anything from the response of the CEO or any of the company's staff! Specifically, AVOID any statements where company executives are talking about themselves using "we", "our", "us", or expressing satisfaction with their own performance. Examples to EXCLUDE:
+- "we are very pleased with the investment"
+- "our offering is performing well"
+- "I'm pleased to say we achieved..."
+- "we are excited about our progress"
+- Any company executive describing their own satisfaction or pride
+
+Make sure that the compliments you account for are not just wishes of good luck for a new CEO being appointed 
+
+Make sure that the compliments you account for are not congratulations on the retirement of the CEO
+
+Make sure that the compliments you account for are "real" compliments, do NOT take just regular questions or remarks made by the analyst, but take only meaningful compliments indicating that the analyst thinks the company demonstrated good performance.
+
+Categorize each compliment into one of three levels, note that the compliments in the following three lines are just examples to demonstrate what compliments should be considered as level 1, 2 or 3:
+
+Level 1: Compliments on solid execution of the company, such as "congrats", "congratulations on the quarter", "Congratulations on a strong year end", "Congrats on the results", "Congrats on the continued progress", "Congrats on strong execution", "Congrats on the solid results", "Nice job on the quarter", "Nice results", "Great quarter", "Congrats on the robust quarter", "Congrats guys. Looks really good", "Congrats on the solid execution", "congrats to the team". Ensure you do not miss any compliments and account for all compliments of this type.
+
+Level 2: Compliments on excellent execution of the company, such as "it was very good to see turning profitable ahead of schedule", "congratulations on beating expectations and raising guidance", "very strong growth performance here in the quarter, well ahead of your guide", "it's pretty amazing to see that", "I appreciate the raise in guidance", "It's great to see the agreement", "I'm afraid to ask this question because you guys are doing so well", "It's great to see such a strong report from top to bottom", "You guys are really killing it", "It's great to hear the comment on the profitability outlook", "this is a tremendous result", "It's certainly a testament to your strength", "historic quarter for the company, so congrats", "We're very happy with bookings growth", "You guys did so well in the quarter", "Great to see you're achieving positive free cash flow", "You have had really nice momentum here in the business". Ensure you do not miss any compliments and account for all compliments of this type.
+
+Level 3: Compliments on outperforming and amazing execution of the company, such as "I have never seen a company beating and raising guidance 5 times in a row - this is a record", "you guys are either executing so well or I am a bad modeler". Ensure you do not miss any compliments and account for all compliments of this type.
+
+After identifying all compliments (if any), please put them in a JSON structure with the following fields:
+
+- analyst_name: The name of the analyst
+- level: [1-3] according to the description above
+- quoted_compliment: copy the compliment sentence exactly as it is written in the text. Please quote the compliment sentence and some context around it, but not the entire analyst question.
+
+Add also analysts who did not compliment, and put level 0 next to them.
+
+Your response should include only JSON format with the above fields that can be loaded using json.loads(), without any further text.
+
+Here is the earnings calls text: 
+{text}
