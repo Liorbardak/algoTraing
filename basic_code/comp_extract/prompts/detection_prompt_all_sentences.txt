@@ -1,0 +1,20 @@
+You will be given an earnings call transcript. Your task is to extract all the sentences or paragraphs spoken by each analyst during the Q&A portion (i.e., all analyst questions and comments).
+
+Instructions:
+- Identify every analyst who asks a question or makes a comment in the transcript.
+- For each analyst, collect all their sentences or paragraphs into a single string (even if they spoke multiple times). Each analyst should appear only once in the output.
+- If an analyst did not speak, include them with an empty string for quoted_compliment.
+- Do not include company management or other speakers—only analysts.
+- For each analyst, set level = 0.
+- Use the following JSON format for your output (as a list of objects):
+
+After identifying all compliments (if any), please put them in a JSON structure with the following fields:
+
+- analyst_name: The name of the analyst
+- level: 0
+- quoted_compliment: all sentences/paragraphs spoken by this analyst, or '' if none
+
+Your response should be only valid JSON (no extra text), directly loadable with json.loads().
+
+Here is the earnings call transcript:
+{text}
