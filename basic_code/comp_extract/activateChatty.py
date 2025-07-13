@@ -23,10 +23,16 @@ import os
 import re
 class ActivateChatty:
     def __init__(self):
-
-        API_KEY_CHAT = "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"
+        try:
+            with open('openai_api_key.txt', 'r') as f:
+                api_key = f.read().strip()
+            if not api_key:
+                raise ValueError("API key is empty in openai_api_key.txt")
+        except FileNotFoundError:
+            raise FileNotFoundError("openai_api_key.txt not found. Please create this file and add your OpenAI API key.")
+            
         self.client = OpenAI(
-            api_key=API_KEY_CHAT
+            api_key=api_key
         )
 
     def activate(self, user_prompt_file, data, model = "gpt-4o-mini"):

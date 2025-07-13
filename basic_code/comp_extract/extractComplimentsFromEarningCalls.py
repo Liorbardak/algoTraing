@@ -24,6 +24,8 @@ import numpy as np
 from openai import OpenAI
 from fetchCompanyData import FinancialDataDownloader
 from activateChatty import ActivateChatty
+from datetime import datetime
+import shutil
 
 
 class EarningsComplimentAnalyzer:
@@ -473,8 +475,13 @@ def main():
     # Configuration paths
     data_path = '../../../../data/'
     tickers_path = '../../../../data/tickers/'
-    results_path = '../../../../data/analysis/results3/'
-    prompt_path = '../../../../data/prompts/'
+    
+    # Create timestamp-based results folder
+    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+    results_folder_name = f"results_{timestamp}"
+    results_path = f'../../../../data/results/{results_folder_name}/'
+    
+    prompt_path = '../../data/prompts/'
 
     # Prompt file paths
     prompt_detection_path = prompt_path + 'detection.txt'
@@ -488,8 +495,8 @@ def main():
     # target_tickers = ["ACAD", "ACB", "ACHC", "ADMA", "AES", "AKAM", "AMRC", "AMRN", "AMSC", "AMPX", "ANF", "AQST", "ASLE", "ASTH", "AVAH", "AVDX", "AVGO", "AVPT", "BKE", "BKTI", "BBCP", "BMA", "BNS", "BWAY", "BBAR", "BTBT", "CAPL", "CAR", "CCBS", "CCBG", "CERS", "CIFR", "CLS", "COIN", "CRDO", "CRS", "CSAN", "CSIQ", "DAKT", "DAY", "DIN", "DRD", "DSP", "DUOL", "EAT", "EIC", "EDN", "ESOA", "ETN", "ETSY", "EXFY", "EXK", "FBMS", "FGBI", "FICO", "FIVE", "FMC", "FMAO", "FNB", "FORR", "FRPH", "FSM", "FTK", "FTAI", "GHM", "GMAB", "GMED", "GNP", "GOSS", "GPN", "HEPS", "HBT", "HL", "HLF", "HNVR", "HOOD", "HRTG", "IART", "IESC", "IREN", "INMD", "IRWD", "KEQU", "KINS", "KOPN", "LFVN", "LMB", "LOCO", "LULU", "LWAY", "MAMA", "MARA", "MASI", "META", "MET", "MHK", "MLCO", "MMYT", "MOD", "MODG", "MOV", "MRAM", "MPTI", "MTRN", "MYO", "MYPS", "MNTK", "NBTA", "NBTB", "NFE", "NGVC", "NL", "NOVT", "NNI", "NRC", "NXT", "ODP", "OFLX", "OKTA", "OLP", "OPK", "OSCR", "OTRK", "OZK", "PAMT", "PBA", "PAY", "PCB", "PEBO", "PERF", "PLTR", "PM", "POOL", "PSFE", "PSIX", "PSX", "PUBM", "POWL", "PRU", "RCL", "RDWR", "REAX", "RGLD", "RKLB", "RRBI", "RRR", "SFL", "SGML", "SHEL", "SHYF", "SITC", "SITE", "SKYW", "SLQT", "SMBC", "SMBK", "SOL", "SPH", "SPOT", "SPTN", "SSTI", "STAA", "STBA", "STRL", "SU", "SUN", "SVV", "SWBI", "SYBT", "TALK", "TATT", "TBLA", "TGTX", "TOWN", "TRP", "TSEM", "TS", "TSCO", "TV", "TZOO", "UL", "UGP", "UTI", "UVSP", "VOYA", "VRT", "VST", "WB", "WBS", "WD", "WDH", "WOOF", "WULF", "XPO", "YPF", "ZI", "ZION"]
 
     # target_tickers = ["CYBR"]
-    target_tickers = ["CYBR", "BSX", "ADMA", "AXON", "CLBT", "ANSS", "AJG", "ADM", "BRO", "CME", "ES", "EVRG"]
-
+    #target_tickers = ["CYBR"]
+    target_tickers = ["ADMA","ADM","AJG","ANSS","AXON","CLBT","CYBR","BSX"]
     print(f"Processing {len(target_tickers)} tickers with batch optimization and timing measurements")
     print(f"Target tickers: {', '.join(target_tickers)}")
     print(f"Output directory: {results_path}")
@@ -497,6 +504,14 @@ def main():
     # Create results directory if it doesn't exist
     if not os.path.exists(results_path):
         os.makedirs(results_path)
+        
+    # Copy prompt files to results directory for reference
+    try:
+        shutil.copy2(prompt_detection_path, os.path.join(results_path, 'detection_prompt_used.txt'))
+        shutil.copy2(prompt_validation_path, os.path.join(results_path, 'validation_prompt_used.txt'))
+        print(f"✓ Copied prompt files to results directory: {results_path}")
+    except Exception as e:
+        print(f"Warning: Could not copy prompt files: {e}")
 
     # Track overall progress
     overall_start_time = time.time()
