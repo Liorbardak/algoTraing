@@ -5,7 +5,7 @@ import re
 import os
 
 import pandas as pd
-
+import glob
 
 # Usage: python compare_compliments.py actual.json gt.json before_validation.json output.json
 
@@ -78,10 +78,10 @@ def compare_analyst_compliments(actual, gt, before_validation):
                     matched_actual.add(actual_name)
                     before_c = find_matching_before_validation(actual_c['analyst_name'], before_validation_comps)
                     before_name = before_c['analyst_name'] if before_c else None
-                    try:
-                        before_quoted = before_c['quoted_compliment'] if before_c else None
-                    except:
-                        before_quoted =  "read error"
+                    #try:
+                    before_quoted = before_c['quoted_compliment'] if before_c else None
+                    # except:
+                    #     before_quoted =  "read error"
                     if gt_c['level']:
                         stats['n_positive'] += 1
                     else:
@@ -117,10 +117,10 @@ def compare_analyst_compliments(actual, gt, before_validation):
                 matched_actual.add(actual_name)
                 before_c = find_matching_before_validation(actual_c['analyst_name'], before_validation_comps)
                 before_name = before_c['analyst_name'] if before_c else None
-                try:
-                    before_quoted = before_c['quoted_compliment'] if before_c else None
-                except:
-                    before_quoted = "read error"
+                #try:
+                before_quoted = before_c['quoted_compliment'] if before_c else None
+                # except:
+                #     before_quoted = "read error"
                 if  gt_c['level']:
                     stats['n_positive'] += 1
                 else:
@@ -134,10 +134,10 @@ def compare_analyst_compliments(actual, gt, before_validation):
                         stats['false_negative'] += 1
                     else:
                         stats['false_positive'] += 1
-                    try:
-                        actual_quoted_compliment = actual_c['quoted_compliment']
-                    except:
-                        actual_quoted_compliment = "read error"
+                    #try:
+                    actual_quoted_compliment = actual_c['quoted_compliment']
+                    # except:
+                    #     actual_quoted_compliment = "read error"
                     results.append({
                         'quarter': quarter,
                         'analyst_name': actual_c['analyst_name'],
@@ -154,10 +154,10 @@ def compare_analyst_compliments(actual, gt, before_validation):
             # No match found in GT for this actual
             before_c = find_matching_before_validation(actual_c['analyst_name'], before_validation_comps)
             before_name = before_c['analyst_name'] if before_c else None
-            try:
-                before_quoted = before_c['quoted_compliment'] if before_c else None
-            except:
-                before_quoted = "read error"
+            #try:
+            before_quoted = before_c['quoted_compliment'] if before_c else None
+            # except:
+            #     before_quoted = "read error"
             if actual_c['level'] == 0:
                 # Do not count as error if actual level is 0
                 continue
@@ -204,21 +204,24 @@ def compare_analyst_compliments(actual, gt, before_validation):
 def main():
     # Set paths
     basepath = '../../../data/'
-    resdir = os.path.join(basepath, "results/results_test")
+    resdir = os.path.join(basepath, "results/results_20250713_142656")
     gtdir = os.path.join(basepath, "GT")
-    gtdir = os.path.join(basepath, "GT2")
-    outputdir = os.path.join(resdir,'compareToGT2')
+    outputdir = os.path.join(resdir,'compareToGV2')
     os.makedirs(outputdir, exist_ok=True)
-    statistic_filename = os.path.join(outputdir, f"compareToGT.csv")
-    tickers = ['ADMA', 'ADM', 'CLBT']
-    tickers = ['ADM']
+    statistic_filename = os.path.join(outputdir, f"compareToG.csv")
+
+
+    tickers = ['ADMA', 'ADM','AJG','ANSS','AXON', 'CLBT','CYBR','BSX']
     res = []
     for ticker in tickers:
         # Set paths
         compliments_file = os.path.join(resdir,f"{ticker}_all_validated_compliments.json")
         before_validation_file = os.path.join(resdir,f"{ticker}_detected_compliments_before_validation.json")
-        #gt_file = os.path.join(gtdir, f"{ticker}_all_validated_compliments_4.7_GT.json")
-        gt_file = os.path.join(gtdir, f"{ticker}_all_validated_compliments_4.7_GT_real_transcript.json")
+        gt_files = glob.glob(os.path.join(gtdir, f"{ticker}_*GT*.json"))
+        if len(gt_files) != 1:
+            print('no GT for ticker', ticker)
+            continue
+        gt_file = gt_files[0]
 
         gt_level_errors_output_file = os.path.join(outputdir,f"{ticker}_compareToGT_level_errors.json")
         name_errors_output_file = os.path.join(outputdir, f"{ticker}_compareToGT_name_errors.json")

@@ -488,8 +488,8 @@ def main():
     # Prompt file paths
     #prompt_detection_path = prompt_path + 'detection.txt'
     #prompt_validation_path = prompt_path + 'validation.txt'
-    prompt_detection_path = 'prompts/prompt_detect_compliments6.txt'
-    prompt_validation_path = 'prompts/validate_compliment.txt'
+    prompt_detection_path = 'prompts/detection_prompt_improved_2.txt'
+    prompt_validation_path = 'prompts/validation_prompt_used_12_7_25.txt'
 
     # Initialize the analyzer classes
     analyzer = EarningsComplimentAnalyzer(data_path, tickers_path, results_path)
@@ -501,6 +501,7 @@ def main():
     # target_tickers = ["CYBR"]
     #target_tickers = ["ADM","CLBT" , "ADMA"]
     target_tickers = ["ADMA"]
+    target_tickers = ['ADMA', 'ADM','AJG','ANSS','AXON', 'CLBT','CYBR','BSX']
 
     print(f"Processing {len(target_tickers)} tickers with batch optimization and timing measurements")
     print(f"Target tickers: {', '.join(target_tickers)}")
