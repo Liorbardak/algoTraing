@@ -299,11 +299,11 @@ def main():
     # Set paths
     basepath = '../../../../data/'
     resdir = os.path.join(basepath, "results/results_dual_field_20250725_172056")
-    gtdir = os.path.join(basepath, "results/GT")
-    outputdir = os.path.join(resdir, 'compareToGT')
+    gtdir = os.path.join(basepath, "results/NewGT")
+    outputdir = os.path.join(resdir, 'compareToNewGT')
     os.makedirs(outputdir, exist_ok=True)
     statistic_filename = os.path.join(outputdir, f"compareToGT.csv")
-    tickers = ["ADMA",'ADM','AJG','ANSS','AXON',"BSX","CLBT","CYBR"]#,"ADM","AJG","ANSS","AXON","BSX","CLBT","CYBR"]
+    tickers = ["CYBR","AJG"] #["ADMA",'ADM','AJG','ANSS','AXON',"BSX","CLBT","CYBR"]#,"ADM","AJG","ANSS","AXON","BSX","CLBT","CYBR"]
     
     res = []
     for ticker in tickers:

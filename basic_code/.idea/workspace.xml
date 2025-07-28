@@ -6,8 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="2d03444b-a0d4-409d-a0fd-8c637ccc2df5" name="Default Changelist" comment="good version, goes with results2">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/comp_extract/activateChatty.py" beforeDir="false" afterPath="$PROJECT_DIR$/comp_extract/activateChatty.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/comp_extract/extractComplimentsFromEarningCalls.py" beforeDir="false" afterPath="$PROJECT_DIR$/comp_extract/extractComplimentsFromEarningCalls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/comp_extract/compare_compliments_normalized_exact.py" beforeDir="false" afterPath="$PROJECT_DIR$/comp_extract/compare_compliments_normalized_exact.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/comp_extract/rerun_validation_only_dual_field.py" beforeDir="false" afterPath="$PROJECT_DIR$/comp_extract/rerun_validation_only_dual_field.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,6 +55,7 @@
     "Python.extractComplimentsFromEarningCalls.executor": "Run",
     "Python.extractComplimentsIndividually.executor": "Run",
     "Python.rerun_validation_only.executor": "Run",
+    "Python.rerun_validation_only_dual_field.executor": "Run",
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "testOld2",
     "last_opened_file_path": "C:/Users/talha/PycharmProjects/investment_strategies/codeNew/algoTraing/basic_code/comp_extract",
@@ -157,7 +158,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="extractComplimentsIndividually" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="rerun_validation_only_dual_field" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="basic_code" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -170,7 +171,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/comp_extract/extractComplimentsIndividually.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/comp_extract/rerun_validation_only_dual_field.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -182,10 +183,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.compare_compliments_normalized_exact" />
+        <item itemvalue="Python.rerun_validation_only_dual_field" />
         <item itemvalue="Python.compare_compliments" />
         <item itemvalue="Python.extractComplimentsDualField" />
         <item itemvalue="Python.compare_compliments_dual_field" />
-        <item itemvalue="Python.extractComplimentsIndividually" />
       </list>
     </recent_temporary>
   </component>
@@ -228,7 +229,15 @@
       <option name="project" value="LOCAL" />
       <updated>1752424086644</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="good version, goes with results2">
+      <option name="closed" value="true" />
+      <created>1753714715419</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1753714715419</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
