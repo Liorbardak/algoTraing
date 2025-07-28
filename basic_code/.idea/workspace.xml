@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2d03444b-a0d4-409d-a0fd-8c637ccc2df5" name="Default Changelist" comment="good version, goes with results2" />
+    <list default="true" id="2d03444b-a0d4-409d-a0fd-8c637ccc2df5" name="Default Changelist" comment="good version, goes with results2">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/comp_extract/activateChatty.py" beforeDir="false" afterPath="$PROJECT_DIR$/comp_extract/activateChatty.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/comp_extract/extractComplimentsFromEarningCalls.py" beforeDir="false" afterPath="$PROJECT_DIR$/comp_extract/extractComplimentsFromEarningCalls.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -17,7 +21,27 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;talhadask&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Liorbardak/algoTraing.git&quot;,
+    &quot;accountId&quot;: &quot;abd13133-8953-4514-9aff-54b8132e9939&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 3
+}</component>
   <component name="ProjectId" id="2uInjG9FG056q6qn1azoVMEYQiE" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -25,9 +49,16 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Python.compare_compliments.executor": "Run",
+    "Python.compare_compliments_dual_field.executor": "Run",
+    "Python.compare_compliments_normalized_exact.executor": "Run",
+    "Python.extractComplimentsDualField.executor": "Run",
     "Python.extractComplimentsFromEarningCalls.executor": "Run",
-    "Python.rerun_validation_only.executor": "Debug",
-    "last_opened_file_path": "C:/Users/talha/PycharmProjects/investment_strategies/codeNew/algoTraing/basic_code/comp_extract"
+    "Python.extractComplimentsIndividually.executor": "Run",
+    "Python.rerun_validation_only.executor": "Run",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "testOld2",
+    "last_opened_file_path": "C:/Users/talha/PycharmProjects/investment_strategies/codeNew/algoTraing/basic_code/comp_extract",
+    "settings.editor.selected.configurable": "preferences.lookFeel"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -37,7 +68,7 @@
       <recent name="C:\work\Algobot\basic_code\visualization" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.compare_compliments">
+  <component name="RunManager" selected="Python.compare_compliments_normalized_exact">
     <configuration name="compare_compliments" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="basic_code" />
       <option name="ENV_FILES" value="" />
@@ -60,7 +91,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="extractComplimentsFromEarningCalls" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="compare_compliments_dual_field" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="basic_code" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -73,7 +104,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/comp_extract/extractComplimentsFromEarningCalls.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/comp_extract/compare_compliments_dual_field.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -82,7 +113,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="rerun_validation_only" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="compare_compliments_normalized_exact" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="basic_code" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -95,7 +126,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/comp_extract/rerun_validation_only.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/comp_extract/compare_compliments_normalized_exact.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -104,7 +135,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="run_test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="extractComplimentsDualField" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="basic_code" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -113,11 +144,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/comp_extract" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/run_test.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/comp_extract/extractComplimentsDualField.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -126,7 +157,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="simplelstbot" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="extractComplimentsIndividually" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="basic_code" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -135,11 +166,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/bots" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/comp_extract" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/bots/simplelstbot.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/comp_extract/extractComplimentsIndividually.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -150,11 +181,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.compare_compliments_normalized_exact" />
         <item itemvalue="Python.compare_compliments" />
-        <item itemvalue="Python.extractComplimentsFromEarningCalls" />
-        <item itemvalue="Python.rerun_validation_only" />
-        <item itemvalue="Python.run_test" />
-        <item itemvalue="Python.simplelstbot" />
+        <item itemvalue="Python.extractComplimentsDualField" />
+        <item itemvalue="Python.compare_compliments_dual_field" />
+        <item itemvalue="Python.extractComplimentsIndividually" />
       </list>
     </recent_temporary>
   </component>
@@ -170,6 +201,14 @@
       </list>
     </option>
   </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-python-sdk-fb887030ada0-aa17d162503b-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-243.21565.199" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -181,7 +220,31 @@
       <option name="presentableId" value="Default" />
       <updated>1741945088526</updated>
     </task>
+    <task id="LOCAL-00001" summary="good version, goes with results2">
+      <option name="closed" value="true" />
+      <created>1752424086644</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1752424086644</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="good version, goes with results2" />
+    <option name="LAST_COMMIT_MESSAGE" value="good version, goes with results2" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

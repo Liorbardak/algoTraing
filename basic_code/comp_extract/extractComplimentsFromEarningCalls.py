@@ -497,6 +497,9 @@ def main():
     # target_tickers = ["CYBR"]
     #target_tickers = ["CYBR"]
     target_tickers = ["ADMA","ADM","AJG","ANSS","AXON","CLBT","CYBR","BSX"]
+    target_tickers = ['CYBR']
+    #target_tickers = ["ANSS","AXON","CLBT","CYBR","BSX"]
+    #target_tickers = ["ADMA"]
     print(f"Processing {len(target_tickers)} tickers with batch optimization and timing measurements")
     print(f"Target tickers: {', '.join(target_tickers)}")
     print(f"Output directory: {results_path}")

@@ -52,7 +52,8 @@ class ActivateChatty:
                 {"role": "user", "content": user_prompt}
             ],
         )
-        json_string = responseChat.choices[0].message.content.strip('```json\n').strip('\n```')
+        raw_content = responseChat.choices[0].message.content
+        json_string = (raw_content or "").strip('```json\n').strip('\n```')
         # Remove invalid control characters using regex
         cleaned_json_string = re.sub(r'[\x00-\x1f\x7f-\x9f]', '', json_string)
 
@@ -64,8 +65,13 @@ class ActivateChatty:
             output = json.loads(cleaned_json_string)
             print("JSON decoded successfully!")
         except json.JSONDecodeError as e:
-            output = []
-            print(f"Error decoding JSON: {e}")
+            # If the string is empty or just whitespace, treat as invalid
+            if not cleaned_json_string.strip():
+                output = 0  # Represents an explicit invalidation
+                print("LLM returned an empty response, treating as invalid.")
+            else:
+                output = []
+                print(f"Error decoding JSON: {e}")
 
 
 
