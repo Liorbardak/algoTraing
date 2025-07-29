@@ -191,6 +191,13 @@ def compare_analyst_compliments(actual, gt, before_validation):
                         before_quoted = before_c['quoted_compliment'] if before_c else None
                     except:
                         before_quoted = "read error"
+                    
+                    # Check if gt_c has the expected structure
+                    if 'level' not in gt_c:
+                        print(f"❌ GT entry missing 'level' field: {list(gt_c.keys())}")
+                        print(f"   Quarter: {quarter}, Analyst: {gt_c.get('analyst_name', 'Unknown')}")
+                        continue
+                        
                     if gt_c['level']:
                         stats['n_positive'] += 1
                     else:
@@ -230,6 +237,13 @@ def compare_analyst_compliments(actual, gt, before_validation):
                         before_quoted = before_c['quoted_compliment'] if before_c else None
                     except:
                         before_quoted = "read error"
+                    
+                    # Check if gt_c has the expected structure
+                    if 'level' not in gt_c:
+                        print(f"❌ GT entry missing 'level' field: {list(gt_c.keys())}")
+                        print(f"   Quarter: {quarter}, Analyst: {gt_c.get('analyst_name', 'Unknown')}")
+                        continue
+                        
                     if gt_c['level']:
                         stats['n_positive'] += 1
                     else:
@@ -276,6 +290,13 @@ def compare_analyst_compliments(actual, gt, before_validation):
                 before_c = find_matching_before_validation(gt_c['analyst_name'], before_validation_comps)
                 before_name = before_c['analyst_name'] if before_c else None
                 before_quoted = before_c['quoted_compliment'] if before_c else None
+                
+                # Check if gt_c has the expected structure
+                if 'level' not in gt_c:
+                    print(f"❌ GT entry missing 'level' field: {list(gt_c.keys())}")
+                    print(f"   Quarter: {quarter}, Analyst: {gt_c.get('analyst_name', 'Unknown')}")
+                    continue
+                    
                 if gt_c['level'] == 0:
                     # Do not count as error if GT level is 0
                     continue
@@ -298,17 +319,18 @@ def compare_analyst_compliments(actual, gt, before_validation):
 def main():
     # Set paths
     basepath = '../../../../data/'
-    resdir = os.path.join(basepath, "results/results_dual_field_20250725_172056")
-    gtdir = os.path.join(basepath, "results/NewGT")
-    outputdir = os.path.join(resdir, 'compareToNewGT')
+    resdir = os.path.join(basepath, "results/results_dual_field_20250728_231128")
+    gtdir = os.path.join(basepath, "results/GT")
+    outputdir = os.path.join(resdir, 'compareToGT')
     os.makedirs(outputdir, exist_ok=True)
     statistic_filename = os.path.join(outputdir, f"compareToGT.csv")
-    tickers = ["CYBR","AJG"] #["ADMA",'ADM','AJG','ANSS','AXON',"BSX","CLBT","CYBR"]#,"ADM","AJG","ANSS","AXON","BSX","CLBT","CYBR"]
+    tickers = ["ADMA","ADM","AJG","ANSS",'AXON','BSX',"CLBT","CYBR"]#,"ADM","AJG","ANSS","AXON","BSX","CLBT","CYBR"]
     
     res = []
     for ticker in tickers:
         # Set paths
-        compliments_file = os.path.join(resdir, f"{ticker}_all_revalidated_compliments.json")
+        compliments_file = os.path.join(resdir, f"{ticker}_all_validated_compliments.json")
+        #compliments_file = os.path.join(resdir, f"{ticker}_all_validated_compliments.json")
         before_validation_file = os.path.join(resdir, f"{ticker}_detected_compliments_before_validation.json")
         gt_file = os.path.join(gtdir, f"{ticker}_all_validated_compliments_4.7_GT_real_transcript.json")
 
@@ -329,12 +351,23 @@ def main():
             print(f"❌ Error loading ground truth file {gt_file}: {e}")
             continue
             
+        # Debug: Print the structure of the first item in GT
+        if gt:
+            first_quarter = list(gt.keys())[0] if gt else None
+            if first_quarter and gt[first_quarter].get('compliments'):
+                first_compliment = gt[first_quarter]['compliments'][0] if gt[first_quarter]['compliments'] else None
+                if first_compliment:
+                    print(f"🔍 GT structure for {ticker}: {list(first_compliment.keys())}")
+            
         before_validation = load_json(before_validation_file)
 
         # Normalize actual data to legacy structure
         print(f"🔄 Normalizing {ticker} data to legacy structure...")
         actual = normalize_dual_field_structure(actual)
         before_validation = normalize_dual_field_structure(before_validation)
+        
+        # Also normalize ground truth data to legacy structure
+        gt = normalize_dual_field_structure(gt)
 
         # Run compare
         results, results_incorrect_names, stats = compare_analyst_compliments(actual, gt, before_validation)

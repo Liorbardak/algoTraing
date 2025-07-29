@@ -147,7 +147,7 @@ def main():
     print(f"🎯 Found {len(stock_tickers)} tickers to process: {', '.join(stock_tickers)}")
     
     # Filter to only process specific tickers
-    stock_tickers = ['CYBR']
+    stock_tickers = ["ADMA",'ADM','ANSS','AXON',"BSX"]
     print(f"🎯 Processing only AJG, ADM, CYBR...")
     
     # Process each stock

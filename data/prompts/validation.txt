@@ -30,16 +30,19 @@ These are the conditions:
 - The quote contains ONLY general greetings like "great, thanks" or non-performance topics.
 -  The quote contains ONLY a polite note or graditude for taking a question, 
 - The quote contains ONLY a general remark or question with no compliment in it,
-- compliments that include the words congrats or congratulations which refer to a SPECIFIC person, (for instance, my congratulations to you, Steve, for...) - will not be accounted as "real" compliments.
+- compliments that include the words congrats or congratulations but where the analyst is congratulating a SPECIFIC PERSON that is stepping down from his role in the company or stepping into a new role in the company - these are not "real" compliments.
+- compliments about very specific subjects, for instance: "strong organic growth", "successful integrating firms", "great to hear about the expansion in.." are not "real" compliments on the company performance 
 
 
 Now I will explain to you how to identify a "real" compliment: 
-- General compliments that refer to the performance of the company or financial results or quoter results or company growth will be identified as "real" compliments. 
+- You are looking to identify general compliments that refer to the performance of the company or financial results or quorter results or company growth, these will be identified as "real" compliments. 
 some examples of "real compliments":
  • “Great quarter” 
 • “Strong results” 
 • “Great to see the execution” 
-• “Very good job in the quarter” will be identified as "real" compliments.
+• “Very good job in the quarter” 
+• “Nice quarter” 
+• “outstanding result” 
 
 In cases you recognized a general compliment that includes the words CONGRATS or CONGRATULATIONS but it is not clear what it is about, for example:
 - congrats to the team

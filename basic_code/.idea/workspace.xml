@@ -4,10 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2d03444b-a0d4-409d-a0fd-8c637ccc2df5" name="Default Changelist" comment="good version, goes with results2">
+    <list default="true" id="2d03444b-a0d4-409d-a0fd-8c637ccc2df5" name="Default Changelist" comment="good version, detection prompt is separated to three different quotes, revalidation runs on three different quotes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/comp_extract/compare_compliments_normalized_exact.py" beforeDir="false" afterPath="$PROJECT_DIR$/comp_extract/compare_compliments_normalized_exact.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/comp_extract/rerun_validation_only_dual_field.py" beforeDir="false" afterPath="$PROJECT_DIR$/comp_extract/rerun_validation_only_dual_field.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/prompts/detection.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../data/prompts/detection.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/prompts/validation.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../data/prompts/validation.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -183,9 +185,9 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.compare_compliments_normalized_exact" />
+        <item itemvalue="Python.extractComplimentsDualField" />
         <item itemvalue="Python.rerun_validation_only_dual_field" />
         <item itemvalue="Python.compare_compliments" />
-        <item itemvalue="Python.extractComplimentsDualField" />
         <item itemvalue="Python.compare_compliments_dual_field" />
       </list>
     </recent_temporary>
@@ -237,7 +239,15 @@
       <option name="project" value="LOCAL" />
       <updated>1753714715419</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="good version, detection prompt is separated to three different quotes, revalidation runs on three different quotes">
+      <option name="closed" value="true" />
+      <created>1753715546836</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1753715546836</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -253,7 +263,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="good version, goes with results2" />
-    <option name="LAST_COMMIT_MESSAGE" value="good version, goes with results2" />
+    <MESSAGE value="good version, detection prompt is separated to three different quotes, revalidation runs on three different quotes" />
+    <option name="LAST_COMMIT_MESSAGE" value="good version, detection prompt is separated to three different quotes, revalidation runs on three different quotes" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
