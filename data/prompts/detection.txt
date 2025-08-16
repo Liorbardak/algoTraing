@@ -6,7 +6,7 @@ Instructions:
 - Identify every analyst who asks a question or makes a comment in the transcript.
 - For each analyst, extract  THE FIRST TWENTY WORDS they spoke and put it in quote1. 
 - Identify and extract any compliment sentence containing the keywords “congrats,” “congratulations,” or “congratulate” and put it in quote2.  MAKE SURE NOT TO MISS A CONGRATS OR CONGRATULATIONS IN THE ANALYST'S TEXT. If the compliment sentence include more then 10 words, extract only the first 10 words of that sentence starting from the keyword.  If keywords was not found, put in quote2 an empty string ('').
-- Identify and extract any other compliment sentence about the passing quarter (for instance, good quarter, great quarter). Put it in quote3.   If the compliment sentence includes more then 10 words, extract only the first 10 words of that sentence.
+- Identify and extract any other compliment sentence about the passing quarter THAT APPEARS IN THE LAST SENTENCE THE ANALYST MENTIONED (for instance, good quarter, great quarter). Put it in quote3.   If the compliment sentence includes more then 10 words, extract only the first 10 words of that sentence.
 
 Make sure that every analyst appears in the file exactly once. If the same analyst asked several questions you should count him only once. 
 After identifying the relevant analysts, put them in a JSON structure with the following fields:
@@ -17,7 +17,7 @@ After identifying the relevant analysts, put them in a JSON structure with the f
 - level_quote2: 0 
 - quote2: compliment sentence (up to 10 words starting from the keyword “congrats,” “congratulations,” or “congratulate.”). if the keyword was not found, put ''. Make sure not to miss congrats or congratulations in the analyst's text.
 - level_quote3: 0
--quote3:  compliment sentence (up to 10 words), it there was not compliment, put ''
+-quote3:  compliment sentence (up to 10 words) THAT APPEARS IN THE LAST SENTENCE THE ANALYST MENTIONED, it there was not compliment, put ''
 
 Your response should include only JSON format with the above fields that can be loaded using json.loads(), without any further text.
 

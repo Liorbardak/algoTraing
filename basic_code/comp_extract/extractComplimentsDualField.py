@@ -152,6 +152,7 @@ def main():
     
     # Run only for ADMA as requested
     target_tickers = ["ADMA","ADM","AJG","ANSS","AXON","CLBT","CYBR","BSX"]
+    #target_tickers = ["AMRK", "ANET", "CAMT", "FIX", "SMCI", "FULC", "DECK", "BR"]
     print(f"Processing {len(target_tickers)} tickers with dual-field validation...")
     
     # --- Setup Results Directory ---

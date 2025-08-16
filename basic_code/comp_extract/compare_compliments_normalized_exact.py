@@ -11,11 +11,18 @@ def load_json(path):
         return json.load(f)
 
 
-def normalize_dual_field_structure(data):
+def normalize_dual_field_structure(data, include_quote3_in_results=True):
     """
-    Normalize three-quote structure to legacy structure.
-    - level = level_quote1 OR level_quote2 OR level_quote3
-    - quoted_compliment = concatenation of quote1, quote2, and quote3 (only non-empty ones)
+    Normalize data to legacy structure.
+    Automatically detects and handles both legacy and new three-quote structures.
+    For three-quote structure:
+        - level = level_quote1 OR level_quote2 OR level_quote3 (if include_quote3_in_results=True)
+        - level = level_quote1 OR level_quote2 (if include_quote3_in_results=False)
+    For legacy structure: keeps as-is
+    
+    Args:
+        data: Data with either legacy or three-quote structure
+        include_quote3_in_results: Whether to include quote3 level in results calculation
     """
     normalized_data = {}
     
@@ -40,9 +47,13 @@ def normalize_dual_field_structure(data):
                 level_quote2 = compliment.get('level_quote2', 0)
                 level_quote3 = compliment.get('level_quote3', 0)
                 
-                # level = level_quote1 OR level_quote2 OR level_quote3
-                level = 1 if (level_quote1 == 1 or level_quote2 == 1 or level_quote3 == 1) else 0
-                level = 1 if (level_quote1 == 1 or level_quote2 == 1 ) else 0
+                # Calculate level based on parameter
+                if include_quote3_in_results:
+                    # Option 1: level_quote1 OR level_quote2 OR level_quote3
+                    level = 1 if (level_quote1 == 1 or level_quote2 == 1 or level_quote3 == 1) else 0
+                else:
+                    # Option 2: level_quote1 OR level_quote2 (ignore quote3)
+                    level = 1 if (level_quote1 == 1 or level_quote2 == 1) else 0
                 
                 # quoted_compliment = concatenation of all non-empty quotes
                 quote1 = compliment.get('quote1', '').strip()
@@ -55,8 +66,8 @@ def normalize_dual_field_structure(data):
                     quotes.append(quote1)
                 if quote2:
                     quotes.append(quote2)
-                #if quote3:
-                #    quotes.append(quote3)
+                if quote3:
+                    quotes.append(quote3)
                 
                 # Concatenate with spaces
                 normalized_quoted_compliment = " ".join(quotes) if quotes else ""
@@ -114,6 +125,92 @@ def normalize_dual_field_structure(data):
         
         normalized_data[quarter_key] = normalized_quarter
     
+    return normalized_data
+
+
+def normalize_gt_structure(data):
+    """
+    Normalize ground truth data to legacy structure.
+    Automatically detects and handles both legacy and new three-quote structures.
+    For legacy structure: keeps as-is
+    For three-quote structure: converts to legacy with quote3 always included
+    """
+    if not data:
+        return data
+    
+    # Determine structure type by checking the first compliment in the first quarter
+    first_quarter = list(data.keys())[0] if data else None
+    if not first_quarter or 'compliments' not in data[first_quarter] or not data[first_quarter]['compliments']:
+        return data
+    
+    first_compliment = data[first_quarter]['compliments'][0]
+    
+    # Check if this is three-quote structure
+    if 'level_quote1' in first_compliment and 'level_quote2' in first_compliment and 'level_quote3' in first_compliment:
+        # Three-quote structure - normalize to legacy
+        print(f"   Converting three-quote GT structure to legacy structure")
+        return _normalize_three_quote_to_legacy(data)
+    elif 'level' in first_compliment:
+        # Already legacy structure - return as-is
+        print(f"   GT already in legacy structure - keeping as-is")
+        return data
+    else:
+        # Unknown structure - return as-is
+        print(f"   Unknown GT structure - keeping as-is")
+        return data
+
+
+def _normalize_three_quote_to_legacy(data):
+    """Helper function to convert three-quote structure to legacy structure"""
+    print(f"      Converting {len(data)} quarters from three-quote to legacy structure")
+    normalized_data = {}
+    
+    for quarter_key, quarter_data in data.items():
+        normalized_quarter = {
+            'year': quarter_data.get('year'),
+            'quarter': quarter_data.get('quarter'),
+            'date': quarter_data.get('date'),
+            'compliments': []
+        }
+        
+        compliments = quarter_data.get('compliments', [])
+        print(f"      Processing {len(compliments)} compliments in {quarter_key}")
+        
+        for compliment in compliments:
+            # Extract three-quote data
+            level_quote1 = compliment.get('level_quote1', 0)
+            level_quote2 = compliment.get('level_quote2', 0)
+            level_quote3 = compliment.get('level_quote3', 0)
+            
+            # Ground truth ALWAYS includes quote3: level_quote1 OR level_quote2 OR level_quote3
+            level = 1 if (level_quote1 == 1 or level_quote2 == 1 or level_quote3 == 1) else 0
+            
+            # Combine all quotes
+            quote1 = compliment.get('quote1', '').strip()
+            quote2 = compliment.get('quote2', '').strip()
+            quote3 = compliment.get('quote3', '').strip()
+            
+            quotes = []
+            if quote1:
+                quotes.append(quote1)
+            if quote2:
+                quotes.append(quote2)
+            if quote3:
+                quotes.append(quote3)
+            
+            quoted_compliment = " ".join(quotes) if quotes else ""
+            
+            normalized_compliment = {
+                'analyst_name': compliment.get('analyst_name', ''),
+                'level': level,
+                'quoted_compliment': quoted_compliment
+            }
+            
+            normalized_quarter['compliments'].append(normalized_compliment)
+        
+        normalized_data[quarter_key] = normalized_quarter
+    
+    print(f"      Conversion complete: {len(normalized_data)} quarters normalized")
     return normalized_data
 
 
@@ -317,14 +414,35 @@ def compare_analyst_compliments(actual, gt, before_validation):
 
 
 def main():
+    # Configuration
+    include_quote3_in_results = True  # Set this to False if you don't want to include quote3 in results
+    
     # Set paths
     basepath = '../../../../data/'
-    resdir = os.path.join(basepath, "results/results_dual_field_20250728_231128")
-    gtdir = os.path.join(basepath, "results/GT")
+    resdir = os.path.join(basepath, "results/allresults")
+    gtdir = os.path.join(basepath, "results/allGT")
     outputdir = os.path.join(resdir, 'compareToGT')
     os.makedirs(outputdir, exist_ok=True)
-    statistic_filename = os.path.join(outputdir, f"compareToGT.csv")
-    tickers = ["ADMA","ADM","AJG","ANSS",'AXON','BSX',"CLBT","CYBR"]#,"ADM","AJG","ANSS","AXON","BSX","CLBT","CYBR"]
+    statistic_filename = os.path.join(outputdir, f"compareToGT_include_quote3_{include_quote3_in_results}.csv")
+    # Default: process all tickers, or specify a specific list for testing
+    #tickers = ["ADM"]  # Uncomment and modify this line to test specific tickers
+    
+    # Auto-detect all unique tickers from the results folder
+    if 'tickers' not in locals() or not tickers:
+        print("Auto-detecting tickers from results folder...")
+        ticker_files = []
+        for file in os.listdir(resdir):
+            if file.endswith('.json'):
+                # Extract base ticker name (before first underscore)
+                filename = file.replace('.json', '')
+                ticker = filename.split('_')[0] if '_' in filename else filename
+                if ticker not in ticker_files:  # Avoid duplicates
+                    ticker_files.append(ticker)
+        
+        tickers = ticker_files
+        print(f"Found {len(tickers)} unique tickers: {', '.join(tickers)}")
+    else:
+        print(f"Using specified tickers: {', '.join(tickers)}")
     
     res = []
     for ticker in tickers:
@@ -332,43 +450,55 @@ def main():
         compliments_file = os.path.join(resdir, f"{ticker}_all_validated_compliments.json")
         #compliments_file = os.path.join(resdir, f"{ticker}_all_validated_compliments.json")
         before_validation_file = os.path.join(resdir, f"{ticker}_detected_compliments_before_validation.json")
-        gt_file = os.path.join(gtdir, f"{ticker}_all_validated_compliments_4.7_GT_real_transcript.json")
+        # Look for GT files with priority: exact match first, then prefix match
+        exact_matches = [f for f in os.listdir(gtdir) if f.startswith(f"{ticker}_") or f.startswith(f"{ticker}.")]
+        prefix_matches = [f for f in os.listdir(gtdir) if f.startswith(ticker) and f not in exact_matches]
+        
+        # Prioritize exact matches over prefix matches
+        gt_files = exact_matches + prefix_matches
+        
+        if not gt_files:
+            print(f"No ground truth files found for {ticker}* in {gtdir}")
+            continue
+        
+        # Use the first matching GT file
+        gt_filename = gt_files[0]
+        gt_file = os.path.join(gtdir, gt_filename)
+        print(f"Using GT file: {gt_filename}")
 
-        gt_level_errors_output_file = os.path.join(outputdir, f"{ticker}_compareToGT_level_errors.json")
-        name_errors_output_file = os.path.join(outputdir, f"{ticker}_compareToGT_name_errors.json")
+        gt_level_errors_output_file = os.path.join(outputdir, f"{ticker}_compareToGT_level_errors_include_quote3_{include_quote3_in_results}.json")
+        name_errors_output_file = os.path.join(outputdir, f"{ticker}_compareToGT_name_errors_include_quote3_{include_quote3_in_results}.json")
 
         # Load json
         actual = load_json(compliments_file)
-        
-        # Check if ground truth file exists
-        if not os.path.exists(gt_file):
-            print(f"❌ Ground truth file not found: {gt_file}")
-            continue
             
         try:
             gt = load_json(gt_file)
         except json.JSONDecodeError as e:
-            print(f"❌ Error loading ground truth file {gt_file}: {e}")
+            print(f"JSON decode error loading ground truth file {gt_file}: {e}")
             continue
-            
-        # Debug: Print the structure of the first item in GT
-        if gt:
-            first_quarter = list(gt.keys())[0] if gt else None
-            if first_quarter and gt[first_quarter].get('compliments'):
-                first_compliment = gt[first_quarter]['compliments'][0] if gt[first_quarter]['compliments'] else None
-                if first_compliment:
-                    print(f"🔍 GT structure for {ticker}: {list(first_compliment.keys())}")
+        except Exception as e:
+            print(f"Unexpected error loading ground truth file {gt_file}: {str(e)}")
+            continue
             
         before_validation = load_json(before_validation_file)
 
-        # Normalize actual data to legacy structure
-        print(f"🔄 Normalizing {ticker} data to legacy structure...")
-        actual = normalize_dual_field_structure(actual)
-        before_validation = normalize_dual_field_structure(before_validation)
+        # Normalize actual data to legacy structure (with configurable quote3 inclusion)
+        actual = normalize_dual_field_structure(actual, include_quote3_in_results)
+        before_validation = normalize_dual_field_structure(before_validation, include_quote3_in_results)
         
-        # Also normalize ground truth data to legacy structure
-        gt = normalize_dual_field_structure(gt)
-
+        # Normalize ground truth data to legacy structure (handles both legacy and three-quote structures)
+        gt = normalize_gt_structure(gt)  # Use proper GT normalization function
+        
+        # Debug: Check if normalization worked
+        if gt and isinstance(gt, dict) and gt:
+            first_quarter = list(gt.keys())[0]
+            if first_quarter and 'compliments' in gt[first_quarter]:
+                print(f"   After GT normalization: {len(gt[first_quarter]['compliments'])} compliments in {first_quarter}")
+                if gt[first_quarter]['compliments']:
+                    first_comp = gt[first_quarter]['compliments'][0]
+                    print(f"   First compliment structure: {list(first_comp.keys())}")
+        
         # Run compare
         results, results_incorrect_names, stats = compare_analyst_compliments(actual, gt, before_validation)
 
@@ -406,6 +536,14 @@ def main():
     pd.set_option('display.width', None)
     pd.set_option('display.max_colwidth', None)
 
+    print("\n" + "="*60)
+    print("CONFIGURATION SUMMARY")
+    print("="*60)
+    print(f"Results normalization: {'Include quote3' if include_quote3_in_results else 'Exclude quote3'}")
+    print(f"Ground truth normalization: Always include quote3")
+    print(f"Output file: {statistic_filename}")
+    print("="*60)
+    
     print(df[['ticker', 'accuracy', 'precision', 'recall']])
 
 
