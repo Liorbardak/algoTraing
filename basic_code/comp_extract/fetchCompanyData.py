@@ -249,10 +249,12 @@ if __name__ == "__main__":
     downloader = FinancialDataDownloader(ticker_file, tickers_path, api_key_earning, api_key_fundamental,
                                          api_key_earningCall,years,quarters)
 
-    downloader.download_financial_numbers('SPY')
-    stocksList = downloader.getStocksList(data_path+stockList)
-    idx = stocksList.index('SPY')
-    stocksList = stocksList[idx:]
+    # downloader.download_financial_numbers('SPY')
+    # stocksList = downloader.getStocksList(data_path+stockList)
+    # idx = stocksList.index('SPY')
+    # stocksList = stocksList[idx:]
+
+    stocksList = ['SUM']
     for ticker in stocksList:
         print(f"Processing {ticker}")
         # self.download_earnings_calls(ticker)
