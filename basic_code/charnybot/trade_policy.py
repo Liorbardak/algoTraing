@@ -303,8 +303,12 @@ class TradingPolicyMostBasic(TradingPolicy):
             (tickers_df.ticker == ticker) & (tickers_df.Date <= date)
             ]
 
+        if(len(ticker_price_data) == 0):
+            print(f'no data for {ticker} in {date} ')
+            return ticker_score
         # Check moving average trend (momentum indicator)
         ma_150_slope_positive = ticker_price_data.ma_150_slop.values[-1] > 0
+
 
         # Price position relative to moving averages (trend strength)
         current_price = ticker_price_data.Close.values[-1]
@@ -600,6 +604,8 @@ class TradingPolicyMostBasic(TradingPolicy):
         # Get list of all tradeable tickers
         tickers = list(set(complement_df.ticker))
 
+        tickers =  list(set(complement_df.ticker).intersection(set(tickers_df.ticker)))
+        print("Number of tickers: ", len(tickers))
         # ====================================================================
         # DATE RANGE SETUP
         # ====================================================================

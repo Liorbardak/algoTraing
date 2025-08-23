@@ -181,6 +181,27 @@ def tradesim_report(tickers_df, complement_df, snp_df, trade_hist_df, outputdir)
         # Clean up matplotlib figures to prevent memory issues
         plt.close("all")
 
+
+    # Tickers that were not chosen
+    # for ticker in sorted(tickers_that_were_not_in_portfolio):
+    #     # Filter data for current ticker
+    #     ticker_price_data = tickers_df[tickers_df.ticker == ticker]
+    #     ticker_complement_data = complement_df[complement_df.ticker == ticker]
+    #
+    #     # Generate ticker-specific visualization
+    #     ticker_fig = plot_ticker(
+    #         ticker,
+    #         ticker_price_data,
+    #         ticker_complement_data,
+    #         trade_hist_df
+    #     )
+    #
+    #     # Add to report with ticker symbol as title
+    #     report.add_figure(f"{ticker} Analysis", ticker_fig)
+    #
+    #     # Clean up matplotlib figures to prevent memory issues
+    #     plt.close("all")
+
     # ========================================================================
     # REPORT OUTPUT
     # ========================================================================

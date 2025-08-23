@@ -5,7 +5,7 @@
     "data_dir": "{base_dir}/data",
     "results_dir": "{base_dir}/results/trading_sim",
     "tickers_dir": "{data_dir}/tickers",
-    "complements_dir": "{data_dir}/complements/TRIP_all_validated_complements"
+    "complements_dir": "{data_dir}/complements/results_dual_field_20250821_222554"
   },
   "policy": {
     "policy_name": "MostBasic"

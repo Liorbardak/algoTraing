@@ -191,7 +191,7 @@ if __name__ == "__main__":
     END_DATE = '2025-01-01'  # End of simulation period
 
     # Output directory for results (reports, charts, trade history)
-    outname = 'test7'
+    outname = 'results_dual_field_20250821_222554_take1'
     config = ConfigManager()
     OUTPUT_PATH =  os.path.join(config.get_path("results_dir"),outname)
 

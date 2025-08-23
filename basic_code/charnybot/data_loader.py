@@ -24,11 +24,15 @@ class FinancialDataLoaderBase:
         """
         Load historical stock data
         """
+        tickers_not_found = []
         dfs = []
         actual_min_max_dates = None
         for ticker in tickers:
-            df = pd.read_csv(os.path.join(self.config.get_path("tickers_dir"),ticker, 'stockPrice.csv'))
-
+            try:
+                df = pd.read_csv(os.path.join(self.config.get_path("tickers_dir"),ticker, 'stockPrice.csv'))
+            except:
+                print(f"Could not load {ticker}")
+                tickers_not_found.append(ticker)
             for kl in [k for k in df.keys() if 'Unnamed' in k]:
                 df = df.drop(kl, axis=1)
 
@@ -44,7 +48,7 @@ class FinancialDataLoaderBase:
 
             df = self.get_stock_features(df)
             dfs.append(df)
-
+        print('tickers_not_found'  , tickers_not_found)
         all_df = pd.concat(dfs)
         all_df.reset_index(drop=True, inplace=True)
 
@@ -77,20 +81,29 @@ class FinancialDataLoaderBase:
         """
         if tickers is None:
             # get all tickers that their earning has been analyzed
-            tickers = [re.match(r'^([A-Za-z]+)', file).group(1).upper() for file in os.listdir(self.config.get_path("complements_dir"))]
+            tickers = sorted(set([re.match(r'^([A-Za-z]+)', file).group(1).upper() for file in os.listdir(self.config.get_path("complements_dir"))]))
 
         dfs = []
         for ticker in tickers:
-            comps = json.load(open(os.path.join(self.config.get_path("complements_dir"), ticker + '_compliment_summary.json')))
+            comp_file = os.path.join(self.config.get_path("complements_dir"), ticker + '_compliment_summary.json')
+            if not os.path.isfile(comp_file):
+                print('No compliment data for ticker {}'.format(ticker))
+                continue
+            comps = json.load(open(comp_file))
             df = pd.DataFrame(comps)
-            # try:
-            #     df['Date'] = pd.to_datetime(df['date'], utc=True)
-            # except:
+            if len(df) == 0:
+                print('invalid compliment data for ticker {}'.format(ticker))
+                continue
+
             df['Date'] = pd.to_datetime(df['date'], format='ISO8601' , utc=True)
 
+            # Format converter
             df['ticker'] = ticker
-            df['number_of_analysts_comp'] = (df['number_of_analysts_comp_1'] + df['number_of_analysts_comp_2'] +
-                                             df['number_of_analysts_comp_3'])
+            df['number_of_analysts_comp_1'] =  df['number_of_analysts_with_quote1_compliments']
+            df['number_of_analysts_comp_2'] = df['number_of_analysts_with_quote2_compliments']
+            df['number_of_analysts_comp_3'] = df['number_of_analysts_with_quote3_compliments']
+            df['number_of_analysts_comp'] =   df['number_of_analysts_with_compliments']
+
             if min_max_dates is not None:
                 # Take only range in time
                 df = df[(df.Date >= pd.to_datetime(min_max_dates[0],utc=True)) & (df.Date <= pd.to_datetime(min_max_dates[1],utc=True))]

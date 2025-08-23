@@ -72,14 +72,16 @@ def plot_ticker(ticker,stocks_df, complement_df , trade_df):
     # Create stacked bar chart
     width = 15  # Width of bars in days
     analyst_dates =complement_df.Date
-    ax3.bar(analyst_dates, complement_df.number_of_analysts_comp_1, width,
-            color='lightcoral', alpha=0.7, label='Level 1')
-    ax3.bar(analyst_dates,complement_df.number_of_analysts_comp_2, width,
-            bottom=complement_df.number_of_analysts_comp_1,
-            color='lightblue', alpha=0.7, label='Level 2')
-    ax3.bar(analyst_dates, complement_df.number_of_analysts_comp_3, width,
-            bottom=complement_df.number_of_analysts_comp_2,
-            color='lightgreen', alpha=0.7, label='Level 3')
+    ax3.bar(analyst_dates, complement_df.number_of_analysts_with_compliments, width,
+            color='lightcoral', alpha=0.7, label='Number analysts with compliments')
+    #ax3.bar(analyst_dates, complement_df.number_of_analysts_comp_1, width,
+    #        color='lightcoral', alpha=0.7, label='Level 1')
+    #ax3.bar(analyst_dates,complement_df.number_of_analysts_comp_2, width,
+    #        bottom=complement_df.number_of_analysts_comp_1,
+    #        color='lightblue', alpha=0.7, label='Level 2')
+    #ax3.bar(analyst_dates, complement_df.number_of_analysts_comp_3, width,
+    #        bottom=complement_df.number_of_analysts_comp_2,
+    #        color='lightgreen', alpha=0.7, label='Level 3')
 
     # Add total analysts bar (outline)
     ax3.bar(analyst_dates, complement_df.total_number_of_analysts, width,
