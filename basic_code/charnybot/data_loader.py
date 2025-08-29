@@ -3,6 +3,7 @@ import numpy as np
 import os
 import json
 import re
+import talib
 import datetime
 class FinancialDataLoaderBase:
     def __init__(self , config):
@@ -17,7 +18,7 @@ class FinancialDataLoaderBase:
         stock_df['ma_150'] = stock_df['Close'].rolling(window=150).mean()
         ma_150_diff = np.diff(stock_df['ma_150'].values)
         stock_df['ma_150_slop'] = np.hstack((ma_150_diff[0], ma_150_diff))
-
+        stock_df['rsi_14'] = talib.RSI(stock_df['Close'], timeperiod=14)
         return stock_df
 
     def load_stock_data(self, tickers , min_max_dates = None , get_average_stock = False):

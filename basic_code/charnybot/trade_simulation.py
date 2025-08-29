@@ -15,7 +15,7 @@ import pandas as pd
 import os
 from typing import Optional, Tuple
 from datetime import datetime
-
+import time
 from config.config import ConfigManager
 from trade_policy import TradingPolicy
 from data_loader import FinancialDataLoaderBase
@@ -68,7 +68,8 @@ class TrainingSimulator:
             self,
             start_date: Optional[str] = None,
             end_date: Optional[str] = None,
-            outputpath: Optional[str] = None
+            outputpath: Optional[str] = None,
+            run_trading:bool = True
     ) -> None:
         """
         Execute the complete trading simulation pipeline.
@@ -86,6 +87,7 @@ class TrainingSimulator:
                                     If None, uses latest available data date.
             outputpath (Optional[str]): Directory path for saving simulation results.
                                       If None, results are not saved to disk.
+            run_trading - debug flag - if false run only analysis
 
         Raises:
             FileNotFoundError: If required data files are not found
@@ -100,23 +102,33 @@ class TrainingSimulator:
         print("Loading individual stock data and complements...")
         tickers_df, complement_df, actual_min_max_dates, avg_df = self.data_loader.load_all_data()
 
-        # Log data availability for debugging
+        # Log data availability
+        tickers =  list(set(complement_df.ticker).intersection(set(tickers_df.ticker)))
+
+
+
         print(f"Data available from {actual_min_max_dates[0]} to {actual_min_max_dates[1]}")
-        print(f"Loaded {len(tickers_df.columns)} individual stocks")
-        print(f"Loaded {len(complement_df.columns)} complement instruments")
+        print(f"Loaded {len(set(tickers_df.ticker))} individual stocks")
+        print(f"Loaded {len(set(complement_df.ticker))} complement instruments")
+        print("Number of tickers valid for simulation: ", len(tickers))
+
+        tickers_df = tickers_df[tickers_df.ticker.isin(tickers)]
+        complement_df = complement_df[complement_df.ticker.isin(tickers)]
+        time.sleep(3)
 
         # ==========================================
         # STEP 2: Execute trading policy
         # ==========================================
-        print(f"Running trading simulation from {start_date} to {end_date}...")
-        self.trade_policy.trade(
-            tickers_df=tickers_df,
-            complement_df=complement_df,
-            default_index=snp_df,
-            start_date=start_date,
-            end_date=end_date,
-            outputpath=outputpath
-        )
+        if run_trading:
+            print(f"Running trading simulation from {start_date} to {end_date}...")
+            self.trade_policy.trade(
+                tickers_df=tickers_df,
+                complement_df=complement_df,
+                default_index=snp_df,
+                start_date=start_date,
+                end_date=end_date,
+                outputpath=outputpath
+            )
 
         # ==========================================
         # STEP 3: Generate reports and analysis
