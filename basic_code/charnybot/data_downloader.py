@@ -12,7 +12,7 @@ stockdir =  'C:/Users/dadab/projects/algotrading/data/tickers'
 start = '2019-01-02'
 end = '2025-06-01'
 
-stocks_to_run_on =  ['CARA', 'ARCH', 'CUTR', 'QRTEA', 'FBMS', 'SUM']
+stocks_to_run_on =  ['ARDX', 'BVS']
 
 
 ticker = '^GSPC'
@@ -78,10 +78,10 @@ for ticker in  stocks_to_run_on:
         plt.plot(data.index, df['AdjClose'], label='yahoo adj close', alpha=0.5)
 
         plt.plot(stock_price.Date, stock_price.close, label='legacy close ', alpha=0.5)
-        plt.plot(date_diff, diff)
+        plt.plot(date_diff, diff ,label='diff ')
         plt.legend()
         plt.title(ticker)
-        plt.show()
+       # plt.show()
 
     # add snp price
     snp_close_price = np.full(len(df), np.nan)
@@ -107,8 +107,8 @@ for ticker in  stocks_to_run_on:
     # plt.title(ticker)
     # plt.show()
 
-    df.to_csv(os.path.join(outdir, ticker + '.csv'))
+    #df.to_csv(os.path.join(outdir, ticker + '.csv'))
 
 print('bad_stocks')
 print(bad_stocks)
-#plt.show()
+plt.show()

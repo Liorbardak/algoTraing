@@ -137,6 +137,117 @@ def tradesim_report(tickers_df, complement_df, snp_df, trade_hist_df, outputdir)
         'profit[%]': np.round(overall_portfolio_profit * 100, 1),
         'snp_profit[%]': np.round(overall_snp_profit * 100, 1)
     })
+    # ========================================================================
+    # Performance per ticker
+    # ========================================================================
+    rows  = []
+    for ticker in tickers_that_were_in_portfolio:
+        tdf = tickers_df[tickers_df.ticker == ticker]
+
+        is_in_prtofolio = (trade_hist_df[ticker].values != 0).astype(int)
+        is_in_prtofolio = np.hstack([is_in_prtofolio, [0]])
+
+        buy_points = np.where((is_in_prtofolio[:-1]== 0) &   (is_in_prtofolio[1:]== 1))[0]
+        sell_points = np.where((is_in_prtofolio[:-1] == 1) & (is_in_prtofolio[1:] == 0))[0]
+        cum_profit_snp= 0
+        cum_profit_stock = 0
+        cum_ratio_snp = 0
+        cum_ratio_stock = 0
+        for i, (buy_indx, sell_indx) in enumerate(zip(buy_points, sell_points)):
+              buy_Date = trade_hist_df.Date.values[buy_indx]
+              sell_Date = trade_hist_df.Date.values[sell_indx]
+              if i == 0:
+                  snp_first = snp_df[snp_df.Date.values == buy_Date].Close.values[0]
+                  ticker_first =tdf[tdf.Date.values == buy_Date].Close.values[0]
+              snp_buy_price = snp_df[snp_df.Date.values == buy_Date].Close.values[0]/snp_first
+              snp_sell_price = snp_df[snp_df.Date.values == sell_Date].Close.values[0]/snp_first
+              ticker_buy_price = tdf[tdf.Date.values == buy_Date].Close.values[0]/ticker_first
+              ticker_sell_price = tdf[tdf.Date.values == sell_Date].Close.values[0]/ticker_first
+
+
+              cum_profit_snp +=  snp_sell_price-snp_buy_price
+              cum_profit_stock += ticker_sell_price-ticker_buy_price
+              cum_ratio_snp += (snp_sell_price - snp_buy_price) / snp_buy_price
+              cum_ratio_stock += (ticker_sell_price - ticker_buy_price) / ticker_buy_price
+        rows.append({'ticker': ticker,
+                     'snp_profit_sum_ratio': cum_ratio_snp * 100,
+                    'trade_profit_sum_ratio': cum_ratio_stock * 100,
+                     'snp-trade': (cum_ratio_snp-cum_ratio_stock) * 100
+                     }
+        )
+
+    profit_per_ticker= pd.DataFrame(rows)
+    avg_row = profit_per_ticker.select_dtypes(include=[np.number]).mean()
+    avg_row['ticker'] = 'AVERAGE'
+    profit_per_ticker.loc[len(profit_per_ticker)] = avg_row
+
+    rows = []
+    row_per_buy = []
+
+    for ticker in tickers_that_were_in_portfolio:
+        tdf = tickers_df[tickers_df.ticker == ticker]
+
+        is_in_prtofolio = (trade_hist_df[ticker].values != 0).astype(int)
+        is_in_prtofolio = np.hstack([is_in_prtofolio, [0]])
+
+        buy_points = np.where((is_in_prtofolio[:-1] == 0) & (is_in_prtofolio[1:] == 1))[0]
+        sell_points = np.where((is_in_prtofolio[:-1] == 1) & (is_in_prtofolio[1:] == 0))[0]
+        cum_profit_snp = 0
+        cum_profit_stock = 0
+        cum_ratio_snp = 0
+        cum_ratio_stock = 0
+        cum_time = 0
+        for i, (buy_indx, sell_indx) in enumerate(zip(buy_points, sell_points)):
+            buy_Date = trade_hist_df.Date.values[buy_indx]
+            sell_Date = trade_hist_df.Date.values[sell_indx]
+            if i == 0:
+                snp_first = snp_df[snp_df.Date.values == buy_Date].Close.values[0]
+                ticker_first = tdf[tdf.Date.values == buy_Date].Close.values[0]
+            snp_buy_price = snp_df[snp_df.Date.values == buy_Date].Close.values[0] / snp_first
+            snp_sell_price = snp_df[snp_df.Date.values == sell_Date].Close.values[0] / snp_first
+            ticker_buy_price = tdf[tdf.Date.values == buy_Date].Close.values[0] / ticker_first
+            ticker_sell_price = tdf[tdf.Date.values == sell_Date].Close.values[0] / ticker_first
+
+            cum_profit_snp += snp_sell_price - snp_buy_price
+            cum_profit_stock += ticker_sell_price - ticker_buy_price
+            cum_ratio_snp += (snp_sell_price - snp_buy_price) / snp_buy_price
+            cum_ratio_stock += (ticker_sell_price - ticker_buy_price) / ticker_buy_price
+            cum_time += (sell_Date-buy_Date).astype('timedelta64[D]')
+
+            # this buy statistics
+            buy_stat = {'ticker': ticker,
+             'buy_date': str(buy_Date)[:10],
+             'sell_date': str(sell_Date)[:10],
+             'profit %':np.round((ticker_sell_price - ticker_buy_price) / ticker_buy_price *100,1),
+             '(buy_price-ma_a150)/ma_150': (tdf[tdf.Date.values == buy_Date].Close.values[0] - tdf[tdf.Date.values == buy_Date].ma_150.values[0]) / tdf[tdf.Date.values == buy_Date].ma_150.values[0],
+             'rsi_14':  tdf[tdf.Date.values == buy_Date].rsi_14.values[0],
+             }
+            # get the price after buy
+            buy_price = tdf[tdf.Date.values == buy_Date].Close.values[0]
+            for nq in range(1, 5):
+                q_after_buy = tdf[(tdf.Date.values <= buy_Date + np.timedelta64(90 * nq, 'D')) & (tdf.Date.values >= buy_Date + np.timedelta64(90 * (nq-1), 'D'))]
+                if len(q_after_buy) > 0:
+                    max_price_in_q_after_buy = np.max(q_after_buy.Close.values)
+                    buy_stat[f'max price q{nq} after buy % '] = np.round(((max_price_in_q_after_buy / buy_price)- 1) *100,1)
+                else:
+                    buy_stat[f'max price q{nq} after buy % '] = None
+            row_per_buy.append(buy_stat)
+
+        rows.append({'ticker': ticker,
+                     'snp_profit_sum_ratio': cum_ratio_snp * 100,
+                     'trade_profit_sum_ratio': cum_ratio_stock * 100,
+                     'snp-trade': (cum_ratio_snp - cum_ratio_stock) * 100,
+                     'days in portfolio': cum_time.astype(int)
+                     }
+                    )
+
+    profit_per_ticker = pd.DataFrame(rows)
+    avg_row = profit_per_ticker.select_dtypes(include=[np.number]).mean()
+    avg_row['ticker'] = 'AVERAGE'
+    profit_per_ticker.loc[len(profit_per_ticker)] = avg_row
+
+    buy_info_per_ticker = pd.DataFrame(row_per_buy)
+
 
     # ========================================================================
     # HTML REPORT GENERATION
@@ -155,6 +266,13 @@ def tradesim_report(tickers_df, complement_df, snp_df, trade_hist_df, outputdir)
     # Add portfolio holdings distribution over time
     holdings_fig = holding_per_time(trade_hist_df, tickers_that_were_in_portfolio)
     report.add_figure("Portfolio Holdings Over Time", holdings_fig)
+
+    # Add performance per ticker / per buy point summary table
+    report.add_df('Performance Per Ticker', pd.DataFrame(profit_per_ticker))
+
+    report.add_df('Performance Per Buy', buy_info_per_ticker)
+
+
 
     # ========================================================================
     # INDIVIDUAL TICKER ANALYSIS

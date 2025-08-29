@@ -1,4 +1,6 @@
 # algoTraing
 Trade simulation:  
-udpdate trading_config.json
-run trade_simulation.py
+udpdate basic_code/charnybot/config/trading_config.json
+ - set complements_dir
+ - 
+run basic_code/charnybot/trade_simulation.py

@@ -184,10 +184,13 @@ class TradingPolicyMostBasic(TradingPolicy):
         # ====================================================================
         # EVALUATE NEW POTENTIAL INVESTMENTS
         # ====================================================================
-        # Find tickers not currently in portfolio that are available for trading
+        # Find tickers not currently in portfolio that are available for trading :
+           # tickers that got complement in current date or in the previous quarter
         available_tickers = set(
-            complement_df[complement_df.Date.dt.normalize() == date].ticker
+            complement_df[(complement_df.Date.dt.normalize() >= (date - pd.Timedelta(days=90))) &
+            (complement_df.Date.dt.normalize() <= date) ].ticker
         )
+
         tickers_not_in_portfolio = available_tickers - set(portfolio_weights.keys())
 
         # Score each potential new investment
@@ -259,6 +262,7 @@ class TradingPolicyMostBasic(TradingPolicy):
         latest_complements = complements_before_current_time[
             complements_before_current_time.Date == complements_before_current_time.Date.max()
             ]
+
         last_complement_date = pd.Timestamp(latest_complements.Date.values[0], tz='UTC')
 
         # Check if recommendations are recent enough to be relevant
@@ -464,7 +468,7 @@ class TradingPolicyMostBasic(TradingPolicy):
         # PORTFOLIO VALIDATION
         # ====================================================================
         # Debug output for monitoring
-        print(f"Portfolio on {date}: {self.portfolio.get_portfolio_weights()}")
+        print(f"Portfolio on {date}: {len(self.portfolio.get_portfolio_weights())}  {self.portfolio.get_portfolio_weights()}")
 
         # Ensure we haven't created a negative cash position
         assert self.portfolio.cash >= -1e-6, (
@@ -602,10 +606,8 @@ class TradingPolicyMostBasic(TradingPolicy):
         self.portfolio = Portfolio()
 
         # Get list of all tradeable tickers
-        tickers = list(set(complement_df.ticker))
-
         tickers =  list(set(complement_df.ticker).intersection(set(tickers_df.ticker)))
-        print("Number of tickers: ", len(tickers))
+
         # ====================================================================
         # DATE RANGE SETUP
         # ====================================================================
