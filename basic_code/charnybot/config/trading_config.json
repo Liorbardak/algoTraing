@@ -12,11 +12,14 @@
   },
     "portfolio": {
     "max_portion_per_ticker" : 0.1,
-    "max_number_of_tickers" : 6000
+    "max_number_of_tickers" : 100000
   },
   "buy": {
     "min_complements_th1": 5,
     "min_complements_th2": 3,
     "complements_portion_th2": 0.5
+  },
+  "sell": {
+    "max_profit_to_sell": 20
   }
 }
