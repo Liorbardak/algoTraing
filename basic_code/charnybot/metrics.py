@@ -6,7 +6,8 @@ from utils.visualizer import plot_ticker, plot_overall, holding_per_time
 from utils.report_utils import HtmlReport
 
 
-def tradesim_report(tickers_df, complement_df, snp_df, trade_hist_df, outputdir):
+def tradesim_report(tickers_df, complement_df, snp_df,avg_df, trade_hist_df, outputdir ,
+                    draw_per_tickers = 'in_portfolio'):
     """
     Generate a comprehensive trading simulation report comparing portfolio performance
     against S&P 500 benchmark.
@@ -18,9 +19,10 @@ def tradesim_report(tickers_df, complement_df, snp_df, trade_hist_df, outputdir)
         tickers_df (pd.DataFrame): Historical price data for individual tickers
         complement_df (pd.DataFrame): Complementary data containing ticker metadata
         snp_df (pd.DataFrame): S&P 500 historical data for benchmarking
+        avg_df : average of all stocks
         trade_hist_df (pd.DataFrame): Trading history with portfolio values over time
         outputdir (str): Directory path where the HTML report will be saved
-
+        draw_per_tickers - 'in_portfolio' - draw all ticker used , 'all' - draw all tickers , otherwise - dont draw  any ticker
     Returns:
         None: Saves HTML report to specified output directory
     """
@@ -41,9 +43,16 @@ def tradesim_report(tickers_df, complement_df, snp_df, trade_hist_df, outputdir)
     snp_df = snp_df[
         (snp_df.Date >= start_date) & (snp_df.Date <= end_date)
         ]
+
+    avg_df = avg_df[
+        (avg_df.Date >= start_date) & (avg_df.Date <= end_date)
+        ]
+
+
     trade_hist_df = trade_hist_df[
         (trade_hist_df.Date >= start_date) & (trade_hist_df.Date <= end_date)
         ]
+
     tickers_df = tickers_df[
         (tickers_df.Date >= start_date) & (tickers_df.Date <= end_date)
         ]
@@ -96,11 +105,22 @@ def tradesim_report(tickers_df, complement_df, snp_df, trade_hist_df, outputdir)
             ].Close.values[-1]
         snp_profit = (snp_end_value / snp_start_value) - 1
 
+        # Calculate average stock profit for the same period
+        avg_stock_start_value = snp_df[
+            snp_df.Date >= start_of_year
+            ].Close.values[0]
+        avg_stock_end_value = snp_df[
+            snp_df.Date <= end_of_year
+            ].Close.values[-1]
+        avg_stock_profit = (avg_stock_end_value / avg_stock_start_value) - 1
+
+
         # Store results as percentage with 1 decimal place
         performance_results.append({
             'year': start_of_year.year,
             'profit[%]': np.round(portfolio_profit * 100, 1),
-            'snp_profit[%]': np.round(snp_profit * 100, 1)
+            'snp_profit[%]': np.round(snp_profit * 100, 1),
+            'avg_stock_profit[%]': np.round(avg_stock_profit * 100, 1)
         })
 
         # Move to next year
@@ -131,12 +151,26 @@ def tradesim_report(tickers_df, complement_df, snp_df, trade_hist_df, outputdir)
         ].Close.values[0]
     overall_snp_profit = (snp_total_end / snp_total_start) - 1
 
+    # Calculate S&P 500 total return for comparison
+    avg_total_start = avg_df[
+        avg_df.Date == start_date
+        ].Close.values[0]
+    avg_total_end = avg_df[
+        avg_df.Date == end_date
+        ].Close.values[0]
+    overall_avg_stock_profit = (avg_total_end / avg_total_start) - 1
+
+
+
     # Add overall performance to results
     performance_results.append({
         'year': 'all',
         'profit[%]': np.round(overall_portfolio_profit * 100, 1),
-        'snp_profit[%]': np.round(overall_snp_profit * 100, 1)
+        'snp_profit[%]': np.round(overall_snp_profit * 100, 1),
+        'avg_stock_profit[%]': np.round(overall_avg_stock_profit * 100, 1)
     })
+
+
     # ========================================================================
     # Performance per ticker
     # ========================================================================
@@ -260,7 +294,7 @@ def tradesim_report(tickers_df, complement_df, snp_df, trade_hist_df, outputdir)
     report.add_df('Performance Results', pd.DataFrame(performance_results))
 
     # Add overall performance comparison chart (Portfolio vs S&P 500)
-    overall_performance_fig = plot_overall(snp_df, trade_hist_df)
+    overall_performance_fig = plot_overall(snp_df, trade_hist_df , avg_df)
     report.add_figure('Portfolio vs S&P 500 Performance', overall_performance_fig)
 
     # Add portfolio holdings distribution over time
@@ -280,45 +314,46 @@ def tradesim_report(tickers_df, complement_df, snp_df, trade_hist_df, outputdir)
 
     # Generate detailed charts for each ticker that was traded
     # Sort tickers alphabetically for consistent report organization
-    for ticker in sorted(tickers_that_were_in_portfolio):
-        # Filter data for current ticker
-        ticker_price_data = tickers_df[tickers_df.ticker == ticker]
-        ticker_complement_data = complement_df[complement_df.ticker == ticker]
+    if draw_per_tickers =='in_portfolio':
+        for ticker in sorted(tickers_that_were_in_portfolio):
+            # Filter data for current ticker
+            ticker_price_data = tickers_df[tickers_df.ticker == ticker]
+            ticker_complement_data = complement_df[complement_df.ticker == ticker]
 
-        # Generate ticker-specific visualization
-        ticker_fig = plot_ticker(
-            ticker,
-            ticker_price_data,
-            ticker_complement_data,
-            trade_hist_df
-        )
+            # Generate ticker-specific visualization
+            ticker_fig = plot_ticker(
+                ticker,
+                ticker_price_data,
+                ticker_complement_data,
+                trade_hist_df
+            )
 
-        # Add to report with ticker symbol as title
-        report.add_figure(f"{ticker} Analysis", ticker_fig)
+            # Add to report with ticker symbol as title
+            report.add_figure(f"{ticker} Analysis", ticker_fig)
 
-        # Clean up matplotlib figures to prevent memory issues
-        plt.close("all")
+            # Clean up matplotlib figures to prevent memory issues
+            plt.close("all")
 
+    if draw_per_tickers =='all':
+        # Draw Tickers that were not chosen
+        for ticker in sorted(tickers_that_were_not_in_portfolio):
+            # Filter data for current ticker
+            ticker_price_data = tickers_df[tickers_df.ticker == ticker]
+            ticker_complement_data = complement_df[complement_df.ticker == ticker]
 
-    # Tickers that were not chosen
-    # for ticker in sorted(tickers_that_were_not_in_portfolio):
-    #     # Filter data for current ticker
-    #     ticker_price_data = tickers_df[tickers_df.ticker == ticker]
-    #     ticker_complement_data = complement_df[complement_df.ticker == ticker]
-    #
-    #     # Generate ticker-specific visualization
-    #     ticker_fig = plot_ticker(
-    #         ticker,
-    #         ticker_price_data,
-    #         ticker_complement_data,
-    #         trade_hist_df
-    #     )
-    #
-    #     # Add to report with ticker symbol as title
-    #     report.add_figure(f"{ticker} Analysis", ticker_fig)
-    #
-    #     # Clean up matplotlib figures to prevent memory issues
-    #     plt.close("all")
+            # Generate ticker-specific visualization
+            ticker_fig = plot_ticker(
+                ticker,
+                ticker_price_data,
+                ticker_complement_data,
+                trade_hist_df
+            )
+
+            # Add to report with ticker symbol as title
+            report.add_figure(f"{ticker} Analysis", ticker_fig)
+
+            # Clean up matplotlib figures to prevent memory issues
+            plt.close("all")
 
     # ========================================================================
     # REPORT OUTPUT

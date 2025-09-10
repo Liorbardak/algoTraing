@@ -39,6 +39,9 @@ class Position:
     quantity: float
     current_price: float
     last_updated: datetime
+    last_buy_price: float
+    last_buy_date: datetime
+    last_buy_quantity: float
 
     @property
     def market_value(self) -> float:
@@ -94,12 +97,26 @@ class Portfolio:
                 ticker=default_index,
                 quantity=0,
                 current_price=0,
-                last_updated=None
+                last_updated=None,
+                last_buy_price =0,
+                last_buy_quantity=0,
+                last_buy_date=None
             )
 
         # Performance tracking
         self.total_invested = 0.0
         self.total_realized_pnl = 0.0
+
+    def get_ticker(self,ticker: str):
+        '''
+        Get ticker
+        :param ticker:
+        :return:
+        '''
+        if ticker in self.positions:
+             return self.positions[ticker]
+        else:
+            return None
 
     def buy_default_index_with_all_cash(self , default_index_price , date ):
         '''
@@ -121,6 +138,12 @@ class Portfolio:
         self.default_index.current_price = default_index_price
         self.default_index.last_updated = date
 
+
+    def tickers(self) -> List[str]:
+        """
+        :return: tickers in portfolio
+        """
+        return list(self.positions.keys())
 
     def is_in(self , ticker: str) -> bool:
         """
@@ -165,6 +188,9 @@ class Portfolio:
                 'quantity': position.quantity,
                 'current_price': position.current_price,
                 'market_value': position.market_value,
+                'last_buy_price' : position.last_buy_price,
+                'last_buy_quantity': position.last_buy_quantity,
+                'last_buy_date': position.last_buy_date,
                 'weight': position.market_value / self.get_total_value() if self.get_total_value() > 0 else 0
             }
         return summary
@@ -191,14 +217,15 @@ class Portfolio:
                 self.positions[ticker].last_updated = update_date
 
         # Update default index
-        self.default_index.current_price = default_index.Close.values[0]
-        self.default_index.last_updated = update_date
+        if default_index is not None:
+            self.default_index.current_price = default_index.Close.values[0]
+            self.default_index.last_updated = update_date
 
         # Take a snapshot for history
         self._take_snapshot()
 
     def buy_stock(self, ticker: str, quantity: float, price: float,
-                  timestamp: Optional[datetime] = None) -> bool:
+                  timestamp) -> bool:
         """
         Buy a stock
 
@@ -211,8 +238,8 @@ class Portfolio:
         Returns:
             bool: True if successful, False otherwise
         """
-        if timestamp is None:
-            timestamp = datetime.now()
+        # if timestamp is None:
+        #     timestamp = datetime.now()
 
         total_cost = quantity * price
 
@@ -238,23 +265,31 @@ class Portfolio:
         if ticker in self.positions:
             # Update existing position
             pos = self.positions[ticker]
+            if pos.quantity == 0:
+                # re-buying ticker - store buying price
+                pos.last_buy_date = timestamp,
+                pos.last_buy_price = price
+                pos.last_buy_quantity = quantity
             total_quantity = pos.quantity + quantity
             pos.quantity = total_quantity
-            pos.current_price = price
-            pos.last_updated = timestamp
+
+
         else:
             # Create new position
             self.positions[ticker] = Position(
                 ticker=ticker,
                 quantity=quantity,
                 current_price=price,
-                last_updated=timestamp
+                last_updated=timestamp,
+                last_buy_date=timestamp,
+                last_buy_price = price,
+                last_buy_quantity = quantity
             )
 
         # Record the trade
         self.trade_history.append(order)
 
-        print(f"Bought {quantity} shares of {ticker} at ${price:.2f} per share")
+        print(f"Bought ${quantity} shares of {ticker} at ${price:.2f} per share")
         return True
 
     def sell_stock(self, ticker: str, quantity: float, price: float,

@@ -4,6 +4,10 @@ import os
 import json
 import re
 import talib
+from trade_policy import TradingPolicy
+from config.config import ConfigManager
+from utils.protofolio import Portfolio
+
 import datetime
 class FinancialDataLoaderBase:
     def __init__(self , config):
@@ -20,6 +24,78 @@ class FinancialDataLoaderBase:
         stock_df['ma_150_slop'] = np.hstack((ma_150_diff[0], ma_150_diff))
         stock_df['rsi_14'] = talib.RSI(stock_df['Close'], timeperiod=14)
         return stock_df
+
+    def average_stock(self, all_df):
+        '''
+        Average stock price
+        Performed using  trading simulation,  simple average is not possible , since not all tickers are present in all times
+        :param all_df:
+        :return: average stock price data frame
+        '''
+
+        # Check if we can perform simple averaging - all stocks appear in all dates
+
+        # Calculate the average of all stocks by simple trading => can not preform simple average , since not all stocks are present in all times
+        trader = TradingPolicy.create("MostBasic", config=ConfigManager())
+        print('calculating average stock')
+
+        avg_df_rows = []
+        for date, tickers_df_per_date in all_df.sort_values('Date').groupby('Date'):
+
+            tickers = list(set(tickers_df_per_date.ticker))
+
+            if len(avg_df_rows) == 0:
+                # initialization - buy all existing tickers in even parts
+
+                target_value = trader.portfolio.get_total_free_value() / len(tickers)  #
+                for ticker in tickers:
+                    current_price = tickers_df_per_date[tickers_df_per_date.ticker == ticker].Close.values[0]
+                    shares_to_buy = target_value / current_price
+                    trader.portfolio.buy_stock(ticker, shares_to_buy, current_price, date)
+                total_val = trader.portfolio.get_total_value()
+                avg_df_rows.append(
+                    {'Date': date,
+                     'ticker': 'average_ticker',
+                     'High': total_val,
+                     'Low': total_val,
+                     'Open': total_val,
+                     'Close': total_val,
+                     'Volume': 1,
+                     }
+                )
+            else:
+                # update prices of stocks in  portfolio
+                trader.portfolio.update_prices(price_updates=tickers_df_per_date, default_index=None,
+                                               update_date=date)
+
+                # Check if there are stocks that have been added  or was removed
+                remove_tickers = list(set(trader.portfolio.tickers()) - set(tickers))
+                new_tickers = list(set(tickers) - set(trader.portfolio.tickers()))
+
+                if len(remove_tickers) > 0:
+                    # sell stocks that are "not there " any more
+                    for ticker in remove_tickers:
+                        current_price = tickers_df_per_date[tickers_df_per_date.ticker == ticker].Close.values[0]
+                        shares_to_sell = trader.portfolio.positions[ticker].quantity
+                        trader.portfolio.sell_stock(ticker, shares_to_sell, current_price, date)
+
+                if len(new_tickers) > 0:
+                    # buy new tickers
+                    tickers_score = {new_ticker: 100 for new_ticker in new_tickers}
+                    trader.buy(date, tickers_score, tickers_df_per_date)
+
+                total_val = trader.portfolio.get_total_value()
+                avg_df_rows.append(
+                    {'Date': date,
+                     'ticker': 'average_ticker',
+                     'High': total_val,
+                     'Low': total_val,
+                     'Open': total_val,
+                     'Close': total_val,
+                     'Volume': 1,
+                     }
+                )
+        return pd.DataFrame(avg_df_rows)
 
     def load_stock_data(self, tickers , min_max_dates = None , get_average_stock = False):
         """
@@ -39,40 +115,23 @@ class FinancialDataLoaderBase:
 
             df['ticker'] = ticker
             df['Date'] = pd.to_datetime(df['Date'],utc=True)
+
+            # Add features
+            df = self.get_stock_features(df)
+
             if min_max_dates is not None:
                 # Take only range in time
-                df = df[(df.Date >= pd.to_datetime(min_max_dates[0],utc=True)) & (df.Date <= pd.to_datetime(min_max_dates[1],utc=True))]
-            if actual_min_max_dates is None:
-                actual_min_max_dates = [df.Date.min(), df.Date.max()]
-            else:
-                actual_min_max_dates = [np.max([df.Date.min(), actual_min_max_dates[0]]), np.min([df.Date.max(), actual_min_max_dates[1]])]
-
-            df = self.get_stock_features(df)
+                df = df[(df.Date >= (pd.to_datetime(min_max_dates[0],utc=True) - pd.Timedelta(days=10))) &
+                        (df.Date <= (pd.to_datetime(min_max_dates[1],utc=True) + pd.Timedelta(days=10)))]
             dfs.append(df)
         print('tickers_not_found'  , tickers_not_found)
         all_df = pd.concat(dfs)
         all_df.reset_index(drop=True, inplace=True)
 
-        # Calculate the average of all stocks
+
         avg_df = None
-        keys_to_avg = ['High', 'Low', 'Open', 'Close', 'AdjClose', 'Volume']
         if get_average_stock:
-            # Calculate the average of all stocks
-            for ticker, tdf in all_df.groupby('ticker'):
-                # Get the stock in the time range
-                tdf = tdf[(pd.to_datetime(tdf.Date) >= actual_min_max_dates[0]) & (pd.to_datetime(tdf.Date) <= actual_min_max_dates[1])]
-                # Normalize price by the first date
-                for k in keys_to_avg:
-                    tdf[k] = tdf[k] / tdf.Close.values[0]
-                if avg_df is None:
-                    avg_df = tdf
-                else:
-                    for k in keys_to_avg:
-                        avg_df[k] = avg_df[k].values + tdf[k].values
-
-            for k in keys_to_avg:
-                avg_df[k] = avg_df[k].values / len(tickers)
-
+            avg_df =  self.average_stock(all_df)
 
         return all_df , actual_min_max_dates, avg_df
 
@@ -127,7 +186,7 @@ class FinancialDataLoaderBase:
         stocks_df , actual_min_max_dates, avg_df  = self.load_stock_data(tickers, min_max_dates, get_average_stock = get_average_stock)
 
 
-        return stocks_df , complement_df ,  actual_min_max_dates , avg_df
+        return stocks_df , complement_df ,  avg_df
 
     def load_snp(self):
         snp_df, _,_ = self.load_stock_data(tickers = ['^GSPC'])

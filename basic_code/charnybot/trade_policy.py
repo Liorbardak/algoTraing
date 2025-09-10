@@ -358,7 +358,7 @@ class TradingPolicyMostBasic(TradingPolicy):
 
         return ticker_score
 
-    def buy(self, date, tickers_score, tickers_df, default_index_df):
+    def buy(self, date, tickers_score, tickers_df, total_ticker_weight_before_sell , daily_reference_index_data = None):
         """
         Execute buy decisions based on ticker scores and portfolio constraints.
 
@@ -391,6 +391,8 @@ class TradingPolicyMostBasic(TradingPolicy):
         # ====================================================================
         new_portfolio_weights = copy(current_portfolio_weights)
 
+        initial_position_size = self.config.get_parameter('portfolio', 'max_portion_per_ticker')
+
         if new_positions_to_add > 0:
             # Select new tickers to add
             # TODO: Prioritize by weighted_score instead of arbitrary selection
@@ -407,7 +409,6 @@ class TradingPolicyMostBasic(TradingPolicy):
                     new_portfolio_weights[ticker] = new_position_size
             else:
                 # First positions in empty portfolio
-                initial_position_size = self.config.get_parameter('portfolio', 'max_portion_per_ticker')
                 new_portfolio_weights = {ticker: initial_position_size for ticker in new_tickers_to_add}
 
         # ====================================================================
@@ -429,10 +430,26 @@ class TradingPolicyMostBasic(TradingPolicy):
                 for ticker, weight in new_portfolio_weights.items()
             }
         elif total_weights < 1.0:
-            # There's free cash available
-            # TODO: Implement logic to allocate remaining cash
-            free_cash_weight = 1.0 - total_weights
-            # Could distribute equally among existing positions or hold as cash
+            # There's free cash available to buy - what to do ?:
+            if self.config.get_parameter('sell', 'sell_return') == 'reference_index':
+                # buy reference_index with the remaining cash
+                pass
+
+            elif (len(self.portfolio.tickers()) > 0) & (total_ticker_weight_before_sell >total_weights) & (total_weights > 1e-1) :
+                # buy other stocks with the remaining cash , upto the portion before the last sell
+                factor =total_ticker_weight_before_sell/total_weights
+
+                if self.config.get_parameter('sell', 'sell_return') == 'reference_index_and_stocks':
+                    # split the remaining cash between other stocks and reference index
+                    factor = np.sqrt(factor)
+
+                new_portfolio_weights = {
+                    ticker: np.min([weight * factor,initial_position_size])
+                    for ticker, weight in new_portfolio_weights.items()
+                }
+
+
+
 
         # ====================================================================
         # EXECUTE PORTFOLIO REBALANCING
@@ -475,7 +492,7 @@ class TradingPolicyMostBasic(TradingPolicy):
             f"Negative cash position detected: {self.portfolio.cash} on {date}"
         )
 
-    def sell(self, date, ticker, tickers_df, complement_df, portfolio_weight):
+    def sell(self, date, ticker, tickers_df, complement_df =None, portfolio_weight = None):
         """
         Evaluate whether to sell a ticker based on technical exit criteria.
 
@@ -516,11 +533,28 @@ class TradingPolicyMostBasic(TradingPolicy):
 
         sell_signal = price_below_ma200_today & price_below_ma200_yesterday
 
+
+
         if sell_signal:
             # Execute complete exit from this position
             current_price = prices[current_index]
             shares_to_sell = self.portfolio.positions[ticker].quantity
             self.portfolio.sell_stock(ticker, shares_to_sell, current_price, date)
+            return
+
+        # Partial sell due to high profits
+        max_profit_to_sell = self.config.get_parameter('sell', 'max_profit_to_sell')
+        if self.portfolio.positions[ticker].last_buy_price > 0:
+            current_value = self.portfolio.positions[ticker].current_price*self.portfolio.positions[ticker].quantity
+            last_buy_value = self.portfolio.positions[ticker].last_buy_price * self.portfolio.positions[ticker].last_buy_quantity
+            profit =  (current_value - last_buy_value) / last_buy_value
+
+            if profit*100 > max_profit_to_sell:
+                # Partial sell - sell only the profit
+                current_price = prices[current_index]
+                shares_to_sell = self.portfolio.positions[ticker].quantity* ( profit / (1+profit) )
+                self.portfolio.sell_stock(ticker, shares_to_sell, current_price, date)
+
 
     def trade_recurrent(self, date, tickers, tickers_df, complement_df, default_index):
         """
@@ -560,9 +594,11 @@ class TradingPolicyMostBasic(TradingPolicy):
         current_index_price = daily_index_data.Close.values[0]
         self.portfolio.sell_all_default_index(current_index_price, date)
 
+        total_ticker_weight_before_sell =  np.sum(list(current_portfolio_weights.values()))
         # ====================================================================
         # EXIT MANAGEMENT: EVALUATE EXISTING POSITIONS FOR SELLING
         # ====================================================================
+
         # Check each current holding against exit criteria
         for ticker, portfolio_weight in current_portfolio_weights.items():
             self.sell(date, ticker, tickers_df, complement_df, portfolio_weight)
@@ -574,7 +610,7 @@ class TradingPolicyMostBasic(TradingPolicy):
         tickers_score = self.score_tickers(date, tickers_df, complement_df)
 
         # Execute buy decisions based on scores
-        self.buy(date, tickers_score, daily_ticker_data, daily_index_data)
+        self.buy(date, tickers_score, daily_ticker_data, total_ticker_weight_before_sell ,daily_index_data  )
 
         # ====================================================================
         # CASH MANAGEMENT: REINVEST REMAINING CASH

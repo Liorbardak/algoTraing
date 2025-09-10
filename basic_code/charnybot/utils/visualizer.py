@@ -4,21 +4,32 @@ import pandas as pd
 from datetime import datetime, timedelta
 import matplotlib.dates as mdates
 
-def plot_overall( snp_df , trade_hist_df):
+def plot_overall( snp_df , trade_hist_df , avg_df = None):
     '''
     General plot of np vs bot
     '''
-    fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(12, 6), sharex=True)
+    fig, (ax1, ax2 , ax3) = plt.subplots(3, 1, figsize=(12, 9), sharex=True)
     ax1.plot( snp_df.Date ,snp_df.Close / snp_df.Close.values[0]*100 , label= 'snp')
     ax1.plot(trade_hist_df.Date, trade_hist_df.total_value.values/ trade_hist_df.total_value.values[0]*100 , label='trade')
+    if avg_df is not None:
+        ax1.plot(avg_df.Date, avg_df.Close /avg_df.Close.values[0]*100 ,
+                 label='average stock')
+
     ax1.set_ylabel('Close Price')
     ax1.legend()
     ax1.grid(True)
     ax2.plot(trade_hist_df.Date, trade_hist_df.n_ticker_in_protofolio)
+
     ax2.set_ylabel('Number of stocks in portfolio ')
     ax2.set_xlabel('Date')
     ax2.grid(True)
     plt.setp(ax2.xaxis.get_majorticklabels(), rotation=45, ha='right')
+
+    ax3.set_ylabel('Portion of s&p in portfolio ')
+    ax3.plot(trade_hist_df.Date, trade_hist_df.default_index / trade_hist_df.total_value * 100)
+    ax3.set_xlabel('Date')
+    ax3.grid(True)
+
 
     plt.gca().xaxis.set_major_locator(mdates.MonthLocator(interval=3, bymonthday=1))
     plt.gca().xaxis.set_major_formatter(mdates.DateFormatter('%Y-%m'))
