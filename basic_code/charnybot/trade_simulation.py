@@ -20,7 +20,7 @@ from config.config import ConfigManager
 from trade_policy import TradingPolicy
 from data_loader import FinancialDataLoaderBase
 from metrics import tradesim_report
-
+import pickle
 
 class TrainingSimulator:
     """
@@ -69,7 +69,8 @@ class TrainingSimulator:
             start_date: Optional[str] = None,
             end_date: Optional[str] = None,
             outputpath: Optional[str] = None,
-            run_trading:bool = True
+            run_trading:bool = True,
+            reload_all_data: bool = True,
     ) -> None:
         """
         Execute the complete trading simulation pipeline.
@@ -89,6 +90,8 @@ class TrainingSimulator:
                                       If None, results are not saved to disk.
             run_trading - debug flag - if false run only analysis
 
+            reload_all_data - reload all data if true , otherwise - read
+
         Raises:
             FileNotFoundError: If required data files are not found
             ValueError: If date range is invalid or data is insufficient
@@ -97,17 +100,23 @@ class TrainingSimulator:
         # STEP 1: Load and prepare all data sources
         # ==========================================
         print("Loading S&P 500 index data...")
+        if outputpath:
+            os.makedirs(outputpath, exist_ok=True)
+
         snp_df = self.data_loader.load_snp()
 
-        print("Loading individual stock data and complements...")
-        tickers_df, complement_df, actual_min_max_dates, avg_df = self.data_loader.load_all_data()
+        if reload_all_data:
+            print("Loading individual stock data and complements...")
+            tickers_df, complement_df,  avg_df = self.data_loader.load_all_data(min_max_dates = [start_date,end_date] ,get_average_stock = True )
+            if outputpath:
+                pickle.dump([tickers_df, complement_df,  avg_df ],
+                            open(os.path.join(outputpath,'all_data.pickle'), "wb"))
+        else:
+            assert outputpath is not None
+            tickers_df, complement_df, avg_df = pickle.load(open(os.path.join(outputpath,'all_data.pickle'), "rb"))
 
         # Log data availability
         tickers =  list(set(complement_df.ticker).intersection(set(tickers_df.ticker)))
-
-
-
-        print(f"Data available from {actual_min_max_dates[0]} to {actual_min_max_dates[1]}")
         print(f"Loaded {len(set(tickers_df.ticker))} individual stocks")
         print(f"Loaded {len(set(complement_df.ticker))} complement instruments")
         print("Number of tickers valid for simulation: ", len(tickers))
@@ -147,6 +156,7 @@ class TrainingSimulator:
                     tickers_df=tickers_df,
                     complement_df=complement_df,
                     snp_df=snp_df,
+                    avg_df=avg_df,
                     trade_hist_df=trade_hist_df,
                     outputdir=outputpath
                 )
@@ -161,7 +171,9 @@ class TrainingSimulator:
 def main(
         start_date: Optional[str] = None,
         end_date: Optional[str] = None,
-        outputpath: Optional[str] = None
+        outputpath: Optional[str] = None,
+        reload_all_data :bool = True,
+        run_trading :bool = True
 ) -> None:
     """
     Main entry point for the trading simulation.
@@ -189,7 +201,9 @@ def main(
     trading_simulator.run_training_simulation(
         start_date=start_date,
         end_date=end_date,
-        outputpath=outputpath
+        outputpath=outputpath,
+        run_trading=run_trading,
+        reload_all_data=reload_all_data
     )
 
 
@@ -198,14 +212,23 @@ if __name__ == "__main__":
     # SIMULATION CONFIGURATION
     # ==========================================
 
+
+    # Prevent sleep in windows
+    import ctypes
+    ES_CONTINUOUS = 0x80000000
+    ES_SYSTEM_REQUIRED = 0x00000001
+    ctypes.windll.kernel32.SetThreadExecutionState(ES_CONTINUOUS | ES_SYSTEM_REQUIRED)
+
+
+
     # Define simulation parameters
-    START_DATE = '2020-01-01'  # Start of simulation period
+    START_DATE = '2021-01-01'  # Start of simulation period
     END_DATE = '2025-01-01'  # End of simulation period
 
     # Output directory for results (reports, charts, trade history)
-    outname = 'results_dual_field_20250821_222554_take1'
+    output_name = 'results_dual_field_20250821_222554_profit_20prec'  # results_dual_field_20250821_222554
     config = ConfigManager()
-    OUTPUT_PATH =  os.path.join(config.get_path("results_dir"),outname)
+    OUTPUT_PATH =  os.path.join(config.get_path("results_dir"),output_name)
 
     # Ensure output directory exists
     os.makedirs(OUTPUT_PATH, exist_ok=True)
@@ -225,7 +248,9 @@ if __name__ == "__main__":
     main(
         start_date=START_DATE,
         end_date=END_DATE,
-        outputpath=OUTPUT_PATH
+        outputpath=OUTPUT_PATH,
+        run_trading=True,
+        reload_all_data = False
     )
 
     print("=" * 60)
