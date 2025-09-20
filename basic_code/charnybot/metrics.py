@@ -302,7 +302,9 @@ def tradesim_report(tickers_df, complement_df, snp_df,avg_df, trade_hist_df, out
     report.add_figure("Portfolio Holdings Over Time", holdings_fig)
 
     # Add performance per ticker / per buy point summary table
-    report.add_df('Performance Per Ticker', pd.DataFrame(profit_per_ticker))
+    profit_per_ticker_df = pd.DataFrame(profit_per_ticker)
+    profit_per_ticker_df = profit_per_ticker_df.sort_values('trade_profit_sum_ratio')    #profit_per_ticker_df = profit_per_ticker_df.sort_values('ticker')
+    report.add_df('Performance Per Ticker', profit_per_ticker_df)
 
     report.add_df('Performance Per Buy', buy_info_per_ticker)
 

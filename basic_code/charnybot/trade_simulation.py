@@ -21,6 +21,7 @@ from trade_policy import TradingPolicy
 from data_loader import FinancialDataLoaderBase
 from metrics import tradesim_report
 import pickle
+from concurrent.futures import ThreadPoolExecutor, as_completed
 
 class TrainingSimulator:
     """
@@ -70,7 +71,7 @@ class TrainingSimulator:
             end_date: Optional[str] = None,
             outputpath: Optional[str] = None,
             run_trading:bool = True,
-            reload_all_data: bool = True,
+            reload_all_data: bool = False,
     ) -> None:
         """
         Execute the complete trading simulation pipeline.
@@ -90,7 +91,7 @@ class TrainingSimulator:
                                       If None, results are not saved to disk.
             run_trading - debug flag - if false run only analysis
 
-            reload_all_data - reload all data if true , otherwise - read
+            reload_all_data - reload all data tickers data (inputs )  if true , otherwise - read data raw  processed in prev round
 
         Raises:
             FileNotFoundError: If required data files are not found
@@ -173,7 +174,8 @@ def main(
         end_date: Optional[str] = None,
         outputpath: Optional[str] = None,
         reload_all_data :bool = True,
-        run_trading :bool = True
+        run_trading :bool = True,
+        config:  "ConfigManager" = None
 ) -> None:
     """
     Main entry point for the trading simulation.
@@ -194,7 +196,8 @@ def main(
         ... )
     """
     # Initialize configuration manager
-    config = ConfigManager()
+    if config is None:
+        config = ConfigManager()
 
     # Create and run trading simulator
     trading_simulator = TrainingSimulator(config=config)
@@ -205,14 +208,10 @@ def main(
         run_trading=run_trading,
         reload_all_data=reload_all_data
     )
-
-
-if __name__ == "__main__":
-    # ==========================================
-    # SIMULATION CONFIGURATION
-    # ==========================================
-
-
+def run_main(output_name, complements_dir = None, START_DATE = '2021-01-01' ,    END_DATE = '2025-01-01',
+             run_trading=True,
+             reload_all_data=False,
+             ):
     # Prevent sleep in windows
     import ctypes
     ES_CONTINUOUS = 0x80000000
@@ -220,16 +219,13 @@ if __name__ == "__main__":
     ctypes.windll.kernel32.SetThreadExecutionState(ES_CONTINUOUS | ES_SYSTEM_REQUIRED)
 
 
-
-    # Define simulation parameters
-    START_DATE = '2021-01-01'  # Start of simulation period
-    END_DATE = '2025-01-01'  # End of simulation period
-
     # Output directory for results (reports, charts, trade history)
-    output_name = 'results_dual_field_20250821_222554_profit_20prec'  # results_dual_field_20250821_222554
+    output_name = output_name
     config = ConfigManager()
-    OUTPUT_PATH =  os.path.join(config.get_path("results_dir"),output_name)
+    OUTPUT_PATH = os.path.join(config.get_path("results_dir"), output_name)
 
+    if complements_dir is not None:
+        config.set_parameter("file_paths","complements_dir", complements_dir)
     # Ensure output directory exists
     os.makedirs(OUTPUT_PATH, exist_ok=True)
 
@@ -249,10 +245,23 @@ if __name__ == "__main__":
         start_date=START_DATE,
         end_date=END_DATE,
         outputpath=OUTPUT_PATH,
-        run_trading=True,
-        reload_all_data = False
+        run_trading=run_trading,
+        reload_all_data=reload_all_data,
+        config = config
     )
 
     print("=" * 60)
     print("SIMULATION COMPLETED")
     print("=" * 60)
+
+
+if __name__ == "__main__":
+    # ==========================================
+    # SIMULATION CONFIGURATION
+    # ==========================================
+
+    #run_main(output_name='fulldata2', complements_dir='fulldata2')
+    run_main(output_name='all_data',complements_dir = 'all_data',run_trading = False,reload_all_data= True )
+    #run_main(output_name='results_dual_field_20250821_222554', complements_dir='results_dual_field_20250821_222554',run_trading = False)
+
+
