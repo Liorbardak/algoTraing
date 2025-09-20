@@ -64,13 +64,48 @@ def plot_ticker(ticker,stocks_df, complement_df , trade_df):
     ax1.grid(True, alpha=0.3)
     ax1.legend()
     ax1.grid(True)
-    #ax1.set_ylim(80, 230)
+
+    # Draw buying and selling points
+    is_in_prtofolio = (trade_df[ticker].values != 0).astype(int)
+    is_in_prtofolio = np.hstack([is_in_prtofolio, [0]])
+
+
+    buy_points = np.where((is_in_prtofolio[:-1] == 0) & (is_in_prtofolio[1:] == 1))[0]
+    sell_points = np.where((is_in_prtofolio[:-1] == 1) & (is_in_prtofolio[1:] == 0))[0]
+
+    for buy_point, sell_point in zip(buy_points,sell_points):
+        buy_Date = trade_df.Date.values[buy_point]
+        sell_Date = trade_df.Date.values[sell_point]
+
+        ticker_buy_price = stocks_df[stocks_df.Date.values == buy_Date].Close.values[0]
+        ticker_sell_price = stocks_df[stocks_df.Date.values == sell_Date].Close.values[0]
+
+        ax1.plot(buy_Date, ticker_buy_price,marker='o', markersize=6, color='green', linewidth=2)
+        ax1.plot(sell_Date, ticker_sell_price, marker='x',markersize=6, color='red',linewidth=2)
+
+        profit = np.round((ticker_sell_price -ticker_buy_price) / ticker_buy_price * 100,1)
+        #draw profit in middle of arc connecting buy and sell points
+        # Get midpoint coordinates
+        mid_date =  trade_df.Date.values[(buy_point+sell_point)//2]
+        mid_price = (ticker_sell_price + ticker_buy_price) / 2
+
+        # Add some vertical offset for better visibility
+        price_range = ticker_sell_price - ticker_buy_price
+        offset = abs(price_range) * 0.1  # 10% offset
+
+        ax1.annotate(f'{profit}%',
+                     xy=(mid_date, mid_price + offset),
+                     ha='center', va='bottom',
+                     fontsize=12, fontweight='bold',
+                     bbox=dict(boxstyle='round,pad=0.3', facecolor='yellow', alpha=0.7))
 
     # Plot 2: Portfolio Percentage
     if ticker in trade_df.keys():
         portfolio_percentages = trade_df[ticker] /trade_df.total_value
     else:
         portfolio_percentages = trade_df.total_value*0
+
+
 
     ax2.fill_between(trade_df.Date,portfolio_percentages, alpha=0.6, color='lightblue', label='Portfolio %')
     ax2.plot(trade_df.Date,portfolio_percentages, 'darkblue', linewidth=1)
@@ -85,14 +120,6 @@ def plot_ticker(ticker,stocks_df, complement_df , trade_df):
     analyst_dates =complement_df.Date
     ax3.bar(analyst_dates, complement_df.number_of_analysts_with_compliments, width,
             color='lightcoral', alpha=0.7, label='Number analysts with compliments')
-    #ax3.bar(analyst_dates, complement_df.number_of_analysts_comp_1, width,
-    #        color='lightcoral', alpha=0.7, label='Level 1')
-    #ax3.bar(analyst_dates,complement_df.number_of_analysts_comp_2, width,
-    #        bottom=complement_df.number_of_analysts_comp_1,
-    #        color='lightblue', alpha=0.7, label='Level 2')
-    #ax3.bar(analyst_dates, complement_df.number_of_analysts_comp_3, width,
-    #        bottom=complement_df.number_of_analysts_comp_2,
-    #        color='lightgreen', alpha=0.7, label='Level 3')
 
     # Add total analysts bar (outline)
     ax3.bar(analyst_dates, complement_df.total_number_of_analysts, width,
@@ -106,7 +133,6 @@ def plot_ticker(ticker,stocks_df, complement_df , trade_df):
     ax3.grid(True)
     # Format x-axis
 
-    #ax3.xaxis.set_major_locator(mdates.YearLocator())
     ax3.xaxis.set_major_locator(mdates.MonthLocator(interval=3, bymonthday=1))
     ax3.xaxis.set_major_formatter(mdates.DateFormatter('%Y-%m-%d'))
 

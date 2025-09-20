@@ -23,6 +23,10 @@ class FinancialDataLoaderBase:
         ma_150_diff = np.diff(stock_df['ma_150'].values)
         stock_df['ma_150_slop'] = np.hstack((ma_150_diff[0], ma_150_diff))
         stock_df['rsi_14'] = talib.RSI(stock_df['Close'], timeperiod=14)
+        stock_df['ma_rsi_14'] = talib.SMA(stock_df['rsi_14'].values, timeperiod=14)
+        stock_df['ATR_14'] = talib.ATR(stock_df['High'].values, stock_df['Low'].values, stock_df['Close'].values, timeperiod=14)
+
+
         return stock_df
 
     def average_stock(self, all_df):
@@ -82,7 +86,7 @@ class FinancialDataLoaderBase:
                 if len(new_tickers) > 0:
                     # buy new tickers
                     tickers_score = {new_ticker: 100 for new_ticker in new_tickers}
-                    trader.buy(date, tickers_score, tickers_df_per_date)
+                    trader.buy(date, tickers_score, tickers_df_per_date, 1.0)
 
                 total_val = trader.portfolio.get_total_value()
                 avg_df_rows.append(
@@ -110,6 +114,8 @@ class FinancialDataLoaderBase:
             except:
                 print(f"Could not load {ticker}")
                 tickers_not_found.append(ticker)
+                continue
+
             for kl in [k for k in df.keys() if 'Unnamed' in k]:
                 df = df.drop(kl, axis=1)
 
@@ -139,13 +145,14 @@ class FinancialDataLoaderBase:
         """
         Load historical complements  data
         """
+        complements_dir = os.path.join(self.config.get_path("complements_base_dir"),self.config.get_path("complements_dir"))
         if tickers is None:
             # get all tickers that their earning has been analyzed
-            tickers = sorted(set([re.match(r'^([A-Za-z]+)', file).group(1).upper() for file in os.listdir(self.config.get_path("complements_dir"))]))
+            tickers = sorted(set([re.match(r'^([A-Za-z]+)', file).group(1).upper() for file in os.listdir(complements_dir)]))
 
         dfs = []
         for ticker in tickers:
-            comp_file = os.path.join(self.config.get_path("complements_dir"), ticker + '_compliment_summary.json')
+            comp_file = os.path.join(complements_dir, ticker + '_compliment_summary.json')
             if not os.path.isfile(comp_file):
                 print('No compliment data for ticker {}'.format(ticker))
                 continue
