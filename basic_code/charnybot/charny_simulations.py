@@ -107,7 +107,8 @@ def plot_ticker(ticker,stocks_df, complement_df , trade_df):
 
 
 
-def charny_sim1(inpath = "C:/Users/dadab/projects/algotrading/results/trading_sim/all_data"):
+def charny_sim1(inpath = "C:/Users/dadab/projects/algotrading/results/trading_sim/all_data",
+                sim_type = "in_portfolio"):
     tickers_df, complement_df, avg_df = pickle.load(open(os.path.join(inpath, 'all_data.pickle'), "rb"))
 
     trade_hist_df = pd.read_csv(os.path.join(inpath, 'trade_simulation_results.csv'))
@@ -122,9 +123,12 @@ def charny_sim1(inpath = "C:/Users/dadab/projects/algotrading/results/trading_si
 
     tickers_that_were_not_in_portfolio = list(set(all_tickers) -  set(tickers_that_were_in_portfolio))
 
-
-    tickers = sorted(tickers_that_were_in_portfolio)
-    #tickers = sorted(tickers_that_were_not_in_portfolio[:577])
+    if sim_type ==  "in_portfolio":
+        tickers = sorted(tickers_that_were_in_portfolio)
+    else:
+        #tickers = sorted(tickers_that_were_not_in_portfolio[:577])
+        dd = pd.read_csv('C:/Users/dadab/projects/charny_not_in_portfolio.csv')
+        tickers = sorted(list(set(dd.ticker.values)))
 
     info_rows = []
     for ticker in tqdm(tickers, desc="tickers",position=0,  leave=True):
@@ -164,12 +168,18 @@ def charny_sim1(inpath = "C:/Users/dadab/projects/algotrading/results/trading_si
                     number_of_analysts_with_compliments = np.nan
 
                     mask = df_comp_ticker_dates["date"].values <= df_ticker.Date.values[buying_point]
-                    closest_complement_date_before = df_comp_ticker.loc[mask, "date"].max()
+                    dates_before  = (df_comp_ticker.loc[mask, "date"].values)
+                    if len(dates_before) == 0:
+                        continue
+                    closest_complement_date_before =np.max(dates_before)
                     mask = df_comp_ticker_dates["date"].values > df_ticker.Date.values[buying_point]
-                    closest_complement_date_after = df_comp_ticker.loc[mask, "date"].min()
+                    dates_after = (df_comp_ticker.loc[mask, "date"].values)
+                    if len(dates_after) == 0:
+                        continue
+                    closest_complement_date_after = np.min(dates_after)
 
 
-                    if (type(closest_complement_date_before) == str) & (type(closest_complement_date_after) == str):
+                    if (type(closest_complement_date_before) == str) & (type(closest_complement_date_after) == str) :
                         # Verify that the complements date is not too far
                         buy_date = np.datetime64(df_ticker.Date.values[buying_point])
                         complements_date_before = np.datetime64(closest_complement_date_before)
@@ -252,22 +262,50 @@ def charny_sim1(inpath = "C:/Users/dadab/projects/algotrading/results/trading_si
                             'ma_150_slop': df_ticker.ma_150_slop.values[buying_point],
                            }
 
-                    # Calculate days to profit
+                    # Calculate days to profit when using ATR criteria
                     ATRprec = ATR / buy_price
                     for profit_ATR in np.arange(0.5,10,0.5):
                         target_price = buy_price*(1+profit_ATR*ATRprec)
                         sell_inds = np.where(df_ticker_buy_to_quarter_end.Close.values >= target_price)[0]
                         if len(sell_inds) > 0:
-                            row[f"days from buy to ATR{profit_ATR} profit"] = sell_inds[0]
+                            sell_date = df_ticker_buy_to_quarter_end.Date.values[sell_inds[0]]
+                            time_diff_days = (sell_date - buy_date) // np.timedelta64(1, 'D')
+                            row[f"days from buy to ATR{profit_ATR} profit"] = time_diff_days
                         else:
                             row[f"days from buy to ATR{profit_ATR} profit"] = -1
+
+                    # Calculate hv at selling dates when  using ATR criteria
+                    ATRprec = ATR / buy_price
+                    for profit_ATR in np.arange(0.5, 10, 0.5):
+                        target_price = buy_price * (1 + profit_ATR * ATRprec)
+                        sell_inds = np.where(df_ticker_buy_to_quarter_end.Close.values >= target_price)[0]
+                        if len(sell_inds) > 0:
+                            row[f"HV ATR{profit_ATR}"] = df_ticker_buy_to_quarter_end.hv.values[sell_inds[0]]
+                        else:
+                            row[f"HV ATR{profit_ATR}"] = -1
+
+                    row[f"last day of quarter price"] = df_ticker_buy_to_quarter_end.Close.values[-1]
+                    row[f"last day of quarter HV"] = df_ticker_buy_to_quarter_end.hv.values[-1]
+
+                    # Calculate close price to profit when using ATR criteria
+                    ATRprec = ATR / buy_price
+                    for profit_ATR in np.arange(0.5, 10, 0.5):
+                        target_price = buy_price * (1 + profit_ATR * ATRprec)
+                        sell_inds = np.where(df_ticker_buy_to_quarter_end.Close.values >= target_price)[0]
+                        if len(sell_inds) > 0:
+                            row[f"Close price ATR{profit_ATR}"] =  df_ticker_buy_to_quarter_end.Close.values[sell_inds[0]]
+                        else:
+                            row[f"Close price ATR{profit_ATR}"] = -1
 
 
                     info_rows.append(row)
 
 
     df = pd.DataFrame(info_rows)
-    df.to_csv('charny_in_portfolio.csv')
+    if sim_type == 'in_portfolio':
+        df.to_csv('charny_in_portfolio.csv')
+    else:
+        df.to_csv('charny_not_in_portfolio.csv')
 
 def report_data(infile , inpath = "C:/Users/dadab/projects/algotrading/results/trading_sim/all_data"):
     tickers_df, complement_df, avg_df = pickle.load(open(os.path.join(inpath, 'all_data.pickle'), "rb"))
@@ -280,7 +318,9 @@ def report_data(infile , inpath = "C:/Users/dadab/projects/algotrading/results/t
         plt.close('all')
     report.to_file(infile + '.html')
 if __name__ == "__main__":
+    np.random.seed(12345)
     # report_data('charny_in_portfolio')
     # report_data('charny_not_in_portfolio')
 
-    charny_sim1()
+    charny_sim1(sim_type = "in_portfolio")
+    charny_sim1(sim_type="not_in_portfolio")
