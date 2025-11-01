@@ -9,7 +9,7 @@
     "complements_dir": "results_dual_field_20250821_222554"
   },
   "policy": {
-    "policy_name": "MostBasic"
+    "policy_name": "RSIPolicy"
   },
     "portfolio": {
     "max_portion_per_ticker" : 0.2,
@@ -18,10 +18,14 @@
   "buy": {
     "min_complements_th1": 5,
     "min_complements_th2": 3,
-    "complements_portion_th2": 0.5
+    "complements_portion_th2": 0.5,
+    "rsi_prec_buy": 20,
+    "new_buy_factor_of_average" : 2.0
   },
   "sell": {
     "max_profit_to_sell": 1000000,
-    "sell_return": "reference_index_and_stocks"
+    "rsi_prec_sell": 20,
+    "buy_with_sell_return": "reference_index",
+    "sell_return_cash_to_reference_index_ratio": 1.0
   }
 }

@@ -41,6 +41,7 @@ class Position:
     last_updated: datetime
     last_buy_price: float
     last_buy_date: datetime
+    last_buy_by_score_date: datetime
     last_buy_quantity: float
 
     @property
@@ -100,7 +101,8 @@ class Portfolio:
                 last_updated=None,
                 last_buy_price =0,
                 last_buy_quantity=0,
-                last_buy_date=None
+                last_buy_date=None,
+                last_buy_by_score_date=None
             )
 
         # Performance tracking
@@ -118,16 +120,29 @@ class Portfolio:
         else:
             return None
 
-    def buy_default_index_with_all_cash(self , default_index_price , date ):
+    def get_last_buy_date(self,ticker: str):
+        '''
+        Get ticker
+        :param ticker:
+        :return:
+        '''
+        if ticker in self.positions:
+             return self.positions[ticker].last_buy_date
+        else:
+            return None
+
+    def buy_default_index_with_free_cash(self , default_index_price , date , portion_to_buy = 1.0 ):
         '''
         Buy default index with all the free cash
         '''
         if self.cash > 0:
-            self.default_index.quantity += self.cash / default_index_price
+            default_index_to_buy = (self.cash / default_index_price) * portion_to_buy
+            self.default_index.quantity += default_index_to_buy
             # Update default
             self.default_index.current_price =  default_index_price
             self.default_index.last_updated = date
-            self.cash = 0
+            # Update free cash
+            self.cash -= default_index_to_buy*default_index_price
 
     def sell_all_default_index(self , default_index_price , date ):
         '''
@@ -138,6 +153,21 @@ class Portfolio:
         self.default_index.current_price = default_index_price
         self.default_index.last_updated = date
 
+    def print(self , date):
+        '''
+        Debug printing
+        :param date:
+        :return:
+        '''
+        total_value = self.get_total_value()
+        cash = self.cash
+        reference_index = self.default_index.market_value
+
+        formatted_portfolio_weights = {k: f"{v:.3e}" if abs(v) < 1e-3 else f"{v:.3f}"
+
+                                       for k, v in self.get_portfolio_weights().items()}
+
+        print(f"Portfolio on {str(date)[:10]}: cash {np.round(cash / total_value,2)} snp {np.round(reference_index / total_value,2)}  {len(formatted_portfolio_weights)}  {formatted_portfolio_weights}")
 
     def tickers(self) -> List[str]:
         """
@@ -191,6 +221,7 @@ class Portfolio:
                 'last_buy_price' : position.last_buy_price,
                 'last_buy_quantity': position.last_buy_quantity,
                 'last_buy_date': position.last_buy_date,
+                'last_buy_by_score_date' : position.last_buy_by_score_date,
                 'weight': position.market_value / self.get_total_value() if self.get_total_value() > 0 else 0
             }
         return summary
@@ -225,7 +256,7 @@ class Portfolio:
         self._take_snapshot()
 
     def buy_stock(self, ticker: str, quantity: float, price: float,
-                  timestamp) -> bool:
+                  timestamp, complement_date = None) -> bool:
         """
         Buy a stock
 
@@ -276,15 +307,24 @@ class Portfolio:
 
         else:
             # Create new position
+            if complement_date:
+                last_buy_by_score_date = complement_date
+            else:
+                #
+                last_buy_by_score_date = None
+
             self.positions[ticker] = Position(
                 ticker=ticker,
                 quantity=quantity,
                 current_price=price,
                 last_updated=timestamp,
                 last_buy_date=timestamp,
+                last_buy_by_score_date=last_buy_by_score_date,
                 last_buy_price = price,
                 last_buy_quantity = quantity
             )
+
+
 
         # Record the trade
         self.trade_history.append(order)
@@ -615,34 +655,3 @@ Positions ({metrics.get('num_positions', 0)} stocks):
         plt.show()
 
 
-# Example usage and testing
-if __name__ == "__main__":
-    # Create a portfolio
-    portfolio = Portfolio(initial_cash=100000, portfolio_name="Test Portfolio")
-
-    # Simulate some trades
-    portfolio.buy_stock("AAPL", 100, 150.0)
-    portfolio.buy_stock("MSFT", 50, 300.0)
-    portfolio.buy_stock("GOOGL", 25, 2800.0)
-
-    # Update prices
-    portfolio.update_prices({
-        "AAPL": 155.0,
-        "MSFT": 310.0,
-        "GOOGL": 2850.0
-    }, default_index_value=105.0)
-
-    # Sell some shares
-    portfolio.sell_stock("AAPL", 25, 155.0)
-
-    # Print summary
-    print(portfolio.get_portfolio_summary())
-
-    # Save history
-    portfolio.save_history("test_portfolio_history.pkl")
-
-    # Create new portfolio and load history
-    new_portfolio = Portfolio()
-    new_portfolio.load_history("test_portfolio_history.pkl")
-    print("\nLoaded portfolio summary:")
-    print(new_portfolio.get_portfolio_summary())

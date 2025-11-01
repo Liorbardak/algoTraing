@@ -66,12 +66,12 @@ def plot_ticker(ticker,stocks_df, complement_df , trade_df):
     ax1.grid(True)
 
     # Draw buying and selling points
-    is_in_prtofolio = (trade_df[ticker].values != 0).astype(int)
-    is_in_prtofolio = np.hstack([is_in_prtofolio, [0]])
+    is_in_portfolio = (trade_df[ticker].values != 0).astype(int)
+    is_in_portfolio = np.hstack([is_in_portfolio, [0]])
 
 
-    buy_points = np.where((is_in_prtofolio[:-1] == 0) & (is_in_prtofolio[1:] == 1))[0]
-    sell_points = np.where((is_in_prtofolio[:-1] == 1) & (is_in_prtofolio[1:] == 0))[0]
+    buy_points = np.where((is_in_portfolio[:-1] == 0) & (is_in_portfolio[1:] == 1))[0]
+    sell_points = np.where((is_in_portfolio[:-1] == 1) & (is_in_portfolio[1:] == 0))[0]
 
     for buy_point, sell_point in zip(buy_points,sell_points):
         buy_Date = trade_df.Date.values[buy_point]

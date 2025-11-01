@@ -98,7 +98,7 @@ class TradingPolicy:
             ValueError: If the requested policy name is not registered
 
         Example:
-            policy = TradingPolicy.create("MostBasic", config, default_index_name='snp')
+            policy = TradingPolicy.create("BasicPolicy", config, default_index_name='snp')
         """
         if name not in cls._registry:
             available_policies = list(cls._registry.keys())
@@ -121,8 +121,9 @@ class TradingPolicy:
         return list(cls._registry.keys())
 
 
-@TradingPolicy.register("MostBasic")
-class TradingPolicyMostBasic(TradingPolicy):
+
+@TradingPolicy.register("BasicPolicy")
+class TradingPolicyBasicPolicy(TradingPolicy):
     """
     Basic momentum-based trading strategy that combines analyst recommendations
     with technical indicators to make buy/sell decisions.
@@ -142,7 +143,7 @@ class TradingPolicyMostBasic(TradingPolicy):
             config: Configuration object containing trading parameters
             default_index_name (str): Name of the default index (e.g., 'snp' for S&P 500)
         """
-        self.name = "MostBasic"
+        self.name = "BasicPolicy"
         self.config = config
         self.portfolio = Portfolio()
         self.default_index_name = default_index_name
@@ -227,6 +228,7 @@ class TradingPolicyMostBasic(TradingPolicy):
             'weighted_score': 0,
             'price_based_score': 0,
             'complement_based_score': 0,
+            'complement_date': None,
             'portfolio_based_score': 0,
             'portfolio_weight': portfolio_weight
         }
@@ -251,7 +253,7 @@ class TradingPolicyMostBasic(TradingPolicy):
         # Find all analyst recommendations for this ticker up to current date
         complements_before_current_time = complement_df[
             (complement_df.ticker == ticker) &
-            (complement_df.Date.values.astype('datetime64[D]') <= np.datetime64(date))
+            (complement_df.Date.values.astype('datetime64[D]') < np.datetime64(date))
             ]
 
         if len(complements_before_current_time) == 0:
@@ -298,6 +300,8 @@ class TradingPolicyMostBasic(TradingPolicy):
             # Analyst recommendations support buying
             # TODO: Implement graduated scoring based on recommendation strength
             ticker_score['complement_based_score'] = 100
+            ticker_score['complement_date'] = last_complement_date
+
 
         # ====================================================================
         # TECHNICAL PRICE-BASED SCORING (Technical Analysis)
@@ -386,35 +390,49 @@ class TradingPolicyMostBasic(TradingPolicy):
         available_position_slots = max_total_positions - current_positions
         new_positions_to_add = min(available_position_slots, len(new_tickers))
 
+        tickers_to_buy_due_to_score = []
         # ====================================================================
         # DETERMINE NEW PORTFOLIO COMPOSITION
         # ====================================================================
         new_portfolio_weights = copy(current_portfolio_weights)
 
-        initial_position_size = self.config.get_parameter('portfolio', 'max_portion_per_ticker')
+        #  Get the portion to buy for new stocks , not in portfolio
+        new_position_size =  self.config.get_parameter('portfolio', 'max_portion_per_ticker')
+
+        if len(current_portfolio_weights):
+            new_buy_factor_of_average = self.config.get_parameter('buy', 'new_buy_factor_of_average')
+            new_position_size = np.minimum(sum(current_portfolio_weights.values()) / len(current_portfolio_weights) * new_buy_factor_of_average, self.config.get_parameter('portfolio', 'max_portion_per_ticker'))
 
         if new_positions_to_add > 0:
+
+
             # Select new tickers to add
             # TODO: Prioritize by weighted_score instead of arbitrary selection
             new_tickers_to_add = new_tickers[:new_positions_to_add]
+            # Calculate position size for new holdings based on current portfolio
+            # Add new positions to portfolio weights
+            for ticker in new_tickers_to_add:
+                new_portfolio_weights[ticker] = new_position_size
+                tickers_to_buy_due_to_score.append(ticker)
 
-            if current_positions > 0:
-                # Calculate position size for new holdings based on current portfolio
-                average_position_size = sum(current_portfolio_weights.values()) / len(current_portfolio_weights)
-                max_position_size = self.config.get_parameter('portfolio', 'max_portion_per_ticker')
-                new_position_size = min(average_position_size, max_position_size)
-
-                # Add new positions to portfolio weights
-                for ticker in new_tickers_to_add:
-                    new_portfolio_weights[ticker] = new_position_size
-            else:
-                # First positions in empty portfolio
-                new_portfolio_weights = {ticker: initial_position_size for ticker in new_tickers_to_add}
+        # ====================================================================
+        # Re-buy stocks inside the portfolio , if they got new recommendations
+        # ====================================================================
+        max_position_size = self.config.get_parameter('portfolio', 'max_portion_per_ticker')
+        rebuy_tickers_complement_date = {}
+        existing_tickers = list(set(tickers_score.keys()).intersection(set(self.portfolio.positions.keys())))
+        for ticker in existing_tickers:
+            last_buy_by_score_date = self.portfolio.positions[ticker].last_buy_by_score_date
+            complement_date = tickers_score[ticker]['complement_date']
+            if last_buy_by_score_date and complement_date and last_buy_by_score_date  != complement_date:
+                new_portfolio_weights[ticker] = min(new_portfolio_weights[ticker] + new_position_size, max_position_size)
+                rebuy_tickers_complement_date[ticker] = complement_date
+               # assert False  , f"  ticker {ticker} needs rebuy  {last_buy_by_score_date} {complement_date} "
 
         # ====================================================================
         # ENFORCE POSITION SIZE LIMITS
         # ====================================================================
-        max_position_size = self.config.get_parameter('portfolio', 'max_portion_per_ticker')
+
         for ticker in new_portfolio_weights.keys():
             new_portfolio_weights[ticker] = min(new_portfolio_weights[ticker], max_position_size)
 
@@ -431,7 +449,7 @@ class TradingPolicyMostBasic(TradingPolicy):
             }
         elif total_weights < 1.0:
             # There's free cash available to buy - what to do ?:
-            if self.config.get_parameter('sell', 'sell_return') == 'reference_index':
+            if self.config.get_parameter('sell', 'buy_with_sell_return') == 'reference_index':
                 # buy reference_index with the remaining cash
                 pass
 
@@ -439,12 +457,12 @@ class TradingPolicyMostBasic(TradingPolicy):
                 # buy other stocks with the remaining cash , upto the portion before the last sell
                 factor =total_ticker_weight_before_sell/total_weights
 
-                if self.config.get_parameter('sell', 'sell_return') == 'reference_index_and_stocks':
+                if self.config.get_parameter('sell', 'buy_with_sell_return') == 'reference_index_and_stocks':
                     # split the remaining cash between other stocks and reference index
                     factor = np.sqrt(factor)
 
                 new_portfolio_weights = {
-                    ticker: np.min([weight * factor,initial_position_size])
+                    ticker: np.min([weight * factor,self.config.get_parameter('portfolio', 'max_portion_per_ticker')])
                     for ticker, weight in new_portfolio_weights.items()
                 }
 
@@ -454,6 +472,7 @@ class TradingPolicyMostBasic(TradingPolicy):
         # ====================================================================
         # EXECUTE PORTFOLIO REBALANCING
         # ====================================================================
+
         total_portfolio_value = self.portfolio.get_total_value()
 
         for ticker, target_weight in new_portfolio_weights.items():
@@ -464,7 +483,7 @@ class TradingPolicyMostBasic(TradingPolicy):
                 # NEW POSITION: Calculate shares to buy
                 target_value = total_portfolio_value * target_weight
                 shares_to_buy = target_value / current_price
-                self.portfolio.buy_stock(ticker, shares_to_buy, current_price, date)
+                self.portfolio.buy_stock(ticker, shares_to_buy, current_price, date , tickers_score[ticker]['complement_date'])
 
             else:
                 # EXISTING POSITION: Rebalance (buy more or sell some)
@@ -473,20 +492,22 @@ class TradingPolicyMostBasic(TradingPolicy):
                 value_change = total_portfolio_value * weight_change
 
                 if value_change > 0:
-                    # Increase position
+                    # Increase position (buy)
+                    # mark that this buy is coming from new complements
+                    new_complement_date = rebuy_tickers_complement_date.get(ticker, None)
+
                     shares_to_buy = value_change / current_price
-                    self.portfolio.buy_stock(ticker, shares_to_buy, current_price, date)
+                    self.portfolio.buy_stock(ticker, shares_to_buy, current_price, date,complement_date = new_complement_date)
+
                 else:
-                    # Decrease position
+                    # Decrease position (sell)
                     shares_to_sell = abs(value_change) / current_price
                     self.portfolio.sell_stock(ticker, shares_to_sell, current_price, date)
 
         # ====================================================================
         # PORTFOLIO VALIDATION
         # ====================================================================
-        # Debug output for monitoring
-        print(f"Portfolio on {date}: {len(self.portfolio.get_portfolio_weights())}  {self.portfolio.get_portfolio_weights()}")
-
+        # # Debug output for monitoring
         # Ensure we haven't created a negative cash position
         assert self.portfolio.cash >= -1e-6, (
             f"Negative cash position detected: {self.portfolio.cash} on {date}"
@@ -615,9 +636,17 @@ class TradingPolicyMostBasic(TradingPolicy):
         # ====================================================================
         # CASH MANAGEMENT: REINVEST REMAINING CASH
         # ====================================================================
-        # Put any remaining cash back into the default index
+        # Put all/part of  remaining cash back into the default index
         # This ensures we're always fully invested
-        self.portfolio.buy_default_index_with_all_cash(current_index_price, date)
+
+        cash_reference_index_ratio = self.config.get_parameter('sell', 'sell_return_cash_to_reference_index_ratio')
+
+        self.portfolio.buy_default_index_with_free_cash(current_index_price, date , portion_to_buy=cash_reference_index_ratio)
+
+        # Debug output for monitoring
+        self.portfolio.print(date)
+
+
 
     def trade(self, tickers_df, complement_df, default_index, outputpath=None,
               start_date=None, end_date=None):
@@ -678,9 +707,263 @@ class TradingPolicyMostBasic(TradingPolicy):
             self.portfolio.history_to_csv(output_file)
             print(f"Trading simulation results saved to: {output_file}")
 
+@TradingPolicy.register("RSIPolicy")
+class TradingPolicyRSI(TradingPolicyBasicPolicy):
+    """
+    Basic momentum-based trading strategy that combines analyst recommendations
+    with technical indicators to make buy/sell decisions.
+
+    This strategy uses:
+    - Analyst complement data (recommendations) for fundamental analysis
+    - Moving averages (MA150, MA200) for technical analysis
+    - Portfolio weight management for risk control
+    - Momentum indicators (price above moving averages, positive slope)
+    """
+
+    def __init__(self, config, default_index_name='snp'):
+        """
+        Initialize the trading policy with configuration parameters.
+
+        Args:
+            config: Configuration object containing trading parameters
+            default_index_name (str): Name of the default index (e.g., 'snp' for S&P 500)
+        """
+        self.name = "BasicPolicy"
+        self.config = config
+        self.portfolio = Portfolio()
+        self.default_index_name = default_index_name
+
+    def score_ticker(self, date, ticker, tickers_df, complement_df, portfolio_weight):
+        """
+        Comprehensive scoring system for individual tickers based on multiple factors.
+
+        The scoring considers:
+        1. Portfolio-based constraints (position size limits)
+        2. Analyst complement data (recommendation quality and recency)
+        3. Technical price indicators (moving averages, momentum)
+
+        Args:
+            date: Date for evaluation
+            ticker: Stock ticker symbol
+            tickers_df: Price and technical data
+            complement_df: Analyst recommendation data
+            portfolio_weight: Current weight of ticker in portfolio (0 if not held)
+
+        Returns:
+            dict: Detailed scoring breakdown with weighted final score
+        """
+        # Initialize scoring structure with all components
+        ticker_score = {
+            'weighted_score': 0,
+            'price_based_score': 0,
+            'complement_based_score': 0,
+            'complement_based_score': 0,
+            'complement_date': None,
+            'portfolio_based_score': 0,
+            'portfolio_weight': portfolio_weight
+        }
+
+        # ====================================================================
+        # PORTFOLIO-BASED SCORING (Risk Management)
+        # ====================================================================
+        # Check if current position size exceeds maximum allowed per ticker
+        max_portion_per_ticker = self.config.get_parameter('portfolio', 'max_portion_per_ticker')
+
+        if portfolio_weight > max_portion_per_ticker:
+            # Position is too large - reject immediately to prevent overconcentration
+            return ticker_score
+        else:
+            # Position size is acceptable - pass this criterion
+            # TODO: Implement graduated scoring based on position size
+            ticker_score['portfolio_based_score'] = 100
+
+        # ====================================================================
+        # ANALYST COMPLEMENT-BASED SCORING (Fundamental Analysis)
+        # ====================================================================
+        # Find all analyst recommendations for this ticker up to current date
+        complements_before_current_time = complement_df[
+            (complement_df.ticker == ticker) &
+            (complement_df.Date.values.astype('datetime64[D]') < np.datetime64(date))
+            ]
+
+        if len(complements_before_current_time) == 0:
+            # No analyst coverage available - too risky to invest
+            return ticker_score
+
+        # Get the most recent analyst recommendations
+        latest_complements = complements_before_current_time[
+            complements_before_current_time.Date == complements_before_current_time.Date.max()
+            ]
+
+        last_complement_date = pd.Timestamp(latest_complements.Date.values[0], tz='UTC')
+
+        # Check if recommendations are recent enough to be relevant
+        if (date - last_complement_date) > pd.Timedelta(days=90):
+            # Recommendations are stale (>90 days old) - don't rely on them
+            # TODO: Consider graduated scoring based on recency
+            return ticker_score
+
+        # Extract analyst recommendation metrics
+        positive_analysts = latest_complements.number_of_analysts_comp.values[0]
+        total_analysts = latest_complements.total_number_of_analysts.values[0]
+
+        # Get configuration thresholds for buy decisions
+        min_complements_th1 = self.config.get_parameter('buy', 'min_complements_th1')
+        min_complements_th2 = self.config.get_parameter('buy', 'min_complements_th2')
+        complements_portion_th2 = self.config.get_parameter('buy', 'complements_portion_th2')
+
+        # Calculate analyst consensus strength
+        positive_analyst_ratio = positive_analysts / (total_analysts + 1e-6)
+        strong_consensus = positive_analyst_ratio > complements_portion_th2
+
+        # Determine if analyst recommendations meet buy criteria
+        # Two paths: either strong consensus OR high absolute number of recommendations
+        complement_buy_signal = (
+                ((positive_analysts >= min_complements_th2) & strong_consensus) |
+                (positive_analysts >= min_complements_th1)
+        )
+
+        if not complement_buy_signal:
+            # Analyst recommendations don't meet our criteria
+            return ticker_score
+        else:
+            # Analyst recommendations support buying
+            # TODO: Implement graduated scoring based on recommendation strength
+            ticker_score['complement_based_score'] = 100
+            ticker_score['complement_date'] = last_complement_date
+
+        # ====================================================================
+        # TECHNICAL PRICE-BASED SCORING (Technical Analysis)
+        # ====================================================================
+        # Get historical price data for technical analysis
+        ticker_price_data = tickers_df[
+            (tickers_df.ticker == ticker) & (tickers_df.Date <= date)
+            ]
+
+        if(len(ticker_price_data) == 0):
+            print(f'no data for {ticker} in {date} ')
+            return ticker_score
+
+
+        # RSI vs RSI MA
+        ma_rsi_14 = ticker_price_data.ma_rsi_14.values[-1]
+        rsi_14 = ticker_price_data.rsi_14.values[-1]
+
+        technical_buy_signal_rsi = rsi_14 < ma_rsi_14 * (1 -  self.config.get_parameter('buy', 'rsi_prec_buy') / 100)
+
+        # ################################################
+        # ##  Add MA condition
+        # # Price position relative to moving averages (trend strength)
+        # ma_150_slope_positive = ticker_price_data.ma_150_slop.values[-1] > 0
+        #
+        # current_price = ticker_price_data.Close.values[-1]
+        # ma_150_current = ticker_price_data.ma_150.values[-1]
+        # ma_200_current = ticker_price_data.ma_200.values[-1]
+        #
+        # # Different criteria based on how recent the analyst recommendations are
+        # if (date - last_complement_date) < pd.Timedelta(days=2):
+        #     # Recent recommendations: Check if price is above MA150 today
+        #     price_above_ma150 = ma_150_current < current_price
+        # else:
+        #     # Older recommendations: Require sustained strength (10-day period above MA150)
+        #     price_above_ma150 = np.all(
+        #         ticker_price_data.ma_150.values[-10:] < ticker_price_data.Close.values[-10:]
+        #     )
+        #
+        # # Long-term trend confirmation: price above 200-day moving average
+        # price_above_ma200 = ma_200_current < current_price
+        #
+        # # Combine all technical conditions for buy signal
+        # technical_buy_signal_ma = (
+        #         price_above_ma200 &
+        #         price_above_ma150 &
+        #         ma_150_slope_positive
+        # )
+        # technical_buy_signal = technical_buy_signal_rsi & technical_buy_signal_ma
+        # #######################################################################################
+        technical_buy_signal = technical_buy_signal_rsi
+        if technical_buy_signal:
+            # Technical indicators support buying
+            # TODO: Implement graduated scoring based on technical strength
+            ticker_score['price_based_score'] = 100
+
+        # ====================================================================
+        # FINAL SCORE CALCULATION
+        # ====================================================================
+        # Use minimum score across all categories (all must pass)
+        # This ensures we only buy when ALL criteria are met
+        # TODO: Consider weighted average instead of minimum for more nuanced scoring
+        ticker_score['weighted_score'] = np.min([
+            ticker_score['portfolio_based_score'],
+            ticker_score['price_based_score'],
+            ticker_score['complement_based_score']
+        ])
+
+        return ticker_score
+
+
+    def sell(self, date, ticker, tickers_df, complement_df =None, portfolio_weight = None):
+        """
+        Evaluate whether to sell a ticker based on technical exit criteria.
+
+        This method implements a simple moving average crossover exit strategy:
+        - Sell when price closes below MA200 for 2 consecutive days
+
+        Args:
+            date: Current trading date
+            ticker: Stock ticker to evaluate for selling
+            tickers_df: Historical price data
+            complement_df: Analyst data (not used in current implementation)
+            portfolio_weight: Current portfolio weight (not used in current implementation)
+        """
+        if not self.portfolio.is_in(ticker):
+            # Not holding this ticker - nothing to sell
+            return
+
+        # ====================================================================
+        # TECHNICAL EXIT CRITERIA
+        # ====================================================================
+        # Get historical price data for this ticker
+        ticker_data = tickers_df[tickers_df.ticker == ticker].sort_values('Date')
+        ma_rsi_14 = ticker_data.ma_rsi_14.values
+        rsi_14 = ticker_data.rsi_14.values
+
+        prices = ticker_data.Close.values
+
+        # Find current date index in the data
+        current_index = np.where(ticker_data.Date == date)[0][0]
+
+
+        sell_signal = rsi_14[current_index] > ma_rsi_14[current_index] * (1 + self.config.get_parameter('sell', 'rsi_prec_sell') / 100)
+
+
+
+
+
+        if sell_signal:
+            # Execute complete exit from this position
+            current_price = prices[current_index]
+            shares_to_sell = self.portfolio.positions[ticker].quantity
+            self.portfolio.sell_stock(ticker, shares_to_sell, current_price, date)
+            return
+
+        # Partial sell due to high profits
+        max_profit_to_sell = self.config.get_parameter('sell', 'max_profit_to_sell')
+        if self.portfolio.positions[ticker].last_buy_price > 0:
+            current_value = self.portfolio.positions[ticker].current_price*self.portfolio.positions[ticker].quantity
+            last_buy_value = self.portfolio.positions[ticker].last_buy_price * self.portfolio.positions[ticker].last_buy_quantity
+            profit =  (current_value - last_buy_value) / last_buy_value
+
+            if profit*100 > max_profit_to_sell:
+                # Partial sell - sell only the profit
+                current_price = prices[current_index]
+                shares_to_sell = self.portfolio.positions[ticker].quantity* ( profit / (1+profit) )
+                self.portfolio.sell_stock(ticker, shares_to_sell, current_price, date)
+
+
 
 if __name__ == "__main__":
 
-    policy = TradingPolicy.create("MostBasic", config= ConfigManager())
+    policy = TradingPolicy.create("BasicPolicy", config= ConfigManager())
     print(policy.name)
 

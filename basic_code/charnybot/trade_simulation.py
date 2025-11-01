@@ -260,8 +260,13 @@ if __name__ == "__main__":
     # SIMULATION CONFIGURATION
     # ==========================================
 
-    #run_main(output_name='fulldata2', complements_dir='fulldata2')
-    run_main(output_name='all_data',complements_dir = 'all_data',run_trading = False,reload_all_data= True )
-    #run_main(output_name='results_dual_field_20250821_222554', complements_dir='results_dual_field_20250821_222554',run_trading = False)
+    #run_main(output_name='all_data',complements_dir = 'all_data',run_trading = True,reload_all_data= False )
+
+    run_main(output_name='all_data', complements_dir='all_data', run_trading=True, reload_all_data=False)
+
+
+    # run_main(output_name='set2', complements_dir='fulldata2',run_trading = True,reload_all_data= False )
+    # #
+    # run_main(output_name='set1', complements_dir='results_dual_field_20250821_222554',run_trading = True,reload_all_data= False )
 
 

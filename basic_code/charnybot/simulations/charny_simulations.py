@@ -7,7 +7,16 @@ from tqdm import tqdm
 import copy
 import yfinance as yf
 from datetime import datetime, timedelta
-from utils.report_utils import HtmlReport
+# At the top of your script
+import sys
+from pathlib import Path
+
+# Add parent package to path
+sys.path.insert(0, str(Path(__file__).parent.parent.parent.parent))
+
+# Now you can use absolute imports
+from basic_code.charnybot.utils.report_utils import HtmlReport
+#from ..utils.report_utils import HtmlReport
 import matplotlib.dates as mdates
 
 def plot_ticker(ticker,stocks_df, complement_df , trade_df):
@@ -107,33 +116,82 @@ def plot_ticker(ticker,stocks_df, complement_df , trade_df):
 
 
 
-def charny_sim1(inpath = "C:/Users/dadab/projects/algotrading/results/trading_sim/all_data",
+def charny_sim1(inpath = "C:/Users/dadab/projects/algotrading/results/trading_sim/all_data/basealgo",
                 sim_type = "in_portfolio"):
+    np.random.seed(12345)
+
+
+
     tickers_df, complement_df, avg_df = pickle.load(open(os.path.join(inpath, 'all_data.pickle'), "rb"))
 
     trade_hist_df = pd.read_csv(os.path.join(inpath, 'trade_simulation_results.csv'))
 
     all_tickers = list(set(complement_df.ticker))
 
-   # Choose tickers
+    # Get snp
+    start = np.min(tickers_df.Date) -timedelta(days=250)
+    end =np.max(tickers_df.Date) +timedelta(days=20)
+
+
+    ticker = '^GSPC'
+    data = yf.download('^GSPC', start=start, end=end, auto_adjust=False)
+
+    snp_df = pd.DataFrame()
+    snp_df['Date'] = data[('Close', ticker)].index
+    for k in ['High', 'Low', 'Open', 'Close', 'Volume']:
+        snp_df[k] = data[(k, ticker)].values
+    snp_df['ma_150'] = snp_df['Close'].rolling(window=150).mean()
+    ma_diff = np.diff(snp_df['ma_150'].values)
+    snp_df['ma_150_slop'] = np.hstack((ma_diff[0], ma_diff))
+    snp_df['ma_50'] = snp_df['Close'].rolling(window=50).mean()
+    ma_diff = np.diff(snp_df['ma_50'].values)
+    snp_df['ma_50_slop'] = np.hstack((ma_diff[0], ma_diff))
+
+    # Choose tickers
     tickers_that_were_in_portfolio = sorted([
         ticker for ticker in trade_hist_df.keys()
         if ticker in all_tickers
     ])
 
-    tickers_that_were_not_in_portfolio = list(set(all_tickers) -  set(tickers_that_were_in_portfolio))
 
-    if sim_type ==  "in_portfolio":
+
+    if sim_type ==  "all":
+        tickers = all_tickers
+    elif sim_type ==  "in_portfolio":
         tickers = sorted(tickers_that_were_in_portfolio)
+    elif "not_in_portfolio":
+        tickers_that_were_not_in_portfolio = list(set(all_tickers) - set(tickers_that_were_in_portfolio))
+        tickers = sorted(tickers_that_were_not_in_portfolio)
     else:
-        #tickers = sorted(tickers_that_were_not_in_portfolio[:577])
-        dd = pd.read_csv('C:/Users/dadab/projects/charny_not_in_portfolio.csv')
-        tickers = sorted(list(set(dd.ticker.values)))
+        assert False , "Bad sim_type"
+
 
     info_rows = []
     for ticker in tqdm(tickers, desc="tickers",position=0,  leave=True):
         df_ticker = tickers_df[tickers_df.ticker ==ticker ]
         df_ticker = copy.copy(df_ticker)
+
+        # ADD more stuff
+
+        # SNP
+        snp_ma_150 = np.full(len(df_ticker), -1.0)
+        snp_ma_50 = np.full(len(df_ticker), -1.0)
+        snp_ma_150_slop = np.full(len(df_ticker), -1.0)
+        snp_ma_50_slop = np.full(len(df_ticker), -1.0)
+        for i, date in enumerate(df_ticker['Date'].values):
+            try:
+                snp_ma_150[i] = snp_df[snp_df.Date == date].ma_150.values[0]
+                snp_ma_50[i] = snp_df[snp_df.Date == date].ma_50.values[0]
+                snp_ma_150_slop[i] = snp_df[snp_df.Date == date].ma_150_slop.values[0]
+                snp_ma_50_slop[i] = snp_df[snp_df.Date == date].ma_50_slop.values[0]
+            except:
+                print(f'bad date {ticker} {date}')
+        df_ticker['SNP_ma_150'] = snp_ma_150
+        df_ticker['SNP_ma_150_slop'] = snp_ma_150_slop
+        df_ticker['SNP_ma_50'] = snp_ma_50
+        df_ticker['SNP_ma_50_slop'] = snp_ma_50_slop
+
+
         # Add HV
         # Compute daily log returns
         df_ticker["log_ret"] = np.log(df_ticker["Close"]).diff()
@@ -166,7 +224,7 @@ def charny_sim1(inpath = "C:/Users/dadab/projects/algotrading/results/trading_si
                     # Find closest complements before and after the buying data
                     total_number_of_analysts = np.nan
                     number_of_analysts_with_compliments = np.nan
-
+                    # TODO - change this - should be  mask = df_comp_ticker_dates["date"].values <= df_ticker.Date.values[buying_point]
                     mask = df_comp_ticker_dates["date"].values <= df_ticker.Date.values[buying_point]
                     dates_before  = (df_comp_ticker.loc[mask, "date"].values)
                     if len(dates_before) == 0:
@@ -188,7 +246,7 @@ def charny_sim1(inpath = "C:/Users/dadab/projects/algotrading/results/trading_si
                         days_from_start = (buy_date.astype('datetime64[D]') - complements_date_before.astype('datetime64[D]')).astype(int)
                         days_to_end = (complements_date_after.astype('datetime64[D]') - buy_date.astype('datetime64[D]')).astype(int)
 
-                        if (days_from_start <= 100) & (days_to_end <= 100):
+                        if (days_from_start > 0) & (days_from_start <= 100) & (days_to_end <= 100):
                             # buying date is between 2 dates of complements
                             total_number_of_analysts = df_comp_ticker[df_comp_ticker.date == closest_complement_date_before].total_number_of_analysts.values[0]
                             number_of_analysts_with_compliments = df_comp_ticker[df_comp_ticker.date == closest_complement_date_before].number_of_analysts_with_compliments.values[0]
@@ -205,9 +263,13 @@ def charny_sim1(inpath = "C:/Users/dadab/projects/algotrading/results/trading_si
                             market_cap = df_ticker.MarketCap.values[valid_market_cap_inds[closest_ind[-1]]]
 
                     # Get maximal profit  until the end of the quarter
-                    #end_of_quarter_date = df_ticker.Date.values[buying_point] +  np.timedelta64(days_to_end, 'D')
+                    start_of_quarter_date = complements_date_before.astype('datetime64[D]')
                     end_of_quarter_date = complements_date_after.astype('datetime64[D]')
                     buying_point_date = df_ticker.Date.values[buying_point]
+
+                    df_ticker_start_to_quarter_end = df_ticker[(df_ticker.Date.values >= start_of_quarter_date) & (
+                            df_ticker.Date.values < end_of_quarter_date)]
+
 
                     df_ticker_buy_to_quarter_end = df_ticker[(df_ticker.Date.values >= buying_point_date) & (
                             df_ticker.Date.values < end_of_quarter_date)]
@@ -236,7 +298,7 @@ def charny_sim1(inpath = "C:/Users/dadab/projects/algotrading/results/trading_si
                             'buy criteria' : f"rsi below rsi ma by {prec_th}%",
                             'buy date': str(buying_point_date)[:10],
                             'buy price ': buy_price,
-                            'buy hv': df_ticker.hv.values[buying_point],
+                            'buy hv': np.max([df_ticker.hv.values[buying_point],0.1]),
                             'days_to_quarter_end': days_to_end,
                             'days_to_quarter_start': days_from_start,
 
@@ -248,23 +310,24 @@ def charny_sim1(inpath = "C:/Users/dadab/projects/algotrading/results/trading_si
                             'maximal price date': str(maximal_price_date)[:10],
                             'maximal price': maximal_price,
                             'maximal profit in quarter[%]' : (price_until_the_end_of_quarter.max() / df_ticker.Close.values[buying_point] -1) * 100,
-                            'maximal price hv': maximal_price_hv,
+                            'maximal price hv': np.max([maximal_price_hv,0.1]),
                             'days to maximal profit in quarter': days_to_maximal_price,
 
                             'total_number_of_analysts': total_number_of_analysts,
                             'number_of_analysts_with_compliments': number_of_analysts_with_compliments,
                             'rsi_14': df_ticker.rsi_14.values[buying_point],
                             'vix': df_ticker.vix_Close.values[buying_point],
-                            'atr': ATR,
+                            'atr': (ATR / buy_price)*100,
                             'market_cap' : market_cap,
                             '(price / ma_150 -1)*100 ': (df_ticker.Close.values[buying_point] / df_ticker.ma_150.values[
                                 buying_point] - 1) * 100,
                             'ma_150_slop': df_ticker.ma_150_slop.values[buying_point],
                            }
 
-                    # Calculate days to profit when using ATR criteria
+                    # Sell with ATR criteria
+                    ATR_range =  np.arange(0.5,10,0.5)
                     ATRprec = ATR / buy_price
-                    for profit_ATR in np.arange(0.5,10,0.5):
+                    for profit_ATR in ATR_range:
                         target_price = buy_price*(1+profit_ATR*ATRprec)
                         sell_inds = np.where(df_ticker_buy_to_quarter_end.Close.values >= target_price)[0]
                         if len(sell_inds) > 0:
@@ -276,36 +339,130 @@ def charny_sim1(inpath = "C:/Users/dadab/projects/algotrading/results/trading_si
 
                     # Calculate hv at selling dates when  using ATR criteria
                     ATRprec = ATR / buy_price
-                    for profit_ATR in np.arange(0.5, 10, 0.5):
+                    for profit_ATR in ATR_range:
                         target_price = buy_price * (1 + profit_ATR * ATRprec)
                         sell_inds = np.where(df_ticker_buy_to_quarter_end.Close.values >= target_price)[0]
                         if len(sell_inds) > 0:
-                            row[f"HV ATR{profit_ATR}"] = df_ticker_buy_to_quarter_end.hv.values[sell_inds[0]]
+                            row[f"HV ATR{profit_ATR}"] = np.max([df_ticker_buy_to_quarter_end.hv.values[sell_inds[0]],0.1])
                         else:
                             row[f"HV ATR{profit_ATR}"] = -1
 
-                    row[f"last day of quarter price"] = df_ticker_buy_to_quarter_end.Close.values[-1]
-                    row[f"last day of quarter HV"] = df_ticker_buy_to_quarter_end.hv.values[-1]
-
                     # Calculate close price to profit when using ATR criteria
                     ATRprec = ATR / buy_price
-                    for profit_ATR in np.arange(0.5, 10, 0.5):
+                    for profit_ATR in ATR_range:
                         target_price = buy_price * (1 + profit_ATR * ATRprec)
                         sell_inds = np.where(df_ticker_buy_to_quarter_end.Close.values >= target_price)[0]
                         if len(sell_inds) > 0:
-                            row[f"Close price ATR{profit_ATR}"] =  df_ticker_buy_to_quarter_end.Close.values[sell_inds[0]]
+                            row[f"Close price ATR{profit_ATR}"] = df_ticker_buy_to_quarter_end.Close.values[
+                                sell_inds[0]]
                         else:
                             row[f"Close price ATR{profit_ATR}"] = -1
 
+
+                    #################################################################################
+                    #   Stop loss
+                    #################################################################################
+                    # Calculate close price to profit when using ATR criteria , add stop loss
+                    ATRprec = ATR / buy_price
+                    stop_loss_dict  = {}
+                    for profit_ATR in ATR_range:
+                        target_price = buy_price * (1 + profit_ATR * ATRprec)
+                        sell_inds = np.where(df_ticker_buy_to_quarter_end.Close.values >= target_price)[0]
+                        if len(sell_inds) > 0:
+                            # Stop loss
+                            sell_ind = sell_inds[0]
+                            stop_loss =  df_ticker_buy_to_quarter_end.Close.values[sell_ind] - ATR
+                            if sell_ind > 0:
+                                for sind in range(sell_inds[0],len(df_ticker_buy_to_quarter_end)):
+                                    if df_ticker_buy_to_quarter_end.Close.values[sind]  <  stop_loss:
+                                        # Sell when price go down
+                                        sell_ind = sind
+                                        break
+                                    # Update stop loss
+                                    stop_loss = np.max([df_ticker_buy_to_quarter_end.Close.values[sind] - ATR,  stop_loss])
+
+                            stop_loss_dict[f"Stop Loss Close price ATR{profit_ATR}"] =  df_ticker_buy_to_quarter_end.Close.values[sell_ind]
+                            stop_loss_dict[f"Stop Loss  HV ATR{profit_ATR}"] = np.max(
+                                [df_ticker_buy_to_quarter_end.hv.values[sell_ind], 0.1])
+                            sell_date = df_ticker_buy_to_quarter_end.Date.values[sell_ind]
+                            time_diff_days = (sell_date - buy_date) // np.timedelta64(1, 'D')
+                            stop_loss_dict[f"Stop Loss  days from buy to ATR{profit_ATR} profit"] = time_diff_days
+
+                        else:
+                            stop_loss_dict[f"Stop Loss Close price ATR{profit_ATR}"] = -1
+                            stop_loss_dict[f"Stop Loss  HV ATR{profit_ATR}"] = -1
+                            stop_loss_dict[f"Stop Loss  days from buy to ATR{profit_ATR} profit"] = -1
+
+                    # Put the stop loss data into the main data , in the order that Adi likes
+                    for profit_ATR in np.arange(0.5, 10, 0.5):
+                        row[f"Stop Loss  days from buy to ATR{profit_ATR} profit"] = stop_loss_dict[
+                            f"Stop Loss  days from buy to ATR{profit_ATR} profit"]
+
+                    for profit_ATR in np.arange(0.5, 10, 0.5):
+                        row[f"Stop Loss  HV ATR{profit_ATR}"] = stop_loss_dict[f"Stop Loss  HV ATR{profit_ATR}"]
+
+                    for profit_ATR in np.arange(0.5, 10, 0.5):
+                        row[f"Stop Loss Close price ATR{profit_ATR}"] = stop_loss_dict[f"Stop Loss Close price ATR{profit_ATR}"]
+
+
+                    #################################################################################
+                    #   Stop loss - end
+                    #################################################################################
+
+                    #################################################################################
+                    #   SNP
+                    #################################################################################
+                    row['(SPY / SPY_ma_150 -1)*100'] = (df_ticker.snp_Close.values[buying_point] / df_ticker.SNP_ma_150.values[
+                        buying_point] - 1) * 100
+                    row['SPY_ma_150_slop']= df_ticker.SNP_ma_150_slop.values[buying_point]
+
+                    row['(SPY / SPY_ma_50 -1)*100']= (df_ticker.snp_Close.values[buying_point] / df_ticker.SNP_ma_50.values[
+                        buying_point] - 1) * 100
+                    row['SPY_ma_50_slop']= df_ticker.SNP_ma_50_slop.values[buying_point]
+
+
+
+                    #################################################################################
+                    #   Arbitrary point
+                    #################################################################################
+                    sell_ind = np.random.randint(0, len(df_ticker_start_to_quarter_end))
+                    row[f"Arbitrary point Date"] = str(df_ticker_start_to_quarter_end.Date.values[sell_ind])[:10]
+                    row[f"Arbitrary point days_to_quarter_end"] = (end_of_quarter_date.astype('datetime64[D]') -
+                                                                   df_ticker_start_to_quarter_end.Date.values[
+                                                                       sell_ind].astype('datetime64[D]')).astype(int)
+                    row[f"Arbitrary point HV"] = np.max(
+                        [df_ticker_start_to_quarter_end.hv.values[sell_ind], 0.1])
+
+                    row[f"Arbitrary point Close price"] = df_ticker_start_to_quarter_end.Close.values[sell_ind]
+
+                    #################################################################################
+                    #  Last day of  quarter
+                    #################################################################################
+
+                    row[f"last day of quarter HV"] = np.max([df_ticker_buy_to_quarter_end.hv.values[-1],0.1])
+                    row[f"last day of quarter Close price"] = df_ticker_buy_to_quarter_end.Close.values[-1]
+
+                    row['one day after complements HV'] = df_ticker_start_to_quarter_end.hv.values[1]
+                    row['one day after complements, days to end of quarter'] = (end_of_quarter_date.astype('datetime64[D]') - df_ticker_start_to_quarter_end.Date.values[1].astype('datetime64[D]')).astype(int)
+
+                    #################################################################################
+                    # SELL by rsi criteria
+                    #################################################################################
+                    df_sell_by_rsi = df_ticker_buy_to_quarter_end[df_ticker_buy_to_quarter_end.rsi_14 > df_ticker_buy_to_quarter_end.ma_rsi_14 * (1 + prec_th / 100)]
+                    row[f"days to rsi SELL"] = -1
+                    row[f"IV at rsi SELL"] = -1
+                    row[f"Price at rsi SELL"] = -1
+                    if len(df_sell_by_rsi) > 0:
+                        row[f"days to rsi SELL"]  = pd.Timedelta(df_sell_by_rsi.Date.values[0] - buying_point_date).days
+                        row[f"IV at rsi SELL"] =  df_sell_by_rsi.hv.values[0]
+                        row[f"Price at rsi SELL"] = df_sell_by_rsi.Close.values[0]
 
                     info_rows.append(row)
 
 
     df = pd.DataFrame(info_rows)
-    if sim_type == 'in_portfolio':
-        df.to_csv('charny_in_portfolio.csv')
-    else:
-        df.to_csv('charny_not_in_portfolio.csv')
+
+    df.to_csv(f'charny_{sim_type}.csv')
 
 def report_data(infile , inpath = "C:/Users/dadab/projects/algotrading/results/trading_sim/all_data"):
     tickers_df, complement_df, avg_df = pickle.load(open(os.path.join(inpath, 'all_data.pickle'), "rb"))
@@ -318,9 +475,9 @@ def report_data(infile , inpath = "C:/Users/dadab/projects/algotrading/results/t
         plt.close('all')
     report.to_file(infile + '.html')
 if __name__ == "__main__":
-    np.random.seed(12345)
+
     # report_data('charny_in_portfolio')
     # report_data('charny_not_in_portfolio')
-
-    charny_sim1(sim_type = "in_portfolio")
-    charny_sim1(sim_type="not_in_portfolio")
+    charny_sim1(sim_type="all")
+    #charny_sim1(sim_type = "in_portfolio")
+    #charny_sim1(sim_type="not_in_portfolio")
