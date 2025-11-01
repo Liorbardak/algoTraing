@@ -40,7 +40,7 @@ class FinancialDataLoaderBase:
         # Check if we can perform simple averaging - all stocks appear in all dates
 
         # Calculate the average of all stocks by simple trading => can not preform simple average , since not all stocks are present in all times
-        trader = TradingPolicy.create("MostBasic", config=ConfigManager())
+        trader = TradingPolicy.create("BasicPolicy", config=ConfigManager())
         print('calculating average stock')
 
         avg_df_rows = []

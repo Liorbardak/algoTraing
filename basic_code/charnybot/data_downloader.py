@@ -5,11 +5,11 @@ import numpy as np
 import pylab as plt
 stockdir =  'C:/Users/dadab/projects/algotrading/data/yahoo_tickers'
 
-start = '2019-01-02'
-end = '2025-10-01'
 
 stocks_to_run_on =  ['APPLE']
 
+start = '2019-01-02'
+end = '2025-10-01'
 
 ticker = '^GSPC'
 data = yf.download('^GSPC', start=start, end=end ,auto_adjust=False )

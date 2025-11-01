@@ -106,11 +106,11 @@ def tradesim_report(tickers_df, complement_df, snp_df,avg_df, trade_hist_df, out
         snp_profit = (snp_end_value / snp_start_value) - 1
 
         # Calculate average stock profit for the same period
-        avg_stock_start_value = snp_df[
-            snp_df.Date >= start_of_year
+        avg_stock_start_value = avg_df[
+            avg_df.Date >= start_of_year
             ].Close.values[0]
-        avg_stock_end_value = snp_df[
-            snp_df.Date <= end_of_year
+        avg_stock_end_value = avg_df[
+            avg_df.Date <= end_of_year
             ].Close.values[-1]
         avg_stock_profit = (avg_stock_end_value / avg_stock_start_value) - 1
 
@@ -178,11 +178,11 @@ def tradesim_report(tickers_df, complement_df, snp_df,avg_df, trade_hist_df, out
     for ticker in tickers_that_were_in_portfolio:
         tdf = tickers_df[tickers_df.ticker == ticker]
 
-        is_in_prtofolio = (trade_hist_df[ticker].values != 0).astype(int)
-        is_in_prtofolio = np.hstack([is_in_prtofolio, [0]])
+        is_in_portfolio = (trade_hist_df[ticker].values != 0).astype(int)
+        is_in_portfolio = np.hstack([is_in_portfolio, [0]])
 
-        buy_points = np.where((is_in_prtofolio[:-1]== 0) &   (is_in_prtofolio[1:]== 1))[0]
-        sell_points = np.where((is_in_prtofolio[:-1] == 1) & (is_in_prtofolio[1:] == 0))[0]
+        buy_points = np.where((is_in_portfolio[:-1]== 0) &   (is_in_portfolio[1:]== 1))[0]
+        sell_points = np.where((is_in_portfolio[:-1] == 1) & (is_in_portfolio[1:] == 0))[0]
         cum_profit_snp= 0
         cum_profit_stock = 0
         cum_ratio_snp = 0
@@ -221,11 +221,11 @@ def tradesim_report(tickers_df, complement_df, snp_df,avg_df, trade_hist_df, out
     for ticker in tickers_that_were_in_portfolio:
         tdf = tickers_df[tickers_df.ticker == ticker]
 
-        is_in_prtofolio = (trade_hist_df[ticker].values != 0).astype(int)
-        is_in_prtofolio = np.hstack([is_in_prtofolio, [0]])
-
-        buy_points = np.where((is_in_prtofolio[:-1] == 0) & (is_in_prtofolio[1:] == 1))[0]
-        sell_points = np.where((is_in_prtofolio[:-1] == 1) & (is_in_prtofolio[1:] == 0))[0]
+        is_in_portfolio = (trade_hist_df[ticker].values != 0).astype(int)
+        is_in_portfolio = np.hstack([is_in_portfolio, [0]])
+        # find buy and sell points TODO - store these point explicitly in portfolio
+        buy_points = np.where((is_in_portfolio[:-1] == 0) & (is_in_portfolio[1:] == 1))[0]
+        sell_points = np.where((is_in_portfolio[:-1] == 1) & (is_in_portfolio[1:] == 0))[0]
         cum_profit_snp = 0
         cum_profit_stock = 0
         cum_ratio_snp = 0
@@ -252,19 +252,21 @@ def tradesim_report(tickers_df, complement_df, snp_df,avg_df, trade_hist_df, out
             buy_stat = {'ticker': ticker,
              'buy_date': str(buy_Date)[:10],
              'sell_date': str(sell_Date)[:10],
-             'profit %':np.round((ticker_sell_price - ticker_buy_price) / ticker_buy_price *100,1),
+             'days': pd.Timedelta(sell_Date - buy_Date).days,
+             'profit %':np.round((ticker_sell_price - ticker_buy_price) / ticker_buy_price *100,2),
+             'snp profit %': np.round((snp_sell_price - snp_buy_price) / snp_buy_price * 100, 2),
              '(buy_price-ma_a150)/ma_150': (tdf[tdf.Date.values == buy_Date].Close.values[0] - tdf[tdf.Date.values == buy_Date].ma_150.values[0]) / tdf[tdf.Date.values == buy_Date].ma_150.values[0],
              'rsi_14':  tdf[tdf.Date.values == buy_Date].rsi_14.values[0],
              }
             # get the price after buy
-            buy_price = tdf[tdf.Date.values == buy_Date].Close.values[0]
-            for nq in range(1, 5):
-                q_after_buy = tdf[(tdf.Date.values <= buy_Date + np.timedelta64(90 * nq, 'D')) & (tdf.Date.values >= buy_Date + np.timedelta64(90 * (nq-1), 'D'))]
-                if len(q_after_buy) > 0:
-                    max_price_in_q_after_buy = np.max(q_after_buy.Close.values)
-                    buy_stat[f'max price q{nq} after buy % '] = np.round(((max_price_in_q_after_buy / buy_price)- 1) *100,1)
-                else:
-                    buy_stat[f'max price q{nq} after buy % '] = None
+            # buy_price = tdf[tdf.Date.values == buy_Date].Close.values[0]
+            # for nq in range(1, 5):
+            #     q_after_buy = tdf[(tdf.Date.values <= buy_Date + np.timedelta64(90 * nq, 'D')) & (tdf.Date.values >= buy_Date + np.timedelta64(90 * (nq-1), 'D'))]
+            #     if len(q_after_buy) > 0:
+            #         max_price_in_q_after_buy = np.max(q_after_buy.Close.values)
+            #         buy_stat[f'max price q{nq} after buy % '] = np.round(((max_price_in_q_after_buy / buy_price)- 1) *100,1)
+            #     else:
+            #         buy_stat[f'max price q{nq} after buy % '] = None
             row_per_buy.append(buy_stat)
 
         rows.append({'ticker': ticker,
@@ -281,7 +283,9 @@ def tradesim_report(tickers_df, complement_df, snp_df,avg_df, trade_hist_df, out
     profit_per_ticker.loc[len(profit_per_ticker)] = avg_row
 
     buy_info_per_ticker = pd.DataFrame(row_per_buy)
-
+    avg_row = buy_info_per_ticker.select_dtypes(include=[np.number]).mean()
+    avg_row['ticker'] = 'AVERAGE'
+    buy_info_per_ticker.loc[len(buy_info_per_ticker)] = avg_row
 
     # ========================================================================
     # HTML REPORT GENERATION
