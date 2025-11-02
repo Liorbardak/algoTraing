@@ -362,7 +362,7 @@ class TradingPolicyBasicPolicy(TradingPolicy):
 
         return ticker_score
 
-    def buy(self, date, tickers_score, tickers_df, total_ticker_weight_before_sell , daily_reference_index_data = None):
+    def buy(self, date, tickers_score, tickers_df, total_ticker_weight_before_sell ):
         """
         Execute buy decisions based on ticker scores and portfolio constraints.
 
@@ -376,7 +376,6 @@ class TradingPolicyBasicPolicy(TradingPolicy):
             date: Trading date
             tickers_score: Dictionary of ticker scores from score_tickers()
             tickers_df: Current price data for order execution
-            default_index_df: Default index data for reference
         """
         # Get current portfolio state
         current_positions = len(self.portfolio.positions)
@@ -420,14 +419,16 @@ class TradingPolicyBasicPolicy(TradingPolicy):
         # ====================================================================
         max_position_size = self.config.get_parameter('portfolio', 'max_portion_per_ticker')
         rebuy_tickers_complement_date = {}
-        existing_tickers = list(set(tickers_score.keys()).intersection(set(self.portfolio.positions.keys())))
-        for ticker in existing_tickers:
-            last_buy_by_score_date = self.portfolio.positions[ticker].last_buy_by_score_date
-            complement_date = tickers_score[ticker]['complement_date']
-            if last_buy_by_score_date and complement_date and last_buy_by_score_date  != complement_date:
-                new_portfolio_weights[ticker] = min(new_portfolio_weights[ticker] + new_position_size, max_position_size)
-                rebuy_tickers_complement_date[ticker] = complement_date
-               # assert False  , f"  ticker {ticker} needs rebuy  {last_buy_by_score_date} {complement_date} "
+
+        if self.config.get_parameter('buy', 'buy_more_with_new_complements'):
+            existing_tickers = list(set(tickers_score.keys()).intersection(set(self.portfolio.positions.keys())))
+            for ticker in existing_tickers:
+                last_buy_by_score_date = self.portfolio.positions[ticker].last_buy_by_score_date
+                complement_date = tickers_score[ticker]['complement_date']
+                if last_buy_by_score_date and complement_date and last_buy_by_score_date  != complement_date:
+                    new_portfolio_weights[ticker] = min(new_portfolio_weights[ticker] + new_position_size, max_position_size)
+                    rebuy_tickers_complement_date[ticker] = complement_date
+
 
         # ====================================================================
         # ENFORCE POSITION SIZE LIMITS
@@ -450,7 +451,7 @@ class TradingPolicyBasicPolicy(TradingPolicy):
         elif total_weights < 1.0:
             # There's free cash available to buy - what to do ?:
             if self.config.get_parameter('sell', 'buy_with_sell_return') == 'reference_index':
-                # buy reference_index with the remaining cash
+                # buy reference_index with the remaining cash => do not change any of the stocks weight
                 pass
 
             elif (len(self.portfolio.tickers()) > 0) & (total_ticker_weight_before_sell >total_weights) & (total_weights > 1e-1) :
@@ -493,21 +494,25 @@ class TradingPolicyBasicPolicy(TradingPolicy):
 
                 if value_change > 0:
                     # Increase position (buy)
-                    # mark that this buy is coming from new complements
-                    new_complement_date = rebuy_tickers_complement_date.get(ticker, None)
 
                     shares_to_buy = value_change / current_price
-                    self.portfolio.buy_stock(ticker, shares_to_buy, current_price, date,complement_date = new_complement_date)
+                    self.portfolio.buy_stock(ticker, shares_to_buy, current_price, date,complement_date =  rebuy_tickers_complement_date.get(ticker, None))
 
                 else:
                     # Decrease position (sell)
                     shares_to_sell = abs(value_change) / current_price
                     self.portfolio.sell_stock(ticker, shares_to_sell, current_price, date)
 
+
+
         # ====================================================================
         # PORTFOLIO VALIDATION
         # ====================================================================
-        # # Debug output for monitoring
+
+        total_portfolio_value_after_balance = self.portfolio.get_total_value()
+        assert np.abs(total_portfolio_value_after_balance - total_portfolio_value) < 1e-6 ,  (
+            f"Balancing error: {total_portfolio_value_after_balance}  {total_portfolio_value} on {date}"
+        )
         # Ensure we haven't created a negative cash position
         assert self.portfolio.cash >= -1e-6, (
             f"Negative cash position detected: {self.portfolio.cash} on {date}"
@@ -631,7 +636,7 @@ class TradingPolicyBasicPolicy(TradingPolicy):
         tickers_score = self.score_tickers(date, tickers_df, complement_df)
 
         # Execute buy decisions based on scores
-        self.buy(date, tickers_score, daily_ticker_data, total_ticker_weight_before_sell ,daily_index_data  )
+        self.buy(date, tickers_score, daily_ticker_data, total_ticker_weight_before_sell )
 
         # ====================================================================
         # CASH MANAGEMENT: REINVEST REMAINING CASH

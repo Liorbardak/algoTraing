@@ -260,9 +260,9 @@ if __name__ == "__main__":
     # SIMULATION CONFIGURATION
     # ==========================================
 
-    #run_main(output_name='all_data',complements_dir = 'all_data',run_trading = True,reload_all_data= False )
 
-    run_main(output_name='all_data', complements_dir='all_data', run_trading=True, reload_all_data=False)
+
+    run_main(output_name='all_data/rsi/reference_index_take2', complements_dir='all_data/rsi/reference_index_take2', run_trading=True, reload_all_data=False)
 
 
     # run_main(output_name='set2', complements_dir='fulldata2',run_trading = True,reload_all_data= False )
