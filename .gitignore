@@ -20,3 +20,6 @@ wheels/
 *.egg-info/
 .installed.cfg
 *.egg
+# Ignore large generated files
+basic_code/charnybot/old/*.html
+basic_code/charnybot/simulations/*.csv
