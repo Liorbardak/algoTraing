@@ -23,3 +23,7 @@ wheels/
 # Ignore large generated files
 basic_code/charnybot/old/*.html
 basic_code/charnybot/simulations/*.csv
+
+# API Keys - never commit these!
+**/openai_api_key*.txt
+**/keys.txt
