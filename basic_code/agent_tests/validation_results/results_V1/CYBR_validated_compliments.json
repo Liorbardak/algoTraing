@@ -1,0 +1,1032 @@
+{
+  "2021_Q1": {
+    "year": 2021,
+    "quarter": 1,
+    "date": "2021-05-05T08:30:00-04:00",
+    "compliments": [
+      {
+        "analyst_name": "Saket Kalyo",
+        "level": 0,
+        "quoted_compliment": ""
+      },
+      {
+        "analyst_name": "Sterling Audio",
+        "level": 0,
+        "quoted_compliment": ""
+      },
+      {
+        "analyst_name": "Fatima Diwani",
+        "level": 0,
+        "quoted_compliment": ""
+      },
+      {
+        "analyst_name": "Rob Owens",
+        "level": 0,
+        "quoted_compliment": ""
+      },
+      {
+        "analyst_name": "Hamza Farawala",
+        "level": 0,
+        "quoted_compliment": ""
+      },
+      {
+        "analyst_name": "Greg Moskowitz",
+        "level": 1,
+        "quoted_compliment": "A super strong quarter for Purpose Cloud."
+      },
+      {
+        "analyst_name": "Brian Essex",
+        "level": 1,
+        "quoted_compliment": "which is great."
+      },
+      {
+        "analyst_name": "Andrew Norinsky",
+        "level": 0,
+        "quoted_compliment": ""
+      },
+      {
+        "analyst_name": "Tal Liani",
+        "level": 0,
+        "quoted_compliment": ""
+      },
+      {
+        "analyst_name": "Jonathan Rycover",
+        "level": 1,
+        "quoted_compliment": "we also showed strong execution on that pipe."
+      },
+      {
+        "analyst_name": "Jonathan Ho",
+        "level": 0,
+        "quoted_compliment": ""
+      },
+      {
+        "analyst_name": "Alex Henderson",
+        "level": 1,
+        "quoted_compliment": "we're seeing much better close rates going into the first quarter of this year."
+      },
+      {
+        "analyst_name": "Eric",
+        "level": 0,
+        "quoted_compliment": ""
+      }
+    ]
+  },
+  "2021_Q2": {
+    "year": 2021,
+    "quarter": 2,
+    "date": "2021-08-12T08:30:00-04:00",
+    "compliments": [
+      {
+        "analyst_name": "Faket Kalia",
+        "level": 0,
+        "quoted_compliment": ""
+      },
+      {
+        "analyst_name": "Saket (implied from context, answering Udi)",
+        "level": 0,
+        "quoted_compliment": ""
+      },
+      {
+        "analyst_name": "sterling autry",
+        "level": 0,
+        "quoted_compliment": ""
+      },
+      {
+        "analyst_name": "Jonathan Ho",
+        "level": 1,
+        "quoted_compliment": "Let me echo my congratulations as well."
+      },
+      {
+        "analyst_name": "Hamza Fadawalla",
+        "level": 1,
+        "quoted_compliment": "A lot of great color on the demand environment, larger deal sizes."
+      },
+      {
+        "analyst_name": "Rob Owens",
+        "level": 1,
+        "quoted_compliment": "Good morning, everybody. Thanks for taking my question."
+      },
+      {
+        "analyst_name": "Adam Borg",
+        "level": 0,
+        "quoted_compliment": ""
+      },
+      {
+        "analyst_name": "Brian Essex",
+        "level": 0,
+        "quoted_compliment": ""
+      },
+      {
+        "analyst_name": "Jonathan Rookhiver",
+        "level": 1,
+        "quoted_compliment": "Congrats on the strong performance."
+      },
+      {
+        "analyst_name": "Roger Boyd",
+        "level": 0,
+        "quoted_compliment": ""
+      },
+      {
+        "analyst_name": "Greg Moskowitz",
+        "level": 0,
+        "quoted_compliment": ""
+      },
+      {
+        "analyst_name": "Catherine Trevenick",
+        "level": 0,
+        "quoted_compliment": ""
+      },
+      {
+        "analyst_name": "Alex Henderson",
+        "level": 0,
+        "quoted_compliment": ""
+      }
+    ]
+  },
+  "2021_Q3": {
+    "year": 2021,
+    "quarter": 3,
+    "date": "2021-11-04T08:30:00-04:00",
+    "compliments": [
+      {
+        "analyst_name": "Sackett Galea",
+        "level": 0,
+        "quoted_compliment": ""
+      },
+      {
+        "analyst_name": "Adam Borg",
+        "level": 0,
+        "quoted_compliment": ""
+      },
+      {
+        "analyst_name": "Rob Owens",
+        "level": 0,
+        "quoted_compliment": ""
+      },
+      {
+        "analyst_name": "Brian X",
+        "level": 0,
+        "quoted_compliment": ""
+      },
+      {
+        "analyst_name": "Jonathan Ho",
+        "level": 0,
+        "quoted_compliment": ""
+      },
+      {
+        "analyst_name": "Jonathan Ruckhaver",
+        "level": 0,
+        "quoted_compliment": ""
+      },
+      {
+        "analyst_name": "Roger Boyd",
+        "level": 0,
+        "quoted_compliment": ""
+      },
+      {
+        "analyst_name": "Greg Moskowitz",
+        "level": 1,
+        "quoted_compliment": "congratulations on a very good quarter."
+      },
+      {
+        "analyst_name": "Rob Goins",
+        "level": 0,
+        "quoted_compliment": ""
+      },
+      {
+        "analyst_name": "KT Tron",
+        "level": 1,
+        "quoted_compliment": "Great quarter."
+      },
+      {
+        "analyst_name": "Catherine Trevnick",
+        "level": 1,
+        "quoted_compliment": "Oh, thanks for taking my question. Excellent quarter."
+      },
+      {
+        "analyst_name": "Joshua Tilton",
+        "level": 0,
+        "quoted_compliment": ""
+      },
+      {
+        "analyst_name": "Task Kuljaji",
+        "level": 0,
+        "quoted_compliment": ""
+      },
+      {
+        "analyst_name": "Mike Sikos",
+        "level": 0,
+        "quoted_compliment": ""
+      }
+    ]
+  },
+  "2021_Q4": {
+    "year": 2021,
+    "quarter": 4,
+    "date": "2022-02-10T08:30:00-05:00",
+    "compliments": [
+      {
+        "analyst_name": "Saket Kalia",
+        "level": 1,
+        "quoted_compliment": "Great to see the ARR acceleration."
+      },
+      {
+        "analyst_name": "Jonathan Ho",
+        "level": 1,
+        "quoted_compliment": "let me echo my congratulations on a very strong quarter as well."
+      },
+      {
+        "analyst_name": "Hamza Farrala",
+        "level": 1,
+        "quoted_compliment": "Ruby obviously did a great job highlighting a lot of the Go drivers for 2022."
+      },
+      {
+        "analyst_name": "Sterling Audi",
+        "level": 0,
+        "quoted_compliment": ""
+      },
+      {
+        "analyst_name": "Rob Owens",
+        "level": 0,
+        "quoted_compliment": ""
+      },
+      {
+        "analyst_name": "Greg Moskowitz",
+        "level": 0,
+        "quoted_compliment": ""
+      },
+      {
+        "analyst_name": "Brian Essex",
+        "level": 0,
+        "quoted_compliment": ""
+      },
+      {
+        "analyst_name": "Roger Boyd",
+        "level": 0,
+        "quoted_compliment": ""
+      },
+      {
+        "analyst_name": "Taz",
+        "level": 0,
+        "quoted_compliment": ""
+      },
+      {
+        "analyst_name": "Alex Henderson",
+        "level": 1,
+        "quoted_compliment": "Thank you very much."
+      },
+      {
+        "analyst_name": "Adam Borg",
+        "level": 0,
+        "quoted_compliment": ""
+      },
+      {
+        "analyst_name": "Satina Bugliani",
+        "level": 0,
+        "quoted_compliment": ""
+      },
+      {
+        "analyst_name": "Joshua Tilton",
+        "level": 0,
+        "quoted_compliment": ""
+      }
+    ]
+  },
+  "2022_Q1": {
+    "year": 2022,
+    "quarter": 1,
+    "date": "2022-05-12T08:00:00-04:00",
+    "compliments": [
+      {
+        "analyst_name": "Suket Kaliya",
+        "level": 1,
+        "quoted_compliment": "great to see the results"
+      },
+      {
+        "analyst_name": "Zach (last name not provided)",
+        "level": 1,
+        "quoted_compliment": "great to see the full year go up"
+      },
+      {
+        "analyst_name": "Adam Bro",
+        "level": 1,
+        "quoted_compliment": "it's great to see the traction there"
+      },
+      {
+        "analyst_name": "Rob Owens",
+        "level": 1,
+        "quoted_compliment": "strong performance"
+      },
+      {
+        "analyst_name": "Brian Essex",
+        "level": 1,
+        "quoted_compliment": "and thank you for taking the question."
+      },
+      {
+        "analyst_name": "Fatima Mbulani",
+        "level": 0,
+        "quoted_compliment": ""
+      },
+      {
+        "analyst_name": "Greg Moskowitz",
+        "level": 1,
+        "quoted_compliment": "Very impressive acceleration in ARR."
+      },
+      {
+        "analyst_name": "Hamza Fathawala",
+        "level": 1,
+        "quoted_compliment": "we're very confident about what's going on this year"
+      },
+      {
+        "analyst_name": "Joshua Tilton",
+        "level": 1,
+        "quoted_compliment": "congrats on the results."
+      },
+      {
+        "analyst_name": "Roger Boyd",
+        "level": 1,
+        "quoted_compliment": "Congrats on a nice quarter."
+      },
+      {
+        "analyst_name": "Eric Heath",
+        "level": 1,
+        "quoted_compliment": "Congrats as well."
+      },
+      {
+        "analyst_name": "Trevor Walsh",
+        "level": 1,
+        "quoted_compliment": "Congrats on the results."
+      },
+      {
+        "analyst_name": "Andrew Novins",
+        "level": 0,
+        "quoted_compliment": ""
+      }
+    ]
+  },
+  "2022_Q2": {
+    "year": 2022,
+    "quarter": 2,
+    "date": "2022-08-10T08:30:00-04:00",
+    "compliments": [
+      {
+        "analyst_name": "Saket Kalia",
+        "level": 0,
+        "quoted_compliment": ""
+      },
+      {
+        "analyst_name": "Zach",
+        "level": 0,
+        "quoted_compliment": ""
+      },
+      {
+        "analyst_name": "Hamza Faderwala",
+        "level": 0,
+        "quoted_compliment": ""
+      },
+      {
+        "analyst_name": "Rob Owens",
+        "level": 0,
+        "quoted_compliment": ""
+      },
+      {
+        "analyst_name": "Fatima Bulani",
+        "level": 0,
+        "quoted_compliment": ""
+      },
+      {
+        "analyst_name": "Greg Moskowitz",
+        "level": 1,
+        "quoted_compliment": "congratulations on a very good Q2."
+      },
+      {
+        "analyst_name": "Brian Essex",
+        "level": 1,
+        "quoted_compliment": "thank you for taking the questions and really nice set of results here."
+      },
+      {
+        "analyst_name": "Roger Boyd",
+        "level": 1,
+        "quoted_compliment": "congrats on the nice results."
+      },
+      {
+        "analyst_name": "Adam Borg",
+        "level": 0,
+        "quoted_compliment": ""
+      },
+      {
+        "analyst_name": "Jonathan Ho",
+        "level": 1,
+        "quoted_compliment": "congrats on the strong quarter."
+      },
+      {
+        "analyst_name": "Eric Heath",
+        "level": 1,
+        "quoted_compliment": "I'll echo my congrats as well."
+      },
+      {
+        "analyst_name": "Joshua Tilton",
+        "level": 1,
+        "quoted_compliment": "congrats on the quarter as well."
+      },
+      {
+        "analyst_name": "Trevor Walsh",
+        "level": 0,
+        "quoted_compliment": ""
+      },
+      {
+        "analyst_name": "Alex Henderson",
+        "level": 0,
+        "quoted_compliment": ""
+      },
+      {
+        "analyst_name": "Andrew Nowinski",
+        "level": 0,
+        "quoted_compliment": ""
+      }
+    ]
+  },
+  "2022_Q3": {
+    "year": 2022,
+    "quarter": 3,
+    "date": "2022-11-03T08:00:00-04:00",
+    "compliments": [
+      {
+        "analyst_name": "Seket Kalia",
+        "level": 1,
+        "quoted_compliment": "solid set of results."
+      },
+      {
+        "analyst_name": "Hamas Fadarwala",
+        "level": 0,
+        "quoted_compliment": ""
+      },
+      {
+        "analyst_name": "Rob Owens",
+        "level": 0,
+        "quoted_compliment": ""
+      },
+      {
+        "analyst_name": "Adam Borg",
+        "level": 0,
+        "quoted_compliment": ""
+      },
+      {
+        "analyst_name": "Shaul Al",
+        "level": 1,
+        "quoted_compliment": "congrats on the strong execution and on guidance."
+      },
+      {
+        "analyst_name": "Eric Heath",
+        "level": 1,
+        "quoted_compliment": "congrats on an impressive set of results"
+      },
+      {
+        "analyst_name": "Jonathan Ho",
+        "level": 1,
+        "quoted_compliment": "let me echo my congratulations as well."
+      },
+      {
+        "analyst_name": "Jonathan Rookhaver",
+        "level": 1,
+        "quoted_compliment": "congrats, guys."
+      },
+      {
+        "analyst_name": "Joshua Tilton",
+        "level": 1,
+        "quoted_compliment": "congrats on the results."
+      },
+      {
+        "analyst_name": "Herschel",
+        "level": 1,
+        "quoted_compliment": "congrats on the results."
+      },
+      {
+        "analyst_name": "Justin Donati",
+        "level": 0,
+        "quoted_compliment": ""
+      },
+      {
+        "analyst_name": "Trevor Walsh",
+        "level": 1,
+        "quoted_compliment": "Congrats on the quarter."
+      },
+      {
+        "analyst_name": "Brian Cooley",
+        "level": 0,
+        "quoted_compliment": ""
+      }
+    ]
+  },
+  "2022_Q4": {
+    "year": 2022,
+    "quarter": 4,
+    "date": "2023-02-09T08:00:00-05:00",
+    "compliments": [
+      {
+        "analyst_name": "Saket",
+        "level": 0,
+        "quoted_compliment": ""
+      },
+      {
+        "analyst_name": "Zach",
+        "level": 0,
+        "quoted_compliment": ""
+      },
+      {
+        "analyst_name": "Hamza Falderwala",
+        "level": 1,
+        "quoted_compliment": "congratulations, Udi, and look forward to working with you, Matt."
+      },
+      {
+        "analyst_name": "Pablo",
+        "level": 0,
+        "quoted_compliment": ""
+      },
+      {
+        "analyst_name": "Rob Owens",
+        "level": 1,
+        "quoted_compliment": "record new logo additions"
+      },
+      {
+        "analyst_name": "Fatima Bulani",
+        "level": 0,
+        "quoted_compliment": ""
+      },
+      {
+        "analyst_name": "Eric Heath",
+        "level": 0,
+        "quoted_compliment": ""
+      },
+      {
+        "analyst_name": "Shaul Eyal",
+        "level": 0,
+        "quoted_compliment": ""
+      },
+      {
+        "analyst_name": "Brian Essex",
+        "level": 1,
+        "quoted_compliment": "thank you for taking the question, and Matt, congratulations for me as well."
+      },
+      {
+        "analyst_name": "Adam Bork",
+        "level": 1,
+        "quoted_compliment": "congrats to both Udi and Matt."
+      },
+      {
+        "analyst_name": "Roger Boyd",
+        "level": 0,
+        "quoted_compliment": ""
+      },
+      {
+        "analyst_name": "Tal Liani",
+        "level": 0,
+        "quoted_compliment": ""
+      },
+      {
+        "analyst_name": "Jonathan Ho",
+        "level": 1,
+        "quoted_compliment": "Let me echo my congratulations as well. It's been a pleasure for all of these years."
+      },
+      {
+        "analyst_name": "Joshua Tilton",
+        "level": 0,
+        "quoted_compliment": ""
+      },
+      {
+        "analyst_name": "Greg Moskowitz",
+        "level": 1,
+        "quoted_compliment": "congratulations, Udi, on everything you've achieved thus far in building such a terrific company."
+      }
+    ]
+  },
+  "2023_Q1": {
+    "year": 2023,
+    "quarter": 1,
+    "date": "2023-05-11T08:00:00-04:00",
+    "compliments": [
+      {
+        "analyst_name": "Saket Kalia",
+        "level": 0,
+        "quoted_compliment": ""
+      },
+      {
+        "analyst_name": "Scott Sackett",
+        "level": 0,
+        "quoted_compliment": ""
+      },
+      {
+        "analyst_name": "Roger Boyd",
+        "level": 0,
+        "quoted_compliment": ""
+      },
+      {
+        "analyst_name": "Adam Borg",
+        "level": 0,
+        "quoted_compliment": ""
+      },
+      {
+        "analyst_name": "Angie Song",
+        "level": 0,
+        "quoted_compliment": ""
+      },
+      {
+        "analyst_name": "Rob Owens",
+        "level": 0,
+        "quoted_compliment": ""
+      },
+      {
+        "analyst_name": "Tal Liani",
+        "level": 0,
+        "quoted_compliment": ""
+      },
+      {
+        "analyst_name": "Eric Heath",
+        "level": 1,
+        "quoted_compliment": "Congrats on a strong quarter here."
+      },
+      {
+        "analyst_name": "Brian Essex",
+        "level": 0,
+        "quoted_compliment": ""
+      },
+      {
+        "analyst_name": "Jonathan Rickhaver",
+        "level": 0,
+        "quoted_compliment": ""
+      },
+      {
+        "analyst_name": "Hany Kutari",
+        "level": 1,
+        "quoted_compliment": "Congrats on the first quarter, Matt."
+      },
+      {
+        "analyst_name": "Andrew Nowinski",
+        "level": 0,
+        "quoted_compliment": ""
+      }
+    ]
+  },
+  "2023_Q2": {
+    "year": 2023,
+    "quarter": 2,
+    "date": "2023-08-10T08:30:00-04:00",
+    "compliments": [
+      {
+        "analyst_name": "Saket Kalia",
+        "level": 1,
+        "quoted_compliment": "it's just great to see the resilience of the subscription ARR line"
+      },
+      {
+        "analyst_name": "Jonathan Ho",
+        "level": 1,
+        "quoted_compliment": "congratulate the strong performance on the quarter."
+      },
+      {
+        "analyst_name": "Rob Owens",
+        "level": 1,
+        "quoted_compliment": "we actually just saw a strong performance, strong execution"
+      },
+      {
+        "analyst_name": "Angie Sollum",
+        "level": 0,
+        "quoted_compliment": ""
+      },
+      {
+        "analyst_name": "Greg Moskowitz",
+        "level": 1,
+        "quoted_compliment": "nice job executing in the Q2."
+      },
+      {
+        "analyst_name": "Brian Essex",
+        "level": 0,
+        "quoted_compliment": ""
+      },
+      {
+        "analyst_name": "Eric Heath",
+        "level": 1,
+        "quoted_compliment": "great to see the great results there."
+      },
+      {
+        "analyst_name": "Roger Boyd",
+        "level": 1,
+        "quoted_compliment": "congrats on a very nice execution."
+      },
+      {
+        "analyst_name": "Joshua Tilton",
+        "level": 1,
+        "quoted_compliment": "I'll echo my congrats. You're on a great quarter."
+      },
+      {
+        "analyst_name": "Adam Borg",
+        "level": 0,
+        "quoted_compliment": ""
+      },
+      {
+        "analyst_name": "Trevor Walsh",
+        "level": 0,
+        "quoted_compliment": ""
+      },
+      {
+        "analyst_name": "Alex Henderson",
+        "level": 1,
+        "quoted_compliment": "thanks for the consistency and strong execution you guys have been delivering"
+      },
+      {
+        "analyst_name": "Rudy Kessinger",
+        "level": 1,
+        "quoted_compliment": "Thanks for taking my questions."
+      },
+      {
+        "analyst_name": "Andrew Nowinski",
+        "level": 0,
+        "quoted_compliment": ""
+      }
+    ]
+  },
+  "2023_Q3": {
+    "year": 2023,
+    "quarter": 3,
+    "date": "2023-11-02T08:30:00-04:00",
+    "compliments": [
+      {
+        "analyst_name": "Seket Kelia",
+        "level": 1,
+        "quoted_compliment": "Great to see the momentum"
+      },
+      {
+        "analyst_name": "Rob Owens",
+        "level": 1,
+        "quoted_compliment": "Congrats on the quarter"
+      },
+      {
+        "analyst_name": "Hamza Fadawalla",
+        "level": 1,
+        "quoted_compliment": "I also want to extend my support"
+      },
+      {
+        "analyst_name": "Itai Kidron",
+        "level": 1,
+        "quoted_compliment": "I've offered congrats to all your employees in Israel"
+      },
+      {
+        "analyst_name": "Brian Essex",
+        "level": 1,
+        "quoted_compliment": "great to see the strong net new ARR growth"
+      },
+      {
+        "analyst_name": "John DeFucci",
+        "level": 1,
+        "quoted_compliment": "impressive top-line momentum"
+      },
+      {
+        "analyst_name": "Fatima Boulani",
+        "level": 1,
+        "quoted_compliment": "sending my well wishes to you and the entire CyberArk family."
+      },
+      {
+        "analyst_name": "Junaid Siddiqui",
+        "level": 1,
+        "quoted_compliment": "positive surprise to you"
+      },
+      {
+        "analyst_name": "Adam Borg",
+        "level": 1,
+        "quoted_compliment": "thanks for taking the question."
+      },
+      {
+        "analyst_name": "Brian Colley",
+        "level": 1,
+        "quoted_compliment": "I'd certainly like to echo my support"
+      },
+      {
+        "analyst_name": "Alex Henderson",
+        "level": 1,
+        "quoted_compliment": "I rarely hear somebody talk about, quote, an amazing pipeline build"
+      }
+    ]
+  },
+  "2023_Q4": {
+    "year": 2023,
+    "quarter": 4,
+    "date": "2024-02-08T08:30:00-05:00",
+    "compliments": [
+      {
+        "analyst_name": "Saqib Khalia",
+        "level": 1,
+        "quoted_compliment": "nicely done."
+      },
+      {
+        "analyst_name": "Zach",
+        "level": 0,
+        "quoted_compliment": ""
+      },
+      {
+        "analyst_name": "Joel",
+        "level": 1,
+        "quoted_compliment": "Congrats on the results and guidance."
+      },
+      {
+        "analyst_name": "Fatima Boulani",
+        "level": 0,
+        "quoted_compliment": ""
+      },
+      {
+        "analyst_name": "Rob Owens",
+        "level": 0,
+        "quoted_compliment": ""
+      },
+      {
+        "analyst_name": "Jonathan Ho",
+        "level": 1,
+        "quoted_compliment": "congratulations on the strong results and guidance."
+      },
+      {
+        "analyst_name": "Tal Liani",
+        "level": 0,
+        "quoted_compliment": ""
+      },
+      {
+        "analyst_name": "Michael Nutterman",
+        "level": 0,
+        "quoted_compliment": ""
+      },
+      {
+        "analyst_name": "Joshua Tilton",
+        "level": 0,
+        "quoted_compliment": ""
+      },
+      {
+        "analyst_name": "Hamza Farawala",
+        "level": 0,
+        "quoted_compliment": ""
+      },
+      {
+        "analyst_name": "Ray McDonough",
+        "level": 0,
+        "quoted_compliment": ""
+      }
+    ]
+  },
+  "2024_Q1": {
+    "year": 2024,
+    "quarter": 1,
+    "date": "2024-05-02T08:30:00-04:00",
+    "compliments": [
+      {
+        "analyst_name": "Saket Kalia",
+        "level": 1,
+        "quoted_compliment": "Congrats on 25 years."
+      },
+      {
+        "analyst_name": "Zach",
+        "level": 1,
+        "quoted_compliment": "great first quarter on cash flow."
+      },
+      {
+        "analyst_name": "Greg Muscovitz",
+        "level": 1,
+        "quoted_compliment": "a nice job on the Q1."
+      },
+      {
+        "analyst_name": "Brian Essex",
+        "level": 0,
+        "quoted_compliment": ""
+      },
+      {
+        "analyst_name": "Rob Owens",
+        "level": 1,
+        "quoted_compliment": "Matt, you've got a strong quarter, our ability to be able to continue to drive momentum in the market."
+      },
+      {
+        "analyst_name": "Joseph Gallo",
+        "level": 0,
+        "quoted_compliment": ""
+      },
+      {
+        "analyst_name": "Adam Borge",
+        "level": 1,
+        "quoted_compliment": "great to see the continued traction with secure cloud access."
+      },
+      {
+        "analyst_name": "Roger Boyd",
+        "level": 0,
+        "quoted_compliment": ""
+      },
+      {
+        "analyst_name": "Andrew Nowinski",
+        "level": 0,
+        "quoted_compliment": ""
+      },
+      {
+        "analyst_name": "Itayi Kidron",
+        "level": 1,
+        "quoted_compliment": "Guys, you did a great job."
+      },
+      {
+        "analyst_name": "Sharadi Kaltari",
+        "level": 1,
+        "quoted_compliment": "secure browser GA looks very timely."
+      }
+    ]
+  },
+  "2024_Q2": {
+    "year": 2024,
+    "quarter": 2,
+    "date": "2024-08-08T08:30:00-04:00",
+    "compliments": [
+      {
+        "analyst_name": "Saket Kalia",
+        "level": 1,
+        "quoted_compliment": "congrats on the strong execution."
+      },
+      {
+        "analyst_name": "Zach",
+        "level": 0,
+        "quoted_compliment": ""
+      },
+      {
+        "analyst_name": "Jonathan Ho",
+        "level": 0,
+        "quoted_compliment": ""
+      },
+      {
+        "analyst_name": "Madeline Brooks",
+        "level": 1,
+        "quoted_compliment": "nice performance this quarter."
+      },
+      {
+        "analyst_name": "Rob Olin",
+        "level": 0,
+        "quoted_compliment": ""
+      },
+      {
+        "analyst_name": "Shawl Ayal",
+        "level": 1,
+        "quoted_compliment": "Congrats on the ongoing consistent execution."
+      },
+      {
+        "analyst_name": "John Dufriti",
+        "level": 1,
+        "quoted_compliment": "impressive, but it's not only"
+      },
+      {
+        "analyst_name": "Joshua Tilton",
+        "level": 0,
+        "quoted_compliment": ""
+      },
+      {
+        "analyst_name": "Fatima Bulani",
+        "level": 0,
+        "quoted_compliment": ""
+      },
+      {
+        "analyst_name": "Cd Queen",
+        "level": 0,
+        "quoted_compliment": ""
+      }
+    ]
+  },
+  "2024_Q3": {
+    "year": 2024,
+    "quarter": 3,
+    "date": "2024-11-13T08:30:00-05:00",
+    "compliments": [
+      {
+        "analyst_name": "Saket Kalia",
+        "level": 1,
+        "quoted_compliment": "I tip my cap to you, man, on just a heck of a run."
+      },
+      {
+        "analyst_name": "Hamsa Farawala",
+        "level": 1,
+        "quoted_compliment": "congrats to Josh on a great run"
+      },
+      {
+        "analyst_name": "Matt Hedberg",
+        "level": 1,
+        "quoted_compliment": "congrats as well to both Josh and Erica."
+      },
+      {
+        "analyst_name": "Brian Essex",
+        "level": 1,
+        "quoted_compliment": "congratulations to you."
+      },
+      {
+        "analyst_name": "Roger Boyd",
+        "level": 1,
+        "quoted_compliment": "respective congrats to both Josh and Eric."
+      },
+      {
+        "analyst_name": "Adam Bork",
+        "level": 1,
+        "quoted_compliment": "Josh and Erica, many congrats to you both."
+      },
+      {
+        "analyst_name": "Don DeFucci",
+        "level": 1,
+        "quoted_compliment": "congrats to you both."
+      }
+    ]
+  }
+}

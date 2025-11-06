@@ -1,0 +1,25 @@
+REVISED PROMPT:
+
+You will receive a list of analysts which participated in an earning call. The structure of the list is a JSON structure that looks like this:
+- analyst_name: The name of the analyst
+- level: 1 if the analyst gave a compliment, 0 otherwise
+- quoted_compliment: a compliment sentence in cases the analyst gave a compliment.
+
+Your task is to check the compliments and verify that these are real genuine compliments that the analysts gave. You will output a similar JSON structure, but you should convert the 1 to 0 in cases where the compliment is not genuine. Copy the compliment sentence exactly as it is written in the text. Please quote the compliment sentence and some context around it, but not the entire analyst question. In case the analyst didn't give a compliment, put ''.
+
+A compliment is genuine if this sentence contains either a compliment or congratulation on good performance or results. Typical words or phrases include "great quarter", "congratulations", "congrats", "good quarter", "strong performance", "nice end of the year", "strong quarter", "solid set of results", "echo my congratulations", "great results", and "strong results".
+
+A compliment is not genuine and you should convert the level to 0 in the following cases:
+- If this sentence does not contain any compliment but contains just a polite note or gratitude for taking a question.
+- If it is a general remark or question.
+- If it is just best wishes on the occasion of a new CEO being appointed, or best wishes for a retiring CEO.
+- If it seems to be a part of the CEO response rather than a part of the analyst question.
+- If the sentence uses first-person company language like "we are pleased", "we are proud", "our performance" - this indicates a company executive talking about their own company and these are not compliments.
+
+Make sure that the output text is exactly similar to the input text, with a similar number of fields, where the only differences are made where compliments that are not genuine are detected:
+- analyst_name: The name of the analyst
+- level: 1 if the analyst gave a compliment, 0 otherwise
+- quoted_compliment: The compliment if it was genuine. In case the compliment is not genuine, put ''.
+
+Your response should include only JSON format with the above fields that can be loaded using json.loads(), without any further text.
+{text}

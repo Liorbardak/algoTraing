@@ -1,0 +1,52 @@
+[
+  {
+    "quarter": "2021_Q3",
+    "analyst_name": "Elliot Wilbur",
+    "analyst_name_GT": "Elliot Wilbur",
+    "level": 1,
+    "level_GT": 0,
+    "quoted_compliment": "Thanks. Good afternoon. Maybe just a couple from me here. First for Brian, just with respect to outlook for gross margin trends and ability to sort of maintain positive gross margin performance going forward, is it Fair to assume at this point that if revenue simply grows sequentially, that you'll be able to continue to generate positive gross margin, just trying to get a sense of how important or what the impact was of the conformance batches in the quarter.",
+    "quoted_compliment_GT": "",
+    "partial_name_match": false
+  },
+  {
+    "quarter": "2022_Q3",
+    "analyst_name": "Elliot Wilber",
+    "analyst_name_GT": "Elliot Wilber",
+    "level": 1,
+    "level_GT": 0,
+    "quoted_compliment": "Thank you, Elliot, again for the congratulatory remarks as well. So to specifically answer your question, you're spot on. We expect the remaining 2200 liter batches that were produced up until the middle of 2021 to be depleted or meaning sold throughout the next couple quarters be completely sold by the middle of 2023. Substantially, we've already sold the majority of the 2200 to date. There's a couple of quarters to go that we feel, but the 4400 will be sold exclusively starting in the middle of 2023 at the higher margin production process, again, in the 20% to 30% range for the 4400 batch production leader process.",
+    "quoted_compliment_GT": "",
+    "partial_name_match": false
+  },
+  {
+    "quarter": "2023_Q1",
+    "analyst_name": "Elliot Wilbur",
+    "analyst_name_GT": "Elliot Wilbur",
+    "level": 0,
+    "level_GT": 1,
+    "quoted_compliment": "",
+    "quoted_compliment_GT": "Just wanted to extend my congratulations to management and the entire organization on all your accomplishments of the past couple of years.",
+    "partial_name_match": false
+  },
+  {
+    "quarter": "2023_Q1",
+    "analyst_name": "Anthony Petroni",
+    "analyst_name_GT": "Anthony Petroni",
+    "level": 0,
+    "level_GT": 1,
+    "quoted_compliment": "",
+    "quoted_compliment_GT": "congratulations again here on another strong quarter, strong start to the year 2023.",
+    "partial_name_match": false
+  },
+  {
+    "quarter": "2023_Q1",
+    "analyst_name": "Kristen Kluska",
+    "analyst_name_GT": "Kristen Kluska",
+    "level": 0,
+    "level_GT": 1,
+    "quoted_compliment": "",
+    "quoted_compliment_GT": "Let me also add my congratulations to you on another great quarter and the pattern that we've really seen emerge over the last couple quarters here.",
+    "partial_name_match": false
+  }
+]

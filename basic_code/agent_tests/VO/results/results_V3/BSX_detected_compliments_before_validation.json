@@ -1,0 +1,1075 @@
+{
+    "2020_Q1": {
+        "year": 2020,
+        "quarter": 1,
+        "date": "2020-04-29T08:00:00-04:00",
+        "compliments": [
+            {
+                "analyst_name": "David Lewis",
+                "level": 0,
+                "quoted_compliment": ""
+            },
+            {
+                "analyst_name": "Bob Hopkins",
+                "level": 0,
+                "quoted_compliment": ""
+            },
+            {
+                "analyst_name": "Robbie Marcus",
+                "level": 0,
+                "quoted_compliment": ""
+            },
+            {
+                "analyst_name": "Vijay Kumar",
+                "level": 0,
+                "quoted_compliment": ""
+            },
+            {
+                "analyst_name": "Joanne Winch",
+                "level": 0,
+                "quoted_compliment": ""
+            },
+            {
+                "analyst_name": "Josh Jennings",
+                "level": 0,
+                "quoted_compliment": ""
+            },
+            {
+                "analyst_name": "Jason Bedford",
+                "level": 0,
+                "quoted_compliment": ""
+            }
+        ]
+    },
+    "2020_Q2": {
+        "year": 2020,
+        "quarter": 2,
+        "date": "2020-07-29T08:00:00-04:00",
+        "compliments": [
+            {
+                "analyst_name": "Bob Hopkins",
+                "level": 0,
+                "quoted_compliment": ""
+            },
+            {
+                "analyst_name": "David Lewis",
+                "level": 0,
+                "quoted_compliment": ""
+            },
+            {
+                "analyst_name": "Larry Beagleson",
+                "level": 0,
+                "quoted_compliment": ""
+            },
+            {
+                "analyst_name": "Robbie Marcus",
+                "level": 0,
+                "quoted_compliment": ""
+            },
+            {
+                "analyst_name": "Rick Wise",
+                "level": 0,
+                "quoted_compliment": ""
+            },
+            {
+                "analyst_name": "Vijay Kumar",
+                "level": 0,
+                "quoted_compliment": ""
+            },
+            {
+                "analyst_name": "Matt Taylor",
+                "level": 1,
+                "quoted_compliment": "Hi, thank you for taking the question. So I appreciate all the detail on June and July. This is more than we've gotten from a lot of other companies. And I guess I'm just wondering if your positivity on July is, you think, differentially related to your portfolio, your products, your exposures, or Are we seeing just the benefit of having more hindsight, and do you think that we're seeing more broad recovery through the month for the MedTech space?"
+            },
+            {
+                "analyst_name": "Joanne Winch",
+                "level": 0,
+                "quoted_compliment": ""
+            }
+        ]
+    },
+    "2020_Q3": {
+        "year": 2020,
+        "quarter": 3,
+        "date": "2020-10-28T08:00:00-04:00",
+        "compliments": [
+            {
+                "analyst_name": "David Lewis",
+                "level": 0,
+                "quoted_compliment": ""
+            },
+            {
+                "analyst_name": "Robert Hopkins",
+                "level": 0,
+                "quoted_compliment": ""
+            },
+            {
+                "analyst_name": "Vijay Kumar",
+                "level": 0,
+                "quoted_compliment": ""
+            },
+            {
+                "analyst_name": "Larry Eagleson",
+                "level": 0,
+                "quoted_compliment": ""
+            },
+            {
+                "analyst_name": "Joanne Lynch",
+                "level": 0,
+                "quoted_compliment": ""
+            },
+            {
+                "analyst_name": "Robbie Marcus",
+                "level": 0,
+                "quoted_compliment": ""
+            },
+            {
+                "analyst_name": "Rick Wise",
+                "level": 0,
+                "quoted_compliment": ""
+            },
+            {
+                "analyst_name": "Matt",
+                "level": 0,
+                "quoted_compliment": ""
+            },
+            {
+                "analyst_name": "Danielle Antelphi",
+                "level": 1,
+                "quoted_compliment": "Hey, good morning, everyone. Thank you so much for squeezing me in and congrats on a strong quarter. I have two products related questions. So first on Watchman, you know, one of the things investors are paying attention to is, you know, potential competitor coming to market. And I was hoping maybe you could outline what the most from a competitive perspective are that you've built around the Watchman business that should make us feel okay about the continued growth trajectory there. And I'll just ask my second now. On Exalt-B, given the financial constraints at hospitals, I'm just curious about how quickly that can be the meaningful revenue contributor that it probably ultimately will be. But, you know, hospitals have to work through their current financial duress. And those are my questions. Thanks so much."
+            }
+        ]
+    },
+    "2020_Q4": {
+        "year": 2020,
+        "quarter": 4,
+        "date": "2021-02-03T08:00:00-05:00",
+        "compliments": [
+            {
+                "analyst_name": "Bob Hopkins",
+                "level": 0,
+                "quoted_compliment": ""
+            },
+            {
+                "analyst_name": "David Lewis",
+                "level": 0,
+                "quoted_compliment": ""
+            },
+            {
+                "analyst_name": "Larry Beagleson",
+                "level": 0,
+                "quoted_compliment": ""
+            },
+            {
+                "analyst_name": "Joanne Winch",
+                "level": 0,
+                "quoted_compliment": ""
+            },
+            {
+                "analyst_name": "Robbie Marcus",
+                "level": 0,
+                "quoted_compliment": ""
+            },
+            {
+                "analyst_name": "Matt Taylor",
+                "level": 0,
+                "quoted_compliment": ""
+            }
+        ]
+    },
+    "2021_Q1": {
+        "year": 2021,
+        "quarter": 1,
+        "date": "2021-04-28T08:00:00-04:00",
+        "compliments": [
+            {
+                "analyst_name": "Bob Hopkins",
+                "level": 1,
+                "quoted_compliment": "Oh, thank you and good morning and congrats on a good start to the year. First question I'd love to ask is just on your 2021 revenue guidance. And, you know, I realize there's a lot of numbers flying around here, but to keep it simple, I think you said your organic sales growth in the first quarter of 2021 over the first quarter of 2019 was 3%. You expect an improvement on that same basis to 3% to 6% in Q2 and 2% to 5% for the full year. My question is, that suggests kind of very little incremental growth in the back half versus the first half. So is that simply conservatism, or is there something going on in the back half that we should be aware of?"
+            },
+            {
+                "analyst_name": "Robbie Marcus",
+                "level": 1,
+                "quoted_compliment": "Oh, great. And I'll add my congrats on a really strong first quarter here. You know, I wanted to touch on, I know a lot of your procedures, some like two-thirds are outside of the hospital and the ASC setting. And a lot of these are, you know, as we learned last year, deferrable procedures. So I'd love to get a sense of how you're thinking about the potential for a backlog of patients to come through later this year and into next year and how sizable an opportunity that might be."
+            },
+            {
+                "analyst_name": "Larry Beagleson",
+                "level": 1,
+                "quoted_compliment": "Good morning. Thanks for taking the questions and congrats on the really nice quarter here. One on the recovery, one on watchmen. When you reported Q4 results, I think January was still declining year over year. You know, February didn't seem like it was a great month with the weather and all. So it looks like, you know, you must have seen a pretty significant acceleration in March. Can you talk about the trends through the quarter, and what are you seeing in April? Apologies for the short-term question, but obviously, you know, a lot of interest in that, and I have one follow-up."
+            },
+            {
+                "analyst_name": "Vijay Kumar",
+                "level": 1,
+                "quoted_compliment": "Hey, guys. Congrats on the nice brings here. Mike, maybe I'm one on cardio. I think there's been some noise around SICD recall, but in the context of your commentary on Lux ICM share gains and ET perhaps coming in slightly better, are the positives more than enough to offset, I guess, some of the CRM headwinds?"
+            },
+            {
+                "analyst_name": "Kyla Kroom",
+                "level": 0,
+                "quoted_compliment": ""
+            },
+            {
+                "analyst_name": "Cecilia Furlong",
+                "level": 0,
+                "quoted_compliment": ""
+            },
+            {
+                "analyst_name": "Rick Wise",
+                "level": 0,
+                "quoted_compliment": "Good morning, Mike. Good morning, Dan. You know, one big picture question and then a product question. When I look at the regions in the organic growth, obviously, US, Asia-Pac, emerging markets strong. In Nia, clearly the laggard, that's not shocking or surprising, but how are you thinking about the recovery in those regions? And how are you thinking about it in offering up your guidance now? Second half recovery or it takes a year? Any incremental thoughts there?"
+            },
+            {
+                "analyst_name": "Josh Jennings",
+                "level": 0,
+                "quoted_compliment": "Good morning. Thanks for taking the questions. I had a follow-up on the millipede question. I just wanted to see if Mike or Dr. Meredith would be willing to just give us an update on your views of the transcatheter mitral opportunity. Just the market, do you believe it's a multibillion-dollar opportunity? And then any updates on Boston's strategy? We may hear more in the September Investor Day. But you have Millipede here. Any other internal investments or development programs that are in place? And then just what is the strategy from here to get involved in the mitral space? Transcast."
+            },
+            {
+                "analyst_name": "Danielle Antelfi",
+                "level": 1,
+                "quoted_compliment": "Hey, good morning, everyone. Thanks so much for taking the question. Congrats on a really strong start to the year. I just have one high-level question. And it's around, you've heard a lot of your large competitors talk about COVID sort of putting them in a stronger competitive position than they were pre-COVID. And I suspect some of that has to do with, you know, sort of stronger relationships with your hospital customers, purchasing or breadth across the portfolio and R&D productivity. Mike, I'd be curious to hear about how you think Boston's competitive positioning has changed with some of the shifting trends as it relates to COVID, if it's changed at all. Thanks so much."
+            }
+        ]
+    },
+    "2021_Q2": {
+        "year": 2021,
+        "quarter": 2,
+        "date": "2021-07-27T08:00:00-04:00",
+        "compliments": [
+            {
+                "analyst_name": "Bob Hopkins",
+                "level": 1,
+                "quoted_compliment": "That's on the strong quarter and congrats to Lauren. So first question for Mike and Dan is just wondering if you could talk a little bit more about your back half 2021 assumptions. You mentioned that you assume a manageable level of COVID. I'm wondering if you could help us understand what that means. Does that mean specifically that you assume things get a little worse from what you're seeing today or do you assume things stay about the same?"
+            },
+            {
+                "analyst_name": "Robbie Marcus",
+                "level": 1,
+                "quoted_compliment": "Great. I'll add my congratulations on a really nice quarter. Two for me. First, it looks like you had great growth in the US with 12% organic over 2019. I was wondering You know, maybe you could just give us an overview of where you're seeing the recovery. Are you seeing any lagging trends from Delta variant? And is there any discrepancy in inpatient versus outpatient? You're one of the first to report here with such a global covering and diverse offering. I think it'd be really instructful as we think about the rest of the year and the guidance."
+            },
+            {
+                "analyst_name": "Larry Beagleson",
+                "level": 1,
+                "quoted_compliment": "Please go ahead. Good morning. Thanks for taking the questions and congrats on the quarter and congrats to Lauren. Just one follow-up on the investor meeting in September. Maybe Dan or Mike, just level set us kind of what we should expect. Will you provide an update to your financial goals and pipeline and any reason to think the algorithm of 6% to 8% sales and You know, 50 to 100 basis points margin improvement with double-digit EPS growth has changed, and I had one follow-up."
+            },
+            {
+                "analyst_name": "BJ Kumar",
+                "level": 1,
+                "quoted_compliment": "Hi, Mike. Congrats on the quarter here. Thanks for taking my question. One on a high level. If I just look at the 2Q performance and the back half implied guide, you know, we did 9% in 2Q versus pre-pandemic 2019. Back half implied is 7 and 9. I mean, we're already running, if I look at the 2Q to 4Q performance, we're already running well north of 8%. Preventus, Lumenis, once these deals become organic, they should be incremental, plus you have these pipelines. I guess when I look at that LRP of 6 to 8, shouldn't these results provide a high degree of confidence in upper end of that LRP on the top line going forward?"
+            },
+            {
+                "analyst_name": "Cecilia Furlong",
+                "level": 1,
+                "quoted_compliment": "Great. Good morning and thanks for taking our questions. I wanted to ask about SCS trialing trends and really just what you've seen from a relative recovery versus other more elective procedures in the quarter and then kind of tying in also just VertiFlex, what type of traction you've seen recently?"
+            },
+            {
+                "analyst_name": "Peter Chickening",
+                "level": 1,
+                "quoted_compliment": "Hey, good morning, guys. Thanks for taking my questions. Congrats on a nice quarter and also congrats to Lauren. To follow up on Bob's question, I understand the comps versus 2018 for 3Q is challenging at 9%, but we also heard from the public hospitals that June was the best month of the quarter and strong June trends continue into July. So just curious, as you look at your third quarter guidance, are you seeing normal 3Q seasonality, or are you simply assuming that you'll see it at some point during the quarter?"
+            },
+            {
+                "analyst_name": "Joanne Wunsch",
+                "level": 1,
+                "quoted_compliment": "Hi, can you hear me okay?"
+            },
+            {
+                "analyst_name": "Travis Steed",
+                "level": 1,
+                "quoted_compliment": "Hi. Good morning. Thanks for the question. I appreciate some of the longer-term comments you gave on operating margins. Just curious what the base we should be using for that 50%. our 50 basis points of margin expansion per year, if we should think about that 26% in the back half here. So thinking about the street somewhere in 26 and a half percent, next year would be a reasonable place to be at this point."
+            }
+        ]
+    },
+    "2021_Q3": {
+        "year": 2021,
+        "quarter": 3,
+        "date": "2021-10-27T08:00:00-04:00",
+        "compliments": [
+            {
+                "analyst_name": "Bob Hopkins",
+                "level": 1,
+                "quoted_compliment": "Yeah, makes sense. And then just one quick follow-up on that. I guess taking a step back, one of the things that's giving a lot of MedTech investors pause right now is just the sheer number of macro issues to kind of think through from staffing, to COVID waves, to supply chain, to inflation. And that's before we even start to look at company fundamentals. So I guess one big picture question I'd ask you, Mike, is, you know, all that's making it kind of hard for investors to know how to think about modeling for, you know, the next 12 months. And so I just would love your kind of top down thoughts on the ability of Boston to deliver over the next 12 months, you know, given all these headwinds, you know, not asking for specific quantification of things, but just your ability to manage through all these headwinds."
+            },
+            {
+                "analyst_name": "Robbie Marcus",
+                "level": 0,
+                "quoted_compliment": ""
+            },
+            {
+                "analyst_name": "Joanne Wench",
+                "level": 0,
+                "quoted_compliment": ""
+            },
+            {
+                "analyst_name": "Rick Wise",
+                "level": 0,
+                "quoted_compliment": ""
+            },
+            {
+                "analyst_name": "Vijay Kumar",
+                "level": 0,
+                "quoted_compliment": ""
+            },
+            {
+                "analyst_name": "Danielle Antofi",
+                "level": 0,
+                "quoted_compliment": ""
+            },
+            {
+                "analyst_name": "Matthew O'Brien",
+                "level": 1,
+                "quoted_compliment": "Good morning. Thanks for taking the questions. Um, Mike, as I look across the portfolio, I think a lot of things held up better than I might've expected going into Q3 with all these, these COVID headwinds, you know, with, with their sphere doing better and peripheral and, and, um, uh, preventive seeming to hold up, you know, CRM and Watchman obviously doing well, even when netting out the, um, the reserve tailwind. So what I'm curious about is what you're seeing in non COVID geographies, as far as the momentum in those businesses, You know, are you taking share with some of these new products? Are you seeing accelerating momentum with some of these new categories? And why wouldn't that accelerate coming out of COVID just given, you know, some of the underlying strength that I think is there?"
+            },
+            {
+                "analyst_name": "Anthony Petroni",
+                "level": 0,
+                "quoted_compliment": ""
+            }
+        ]
+    },
+    "2021_Q4": {
+        "year": 2021,
+        "quarter": 4,
+        "date": "2022-02-02T08:00:00-05:00",
+        "compliments": [
+            {
+                "analyst_name": "Robbie Marcus",
+                "level": 0,
+                "quoted_compliment": ""
+            },
+            {
+                "analyst_name": "Larry Beagleson",
+                "level": 1,
+                "quoted_compliment": "Good morning. Thanks for taking the question and congrats on a nice finish to the year. Just on Watchman. Yeah, of course. Just on Watchman, just what you've seen so far with Amulet, you know, Boston, I mean, I'm sorry, Habit claims they had about 10% share in the U.S. in December. What are you assuming in the guidance, you know, for Watchman growth in 2022? And, you know, how confident are you you'll get the DAP label in the first half of this year? Thanks for taking the question."
+            },
+            {
+                "analyst_name": "Joanne Lynch",
+                "level": 0,
+                "quoted_compliment": ""
+            },
+            {
+                "analyst_name": "Vijay Kumar",
+                "level": 0,
+                "quoted_compliment": ""
+            },
+            {
+                "analyst_name": "Danielle Antalfi",
+                "level": 0,
+                "quoted_compliment": ""
+            },
+            {
+                "analyst_name": "Matt Mixick",
+                "level": 1,
+                "quoted_compliment": "Hi, good morning. Thanks for taking the question. So I had one follow-up on some of the portfolio and investment and strategic comments that you made regarding Millipede and sort of the other options that are out there. If you could talk maybe a little bit about one of the areas I don't think you mentioned was tricuspid and other sort of structural heart opportunities as well as digital and any understanding heart logic is a big part of your CRM strategy. Maybe if you could comment on further investments there or to what degree you view either one of those as strategically important and I had one follow-up if I could."
+            },
+            {
+                "analyst_name": "Matt Taylor",
+                "level": 0,
+                "quoted_compliment": ""
+            },
+            {
+                "analyst_name": "Cecilia Furlong",
+                "level": 1,
+                "quoted_compliment": "Great. Thank you for taking the questions. I wanted to ask just on your EP business specifically, can you talk about what you're seeing in Europe just in terms of early Farrah Pulse versus Cryo versus RF trends? And then just beyond that as well, can you provide an update on your Farrah Pulse US trial, where enrollment stands there? as well as what you're seeing in Japan, specifically around PolarX. Thank you."
+            },
+            {
+                "analyst_name": "Pito Chickering",
+                "level": 0,
+                "quoted_compliment": ""
+            }
+        ]
+    },
+    "2022_Q1": {
+        "year": 2022,
+        "quarter": 1,
+        "date": "2022-04-27T08:00:00-04:00",
+        "compliments": [
+            {
+                "analyst_name": "Robbie Marcus",
+                "level": 1,
+                "quoted_compliment": "Good morning, and congrats on a nice quarter. Thanks, Robbie. Maybe to start, you know, it's great to see the outperformance in a tough quarter and the organic sales guidance raise. I was hoping... Maybe you could just walk us through the thought process of coming up with the second quarter guide, which came in maybe just a hair below where the street was. I imagine the China lockdowns are impacting that, if you could comment, and just how you're thinking about the balance of the year and what's assumed."
+            },
+            {
+                "analyst_name": "Rick Wise",
+                "level": 0,
+                "quoted_compliment": ""
+            },
+            {
+                "analyst_name": "Joanne Winch",
+                "level": 0,
+                "quoted_compliment": ""
+            },
+            {
+                "analyst_name": "Larry Beagleson",
+                "level": 0,
+                "quoted_compliment": ""
+            },
+            {
+                "analyst_name": "Vijay Kumar",
+                "level": 1,
+                "quoted_compliment": "Hey, guys. Hey, guys. Congrats on a nice Q1 print share. My first question, one on guidance here. Dan, Q1 organic bid by 200 basis points, so it looks like the guide rates for annual just annualized the Q1 bid. Any reason why? The Q1 strength would insist in, you know, what specifically are you assuming for China impact? You know, similarly on EPS. It was raised by one cent at the low end, right, given the debt-free-fied bail list. Looks like operating margin is in line-ish. Maybe talk about the annual guidance for a second."
+            },
+            {
+                "analyst_name": "Travis Steed",
+                "level": 1,
+                "quoted_compliment": "Hi, good morning. Congrats on a good start to the year. Question on the $300 million of anchor, or the headwind that you built in on freight and direct materials versus pre-COVID levels. How much of this is incremental versus the prior guide three months ago? Just trying to get a sense for the rate of change on some of these inflationary pressures, and also try to get a sense for how much of this is actually locked into the P&L for sure versus the potential for some things to actually improve versus what you built in."
+            },
+            {
+                "analyst_name": "Danielle Antalfi",
+                "level": 1,
+                "quoted_compliment": "Hey, good morning, everyone. Thanks so much for taking the question, and congrats on a really good quarter. I just wanted to get a sense... Yeah, no, thank you. I just wanted to get a sense of the recovery within the quarter, and I just wanted to bounce something off you and see how this will translate to the rest of the year. So our sense from reports to date and from talking to some other privately held companies is that the first half of the quarter, you saw suppressed procedure volumes, then a quick rebound, and everything got compressed. into the quarter within itself the um compressed procedure trends i'm sorry suppressed procedure trends and then the recovery whereas previously it was like down one quarter the recovery the next quarter do you guys think you saw that is my first question and then as we think about the rest of the year and potentially more covid waves do you think the recovery from here is going to look more like that or there's risk excuse me of the volatility that we saw previously i guess what i'm getting at is Is there still a backlog of patients, number one? Number two, do we think this is going to be more consistent, more linear going forward? Sorry, that was a long question."
+            },
+            {
+                "analyst_name": "Cecilia Furlong",
+                "level": 0,
+                "quoted_compliment": ""
+            },
+            {
+                "analyst_name": "Matthew O'Brien",
+                "level": 0,
+                "quoted_compliment": ""
+            }
+        ]
+    },
+    "2022_Q2": {
+        "year": 2022,
+        "quarter": 2,
+        "date": "2022-07-27T08:00:00-04:00",
+        "compliments": [
+            {
+                "analyst_name": "Jason Bedford",
+                "level": 0,
+                "quoted_compliment": ""
+            },
+            {
+                "analyst_name": "Joanne Lynch",
+                "level": 0,
+                "quoted_compliment": "Good morning, and thank you for taking the question. May I say congratulations? I want to spend just a little bit of time on the organic growth rate, because when you entered the year, we were looking for 6% to 8%, which was raised on the first quarter call to 6.5% to 8.5%, and now to 8% to 9% organic. What is happening in your core businesses or in your particular franchises, maybe, that's helping you sort of buck the trend and actually be raising your organic growth rate each quarter?"
+            },
+            {
+                "analyst_name": "Robbie Marcus",
+                "level": 1,
+                "quoted_compliment": "Oh, great. Thanks for taking the question. I'll add my congratulations on a good quarter. Thanks, Robbie. Dan, I was wondering, it sounds like you're absorbing about 300 basis points of headwinds versus 2019, but on track to generate flat operating margins, which is really impressive given all the headwinds. Maybe just walk through where you're seeing those pressures and you know, how you're offsetting it in the base business. And then if there's anything we should be focused on that carries over into 2023 in the models from some of these offsets or pressures. Thanks."
+            },
+            {
+                "analyst_name": "Larry Diegelson",
+                "level": 1,
+                "quoted_compliment": "Good morning. Thanks for taking the questions and congrats on a nice quarter. You know, I heard you mention that you are having an analyst meeting at TCT. So, are you expecting to present any significant data there? So, for example, the Saval, you know, BTK data. And if so, kind of what should we be looking for in your confidence you can overcome, you know, the issues of previous devices? And just maybe on Devoro, any color on the launch there and how you see that fitting into the treatment armamentarium. Thanks for taking the question."
+            },
+            {
+                "analyst_name": "Vijay Kumar",
+                "level": 1,
+                "quoted_compliment": "Hey, guys. Congrats on the print share, and thanks for taking my question. I have a two-part question. One, just on the guidance here, first half versus second half, the high end implies, I think, low doubles in the second half versus 8% in first half. You know, the pre-pandemic comps, you know, first half, second half, 21 versus 19, they seem comparable. There was no first half versus second half. So I'm curious, what's driving the second half acceleration? You know, what was the China lockdown and contrast media impact in 2Q? Perhaps is that what's giving you the confidence looking at the underlying trends for second half? And then on the gross margin, $375 million of cost, do you know what – What dollar amount of that is capitalized on the balance sheet? Thank you."
+            },
+            {
+                "analyst_name": "Rick Wise",
+                "level": 0,
+                "quoted_compliment": "Good morning, Mike. Hi, Dan. Maybe you could give us a little more color on two key products, both Watchman and Faribault. Watchman, you did face a difficult 2Q comp, another excellent quarter. Maybe talk about where we are in the flex rollout and what's driving that growth and how sustainable you see it or what sustains this kind of impressive growth going ahead. And on FerriPulse, we recently checked in with some early FerriPulse adopters in Europe, and they love the technology, but were concerned about price and sort of limiting their utilization. So maybe you can sort of Talk about that, how you're addressing that issue, and any color on where you are with the number of accounts and your goals in terms of account opening in Europe. Any extra color would be great. Thank you so much."
+            },
+            {
+                "analyst_name": "Cecilia Furlong",
+                "level": 1,
+                "quoted_compliment": "Great. Good morning, and thank you for taking the question. I wanted to ask on Watchmen, but specifically contrast supply, if you could just talk to the headwind that posed in the quarter. And then, Bradley, too, can you speak to what you've seen from a residual staffing shortage impact across the hospital system at this point? Where do you feel we are in recovery, and how much further recovery is incorporated in your outlook for the back half of the year? And thank you for taking the question."
+            },
+            {
+                "analyst_name": "Travis Steed",
+                "level": 1,
+                "quoted_compliment": "thank you the next question comes from travis steed with bank of america please go ahead hey good morning congrats on a good quarter uh so you talked about the gross margin pressures being offset in the p l just curious how sustainable that is as you move into 23 does some of that opex have to come back or can you keep opex this level until the gross margin pressures ease and then a quick follow-up on on china up nine percent much better than your peers which are still down Just curious what's driving the strength in your China business versus peers? Thank you."
+            },
+            {
+                "analyst_name": "Pito Chickering",
+                "level": 0,
+                "quoted_compliment": "Hey, good morning, guys. Thanks for taking my questions here. Two quickies. From a capital allocation perspective, I understand M&A will always be a priority for you guys. But as you look at your free cash flow generation, what are the reasons to not get more aggressive with ShareRepo to keep driving EPS growth? And also, can you give us any details on the Vortex hard pump, such as the size of the pump, or when you start seeing data from that? Thanks so much."
+            },
+            {
+                "analyst_name": "Josh Jennings",
+                "level": 0,
+                "quoted_compliment": "Hi, good morning. Thanks for taking the questions. Just wanted to focus on Watchman. And just with the DAPT label update, do you expect that to cause any change in terms of physician decision-making on device selection? I mean, it seems like it's not impacting growth and that there's some off-label utilization going on out there already with data that's been put in the public domain. And then just the second part is, I heard you say on kind of next-generation Watchman devices and saw a presentation recently about coding enhancements that could increase hemocompatibility, potentially reduce the device-weighted thrombus rate. It seems like there's some bench and animal data out there already, but any update you can give us on this coding enhancement project internally would be great to hear. Thanks for taking the questions."
+            },
+            {
+                "analyst_name": "Richard Newiter",
+                "level": 1,
+                "quoted_compliment": "Hi. Thanks for taking the questions and congrats on the quarter. You have some competitors out there that are calling out pricing strategies, particularly to head into 2023. Anything you'd call out there potentially as a lever to offset margin headwinds or sustain? And then also, if you could just comment a little bit more on the double-digit growth comment in the back half that you're expecting out of your Neuromod business? Any specific regions driving that? I'm assuming that doesn't assume a major pickup in SES, but other product categories, but please correct that if that's wrong. Thank you."
+            },
+            {
+                "analyst_name": "Shagun Singh",
+                "level": 0,
+                "quoted_compliment": "Thank you so much for taking the question. I was wondering if you can provide a little bit color on 2023. You did call out durable growth in the back half of this year. Directionally, should we expect that strength to continue into next year, just given your higher acuity exposure and despite a potential economic slowdown? What are the key catalysts we should look out for next year? And then you talked about some macroeconomic headwinds continuing into 2023, but the majority will impact a majority of the impact is going to come this year. Does that mean we can expect you to return to plus 50 basis points of operating margin goal in 2023 and beyond? Thank you for taking the question."
+            }
+        ]
+    },
+    "2022_Q3": {
+        "year": 2022,
+        "quarter": 3,
+        "date": "2022-10-26T08:00:00-04:00",
+        "compliments": [
+            {
+                "analyst_name": "Robbie Marcus",
+                "level": 1,
+                "quoted_compliment": "Robbie Marcus Great. Thanks for taking the question, and congrats on a great top-line quarter. I'll also add congratulations to Dr. Meredith on a very well-deserved retirement. Maybe for my question, it really was a strong top line, double digits, organic. Fourth quarter continues to look good in guidance. I think the one area where we're seeing a little pressure is on margins. So, Dan, I was hoping you might be able to give us an early look into next year. How elevated is the spending? There's a lot of moving pieces with OpEx and currency and the share count. You know, do you think the street's generally in a decent spot for next year with returning to more normalized margin expansion, or do you think it's still going to be a pressured year in 2023? Thanks."
+            },
+            {
+                "analyst_name": "Larry Bigelson",
+                "level": 0,
+                "quoted_compliment": "Good morning. Thanks for taking the question. I just wanted to ask about neuromodulation. Mike, could you talk a little bit more about the reimbursement challenges there? What channels are you seeing that in? And it seems like all your businesses are consistently growing around the corporate growth rate except neuromodulation. So what's the plan to accelerate the growth in that business. And let me just also extend my congratulations to Dr. Meredith. And I wholeheartedly agree with your comments earlier, especially about his sense of humor. Thanks for taking the questions."
+            },
+            {
+                "analyst_name": "Joanne Lynch",
+                "level": 0,
+                "quoted_compliment": "Sorry, thank you very much for taking the questions. Can we spend a little bit of time on the Watchmen franchise? You've had, over the last 12 months, increased competition but an improved label and sort of a broader geographic reach. Can you pick apart how those segments are going or how those headwinds and maybe not headwinds are impacting the franchise? Thanks."
+            },
+            {
+                "analyst_name": "Vijay Kumar",
+                "level": 0,
+                "quoted_compliment": "Hey, guys. Thanks for taking my question. Dan, maybe one for you on the financial side here. I think the 26% operating margin for the year, that would imply a Q4. The pretty steep ramp in Q4. Are we thinking about margins the right way? And when you think about those margins, You know, what should FX impact be for next year at current rates? Anything to think about, you know, balance sheet inventories, which have been capitalized, that's flowing through the P&L for next year, any impact for RAC22? Thank you. Sure."
+            },
+            {
+                "analyst_name": "Travis Seed",
+                "level": 1,
+                "quoted_compliment": "Hey, thanks for taking the question, and also congrats to Ian Meredith. I might have missed it earlier, but can you remind us again the moving parts on what drove the higher OPX and the lower margin guide for 2022 versus three months ago, just as a quick clarification? And then the question I was going to ask was more on the analyst day last year, you were committed to a double-digit EPS growth CAGR. This year, you're close to 7%. Is that double-digit EPS CAGR still good and the starting point for 2023? and still be in that double-digit range given the macro pressures that we're in?"
+            },
+            {
+                "analyst_name": "Cecilia Furlong",
+                "level": 0,
+                "quoted_compliment": "Great. Good morning and thank you for taking the questions. Just wanted to ask a bit more color on what you saw exiting September versus July and August across your portfolio. And then looking at the 4Q guide, if you could just walk through your expectations, either U.S. or U.S., what you're looking at for China, and then just expected either seasonality, any impact from deductibles, anything you would call out specifically that you incorporated in the 4Q guide. And thanks for taking the question."
+            },
+            {
+                "analyst_name": "Rick Wise",
+                "level": 0,
+                "quoted_compliment": "Hi, Mike. Hi, Dan. Two questions. Maybe just on the recovery, just one large picture and one product question. On the recovery, obviously FX is an unknowable factor. It's going to continue. But I'm curious, to what extent are some of the other macro headwinds stabilizing or even improving, particularly staffing? I keep saying to myself, if staffing were less of an issue, maybe you would have grown even more rapidly. Is staffing still an issue? Are things stabilizing in general on the freight and costs that are getting worse? And then I have a product follow-up question."
+            },
+            {
+                "analyst_name": "Matthew O'Brien",
+                "level": 1,
+                "quoted_compliment": "Good morning. Thanks for taking the question and let me offer my congratulations to Dr. Meredith as well on his retirement. You know, Mike, it seems like you're taking a little bit of near-term, you know, pain right now to continue your spending, you know, in these growth areas because you continue to be one of the faster growth diversified med tech names out there. So I'm just curious, You know, if you feel like that momentum is going to continue into 23 where you can stay one of the faster growth large cap med tech names out there, and if it's going to be more of a broad-based, you know, level of improvement across all the different franchises where you can keep kind of growing in this double-digit range in some areas, or if it's going to be a little bit more focal than what we've seen historically. I don't know if it's specifically in cardiology or other areas. Thank you."
+            },
+            {
+                "analyst_name": "Matt Taylor",
+                "level": 0,
+                "quoted_compliment": "Hi, thanks for taking the question. Can you hear me okay?"
+            },
+            {
+                "analyst_name": "Chris Pasquale",
+                "level": 0,
+                "quoted_compliment": "Thanks. I wanted to follow up on the increased prior auth denials in Neuromod. You talked about helping physicians with documentation, but what about addressing the underlying payer reticence to allow access to those therapies? Do you think more clinical data can help, and what have you had planned on that front?"
+            },
+            {
+                "analyst_name": "Matt Mixick",
+                "level": 1,
+                "quoted_compliment": "Hey, thanks so much for squeezing me in. Hey, how are you? So congrats on a really strong quarter, and Dr. Meredith, we'll certainly miss your insights and your cheerful disposition. And I guess I'm thankful that I've got about six months to get to know this humorous side that everyone's referring to. So I look forward to that. Just one follow-up, if I could, on margins. Dan, you talked about the impact of FX, and it seems like that explains pretty much the three-cent reduction in EPS guide for the year. Just maybe one question on trajectory. There's such a strong Q3 here. You're adjusting Q4 for EPS and top end of the range for organic growth. That strikes me as a little bit conservative, just given the strengths, but love your comment on that. And then maybe you're not talking much about 23, but the shape of margins. I know there's been a lot of questions around how far into 23 some of the higher costs will go and If we were to think about, is that sort of a front half, back half that we should be thinking about for 23 at this point, or I'm sure it's too early to say, but any insight you can give on how we should think about costs as they roll through inventory and P&L and so on. Thanks so much."
+            }
+        ]
+    },
+    "2022_Q4": {
+        "year": 2022,
+        "quarter": 4,
+        "date": "2023-02-01T08:00:00-05:00",
+        "compliments": [
+            {
+                "analyst_name": "Rick Wise",
+                "level": 1,
+                "quoted_compliment": "Good morning, everybody. Great to see another excellent year from Boston Scientific. I guess to focus on one question, I'll start with your 2023 guidance. Obviously, the 6% to 8% guide is right in line with your long-term philosophy, but you started at the same place in 2022, obviously excluding the Italy issue, finished above 9% organically. Why, again, stick with the 6% to 8% Is this conservatism, respect for lingering macro pressures, or both? And maybe just as part of that, why model macro headwinds similar to 22? The large cap companies reporting to date, they're not Boston Scientific, but they're all in some way, shape, or form highlighting the improving or less pressures from macro as they finish the year and start 23. Thank you very much."
+            },
+            {
+                "analyst_name": "Robbie Marcus",
+                "level": 1,
+                "quoted_compliment": "Oh, great. Thanks for taking the questions, and congrats on a nice quarter. Thanks, Robbie. Maybe to start, Mike, at our conference last month, you were really bullish on Farapulse. And we saw EP have a nice beat in the quarter, particularly outside the U.S., where you have Farapulse and PolarRx going now. Maybe you could talk about your expectations or what you saw in the quarter for Farapulse specifically and your expectations for it in 2023, especially now. after we get the data later in the back half of the year, assuming it looks good?"
+            },
+            {
+                "analyst_name": "Larry Beagleson",
+                "level": 1,
+                "quoted_compliment": "Good morning. Thanks for taking the question, and congratulations on a strong end to the year here. I wanted to ask a two-part question also on Farrapulse. So maybe for Dr. Stein, you know, you talked about your, you know, excitement for the ADVENT trial later this year. Can you help put the manifest PF data into context? You know, how did that compare to prior RF and cryo studies? And what would be a win for you in Advent, you know, for Farrah Pulse? And we're going to see, the second part is we're going to see the Medtronic Pulse Select data at ACC, the J&J Inspire data at Boston AF, I guess, this weekend. You talked about how Farrah Pulse is differentiated. What should we be looking for in those studies that would support, you know, your comments earlier? Thanks for taking the questions."
+            },
+            {
+                "analyst_name": "Joanne Lynch",
+                "level": 1,
+                "quoted_compliment": "Thank you very much for taking the question, and good morning. I want to spend just a minute or two on urology and pelvic health business. I mean, that was a another 12% this quarter, 12.7% organically last quarter. What is driving that, and should we think of this more as a solid double-digit grower as we look forward? And my follow-up question, I'm going to just put it out there now, 50 basis points of operating margin expansion, or at least 50 basis points this year, where is that coming from? Thank you."
+            },
+            {
+                "analyst_name": "Vijay Kumar",
+                "level": 1,
+                "quoted_compliment": "Hey, guys. Thanks for taking my question. Just some cleanup questions here on the guidance assumptions. Mike, the 68% organic, it is what it is, but can you just remind us, you know, what are the incremental tailwinds, positive tailwinds here in 23 and any incremental headwinds versus 22? You know, some things I can think of, the FaroPulse becomes organic, maybe China has a little bit of headwind, but can you just go through some of those drivers? And Dan, on, you know, share count up, you know, 20 million, that seems egregious just given how we've seen share count progress throughout the year. I'm curious why and what's behind the share count assumptions of the year."
+            },
+            {
+                "analyst_name": "Travis Seed",
+                "level": 0,
+                "quoted_compliment": ""
+            },
+            {
+                "analyst_name": "Cecilia Furlong",
+                "level": 1,
+                "quoted_compliment": "Great. Good morning, and thank you for taking the question. I wanted to ask on Watchman. Specifically, what's underlying the double-digit growth outlook that you called out for 23? How are you thinking about market growth as well as Japan and China contributions? And then just a quick follow-up on AccurateNEO2 with the Prime XL registry. How are you thinking about approval timelines at this point in the U.S.?"
+            },
+            {
+                "analyst_name": "Josh Jennings",
+                "level": 1,
+                "quoted_compliment": "Hi. Good morning. Thanks for taking the questions. I was hoping to start off with just your Apollo acquisition. gets you into the diabetes, sorry, diabetes, the obesity segment. And just wanted to hear about your outlook for that portfolio, but also just a device-based intervention opportunities in obesity from a higher level and whether this portfolio could become a long-term growth driver for the endoscopy franchise. Then the follow-up is just on your neuromyelodulation business. Congratulations on the solace trial results and, uh, I think three of the big competitors in the space have a peripheral diabetic neuropathy indication now with different levels of evidence. But I was hoping you could just review Boston's plan to generate clinical evidence for that indication going forward. Thanks a lot."
+            }
+        ]
+    },
+    "2023_Q1": {
+        "year": 2023,
+        "quarter": 1,
+        "date": "2023-04-26T08:00:00-04:00",
+        "compliments": [
+            {
+                "analyst_name": "Robbie Marcus",
+                "level": 1,
+                "quoted_compliment": "Oh, great. Good morning, and congrats on a great quarter here. Thanks, Robbie. Let me start with, and I'll just ask one two-part question here. Great, great performance in the first quarter, particularly on the top line. We all know this is probably the last easy comp from COVID trends in first quarter last year. But would love to get a sense of, you know, what are you seeing globally? How sustainable is this? You know, you guided to a slight deceleration second quarter. Anything to note there other than conservatism? And then second, you know, there have been some news reports lately about M&A on the behalf of Boston Scientific. We'd love to just get a refresh on your M&A strategy. We've seen a lot more smaller tuck-in type deals historically. You know, is that still the goal? And any thoughts there? Thanks a lot."
+            },
+            {
+                "analyst_name": "Joanne Wench",
+                "level": 0,
+                "quoted_compliment": ""
+            },
+            {
+                "analyst_name": "Rick Wise",
+                "level": 0,
+                "quoted_compliment": ""
+            },
+            {
+                "analyst_name": "Larry Bigelson",
+                "level": 1,
+                "quoted_compliment": "Good morning. Congrats on a great start to the year here, guys. So one for Dr. Stein, one for Mike. So Dr. Stein, you know, Farrapulse is a single shot technology, you know, with PFA energy, you know, but companies are developing large focal catheters and dual energy sources. How are you thinking about the evolution of Farrapulse, you know, beyond its current geometry and energy source? And Mike, you know, we all completely understand you won't comment on rumors, but, you know, there are interesting assets in medtech that would you know, push you to over four and a half times leverage or require the use of equity to relatively large deals. You know, are those options on the table? And just remind us of how you think about ROIC. Thank you."
+            },
+            {
+                "analyst_name": "Travis Speed",
+                "level": 0,
+                "quoted_compliment": ""
+            },
+            {
+                "analyst_name": "Vijay Kumar",
+                "level": 1,
+                "quoted_compliment": "Hey, guys. Congrats on the printing. Thanks for taking my question. I had a two-part, one product and one capital allocation. On the product side, PFA, Mike, did I hear it correctly? uh, on the prior question on, on, uh, Sarah calls, uh, can it do point by point, uh, ablation at this point? I thought it was single shot, um, uh, cancer, but I would be curious to know, uh, if you have, if it can do point by point ablation and, and, uh, are you gaining share in the RF side as well, uh, in the current market? Um, and then on, on the capital allocation side, um, I know you're not going to comment on market speculation, so this is not related to market speculation, but can you just remind us, in current interest rate environment, what kind of leverage levels would Boston be comfortable with? And if Boston deems a deal as strategic, would it be okay doing an earnings dilute appeal?"
+            },
+            {
+                "analyst_name": "Danielle Antoloffi",
+                "level": 1,
+                "quoted_compliment": "Thanks so much. Good morning, everyone, and congrats on a really strong quarter. Just a question on Farrah Pulse. Sorry, there's so much focus on this one product on the call, but I'm curious about how you guys are thinking about the evolution of the market broadly. I mean, this has been a market, the AF ablation market, that's been a double-digit grower for the last decade plus. But is it right to think about Farrah Pulse and just the advent of pulse field ablation overall as potentially accelerating market growth in a meaningfully and sustainable way? because of the safety profile of the device, or how are you thinking about, and what are you seeing, I guess, in Europe about market growth overall for this device? And I have one follow-up on Watchman."
+            },
+            {
+                "analyst_name": "Cecilia Furlong",
+                "level": 1,
+                "quoted_compliment": "Great. Good morning, and thanks for taking the question and also echoing my congrats on the quarter. I wanted to ask specifically just your comments on pain and SES, really what you saw in the quarter, especially as it pertains to recent headwinds prior auth, and then just your outlook in terms of underlying market growth. Did we see some recapture in one queue? Was that part of the strength in how you're thinking about underlying market growth going forward?"
+            },
+            {
+                "analyst_name": "Matt Taylor",
+                "level": 1,
+                "quoted_compliment": "Good morning. Thanks for taking the question. So, great result. I guess what I'm struggling to understand is, you know, obviously you saw strong demand in the quarter, and I think we're seeing a lot of macro things improving, like staffing, et cetera. I mean, couldn't it actually theoretically get better sequentially? Why are we thinking so conservatively? Do you think that the direction of travel could be positive, negative, or neutral? And what are some of the background thoughts that you would base that on?"
+            },
+            {
+                "analyst_name": "Matt Mixick",
+                "level": 0,
+                "quoted_compliment": ""
+            },
+            {
+                "analyst_name": "Chris Pasquale",
+                "level": 0,
+                "quoted_compliment": ""
+            }
+        ]
+    },
+    "2023_Q2": {
+        "year": 2023,
+        "quarter": 2,
+        "date": "2023-07-27T07:30:00-04:00",
+        "compliments": [
+            {
+                "analyst_name": "Robbie Marcus",
+                "level": 1,
+                "quoted_compliment": "Oh, good morning, and congrats on a really nice quarter. Thanks, Robbie."
+            },
+            {
+                "analyst_name": "Joanne",
+                "level": 0,
+                "quoted_compliment": "Good morning and thank you for asking or for taking the question letting me ask it. As soon as you print this very good quarter, I'm going to get 15 questions about or more about what to expect for ESE and for the analyst meeting. So maybe you can sort of set or level set what you expect or how we should think about putting those two events within the BRITE framework."
+            },
+            {
+                "analyst_name": "Rick Wise",
+                "level": 1,
+                "quoted_compliment": "Good morning, Mike. Hi, Dan. Maybe focusing on the excellent margin performance, operating margins were particularly standout. The divisional performance, I mean, MedSurg up 410 basis points, cardiovascular up 240 basis points. Help us understand maybe in a little more detail the drivers. Is it volume? Is it mix? And to what extent did price play a role? And not quite sure I'm understanding your commentary down about second half margins as well. Thanks so much."
+            },
+            {
+                "analyst_name": "Larry Pilsen",
+                "level": 1,
+                "quoted_compliment": "Good morning. Thanks for taking the question, and I'll reiterate my congratulations on another strong quarter here. Dr. Stein, on Advent, just using the same definition of success in Advent as manifest, I think the success rate was 74%. So what differences do we need to consider between the two studies, and how much do you think those differences could impact the results for Farrapulse. And separately, what have the success rates been with RF and cryo in previous studies when using the same criteria as ADVENT? And sorry for the long question. Just lastly, if Farrapulse is numerically lower on success or efficacy versus RF and cryo, how do you think it will impact adoption? Thanks for taking the question."
+            },
+            {
+                "analyst_name": "Travis Steed",
+                "level": 1,
+                "quoted_compliment": "Hey, congrats on the good quarter. Just maybe following up to Larry's question, how would you frame up a commercial opportunity for Farrah Paltz for the market growth and share kind of based on the various potential outcomes for Advent? And I think you said it's the most exciting product launch in your career, but just curious how you think the commercial opportunity frames out based on how Advent comes out. And then I'm curious if you've seen the data yet or are you still blinded to the data? Thanks."
+            },
+            {
+                "analyst_name": "Danielle Antofi",
+                "level": 0,
+                "quoted_compliment": "Good morning, everyone. Thanks so much for taking the question. And congrats to Malik. He was always a pleasure to work with. If you could pass along my best to him, I'd appreciate it. Thank you so much. And my question is really around just thinking about the back half of the year top line growth guidance. It does organically. move higher. And I just want to make sure I understand all the puts and takes there. Obviously, back half of the year does get a little bit tougher from a comp perspective on an organic basis, but does reflect some deceleration. I want to basically understand how much of this is just prudent conservatism on your part, which you guys tend to do, versus some real product-driven or business-driven things we need to consider when looking at the back half. Thanks so much."
+            },
+            {
+                "analyst_name": "Sam Kurtz",
+                "level": 1,
+                "quoted_compliment": "Agreed. Thanks so much, Dan."
+            },
+            {
+                "analyst_name": "Matt Taylor",
+                "level": 0,
+                "quoted_compliment": "Hi, good morning, and thanks for taking the question. Dan, I had one more conceptually on EPS. margins, I guess. I wanted to understand some of the key puts and takes for margin expansion going forward. And specifically, I think a lot of investors are focused on inflation, you know, kind of abating and the potential for you to get savings on things like freight and lower component costs. Do you think that we could see any of that be good guys for margins in 24 and beyond? And maybe just speak to the high level factors there, if you could."
+            },
+            {
+                "analyst_name": "Sam Kurtz",
+                "level": 1,
+                "quoted_compliment": "Hi, this is Sam Kurtz on for Matt. Congrats on a great quarter and for taking our question. I guess we would like to touch on the guidance again, and maybe could you tell us a little bit about where you're most excited heading into the second half of the year and where we could potentially see that upside?"
+            },
+            {
+                "analyst_name": "Rick Wise",
+                "level": 1,
+                "quoted_compliment": "Hey, thanks so much for taking the questions, and congrats on a super strong quarter. So really impressed with you breaking it to double digits. You're very welcome. So, Dan, I want to just follow up on cash flows and cash flow conversion. and sort of what the puts and takes there have been in the first half, what your expectations are in the back half, and your intermediate long-term goals there, which we'll talk more about at the analyst meeting. But anything you can share now, and then also just on cash, if I could, you know, you have so many things going on in the portfolio and in your clinical programs, but I'd love to get your sort of posture on the business development front and in your efforts to find and invest in additional technology and assets. Thanks."
+            },
+            {
+                "analyst_name": "Marie",
+                "level": 1,
+                "quoted_compliment": "Hi, good morning. Nice quarter, and thanks for taking the question. Wanted to ask here on PolarX, the cryo catheter, you have that coming to the US in second half of this year. I know it's had pretty great success in Europe, but given some of the supply dynamics happening with FerriPulse, it sounds like manufacturing will ease there for FerriPulse. And the timing of the Ferropulse launch here in the U.S., how are you thinking about that PolarX launch here in the U.S.? Can that same success be replicated here, do you think?"
+            },
+            {
+                "analyst_name": "Patrick Wood",
+                "level": 1,
+                "quoted_compliment": "Amazing. Thank you very much for taking the question. I'd love a little bit more detail if you could on the endo business. Obviously, did very well in the quarter. There's obviously a lot happening in that business overall, but maybe just giving us a sense of patient volumes relative to share, pricing, like, Any details you can give around their single-use endoscopy, that kind of thing? I'd love any more details if you could."
+            },
+            {
+                "analyst_name": "Vijay Kumar",
+                "level": 1,
+                "quoted_compliment": "Hey, guys. Thanks for taking my question. Maybe my first one here, if you look at 2023, W organic, that's a pretty big number. Should we worry about comps? When you look at the outlook here, Can you just remind us the plus and minuses from a product perspective? What could be Talvin's headwinds in fiscal 24?"
+            },
+            {
+                "analyst_name": "Jason Bedford",
+                "level": 1,
+                "quoted_compliment": "Good morning, and thanks for fitting me in. Just touching on an earlier question, and trying to break out what's normalized market growth versus say a temporary catch up here. You know, you've grown revenue in the double digits in three of the last four quarters here. So I guess my question is, what do you think end market growth is right now in the markets in which you compete?"
+            }
+        ]
+    },
+    "2023_Q3": {
+        "year": 2023,
+        "quarter": 3,
+        "date": "2023-10-26T08:00:00-04:00",
+        "compliments": [
+            {
+                "analyst_name": "Robin Marcus",
+                "level": 1,
+                "quoted_compliment": "Hi, good morning, and congrats on a great quarter. And since many of us are at TCT, I'll add the nice agent DCP trial as well. I had two questions. I had two questions, so I'll just go with one here. As we go back to the analyst day, you pointed to 8% to 10% growth and 150 basis points of operating margin expansion over the three-year time frame. And I believe one of the comments was at the beginning of the range, it'll be towards the lower end and accelerate as you have some of your big new product launches coming. So I'm looking at 2024 here, and I see the street at 8% to 9% organic sales growth and about 50 basis points margin expansion. I just want to make sure we're interpreting the comments you made at the end correctly and any thoughts you have on directionality for next year. Thanks a lot."
+            },
+            {
+                "analyst_name": "Joanne Wunsch",
+                "level": 0,
+                "quoted_compliment": ""
+            },
+            {
+                "analyst_name": "Rick Wise",
+                "level": 1,
+                "quoted_compliment": "Good morning. Thank you for the question, and it's wonderful to see such an excellent quarter. I guess if I focus on one, maybe you could expand on your, Mike, on your, if you want to do it, your Neuromod comments, just your latest thinking Just broadly, what's going to help re-accelerate the business or what's next from here? But more specifically, the PDN indication approval, how does that affect the business? When does it start contributing? How would you have us think about the beneficial contribution there? Thanks a lot."
+            },
+            {
+                "analyst_name": "BJ Kumar",
+                "level": 1,
+                "quoted_compliment": "Hey, guys. Congrats on the print and the data being present at TCT. If I may, I want to stick to it on the financial side. Dan, just to clarify the 24 commentary, if the acceleration is all being driven by new products and these new products are being launched, I think it's the back half of next year. should we be perhaps thinking about the lower end of that eight to ten percent and i think you mentioned gross margins uh fx impact here so it looks like q4 is going to look similar to tq how to think about any fx impact on gross margins as we look at the outlook uh sure so i hit the gross margin one uh first uh"
+            },
+            {
+                "analyst_name": "Larry Bigleton",
+                "level": 1,
+                "quoted_compliment": "Good morning. Congrats on the print. Mike, we made it this far without a GLP-1 question, but I'm going to ask it anyway. Obviously, diabetes and obesity are risk factors for many diseases, such as cardiovascular disease. So how are you thinking about the potential long-term impact of GLP-1s on your businesses? And any high-level thoughts, Mike, on how investors have reacted to GLP-1s in general? Thank you."
+            },
+            {
+                "analyst_name": "Travis Steed",
+                "level": 1,
+                "quoted_compliment": "Great. Thanks a lot for the question. You're asking a good quarter. Thanks, Travis."
+            },
+            {
+                "analyst_name": "Daniel Antalfa",
+                "level": 1,
+                "quoted_compliment": "Hey, good morning, everyone. Thanks so much for taking the question. And congrats on a great quarter and the data here at TCT. Just a quick question on 2.4 top line guide. I imagine there's some conservatism baked in here, but if I'm looking at it correctly, it is implying a little bit of a deceleration and not to be nitpicky here, but just want to make sure we're understanding of what the tailwinds versus headwinds are as we go into Q4 and heading into 2024. Thanks so much."
+            },
+            {
+                "analyst_name": "Matt Taylor",
+                "level": 0,
+                "quoted_compliment": ""
+            },
+            {
+                "analyst_name": "Josh Jennings",
+                "level": 1,
+                "quoted_compliment": "Hi, good morning. Congratulations on the strong results. I wanted to follow up on Travis's question on FerriPulse. I was hoping to just better understand where your US EP sales force stands today and how you're building that out or plan to build that out for the FerriPulse launch. And then just on top of that, just thinking about the full integration of FerroPulse into arrhythmia and developing these Fairview capabilities, is there anything of note that we should be thinking about that would provide clinical advantages that could catalyze stronger demand for arrhythmia once that integration is complete, I believe, at the year end of 24? Thanks for taking the questions."
+            },
+            {
+                "analyst_name": "Chris Pascal",
+                "level": 0,
+                "quoted_compliment": ""
+            },
+            {
+                "analyst_name": "Michael Pollark",
+                "level": 0,
+                "quoted_compliment": "Good morning. Thank you for taking the question. I have a question on price cost. On price, the message has been, you know, historically, we were kind of a little negative. We've moved it at the portfolio level to neutral. As we jump into 24, what's a good base case? Neutral, again, a little up, a little down. On the cost side, kind of where are you seeing opportunities, raw materials, freight labor? Where are you seeing tensions? And then the last piece of this is one of your large competitors did announce inventory obsolescence charge this quarter. I think we all can see that inventories for the sector overall are quite higher than they used to be because of the COVID stresses and strains. Can I get an update on Boston's status on inventory? Thank you."
+            },
+            {
+                "analyst_name": "Matthew O'Brien",
+                "level": 1,
+                "quoted_compliment": "Morning, thanks for squeezing me in here. I know you guys are a domestic company, but the performance in EMEA and APAC specifically were notable, and specifically APAC was really, really strong this quarter. Can you just give us a little more sense for, because I think those two collectively were roughly after growth this quarter. The durability of the performance in those geographies, is it a function of just more and more products into those areas? And so, you know, that's pretty straightforward. Or is it share taking that's required or what's really required to continue to deliver? Maybe not this level of growth, which is really strong again, but a very strong growth going forward where that's, you know, a significant contributor to the top line for 24, 25 and beyond. Thanks."
+            }
+        ]
+    },
+    "2023_Q4": {
+        "year": 2023,
+        "quarter": 4,
+        "date": "2024-01-31T08:00:00-05:00",
+        "compliments": [
+            {
+                "analyst_name": "Robbie Marcus",
+                "level": 1,
+                "quoted_compliment": "Oh, great. Congrats on a really good quarter and congratulations, Lauren, on the promotion. I wanted to ask on two of the biggest product drivers in 2024, Watchman and Farapulse. Farapulse got approval today. I wanted to see what's included in guidance for this year and how to think about phasing over the year, how long will it take to get into hospitals and approved on formularies. And then second on Watchman, it still had a very good quarter and fourth quarter, but growth slowed a little bit. How should we be thinking about the potential for Watchmen and 20% plus growth in 2024? Thanks a lot."
+            },
+            {
+                "analyst_name": "Joanne Lynch",
+                "level": 0,
+                "quoted_compliment": ""
+            },
+            {
+                "analyst_name": "Larry Beagleson",
+                "level": 1,
+                "quoted_compliment": "Good morning. Thanks for taking the questions. Congrats on a strong finish here and the approval of Farrah Pulse in the U.S. On Farrah Pulse, can you talk about the manufacturing capacity for the Catherine console upon launch and expectations for the EP business this year? You grew 43% in Q4 of 23. Any reason why growth would be lower in 24? And I have to ask you to please clarify your comments around AccurateNEO2. It sounds like something happened with Prime, which is the larger size. What are the implications for the other sizes of NEO2 in Europe and the U.S.? Thank you."
+            },
+            {
+                "analyst_name": "Vijay Kumar",
+                "level": 1,
+                "quoted_compliment": "Hey, guys. Thanks for taking my question, and congrats on a really strong finish here. Maybe just one on that. the guidance here perhaps for Dan. Dan, the 8% to 9%, it looks like Farrah Paul's, the prior guided assumed back half launch, it's coming in a little bit ahead. Can you just walk us through that 8% to 9%? Is that right that Farrah Paul's perhaps assumptions have changed? Any impact from VBP or base impact that we should be aware of? And what are you assuming for pricing in fiscal year 24? Thank you."
+            },
+            {
+                "analyst_name": "Danielle Antelfi",
+                "level": 1,
+                "quoted_compliment": "Hey, good morning, everyone. Thanks so much for taking the question. Just a follow-up question on Accurate Neo2, Mike, if I could. So, appreciate the comments that you did provide. Just curious, I mean, obviously, you're giving pretty strong guidance here for 2024. I mean, is the right read here that regardless of what happens with Accurate Neo2 and timing there, You're sticking to your long-term sales growth guidance that you provided back in September. And sort of how do we think about this as a long-term growth contributor now given this little wrinkle here? And, Lauren, we will miss you very much. Thanks so much."
+            },
+            {
+                "analyst_name": "Gennar Osantanathan",
+                "level": 0,
+                "quoted_compliment": ""
+            },
+            {
+                "analyst_name": "Josh Jennings",
+                "level": 0,
+                "quoted_compliment": ""
+            },
+            {
+                "analyst_name": "Richard Newitter",
+                "level": 1,
+                "quoted_compliment": "Hi. Thanks for taking the questions, and congrats on a really strong finish to the year. Thanks. My first question is just going back to TAVR. You know, at your analyst day, you had talked to, you know, an expectation and a level of confidence that you could disrupt that market in the U.S. relatively quickly out of the gate. I'm just curious with, you know, I get something approaching 20% share of the market over time, which is what you've done you know, in other markets with your disruption capabilities. I'm just curious, does anything change there with the indeterminate kind of view of what the next steps are for the U.S.? I'm just trying to focus on that commentary a bit. You know, does your outlook for the franchise in the U.S. change in TAVR? And then I have a follow-up."
+            },
+            {
+                "analyst_name": "Patrick Wood",
+                "level": 1,
+                "quoted_compliment": "Amazing. Thank you for taking the question, and congrats, Lauren. I might stick with Axonix if that's all right. I appreciate it hasn't closed yet, but I'm just kind of curious, you know, urology in Boston has a very sizable distribution network across, I guess, primarily stone management, but a whole bunch of different areas. How are you thinking about, you know, the ability to drive adoption in OAB faster and, like, really push that asset? I'm guessing, you know, having just played with the numbers, and correct me if I'm wrong, but there's some assumption of slightly faster growth there. Once you've acquired Axonics and the street previously had in there, at least that's where I end up with the numbers. Feel free to correct me, but how are you thinking about the commercialization and really pushing that through the distribution network? Thanks."
+            },
+            {
+                "analyst_name": "Michael Pollark",
+                "level": 0,
+                "quoted_compliment": ""
+            }
+        ]
+    },
+    "2024_Q1": {
+        "year": 2024,
+        "quarter": 1,
+        "date": "2024-04-24T08:00:00-04:00",
+        "compliments": [
+            {
+                "analyst_name": "Robbie Marcus",
+                "level": 1,
+                "quoted_compliment": "Oh, great. Thanks for taking the question. Congrats on a fantastic quarter. Thanks, Robbie. I guess with my one question, it has to be on Farrapulse and EP in general. The beat was substantial, both US and OUS. The doc feedback we hear is phenomenal on Farrapulse, PFA in general. I'd just love to get your view on what you're seeing in the field, the willingness to adopt the new technology, how fast it could go, and how much of the guidance raised is just from Farrapulse here and the opportunity. Thanks a lot."
+            },
+            {
+                "analyst_name": "Larry Beagleson",
+                "level": 1,
+                "quoted_compliment": "Good morning. I'll echo Robbie's congratulations on a really strong quarter here. Just with my one question, I feel compelled to ask a big-picture question here. You updated your LRP in September of last year to 8% to 10% organic growth for 2024 to 2026. The assumption at the time was that growth in 2025 would accelerate over 2024. You're guiding today to 10% to 12% organic growth. So the question is, do you still expect growth to accelerate in 2025? And how should we think about the 8% to 10% CAGR in the context to this strong 2024 guidance? Thanks for taking the question."
+            },
+            {
+                "analyst_name": "Rick Wise",
+                "level": 0,
+                "quoted_compliment": ""
+            },
+            {
+                "analyst_name": "Joanne Winch",
+                "level": 1,
+                "quoted_compliment": "Good morning and another nice quarter. Question on operating margins. I think your LRP was 450 basis points. Was it over the two-year period, I would assume? No, it was over."
+            },
+            {
+                "analyst_name": "Vijay Kumar",
+                "level": 1,
+                "quoted_compliment": "Hey guys, thanks for taking my question and congrats on a really solid print share. Mike, maybe one question on the EP portfolio. the 70% overall growth, 85% U.S., can you give us a little bit of color on, was there any stocking dynamic? How much of this was driven by the account of openings versus that procedure uptake? And sort of related to that, does new tech add-on payment, does it matter where we're on TPG? Thank you."
+            },
+            {
+                "analyst_name": "Travis Steed",
+                "level": 1,
+                "quoted_compliment": "Hey, everybody. Congrats again on the good quarter. I wanted to ask about the new DRG for ablation and left atrial appendage closure and the overall LAC market. Do you think that market can kind of sustain this 20% plus growth through before the indication extensions, or do you kind of need to see those indication extensions at some point sooner rather than later?"
+            },
+            {
+                "analyst_name": "Danielle Antelfi",
+                "level": 1,
+                "quoted_compliment": "Hey, good morning, everyone. Thanks so much for taking the questions. I'll also say congrats on a really strong quarter. For my one question, I wanted to look at some of the, I'll call them legacy businesses. Not sure if that's fair to describe them, maybe slower growth businesses. I mean, a CRM mid-single-digit growth is very strong. Interventional cardiology of double digits, very strong. Just curious about how to think about those sort of slower growth in interventional cardiology. I'm thinking more on the drug-eluting stem portfolio, obviously, and then CRM. Can they sustain these kinds of growth profiles, given that the end markets are, from a volume perspective, are arguably probably some of your slower growth end markets? And what needs to happen from an innovation perspective to sustain that sort of growth? Thanks so much."
+            },
+            {
+                "analyst_name": "Josh Jennings",
+                "level": 0,
+                "quoted_compliment": ""
+            },
+            {
+                "analyst_name": "Chris Pasquale",
+                "level": 0,
+                "quoted_compliment": ""
+            },
+            {
+                "analyst_name": "Matthew O'Brien",
+                "level": 0,
+                "quoted_compliment": ""
+            },
+            {
+                "analyst_name": "Matt Taylor",
+                "level": 0,
+                "quoted_compliment": ""
+            },
+            {
+                "analyst_name": "Matt Mixick",
+                "level": 0,
+                "quoted_compliment": ""
+            },
+            {
+                "analyst_name": "Michael Pollack",
+                "level": 0,
+                "quoted_compliment": ""
+            }
+        ]
+    },
+    "2024_Q2": {
+        "year": 2024,
+        "quarter": 2,
+        "date": "2024-07-24T08:00:00-04:00",
+        "compliments": [
+            {
+                "analyst_name": "Robbie Marcus",
+                "level": 1,
+                "quoted_compliment": "Oh, thank you, and congratulations on another fantastic quarter here. Thanks, Robbie."
+            },
+            {
+                "analyst_name": "Joanne Wunsch",
+                "level": 1,
+                "quoted_compliment": "Thank you so much for taking the question, and I echo. A very nice quarter. Can we unpack just a little bit, and you may not like this question, but I get it a lot. What's next? And how do we think about, to your point, we're going to talk about therapist and launchment a lot, but people are now sort of looking forward at how does this continue to roll out to deliver this kind of growth? And thank you."
+            },
+            {
+                "analyst_name": "Larry Beagleson",
+                "level": 1,
+                "quoted_compliment": "Good morning. Thanks for taking the question, and congrats on a really nice quarter here. Mike, maybe just to drill down on EP and Farrah Pulse. I guess it's a similar question, but just the sustainability here of the growth and the share. By our math, it looks like you've captured about 15% of the US EP market in the second quarter, excluding Bayless. Help us understand how durable your EP share and growth is. Can EP continue to be a growth driver for Boston Scientific for years to come And what's driving your confidence you can compete effectively with, you know, Athera and Varipulse when they launch? Thank you."
+            },
+            {
+                "analyst_name": "Rick Wise",
+                "level": 0,
+                "quoted_compliment": ""
+            },
+            {
+                "analyst_name": "Vijay Kumar",
+                "level": 1,
+                "quoted_compliment": "Hi, guys. Thanks for taking my question, and my congratulations on my experience here. I had one question on USPFA, the 220% growth. Can you parse out what was the capital contribution versus, you know, capital contribution in the U.S. number? And I think you mentioned a TPT, you know, in the U.S., in the allocation setting. Any update on has Boston submitted its TPT? Thank you."
+            },
+            {
+                "analyst_name": "David Roman",
+                "level": 0,
+                "quoted_compliment": ""
+            },
+            {
+                "analyst_name": "Patrick Wood",
+                "level": 0,
+                "quoted_compliment": ""
+            },
+            {
+                "analyst_name": "Travis Steed",
+                "level": 0,
+                "quoted_compliment": ""
+            },
+            {
+                "analyst_name": "Josh Jennings",
+                "level": 1,
+                "quoted_compliment": "Good morning. Thanks a lot for taking the questions and congrats on the stellar results. I wanted to just follow up on Travis's two questions. I guess first on TAVR, could we see top line data before the ACC presentation next year and could Boston file before that presentation? And then just the other follow-up is just on the profitability. You guys are seeing, letting a lot of profitability flow through on the outperformance on the top line. Wanted to just get a sense of of taking some of that profitability and reinvesting that, you know, where could we see, where's some of those dollars going, and just some high-level commentary on that reinvestment driving, supporting this sustainability of top-tier revenue growth in the medtech space. Thanks for taking the questions."
+            },
+            {
+                "analyst_name": "Danielle Antelfi",
+                "level": 1,
+                "quoted_compliment": "Hey, good morning, everyone. Thanks so much for taking the question, and I'll be a broken record here. Congrats on the really awesome quarter. Mike, I wanted to go in a different direction here, away from PFA for a second, and talk about how we should think, just on this theme of sustainability of growth into 2025, appreciating we won't give guidance here, but if we think about Asian DCB launching back half of this year and modular development, in the back half, or I guess is that launching this year as well. So how do we think about those contributing and maybe elevating CRM growth above the market in next year as well as the interventional cardiology portfolio? Thanks so much."
+            },
+            {
+                "analyst_name": "Unknown",
+                "level": 0,
+                "quoted_compliment": ""
+            },
+            {
+                "analyst_name": "Matt Taylor",
+                "level": 1,
+                "quoted_compliment": "Hi. Good morning, guys. Thank you for taking the question. Congrats on the great quarter. I did want to ask a follow-up question on Farrakhal just to help with thinking about the modeling and the opportunity there. Could you give us any kind of update or parameters on on how many centers you're in, how many boxes you've placed, and maybe talk about whether the early experience has changed your views on how the market could evolve like you laid out at the analyst day several months ago."
+            }
+        ]
+    },
+    "2024_Q3": {
+        "year": 2024,
+        "quarter": 3,
+        "date": "2024-10-23T08:00:00-04:00",
+        "compliments": [
+            {
+                "analyst_name": "Robbie Marcus",
+                "level": 1,
+                "quoted_compliment": "Oh, great. Good morning, and congrats on another fantastic quarter here. Thanks, Rob."
+            },
+            {
+                "analyst_name": "Joanne Lynch",
+                "level": 1,
+                "quoted_compliment": "Good morning, and thank you for the question. I want to talk about the amazing results of Faribault that we just saw, and specifically how you're thinking about moving, I was really interested in one quote that you said, to exceed 40 to 60% of global AF procedures by 2026. Thank you."
+            },
+            {
+                "analyst_name": "Larry Diegelson",
+                "level": 1,
+                "quoted_compliment": "Good morning. Thanks for taking the question. I'll echo my congratulations on a really phenomenal quarter here. You know, Dr. Stein, given the importance of Faripulse, can you provide more color on the Avant Garde trial and the observations you saw? And, you know, related to that, there are going to be more PFA ablation choices soon, including from the market leader. You know, once these new PFA catheters are launched, what are the factors that will lead existing Faripulse customers to stay with Faripulse or choose Faripulse if they haven't adopted it yet? Thank you."
+            },
+            {
+                "analyst_name": "Rick Wise",
+                "level": 0,
+                "quoted_compliment": ""
+            },
+            {
+                "analyst_name": "David Roman",
+                "level": 0,
+                "quoted_compliment": ""
+            },
+            {
+                "analyst_name": "Matt Mixick",
+                "level": 0,
+                "quoted_compliment": ""
+            },
+            {
+                "analyst_name": "Travis Steed",
+                "level": 0,
+                "quoted_compliment": ""
+            },
+            {
+                "analyst_name": "Danielle Antelfi",
+                "level": 1,
+                "quoted_compliment": "Hey. Good morning, everyone. Thanks so much for taking the question. Congrats on this amazing quarter. I'm kind of speechless. Just wanted to ask, I appreciate there's not going to be a lot. You can say, Dan, appreciate the comments that you did give on 2025, but specifically as we think about sales, you noted above market sales growth. I mean, market can be a moving target a little bit here about how you think about the markets growing next year. So I was hoping maybe you could give a little bit more color if possible, even if it's just highlighting tailwinds and headwinds from a sales growth perspective to think about as we look ahead to 2025. Thanks so much."
+            },
+            {
+                "analyst_name": "Anthony Patron",
+                "level": 1,
+                "quoted_compliment": "Well, thanks and congrats on a strong quarter here. I think the question will be on the go-to market next year, 2025. You go back to the October 18th press release and you have Farrow Wave Navcatheter out there, but it indicates that it's exclusive to Opal on the mapping side. So in other words, the company is coming with a closed loop offering here next year and presumably we'll have competitors that are coming with a bundled approach So maybe the question here is just when we enter 25, it seems that three competitors will be out there with a bundled approach to PFA with mappers. So maybe just walk through that dynamic a little bit. Congratulations again on the quarter."
+            },
+            {
+                "analyst_name": "Vijay Kumar",
+                "level": 1,
+                "quoted_compliment": "Hi, guys. Congrats on a nice quarter here, and thanks for taking my question. Mike, maybe one for you on next week's accurate NEO2 results here. What is the regulatory strategy? Do you expect to file with the FDA? And I think you mentioned that you expect to have a successful launch in the U.S. Is that referring to NEO2 or some other generation of the valve? So maybe talk about your TAVR strategy in the U.S.? ?"
+            },
+            {
+                "analyst_name": "Josh Jennings",
+                "level": 1,
+                "quoted_compliment": "Hi, good morning. Thanks for taking the questions and congratulations on another home run quarter. Wanted to just check the box. Mike, you called out your ops and supply chain team for keeping up with the demand for Farrah Pulse and staying on top. I just want to make sure that there's no manufacturing capacity issues next year if that franchise continues to outperform internal expectations. And then also just sorry to follow up on a two-parter, but I wanted to just get your team's view on this mapping segment. I mean, our understanding is that mapping capital and diagnostic mapping catheters, kind of the percentage of the overall ablation market, it's even higher than the ablation catheter segment. I know you guys are now well-positioned there, but just to review that and maybe just the revenue, the business model for Boston Scientific, whether this FairPulse NAV will be single use for PVIs and then just how you're building out your diagnostic mapping catheter portfolio. Sorry for the multi-part."
+            },
+            {
+                "analyst_name": "Matthew O'Brien",
+                "level": 1,
+                "quoted_compliment": "Hey, thanks so much for fitting us in, and congrats on a really impressive quarter and all the great growth drivers you have running. I had a question just on, maybe for Dan, on some of the dynamics in the gross margin line in the quarter. You mentioned FX being kind of one of the primary headwinds, but as you move into 25, maybe you can talk a little bit about you know, where the leverage in the model is. It's, you know, table gross margin and levering some of the operating investments that you're making, but maybe just some color on how you see that progressing at this point. Thanks."
+            }
+        ]
+    }
+}

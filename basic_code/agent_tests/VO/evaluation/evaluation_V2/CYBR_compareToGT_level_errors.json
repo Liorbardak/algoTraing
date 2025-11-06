@@ -1,0 +1,552 @@
+[
+  {
+    "quarter": "2021_Q1",
+    "analyst_name": "Sterling Audio",
+    "analyst_name_GT": "Sterling Audio",
+    "level": 1,
+    "level_GT": 0,
+    "quoted_compliment": "So, hey, starting first of all, we're excited with the strong start to the subscription transition. I think it beat our expectations. And so as the first quarter that is chewing on some old pipeline, you can say we have some old pipeline that we expected to continue to sell as perpetual, but very pleased with how the mix is. has outperformed and very pleased with how it's looking in the current full-year Q2 and full-year pipeline. So I would say no pushback, but actually better than expected transition and really the way we wanted to start this year.",
+    "quoted_compliment_GT": "Yeah, thanks. Hi, guys. So I'm just curious what kind of pushback you may have gotten. So the mix in subscription was better than you expected, which I don't think comes as a surprise to many of us that have watched a lot of the transitions. All right, perfect. Thank you.____",
+    "partial_name_match": false
+  },
+  {
+    "quarter": "2021_Q1",
+    "analyst_name": "Fatima Diwani",
+    "analyst_name_GT": "Fatima Diwani",
+    "level": 1,
+    "level_GT": 0,
+    "quoted_compliment": "Fatima Odi here. I'll start. So actually, when we looked at it and you touched it, we're actually excited to see that it's the faster mover in the transition with the heaviest weight on SAS. I would say some specific elements of this quarter. I mean, Americas is coming off a record 32% growth Q4, and it was the fastest of the region. And so we're pleased with where we are in the Americas, especially when we see the great pipe, the great start of Q2, and are optimistic for the rest of the year. And I guess I would add there, I would just add on a specific in terms of markets, you know, last year in the first quarter, we had a very strong federal spend that was out of cycle. And, you know, that didn't repeat in this quarter.",
+    "quoted_compliment_GT": "Good morning. Thank you for taking my questions. Josh, I wanted to start with you on the Americas performance. So appreciate you quantifying that headwind for us as it relates to the model transition that seems like it's more concentrated in the Americas. Very helpful. Josh, since I have you, any high-level modeling points or expectations you could point us to as it relates to the subscription revenue and subscription ARR mix between SaaS and on-prem? And to the extent the performance this quarter is changing your mix expectations specifically for that category. And that's it for me. Thank you.____",
+    "partial_name_match": false
+  },
+  {
+    "quarter": "2021_Q1",
+    "analyst_name": "Rob Owens",
+    "analyst_name_GT": "Rob Owens",
+    "level": 1,
+    "level_GT": 0,
+    "quoted_compliment": "Sure. I'll start with the latter question on adaptive. I think we've invested the last several quarters on really integrating it to create 1 plus 1 equals 11 with being part of connected into PAM and part of the identity security portfolio. And we've also invested in putting overlay sales effort there. So we are It's still early innings for adaptive standalone, but we're seeing it, and some of the examples I've given, really play well in the cross-sell, up-sell motion with existing customers, and also as a new landing front for us, as a tip of the spear, as Matt called it, in the investor day. And so it's an early, young speedboat within CyberArk, But it's really taking off well. And, Rob, you know, on the AAR growth question, you know, we're still very much looking at 30% growth for the year on AAR. And, you know, we started off nicely on the first quarter with 41%, 30-plus percent organically, and we see that continuing through the year. All right, thanks.",
+    "quoted_compliment_GT": "Great, and thanks for taking my question. As we look towards Q2 and ARR, noting that you bought Adaptive a year ago, any puts and takes around how we should think about growth? And I know you said you were over 30% from an organic perspective this quarter. Are you sticking to that kind of guardrail? And then number two, I'll ask them both up front, given it's been a year since the acquisition, maybe an update on how Adaptive is doing. Thanks. All right, thanks.____",
+    "partial_name_match": false
+  },
+  {
+    "quarter": "2021_Q1",
+    "analyst_name": "Greg Moskowitz",
+    "analyst_name_GT": "Greg Moskowitz",
+    "level": 1,
+    "level_GT": 0,
+    "quoted_compliment": "Thanks. Yeah, absolutely. A super strong quarter for Purpose Cloud. I would say that we're beginning to see the lines blur into how big and how large enterprises can be in adopting it. And even financial verticals and very large accounts. And so it's becoming the larger force within new PAM deals is landing in Privilege Club.",
+    "quoted_compliment_GT": "Okay, thank you very much for taking the questions. Maybe to start with Udi. How was, I know you called that one interesting customer example, but more broadly, how was adoption of Privileged Cloud this quarter among both mid-market and enterprises, and how do you see this evolving over the course of 2021? Okay, great. Thank you.____",
+    "partial_name_match": false
+  },
+  {
+    "quarter": "2021_Q1",
+    "analyst_name": "Brian Essex",
+    "analyst_name_GT": "Brian Essex",
+    "level": 1,
+    "level_GT": 0,
+    "quoted_compliment": "Yeah, it's definitely more prevalent on the SaaS platform where we see the progression in the cross-sale move faster. I think the commentary last year or earlier in the year, we talked about the customer kind of looking to do the basics as they transition to work from home. And now we're seeing them be much more back to their strategic programs. We already saw that in Q4 and it competed in that. in Q1 and commentary and things we're seeing in deal cycles, both related to SolarWinds and also related to being back on track, is that they're looking to do deeper programs, whether like in the commentary, really following our blueprint when it comes to add-on and looking at multiple products and solutions, but also in new customers. We're seeing them be more strategic in about going deep in PAM and other areas in identity security. I would say that the average deal size is up and SAS deal size are similar to historic perpetual deal size, which is great.",
+    "quoted_compliment_GT": "Great. Thank you. And good morning. Thank you for taking the question. Udi, I had a couple for you. You mentioned your prepared remarks of flight to trust. And maybe if you could just update us in terms of how customer buying patterns may have evolved as you enter this year. Thank you.____",
+    "partial_name_match": false
+  },
+  {
+    "quarter": "2021_Q1",
+    "analyst_name": "Jonathan Rycover",
+    "analyst_name_GT": "Jonathan Rycover",
+    "level": 1,
+    "level_GT": 0,
+    "quoted_compliment": "Yeah. Hey, Jonathan. I would say we're seeing a return to normalcy on that front and the ability for us to – the pipe was building great, and I think this quarter we also showed strong execution on that pipe. And I would say that from a close rate perspective, we could probably talk about record – record close rates in this quarter. And so more and more signs of return to normal. And then, of course, the more opportunity for acceleration because we have a growing SaaS portfolio and a growing number of customers that we can take them through the SaaS journey in process.",
+    "quoted_compliment_GT": "Yeah, good morning. Hey, guys. So last year, you talked pretty consistently about strong pipeline growth, but you noted the challenges to deal with sizes and also conversion rates, particularly within certain verticals. So I'm just curious if you could comment on those dynamics entering 2021. Thank you.____",
+    "partial_name_match": false
+  },
+  {
+    "quarter": "2021_Q1",
+    "analyst_name": "Alex Henderson",
+    "analyst_name_GT": "alex henderson",
+    "level": 1,
+    "level_GT": 0,
+    "quoted_compliment": "Yeah, thanks. I would say we still talk about a six- to nine-month sales cycle, but beginning to see the advantages and value, like you're talking about, of customers, of higher velocity sales, when it comes to SaaS customers and their ability to get a faster time to value and then faster adoption and our ability to push across. So faster, we're not changing our kind of our six to nine month general approach, but we are very optimistic that this is one of the upsides of this transition. And I would add that, you know, we're seeing much better close rates going into the first quarter of this year. So that – Udi mentioned it before, and I'll mention it again. And when we think about the record pipeline, I would also say what we like about it is that it's – First of all, going across all aspects of the pipeline, new customers, existing customers, across each of the geographies and across each of the product lines that we're talking about, whether it's privilege, access, or DevSecOps. And, of course, one of the other things that we're tracking very closely is, is it supporting our transition goals? And we're really pleased to see the pipeline supporting that. the transition goals, meaning that we're seeing record increases in our SAS pipelines, as well as our subscription packages, including and especially our new subscription packages.",
+    "quoted_compliment_GT": "hi team you have mike secos on the line here for alex henderson um i did want to follow up on this record pipeline that you guys have to see if you could give this big unit order of magnitude um or at least provide some additional color i guess with this model transition underway and the bigger push on subscription and higher adoption rates of stats uh are you seeing I guess, increased velocity in the sales cycles and customers moving quicker from the top of the funnel down to the final deal.____",
+    "partial_name_match": false
+  },
+  {
+    "quarter": "2021_Q1",
+    "analyst_name": "Eric",
+    "analyst_name_GT": "Eric",
+    "level": 1,
+    "level_GT": 0,
+    "quoted_compliment": "Yeah, thanks, Eric, for those questions. I'll start with the second one. Basically, as we moved last year, if you think about it on a year-on-year basis, we already started to see some increases last year between Q1 and Q2 on the percent subscription. YOU KNOW, THAT'S IMPACTING THE MATH. YOU KNOW, WE LOOK AT WHEN WE LOOK AT THE HEADLINE, WE LOOK AT IT YEAR ON YEAR. SO WE'RE NOT DOING IT FROM A CUMULATIVE PERSPECTIVE. WE'RE LOOKING AT IT AS, OKAY, WE'RE TAKING THIS YEAR'S Q2 versus the scenario FROM Q2 a year ago. And already Q2 a year ago, we started to have more subscription business on a natural basis. So that's why, you know, we see a slight decline in the headwind, but, you know, we're still supporting the strong revenue growth. With regard to your first question on moving in the goalposts, You know, we're real pleased where we started the first quarter because it really set us up well for being able to establish firmly that the transition is happening, that it's certainly happening definitely within our original goalposts of 8 to 10 quarters. We're able to move up a couple percentage points in Q1. We also were able to move up a couple of percentage points already for Q2 and for the year. I think Q1 is still one quarter of work. But, you know, we'll see how Q2 goes and we'll be able to, I think, based off of the first half of the year, really reevaluate again, you know, the full transition period. But, you know, I think in order to bring it in, we'll want to see, you know, we'll want to see how more than just one quarter behaves on the transition. But so far, we like what we see.",
+    "quoted_compliment_GT": "Yeah, thanks for squeezing me in. First off, Your contribution from subscription bookings, I think, was 20% in the year-ago quarter. It expanded to 51%. It seems like that's moving very quickly. What will it take for you to accelerate your timeline for reaching that 70% to 80%? I think you would. suggested it would be 8 to 10 quarters out. So what do you think the likelihood of that happening before the end of fiscal 22? And then secondly, I think you had indicated that your headwind projected for Q2 is about $9 million. I think it was $11 million in the March quarter here. Why will it be coming down in the June quarter from the March quarter? This concludes our question and answer session. I will now turn the call back over to Udi Mukadi for closing remarks.____",
+    "partial_name_match": false
+  },
+  {
+    "quarter": "2021_Q1",
+    "analyst_name": "Jonathan Ho",
+    "analyst_name_GT": "Jonathan Ho",
+    "level": 1,
+    "level_GT": 0,
+    "quoted_compliment": "Yeah, thanks, Jonathan. I think in the past we talked about the non-human opportunity being as big as the human side. And I think every day that goes by is another shift left day for the world and technology. Applications are growing exponentially, no matter what industry it is. So across industry, we see them becoming more and more software companies. And And we have that great bridge of securing one of the most important elements in DevSecOps, but with a win-win, transparent to the developer and a good control point for the security professionals. So we see that only becoming more and more critical, and that's why we – We, of course, put it in the speedboat, a whole speedboat behind it because of this critical opportunity.",
+    "quoted_compliment_GT": "Hi, good morning. I just wanted to maybe start out with some of your commentary on the non-human opportunity. Can you talk a little bit about how big that market could be and maybe, I guess, relative to the more traditional use cases, you know, how big of an opportunity you see there? Thank you.____",
+    "partial_name_match": false
+  },
+  {
+    "quarter": "2021_Q2",
+    "analyst_name": "Faket Kalia",
+    "analyst_name_GT": "Faket Kalia",
+    "level": 0,
+    "level_GT": 1,
+    "quoted_compliment": "",
+    "quoted_compliment_GT": "Okay, great. Hey, guys. Thanks for taking my questions here. ... Got it very helpful guys thanks i'll get back in queue ____it's great to see the overall revenue upside in the quarter",
+    "partial_name_match": false
+  },
+  {
+    "quarter": "2021_Q2",
+    "analyst_name": "Jonathan Ho",
+    "analyst_name_GT": "Jonathan Ho",
+    "level": 0,
+    "level_GT": 1,
+    "quoted_compliment": "",
+    "quoted_compliment_GT": "Hi, good morning. Let me echo my congratulations as well. Can you give us a little bit more color on the multi-product deals that you're seeing or platform purchases? And, you know, does SaaS make it easier for customers either to buy upfront or to add on, you know, sort of additional products over time? ... Great. Thank you. ____ Congrats on the strong performance.",
+    "partial_name_match": false
+  },
+  {
+    "quarter": "2021_Q2",
+    "analyst_name": "Jonathan Rookhiver",
+    "analyst_name_GT": "Jonathan Rookhiver",
+    "level": 0,
+    "level_GT": 1,
+    "quoted_compliment": "",
+    "quoted_compliment_GT": "Yeah, hey, guys. Congrats on the strong performance. So it's really great to hear how well Privileged Cloud is doing. But I'm curious if you can give us some color on Adaptive. It's been about a year since the acquisition. It seems like you've had some early traction there. I'm just curious how you feel about the positioning there, especially with the security-first messaging. ... Thanks, Todd. ____ Congrats on the strong performance.",
+    "partial_name_match": false
+  },
+  {
+    "quarter": "2021_Q2",
+    "analyst_name": "Catherine Trevenick",
+    "analyst_name_GT": "Catherine Trevenick",
+    "level": 0,
+    "level_GT": 1,
+    "quoted_compliment": "",
+    "quoted_compliment_GT": "Oh, thank you for taking my question. And good quarter. Could you just pull apart for me maybe the top five C3 players on your alliance that really help you drive, you know, revenue or cross-sell, up-sell within some of your accounts? Thanks. ... No, thank you very much. ____good quarter ",
+    "partial_name_match": false
+  },
+  {
+    "quarter": "2021_Q3",
+    "analyst_name": "Jonathan Ruckhaver",
+    "analyst_name_GT": "Jonathan Ruckhaver",
+    "level": 0,
+    "level_GT": 1,
+    "quoted_compliment": "",
+    "quoted_compliment_GT": "Yeah, good morning, and congrats on the strong performance. Udi, it's great to see the success you're seeing. I'm wondering if you could talk a little bit more detail about the adoption trends you're seeing in terms of new customer acquisition versus install-based expansion and what you're seeing in terms of those adoption trends across commercial versus large enterprise. ____congrats on the strong performance",
+    "partial_name_match": false
+  },
+  {
+    "quarter": "2021_Q4",
+    "analyst_name": "Hamza Farrala",
+    "analyst_name_GT": "Hamza Farrala",
+    "level": 1,
+    "level_GT": 0,
+    "quoted_compliment": "Hey, guys. Thanks for taking my question. I wanted to follow up on a question in line with what Socket asked. So, Josh, for you, Ruby obviously did a great job highlighting a lot of the Go drivers for 2022. If I look at your ARR guide, and I assume, you know, maintenance, let's assume it just stays flat, you're guiding for about a 30% growth in net new subs ARR. after what was a really strong acceleration in 21. So I'm curious, how much of that is attributed to this demand inflection that you've spoken so clearly about in the back half of last year versus a faster transition? And to put it bluntly, do you feel like you've given yourself enough wiggle room to really outperform like you did last year?",
+    "quoted_compliment_GT": "Hey, guys. Thanks for taking my question. I wanted to follow up on a question in line with what Socket asked. So, Josh, for you, Ruby obviously did a great job highlighting a lot of the Go drivers for 2022. If I look at your ARR guide, and I assume, you know, maintenance, let's assume it just stays flat, you're guiding for about a 30% growth in net new subs ARR. after what was a really strong acceleration in 21. So I'm curious, how much of that is attributed to this demand inflection that you've spoken so clearly about in the back half of last year versus a faster transition? And to put it bluntly, do you feel like you've given yourself enough wiggle room to really outperform like you did last year? Yeah, thanks. And I think you got it right. It was important that you talked about the maintenance piece of the ARR as well because we do actually, and I called it out in my prepared remarks, that we will probably start to see the decline even on the maintenance ARR, but then the super growth rate on the subscription piece of the ARR. And, you know, the confidence, again, it's really coming from, first of all, the faster transition and also the SaaS-heavy side of the transition. And we're seeing Privileged Cloud really being a big piece of that. And we're also seeing Privileged Cloud also going even further up market. And we talked a little bit about our average deal sizes going up. as well, especially for new logos. And it's really tied to privileged cloud success, also further upmarket, and the value that our customers and the enterprises are seeing in the subscription packages and for the self-hosted as well. You know, I think that, you know, we feel confident about the ARR growth, you know, about overachieving. You know, we put out the number in our guidance, you know, that we feel comfortable given the information we have in front of us. You know, we had great execution in 2021, but, you know, for now the guide is the guide, but absolutely the demand environment is there for us to invest in.____",
+    "partial_name_match": false
+  },
+  {
+    "quarter": "2021_Q4",
+    "analyst_name": "Satina Bugliani",
+    "analyst_name_GT": "Satina Bugliani",
+    "level": 1,
+    "level_GT": 0,
+    "quoted_compliment": "Thank you for taking my questions. Josh, this one's for you just with respect to free cash flow. So it was nice to see the outperformance this quarter. But if you can help walk us through some of the thought process for calendar 22 as you reinvest, as you accelerate the timeframe by which you are going to complete your subscription transition, as well as, you know, some of the drag from maybe the perpetual maintenance or fading away. Anything you can help us, you know, vis-a-vis those factors and how we should be thinking about the shape and the complexion of free cash flow in 2022, that'd be really helpful.",
+    "quoted_compliment_GT": "Thank you for taking my questions. Josh, this one's for you just with respect to free cash flow. So it was nice to see the outperformance this quarter. But if you can help walk us through some of the thought process for calendar 22 as you reinvest, as you accelerate the timeframe by which you are going to complete your subscription transition, as well as, you know, some of the drag from maybe the perpetual maintenance or fading away. Anything you can help us, you know, vis-a-vis those factors and how we should be thinking about the shape and the complexion of free cash flow in 2022, that'd be really helpful. Thank you. Yeah, great.____",
+    "partial_name_match": false
+  },
+  {
+    "quarter": "2021_Q4",
+    "analyst_name": "Joshua Tilton",
+    "analyst_name_GT": "Joshua Tilton",
+    "level": 1,
+    "level_GT": 0,
+    "quoted_compliment": "Yeah, guys, thanks for taking my question. So historically you guys have kind of been the 800-pound gorilla in the room in the on-premise pan market. But as you move to the cloud, would you say your win rate suggests that you kind of maintain the status? Have you maybe become the 1,000-pound gorilla? Any commentary on kind of the competitive environment and how your position has changed as the pan market moves to the cloud would be great.",
+    "quoted_compliment_GT": "Yeah, guys, thanks for taking my question. So historically you guys have kind of been the 800-pound gorilla in the room in the on-premise pan market. But as you move to the cloud, would you say your win rate suggests that you kind of maintain the status? Have you maybe become the 1,000-pound gorilla? Any commentary on kind of the competitive environment and how your position has changed as the pan market moves to the cloud would be great. Yeah, absolutely. That's one of the most exciting elements for us is that we are the market leader no matter how you slice it in PAM and in Privileged Cloud. The solution basically has, you know, in past investments caught up and then went beyond what we offer on PRAM. So the customers can really get the full solution with Privileged Cloud and we're seeing great win rates. and the ability for the customer, like I said earlier, to get quick time to value and expand faster. So I don't know what pounds to give it there, but if we were to just slice it and say, hey, how's the leadership from a TAM perspective in SaaS where the clear market leader is there, just like we showed up on the Gardner Magic Water three years in a row. And in this space, we're seeing that the plan players have been continuously disrupted by PE and changing hands over the last couple of years and really didn't invest in R&D while SideRock has continued to invest in R&D and innovation. and continue to open up a strong gap. And then take it into the platform approach where we're approaching everything as a platform sale, and customers can see, well, we're starting with you with Perfect Cloud, but, wow, you can also secure me on the endpoint in secrets management or my workforce and vendors. And so that's really another great differentiator there for the SaaS function. Woody, I want to interject here and just call out a correction. We said earlier that the EPM was 20% of total ARR, and I want to make sure that it was clear that it was 20% of subscription ARR.____",
+    "partial_name_match": false
+  },
+  {
+    "quarter": "2021_Q4",
+    "analyst_name": "Alex Henderson",
+    "analyst_name_GT": "Alex Henderson",
+    "level": 1,
+    "level_GT": 0,
+    "quoted_compliment": "Great. Thank you very much. So I was hoping you could talk a little bit about the competitive landscape, and not in the way that I think most people are thinking about it. So there's a lot of, you know, blurring in swim lanes with people like SailPoint, Nocta, and even HashiCorp getting into your space. But my sense is that that actually has resulted in an increase in demand for your products, as they have stimulated awareness but not necessarily impacted the share. And in fact, customers will see them come in, hear the pitch, and then realize they need the technology and therefore come to you as opposed to going with the slimmed down initial versions of their products. So are we seeing a stimulation in demand for privilege access as a result of the lightweight competitive entry?",
+    "quoted_compliment_GT": "Great. Thank you very much. So I was hoping you could talk a little bit about the competitive landscape, and not in the way that I think most people are thinking about it. So there's a lot of, you know, blurring in swim lanes with people like SailPoint, Nocta, and even HashiCorp getting into your space. But my sense is that that actually has resulted in an increase in demand for your products, as they have stimulated awareness but not necessarily impacted the share. And in fact, customers will see them come in, hear the pitch, and then realize they need the technology and therefore come to you as opposed to going with the slimmed down initial versions of their products. So are we seeing a stimulation in demand for privilege access as a result of the lightweight competitive entry? Thanks, Alex, and I love your angle here. I think first and foremost is the increased demand environment and our increased leadership position based on merit, you know, having the better products that address all of the broad use cases and definitely privilege access management. and expanding to identity. I do agree that there's been more publicity to the space from that perspective with announcements of entry of very early products where we do not see those products in the field and customers have heard of those pre-announcements. And, you know, I don't know how much we factor that into the awareness, but the awareness is up across the board for identity security. And that may be probably some contributing factor, but the biggest thing are the demand drivers and, you know, all of these years of focusing on the customers and focusing on being a broad platform for identity is huge. you know, it's bearing fruit for us in a very strong competitive position, as strong as I can remember. Great. Thanks. Thank you.____Congrats on the strong quarter.",
+    "partial_name_match": false
+  },
+  {
+    "quarter": "2022_Q1",
+    "analyst_name": "Rob Owens",
+    "analyst_name_GT": "Rob Owens",
+    "level": 1,
+    "level_GT": 0,
+    "quoted_compliment": "Great. We'd love to touch on the new logo growth as well. I think what we've seen throughout the earnings season has been durability of spend, but it really feels like your business is seeing inflection here. So can you maybe speak, you gave us the 250 number, but maybe speak a little bit to the pipeline that you're seeing as you head into the June quarter here.",
+    "quoted_compliment_GT": "Great. We'd love to touch on the new logo growth as well. I think what we've seen throughout the earnings season has been durability of spend, but it really feels like your business is seeing inflection here. Great. Thank you for the color. Absolutely. ____",
+    "partial_name_match": false
+  },
+  {
+    "quarter": "2022_Q1",
+    "analyst_name": "Brian Essex",
+    "analyst_name_GT": "Brian Essex",
+    "level": 1,
+    "level_GT": 0,
+    "quoted_compliment": "Hi. Good morning and thank you for taking the question. Maybe to kind of pivot off of Rob's question. Could you give us maybe a little bit of perspective? I guess during the onset of the pandemic when you saw a little pullback in deal sizes and how the platform was being consumed, given the mix that you have now with greater SaaS mix and the greater awareness, how do you think about the durability of growth? And if we were to head into a more challenging macro environment, Where do you think you might see either benefit or risk to the durability of growth with regard to how enterprises consume the platform?",
+    "quoted_compliment_GT": "Hi. Good morning and thank you for taking the question. Maybe to kind of pivot off of Rob's question. Could you give us maybe a little bit of perspective? I guess during the onset of the pandemic when you saw a little pullback in deal sizes and how the platform was being consumed, given the mix that you have now with greater SaaS mix and the greater awareness, how do you think about the durability of growth? And if we were to head into a more challenging macro environment, Where do you think you might see either benefit or risk to the durability of growth with regard to how enterprises consume the platform? Excellent. Thank you. Appreciate the call. ____",
+    "partial_name_match": false
+  },
+  {
+    "quarter": "2022_Q1",
+    "analyst_name": "Hamza Fathawala",
+    "analyst_name_GT": "Hamza Fathawala",
+    "level": 1,
+    "level_GT": 0,
+    "quoted_compliment": "Hey, guys. Thanks for taking my question. So really appreciate all the great detail earlier. Maybe just one for Josh. I'm curious as you think about your full year outlook, how are you handicapping for all the macro uncertainty out there? I get that security right now is fairly defensive given the geopolitical volatility. But in the past, CyberArk has had, I think, relatively longer sales cycles. And then in relation to that, how should we think about the seasonality in net new ARR for the rest of the year?",
+    "quoted_compliment_GT": "",
+    "partial_name_match": false
+  },
+  {
+    "quarter": "2022_Q2",
+    "analyst_name": "Roger Boyd",
+    "analyst_name_GT": "Roger Boyd",
+    "level": 0,
+    "level_GT": 1,
+    "quoted_compliment": "",
+    "quoted_compliment_GT": "Great. Thanks for taking my question, and congrats on the nice results. Udi, you had mentioned MSSP partners in your prepared remarks, which I think is a relatively new channel for CyberArk. You talked a little bit about the certifications of 3x, but can you just talk about the momentum you're seeing there, the potential for that channel maybe as you work further into the commercial cohort?____congrats on the nice results",
+    "partial_name_match": false
+  },
+  {
+    "quarter": "2022_Q3",
+    "analyst_name": "Brian Cooley",
+    "analyst_name_GT": "Brian Cooley",
+    "level": 1,
+    "level_GT": 0,
+    "quoted_compliment": "Hey, guys. Thanks for taking my question here. So clearly you all have a lot of strong tailwinds driving momentum in the business right now. I kind of wanted to hone in on some and see if you could maybe just rank order what you see as kind of the three biggest growth drivers or tailwinds for the business right now and then kind of looking forward. maybe rank order, kind of what you see as Vegas growth drivers moving into 2023, if it's changed at all, you know, between, you know, whether it's multi-product adoption, new logos, or greenfield PAM wins with new customers?",
+    "quoted_compliment_GT": "Hey, guys. Thanks for taking my question here. So clearly you all have a lot of strong tailwinds driving momentum in the business right now. I kind of wanted to hone in on some and see if you could maybe just rank order what you see as kind of the three biggest growth drivers or tailwinds for the business right now and then kind of looking forward. maybe rank order, kind of what you see as Vegas growth drivers moving into 2023, if it's changed at all, you know, between, you know, whether it's multi-product adoption, new logos, or greenfield PAM wins with new customers?Got it. Thank you for that. It's helpful. And then just thinking about your efforts with the channel expansion, can you just help us frame up kind of what innings you think you're in on that front? I mean, it seems like it's clearly already driving an increase in new logo wins, an incremental business. I'm curious if you think we're kind of still in the early innings of that and whether it could potentially drive further acceleration from here. What percentage of new deals are the channel contributing to today?Great. Thank you for the time. Absolutely.___",
+    "partial_name_match": false
+  },
+  {
+    "quarter": "2022_Q4",
+    "analyst_name": "Hamza Falderwala",
+    "analyst_name_GT": "Hamza Falderwala",
+    "level": 1,
+    "level_GT": 0,
+    "quoted_compliment": "Hey, good morning, and congratulations, Udi, and look forward to working with you, Matt. Just for Udi, it seems like CyberArk is really separating itself from the pack, from a lot of your competitors, which have been acquired, and others that may be facing their own execution challenges. CyberArk's been a profitable company in the past. But just given the opportunity that you're seeing and the success that you're seeing in multiple identity categories, how do you think about just doubling down on investment and continuing to just accelerate your share gain versus getting back to those very high margins that you saw prior to the transition?",
+    "quoted_compliment_GT": "Hey, good morning, and congratulations, Udi, and look forward to working with you, Matt. Just for Udi, it seems like CyberArk is really separating itself from the pack, from a lot of your competitors, which have been acquired, and others that may be facing their own execution challenges. CyberArk's been a profitable company in the past. But just given the opportunity that you're seeing and the success that you're seeing in multiple identity categories, how do you think about just doubling down on investment and continuing to just accelerate your share gain versus getting back to those very high margins that you saw prior to the transition? Thank you so much. Thanks, Pablo. ____ ",
+    "partial_name_match": false
+  },
+  {
+    "quarter": "2022_Q4",
+    "analyst_name": "Rob Owens",
+    "analyst_name_GT": "Rob Owens",
+    "level": 1,
+    "level_GT": 0,
+    "quoted_compliment": "Yeah, I would say definitely strong contributors to the growth and in capturing the new logos, and especially as we expanded and have more and more channels trained on the new solutions, also helping us land with access and other fronts. I don't have the metric handy of how much do we attribute, but again, the majority of our sales involve channels, And, you know, probably 70, 80% of our business we attribute through direct work with channels. So they're definitely strong contributors to this net ARR. And I think, like I mentioned in the remarks, it's strategic for us to have them embracing our broad portfolio. And we see that through their certifications and training and through sales that they're continuously expanding beyond PAM with us also to access and secrets management.",
+    "quoted_compliment_GT": "Yeah, good morning, everyone. In the prepared remarks, you did talk about the record new logo additions that you had during the year and talked about optimized go-to-market, extended channel partnerships. Maybe focus a little bit on the channel front with the new partners. What is their contribution to net new ARR at this point and How do you expect that to ramp throughout 23 and into the future? And quickly for Josh, as you contemplate profitable growth and the return of margin moving forward, having gone through the transition, how should we think about free cash flow and any hints there in terms of modeling it? Thanks. Yeah, thanks, Rob. ____",
+    "partial_name_match": false
+  },
+  {
+    "quarter": "2022_Q4",
+    "analyst_name": "Adam Bork",
+    "analyst_name_GT": "Adam Bork",
+    "level": 1,
+    "level_GT": 0,
+    "quoted_compliment": "Awesome, and thanks so much for taking the question, and congrats to both Udi and Matt. Maybe for Josh, you've talked in the past about a single-digit growth rate from ARR coming from converting the existing maintenance base to subscription and SAF, and I was just curious, kind of, was that true for all of Fiscal 22, and how should we think about the conversion mix in the context of Fiscal 23 guidance? Thanks so much.",
+    "quoted_compliment_GT": "Awesome, and thanks so much for taking the question, and congrats to both Udi and Matt. Maybe for Josh, you've talked in the past about a single-digit growth rate from ARR coming from converting the existing maintenance base to subscription and SAF, and I was just curious, kind of, was that true for all of Fiscal 22, and how should we think about the conversion mix in the context of Fiscal 23 guidance? Thanks so much. Great. Any expectations for that to change in fiscal 23rd? ____",
+    "partial_name_match": false
+  },
+  {
+    "quarter": "2022_Q4",
+    "analyst_name": "Roger Boyd",
+    "analyst_name_GT": "Roger Boyd",
+    "level": 1,
+    "level_GT": 0,
+    "quoted_compliment": "Great. Thank you for taking my questions, and Udi and Matt, I want to echo my congrats on your respective moves and Congrats on what overall looks like a very smooth transition. Maybe for Udi or for Matt, you've consistently talked about a SaaS-heavy transition, and it looks like that was even more so the case in 4Q with SaaS growing nicely above 100%. Any high-level thoughts on the expectations of PrivCloud versus term-based license and Encounter 23? And specifically, what are you hearing from customers around demand for self-hosted versus SaaS and the feature parity there?",
+    "quoted_compliment_GT": "Great. Thank you for taking my questions, and Udi and Matt, I want to echo my congrats on your respective moves and Congrats on what overall looks like a very smooth transition. Maybe for Udi or for Matt, you've consistently talked about a SaaS-heavy transition, and it looks like that was even more so the case in 4Q with SaaS growing nicely above 100%. Any high-level thoughts on the expectations of PrivCloud versus term-based license and Encounter 23? And specifically, what are you hearing from customers around demand for self-hosted versus SaaS and the feature parity there? ____",
+    "partial_name_match": false
+  },
+  {
+    "quarter": "2022_Q4",
+    "analyst_name": "Greg Moskowitz",
+    "analyst_name_GT": "Greg Moskowitz",
+    "level": 1,
+    "level_GT": 0,
+    "quoted_compliment": "And congratulations, Udi, on everything you've achieved thus far in building such a terrific company. Congrats to Matt as well on an extremely well-deserved promotion. Udi, as you know, CyberArk is one of a select few software vendors that was able to execute at a very high level throughout all of 2022. You know, many investors wonder if you can continue to defy gravity in this environment. So it might be helpful just to hear a bit more from you on your confidence level.",
+    "quoted_compliment_GT": "And congratulations, Udi, on everything you've achieved thus far in building such a terrific company. Congrats to Matt as well on an extremely well-deserved promotion. Udi, as you know, CyberArk is one of a select few software vendors that was able to execute at a very high level throughout all of 2022. You know, many investors wonder if you can continue to defy gravity in this environment. So it might be helpful just to hear a bit more from you on your confidence level. ____",
+    "partial_name_match": false
+  },
+  {
+    "quarter": "2023_Q1",
+    "analyst_name": "Saket Kalia",
+    "analyst_name_GT": "Saket Kalia",
+    "level": 1,
+    "level_GT": 0,
+    "quoted_compliment": "Okay. Hey, good morning, guys. Thanks for taking my questions here. Matt, congrats on your first six weeks as CEO.",
+    "quoted_compliment_GT": "Okay. Hey, good morning, guys. Thanks for taking my questions here. Matt, congrats on your first six weeks as CEO.____",
+    "partial_name_match": false
+  },
+  {
+    "quarter": "2023_Q1",
+    "analyst_name": "Hany Kutari",
+    "analyst_name_GT": "Hany Kutari",
+    "level": 1,
+    "level_GT": 0,
+    "quoted_compliment": "Hey, this is from bed. Thanks for taking my question. Congrats on the first quarter, Matt. So one for you and one quick follow up for Josh. Matt, you mentioned about AI that's shaving the cyber landscape and weaponized AI in particular with organizations becoming more vulnerable to attacks that are difficult to detect. You gave an example of a customer, the Fortune 100 transportation company, who cited the threat and That was a key motivator in the expansion deal. Can you talk a little bit more about AI as a driver this past quarter? And in terms of the pipeline, what do you see in terms of the opportunity ahead? And then one quick follow-up for Josh.",
+    "quoted_compliment_GT": "Hey, this is from bed. Thanks for taking my question. Congrats on the first quarter, Matt. So one for you and one quick follow up for Josh. Matt, you mentioned about AI that's shaving the cyber landscape and weaponized AI in particular with organizations becoming more vulnerable to attacks that are difficult to detect. You gave an example of a customer, the Fortune 100 transportation company, who cited the threat and That was a key motivator in the expansion deal. Can you talk a little bit more about AI as a driver this past quarter? And in terms of the pipeline, what do you see in terms of the opportunity ahead? And then one quick follow-up for Josh.____Congrats on the first quarter",
+    "partial_name_match": false
+  },
+  {
+    "quarter": "2023_Q2",
+    "analyst_name": "Rob Owens",
+    "analyst_name_GT": "Rob Owens",
+    "level": 1,
+    "level_GT": 0,
+    "quoted_compliment": "Yeah, so I think we talked about it a little bit in depth last quarter, and we talked about two things, the downsizing of deals. We also talked about, though, that the component parts that were downsized maybe were put into the back half of the year pipeline and were ready for expansion motion. The deals, first of all, to double down on that or come back to that, the deals that we saw happen in Q1, the other component parts still do sit in the back half of the year and actually are progressing really nicely. So we're really happy with that. I think what I would say as related to the second quarter here is the team did a better job of actually positioning the right deal up front for the customer based upon a better understanding of their budgets, based upon a better understanding of you know, what they needed to procure, and maybe weren't seeking out the supersized deal to begin with. And in that case, we didn't see as much downsizing, you know, at the end of the quarter. We actually just saw a strong performance, strong execution, and the ability to be able to, you know, kind of deliver against the close rates that we would expect. So, I would say the market itself continues to stabilize around us. You know, we feel like we're in a strong position vis-a-vis the macros at the moment. And, you know, I wouldn't say there's been any change in trends of a dramatic nature.",
+    "quoted_compliment_GT": "Great, and thanks for taking my question. Last quarter you did note some downsizing of deals. And just curious, given the puts and takes with the economy, what you guys are seeing now in terms of deal sizes? Great. Thank you, guys.____",
+    "partial_name_match": false
+  },
+  {
+    "quarter": "2023_Q2",
+    "analyst_name": "Greg Moskowitz",
+    "analyst_name_GT": "Greg Moskowitz",
+    "level": 0,
+    "level_GT": 1,
+    "quoted_compliment": "",
+    "quoted_compliment_GT": "Thank you very much for taking the question and nice job executing in the Q2. Matt, I think everyone would agree that generative AI is spawning more cyber attacks and that this is only going to increase.____nice job executing in the Q2",
+    "partial_name_match": false
+  },
+  {
+    "quarter": "2023_Q2",
+    "analyst_name": "Saket Kalia",
+    "analyst_name_GT": "Saket Kalia",
+    "level": 0,
+    "level_GT": 1,
+    "quoted_compliment": "",
+    "quoted_compliment_GT": "Okay, great. Hey, good morning, guys. Thanks for taking my questions here. Hey, Matt. Hey, Josh. Good morning. Got it. That makes a ton of sense. Josh, maybe for my follow-up for you, great to see the upside on the income statement this quarter, both in revenue and operating income, and also great to see the operating income guide go up so much for the year, I think more than this quarter's beat.____great to see the upside on the income statement this quarter",
+    "partial_name_match": false
+  },
+  {
+    "quarter": "2023_Q2",
+    "analyst_name": "Eric Heath",
+    "analyst_name_GT": "Eric Heath",
+    "level": 0,
+    "level_GT": 1,
+    "quoted_compliment": "",
+    "quoted_compliment_GT": "Thanks for taking the question, and great to see the great results there. Just two-parter for me, Matt and Josh, if I could. Just first, any uptick in noise in the market or any change in sales cycles at all as it relates to Hashi's self-managed boundary offering or Fox's upcoming payment release? And secondarily, I just wanted to ask on M&A matches, if there's any areas of interest for you as you look to kind of accelerate the product roadmap? And that's it. Thanks.____great to see the great results there",
+    "partial_name_match": false
+  },
+  {
+    "quarter": "2023_Q2",
+    "analyst_name": "Alex Henderson",
+    "analyst_name_GT": "Alex Henderson",
+    "level": 0,
+    "level_GT": 1,
+    "quoted_compliment": "",
+    "quoted_compliment_GT": "Great, thanks. And thanks for the consistency and strong execution you guys have been delivering quarter after quarter after quarter. I was hoping you could move to a little bit broader view of the world than just looking at what CyberArk is seeing and talk to us about what you're hearing from the C-suite at your customers and in the marketplace. There seems to be two specific dynamics that have set up the fear after the Fortinet print that people are cutting back on spending. Conversely, the software companies seem to be talking about an improved normalization and stability. So what are you seeing from the aggregate C-suite about what their intentions are on overall spending on security? Thanks.____strong execution you guys have been delivering quarter after quarter after quarter",
+    "partial_name_match": false
+  },
+  {
+    "quarter": "2023_Q3",
+    "analyst_name": "Rob Owens",
+    "analyst_name_GT": "Rob Owens",
+    "level": 1,
+    "level_GT": 0,
+    "quoted_compliment": "Great. Congrats on the quarter, and again, echo thoughts on your employees and everybody in Israel. I wonder if you could talk about new logos. I think, apologies if I missed, I don't think I heard a new logo disclosure, but I think for the past few quarters, you've talked about the fact that it's a tougher environment for that, but that the customer you are landing are landing bigger with the platform. It clearly sounded like that was the case in 3Q, but love any thoughts on how you're thinking about new logo contribution as maybe around the corner into next year.",
+    "quoted_compliment_GT": "Thank you, guys, and we'd like to echo our thoughts relative to your employees and the people of Israel. Tough situation. Wanted to drill down, Josh, a little bit in just one question from me into the free cash flow guide. Realized that there was puts and takes with previous guide around duration of maintenance contracts, but it looks like some of that previous guidance of that net income margin spread relative to free cash flow aren't necessarily going to hold. So can you unpack that for us and help us get to an understanding of, A, free cash flow for this year and where it's coming in, and then any thoughts relative to how that might accelerate next year in terms of that spread?____ Thank you, guys, and we'd like to echo our thoughts relative to your employees and the people of Israel.",
+    "partial_name_match": false
+  },
+  {
+    "quarter": "2023_Q3",
+    "analyst_name": "Itai Kidron",
+    "analyst_name_GT": "Itai Kidron",
+    "level": 1,
+    "level_GT": 0,
+    "quoted_compliment": "Thanks, and I echo everyone's comments. Our thoughts are with you. Matt, Josh had a couple of questions. Matt, to you, on the go-to-market side, where is your priority right now? Expansion with existing customers, given the massive growth in the portfolio and what you have to offer? or going after new customers. Clearly, everyone would want to have another 100 salespeople running around. But given what you have, how are you reorienting your salesforce right now? What is the priority? And for you, Josh, on the financial side, I want to go back to Saket's comments. Clearly, you've done a very good job in keeping up maintenance, and the price increases are clearly helping. But we're now getting into, right, the three-year mark of the real big shift in subscription. So I'm kind of wondering if there's a cohort of large customers that were on three or perhaps even five-year contracts with you that are now coming for renewal. Is there a risk that they – not a risk, but is there a possibility that they shifted to cloud in a way that creates significant step-downs in maintenance as they – shift from one tool to another help me understand that transition why should we keep thinking that maintenance will just keep on slowly gliding down rather than have big step downs sorry for the long question no no it's good good questions and again thanks for the support on the go-to-market side i",
+    "quoted_compliment_GT": "Thanks, and I echo everyone's comments. Our thoughts are with you. Matt, Josh had a couple of questions. Matt, to you, on the go-to-market side, where is your priority right now? Expansion with existing customers, given the massive growth in the portfolio and what you have to offer? or going after new customers. Clearly, everyone would want to have another 100 salespeople running around. But given what you have, how are you reorienting your salesforce right now? What is the priority? And for you, Josh, on the financial side, I want to go back to Saket's comments. Clearly, you've done a very good job in keeping up maintenance, and the price increases are clearly helping. But we're now getting into, right, the three-year mark of the real big shift in subscription. So I'm kind of wondering if there's a cohort of large customers that were on three or perhaps even five-year contracts with you that are now coming for renewal. Is there a risk that they – not a risk, but is there a possibility that they shifted to cloud in a way that creates significant step-downs in maintenance as they – shift from one tool to another help me understand that transition why should we keep thinking that maintenance will just keep on slowly gliding down rather than have big step downs sorry for the long question no no it's good good questions and again thanks for the support on the go-to-market side i____",
+    "partial_name_match": false
+  },
+  {
+    "quarter": "2023_Q3",
+    "analyst_name": "John DeFucci",
+    "analyst_name_GT": "John DeFucci",
+    "level": 1,
+    "level_GT": 0,
+    "quoted_compliment": "I'm sorry. Thank you. This is John Tafuji for Ray McDonough. Matt and Josh, I don't normally try to repeat what everyone else is saying, but it's important to just express our thoughts and prayers with your employees and the people of Israel. Guys, you continue to put up impressive top-line momentum in an environment when, frankly, most aren't, even in the security segment. And we really appreciate the bottom-line discipline that But I have a question sort of following up Etai's question on go-to-market, and it's something you might not have much control over. Are there any general trends worth noting for the second half of this year? For instance, we're generally hearing about exhausted security budgets coming into the end of 23. Is there a good reason? Because people have spent a lot on security throughout 23. I guess, are you hearing this at all? And if so, Are you seeing any deals that might be getting pushed out into 24 at the end of the year, or is budget getting pulled into 23 from 24 to satisfy current security needs? Thanks.",
+    "quoted_compliment_GT": "I'm sorry. Thank you. This is John Tafuji for Ray McDonough. Matt and Josh, I don't normally try to repeat what everyone else is saying, but it's important to just express our thoughts and prayers with your employees and the people of Israel. Guys, you continue to put up impressive top-line momentum in an environment when, frankly, most aren't, even in the security segment. And we really appreciate the bottom-line discipline that But I have a question sort of following up Etai's question on go-to-market, and it's something you might not have much control over. Are there any general trends worth noting for the second half of this year? For instance, we're generally hearing about exhausted security budgets coming into the end of 23. Is there a good reason? Because people have spent a lot on security throughout 23. I guess, are you hearing this at all? And if so, Are you seeing any deals that might be getting pushed out into 24 at the end of the year, or is budget getting pulled into 23 from 24 to satisfy current security needs? Thanks.____",
+    "partial_name_match": false
+  },
+  {
+    "quarter": "2023_Q3",
+    "analyst_name": "Fatima Boulani",
+    "analyst_name_GT": "Fatima Boulani",
+    "level": 1,
+    "level_GT": 0,
+    "quoted_compliment": "Hey, good morning. Thank you for taking my questions and sending my well wishes to you and the entire CyberArk family. Either for Matt or Josh, feel free to jump all this one. I wanted to get a sense of sales cycle trends within the new logo and expansion activity that you're very strongly executing on. And really the spirit of the question is, you've got a much more expanded portfolio. So how are you you know, managing the extension of sales cycles that typically come with the sale of a broader portfolio.",
+    "quoted_compliment_GT": "Hey, good morning. Thank you for taking my questions and sending my well wishes to you and the entire CyberArk family. Either for Matt or Josh, feel free to jump all this one. I wanted to get a sense of sales cycle trends within the new logo and expansion activity that you're very strongly executing on. And really the spirit of the question is, you've got a much more expanded portfolio. So how are you you know, managing the extension of sales cycles that typically come with the sale of a broader portfolio.____",
+    "partial_name_match": false
+  },
+  {
+    "quarter": "2023_Q3",
+    "analyst_name": "Junaid Siddiqui",
+    "analyst_name_GT": "Junaid Siddiqui",
+    "level": 1,
+    "level_GT": 0,
+    "quoted_compliment": "Great. Thank you for taking my question. Matt, you highlighted secure cloud access that you just launched recently. I was just curious about some of the other new products that you launched at Impact, like Secure Browser. What's been a positive surprise to you in terms of how quickly they're being adopted by customers and contributing to growth?",
+    "quoted_compliment_GT": "Great. Thank you for taking my question. Matt, you highlighted secure cloud access that you just launched recently. I was just curious about some of the other new products that you launched at Impact, like Secure Browser. What's been a positive surprise to you in terms of how quickly they're being adopted by customers and contributing to growth?____",
+    "partial_name_match": false
+  },
+  {
+    "quarter": "2023_Q3",
+    "analyst_name": "Adam Borg",
+    "analyst_name_GT": "Adam Borg",
+    "level": 1,
+    "level_GT": 0,
+    "quoted_compliment": "Awesome. Thanks for taking the question. And again, I'll echo my thoughts about the entire Israeli team and the community of Israel more broadly. Real quickly on the government opportunity. So it was 8% mix of ARR in the quarter. Maybe just talk a little bit more about how federal played out in the quarter and how you think about government more broadly over the next 12 months. Thanks.",
+    "quoted_compliment_GT": "Awesome. Thanks for taking the question. And again, I'll echo my thoughts about the entire Israeli team and the community of Israel more broadly. Real quickly on the government opportunity. So it was 8% mix of ARR in the quarter. Maybe just talk a little bit more about how federal played out in the quarter and how you think about government more broadly over the next 12 months. Thanks.____",
+    "partial_name_match": false
+  },
+  {
+    "quarter": "2023_Q3",
+    "analyst_name": "Brian Colley",
+    "analyst_name_GT": "Brian Colley",
+    "level": 1,
+    "level_GT": 0,
+    "quoted_compliment": "Hey, guys. Thanks for taking my question here. I'd certainly like to echo my support as well for the team in Israel and the people in Israel more broadly. I'm curious if you saw any divergence in demand trends this quarter between the enterprise and mid-market segments of your business. We've heard some other cybersecurity companies say they started seeing some softness in the third quarter in the mid-market. I'm wondering if that's something you saw materialize in any way.",
+    "quoted_compliment_GT": "Hey, guys. Thanks for taking my question here. I'd certainly like to echo my support as well for the team in Israel and the people in Israel more broadly. I'm curious if you saw any divergence in demand trends this quarter between the enterprise and mid-market segments of your business. We've heard some other cybersecurity companies say they started seeing some softness in the third quarter in the mid-market. I'm wondering if that's something you saw materialize in any way.____",
+    "partial_name_match": false
+  },
+  {
+    "quarter": "2023_Q3",
+    "analyst_name": "Alex Henderson",
+    "analyst_name_GT": "Alex Henderson",
+    "level": 1,
+    "level_GT": 0,
+    "quoted_compliment": "Great. I rarely hear somebody talk about, quote, an amazing pipeline build, and I was hoping you could talk a little bit about the composite of that. How much of that is driven off of just simply the broader adoption of the platform, existing customers and the like, and how much of that is driven off of the – the recent new product and technologies that were announced and the reaction from your trade show midsummer. And the reason I ask the question is obviously with a six-month plus sell cycle, I assume that that midsummer build might be helping visibility. Thanks.",
+    "quoted_compliment_GT": "Great. I rarely hear somebody talk about, quote, an amazing pipeline build, and I was hoping you could talk a little bit about the composite of that. How much of that is driven off of just simply the broader adoption of the platform, existing customers and the like, and how much of that is driven off of the – the recent new product and technologies that were announced and the reaction from your trade show midsummer. And the reason I ask the question is obviously with a six-month plus sell cycle, I assume that that midsummer build might be helping visibility. Thanks.____",
+    "partial_name_match": false
+  },
+  {
+    "quarter": "2024_Q1",
+    "analyst_name": "Zach",
+    "analyst_name_GT": "Zach",
+    "level": 1,
+    "level_GT": 0,
+    "quoted_compliment": "Yes, Zach, and thanks for asking. I mean, you know, first of all, you know, obviously we we had a great first quarter on cash flow. It was based off of coming off of a really strong year, and particularly Q4, and a strong Q4, not just in new business, but as you started to point out, it also included a really nice renewal base from Q4, which is kind of what you started alluding to, which is kind of the beginning of the first glimpse of the power of this model after the transition, and now really starting to see kind of the last piece of the flywheel come into effect, which is around cash flow. And, of course, we're able to boost from the first quarter by having excellent collections as well, and early Q1 bookings, which also supports the cash, and still continuing to control our expenses, which you know we like to do. So, overall, it reports a stellar growth cash flow execution for the first quarter. And that really gives us the confidence as one, kind of the first part that I mentioned, that actually the renewal and the recurring revenue does create that flywheel for billings and collections, assuming that we continue to collect at the well-executed rate that we are, that we expect to do. And then, of course, our overall bullishness in the business for the rest of the year as we also raise all of our metrics, not just the cash flow. And so I think it's a complete story around cash flow.",
+    "quoted_compliment_GT": "Got it. That makes a ton of sense. Josh, if I can ask one follow-up for you.____",
+    "partial_name_match": false
+  },
+  {
+    "quarter": "2024_Q1",
+    "analyst_name": "Brian Essex",
+    "analyst_name_GT": "Brian Essex",
+    "level": 1,
+    "level_GT": 0,
+    "quoted_compliment": "Yeah, thank you. Good morning. Thank you for taking the question. I want to follow up on a question from Greg on EPM. I think, obviously, 100 million ARR is a great milestone, and it's a substantial adjacent pan for you guys. But I guess any plans to... maybe evaluate, go to market, and do you see any impact on customer adoption for next-gen EDR or to customers? And this is layer on top of, you know, legacy or best-of-breed EDR solutions. And, you know, we'd love to understand maybe the profile as you see customers adopt EPM. What does the profile of the customer tend to look like? Maybe the size of the customer, geo – you know, sophistication, are they more identity focused, or do you see that endpoint demand also driving demand for EPM?",
+    "quoted_compliment_GT": "Yeah, thank you. Good morning. Thank you for taking the question. I want to follow up on a question from Greg on EPM. I think, obviously, 100 million ARR is a great milestone, and it's a substantial adjacent pan for you guys.____",
+    "partial_name_match": false
+  },
+  {
+    "quarter": "2024_Q1",
+    "analyst_name": "Rob Owens",
+    "analyst_name_GT": "Rob Owens",
+    "level": 1,
+    "level_GT": 0,
+    "quoted_compliment": "Thanks, Rob. So overall, we had a strong quarter, our ability to be able to continue to drive momentum in the market. You know, you've heard me talk for quarters about the difference in conversation with the CISO, with the CIO, with the C-suite, and elevating the conversation up to this identity security story and really talking about how do we help them with their overall security posture and help enable them as they talk to their boards, to their auditors, And at the top of the list is identity security. So we continue to see that building. We continue to see that strong. And Q1 was just a continuation of what we've been able to see over the last couple quarters. As it relates to the Q1 performance itself, we were very happy with where we ended up and the overall performance. There was one element that actually occurred in the quarter where we had about 2 million or so of renewals that basically wasn't able to come in due to the holidays and other stuff and has closed since. And that would have made the net new AR look a little bit better. It then has demonstrated in our ability to be able to raise full year at a high level. So overall, I would tell you that Q1 was a strong quarter for us, and there's been no change in the environment that we've seen out there.",
+    "quoted_compliment_GT": "Great. Thank you guys for taking my question. I want to ask on... net new subscription ARR, which was flat from a year-over-year perspective. And I wanted to ask a question, I guess, from the perspective of just security spending and environment overall.____",
+    "partial_name_match": false
+  },
+  {
+    "quarter": "2024_Q1",
+    "analyst_name": "Fatima Boulani",
+    "analyst_name_GT": "Fatima Boulani",
+    "level": 1,
+    "level_GT": 0,
+    "quoted_compliment": "Yeah, absolutely. So first and foremost, I mean, we have a great set of customers. You know, we have more than 8,000, 8,800 worldwide. These customers trust us from a security perspective. And so our ability to go back into that base to upsell them more PAM seats and then expand them into EPM, into workforce, into secrets, into our secure cloud access, it's an incredibly strong position that we find ourselves in. And our sales team does an excellent job of really monetizing that base and expanding our footprint. And so I think you heard that in our talk track as we talk about that healthy expansion ability that we have. And I think it comes back to an earlier question, which is, our clear differentiation is this spectrum of identities and customers are buying into the idea that it's not enough to just secure the most privileged IT users with PAM. They need to apply privilege controls across the entire spectrum of identities. So I think on the existing business and our ability to upsell and expand, it just continues to be strong. It's been strong, and we're excited to see where we take that for quarters to come. From a new business perspective, we look at it and kind of say, anytime we can get 200 new logos in the door in a non-Q4 quarter, we're pretty happy with that. That allows us to be able to start the process of turning them into these longer-term customers to expand across the multiple identity groups. And so we look at Q1, and we've always said that in this macro and this environment, new logo deals take a little bit longer. They take a little bit more work. We've gotten better and better at doing that. And we're really happy with our ability to be able to land those logos. And frankly, we're really happy about the pipeline on those new logos, the ones we just landed, and when they are anticipated to come back for an expansion deal, because then the flywheel is really kicking in, and it brings us back to the beginning of my answer.",
+    "quoted_compliment_GT": "Good morning. Thank you for taking my questions. Matt, in your prepared remarks, you shared a lot of anecdotes about customers who are increasingly landing with a higher incidence of products across the portfolio.____",
+    "partial_name_match": false
+  },
+  {
+    "quarter": "2024_Q1",
+    "analyst_name": "Adam Borge",
+    "analyst_name_GT": "Adam Borge",
+    "level": 1,
+    "level_GT": 0,
+    "quoted_compliment": "Awesome. Thanks so much for taking the question. Maybe just on the cloud, it's great to see the continued traction with secure cloud access. And as we think about kind of the cloud opportunity more broadly, you know, we often hear about either Kim or ITDR. I was hoping you could talk more about how you think about these adjacent cloud identity security markets as opportunities for CyberArk over time. Thanks so much.",
+    "quoted_compliment_GT": "Awesome. Thanks so much for taking the question. Maybe just on the cloud, it's great to see the continued traction with secure cloud access. And as we think about kind of the cloud opportunity more broadly, you know, we often hear about either Kim or ITDR. I was hoping you could talk more about how you think about these adjacent cloud identity security markets as opportunities for CyberArk over time. Thanks so much.____",
+    "partial_name_match": false
+  },
+  {
+    "quarter": "2024_Q1",
+    "analyst_name": "Roger Boyd",
+    "analyst_name_GT": "Roger Boyd",
+    "level": 1,
+    "level_GT": 0,
+    "quoted_compliment": "Great. Good morning and thanks for taking the question. I want to go back to Joe's question just on the guide, but regarding the duration tailwind that you've seen term license over the past two quarters, any color on what's driving that higher? And Josh, can you just clarify what you're expecting from a duration perspective throughout the rest of the year and how that might be impacting the different updates to the revenue and ARR guides? Thanks.",
+    "quoted_compliment_GT": "Great. Good morning and thanks for taking the question. I want to go back to Joe's question just on the guide, but regarding the duration tailwind that you've seen term license over the past two quarters, any color on what's driving that higher? And Josh, can you just clarify what you're expecting from a duration perspective throughout the rest of the year and how that might be impacting the different updates to the revenue and ARR guides? Thanks.____",
+    "partial_name_match": false
+  },
+  {
+    "quarter": "2024_Q1",
+    "analyst_name": "Andrew Nowinski",
+    "analyst_name_GT": "Andrew Nowinski",
+    "level": 1,
+    "level_GT": 0,
+    "quoted_compliment": "Great. Thank you for the question. I want to talk about the U.S. federal market. You mentioned you have FedRAMP high status for EPM and PAM now. I guess first, how is demand in the quarter? And then second, has that FedRAMP high status opened up a larger pipeline with new agencies that you can now sell to? And are they also purchasing SaaS or more on-prem? Thanks.",
+    "quoted_compliment_GT": "Great. Thank you for the question. I want to talk about the U.S. federal market. You mentioned you have FedRAMP high status for EPM and PAM now. I guess first, how is demand in the quarter? And then second, has that FedRAMP high status opened up a larger pipeline with new agencies that you can now sell to? And are they also purchasing SaaS or more on-prem? Thanks.____",
+    "partial_name_match": false
+  },
+  {
+    "quarter": "2024_Q1",
+    "analyst_name": "Itayi Kidron",
+    "analyst_name_GT": "Itayi Kidron",
+    "level": 1,
+    "level_GT": 0,
+    "quoted_compliment": "Thanks. I have two questions. Maybe I'll show them all at once. First for you, Josh, on the bookings upside, Can you give us a little bit more color there on how much of that is duration, new customers, expansion activities stronger than you expected, the mix of products there, any color would be great. And Matt, going back to the point you mentioned to the question of EPM being complementary to EDR, it is complementary today, but clearly more and more of your portfolio right now is at the edge. I would think the browser, I would think about that as an edge product as well. And so as you're moving closer and closer to the edge, can your EPM product evolve into an EDR-like product and be competitive with an EDR solution?",
+    "quoted_compliment_GT": "Thanks. I have two questions. Maybe I'll show them all at once. First for you, Josh, on the bookings upside, Can you give us a little bit more color there on how much of that is duration, new customers, expansion activities stronger than you expected, the mix of products there, any color would be great. And Matt, going back to the point you mentioned to the question of EPM being complementary to EDR, it is complementary today, but clearly more and more of your portfolio right now is at the edge. I would think the browser, I would think about that as an edge product as well. And so as you're moving closer and closer to the edge, can your EPM product evolve into an EDR-like product and be competitive with an EDR solution?____",
+    "partial_name_match": false
+  },
+  {
+    "quarter": "2024_Q1",
+    "analyst_name": "Sharadi Kaltari",
+    "analyst_name_GT": "Sharadi Kaltari",
+    "level": 1,
+    "level_GT": 0,
+    "quoted_compliment": "Hey, thanks for taking my question. Matt, the follow-up on the secure browser GA looks very timely. As you said, addresses the growing demand for enterprise market and designed to go beyond just log in, harvesting and browser bidder access. One recent comment you made was you believe the browser will not only enhance security, but also drive adoption of all the other solutions. I know it's still early days, but the market seems to be moving quite fast. So just curious, are you already seeing signs where the browser is seen differentiated, becoming a landing point and driving demand for other solutions? And then just a quick follow-up on Azure.",
+    "quoted_compliment_GT": "Hey, thanks for taking my question. Matt, the follow-up on the secure browser GA looks very timely. As you said, addresses the growing demand for enterprise market and designed to go beyond just log in, harvesting and browser bidder access. One recent comment you made was you believe the browser will not only enhance security, but also drive adoption of all the other solutions. I know it's still early days, but the market seems to be moving quite fast. So just curious, are you already seeing signs where the browser is seen differentiated, becoming a landing point and driving demand for other solutions? And then just a quick follow-up on Azure.____",
+    "partial_name_match": false
+  },
+  {
+    "quarter": "2024_Q2",
+    "analyst_name": "John Dufriti",
+    "analyst_name_GT": "John Dufriti",
+    "level": 0,
+    "level_GT": 1,
+    "quoted_compliment": "Thank you. I'd like to follow up to Rob's question because, you know, the results here, as everyone is saying here, is impressive. But it's not only Matt, the CISOs that identify that have said, hey, identity is a priority here, but it's also cyber insurance companies. I know this you and I've talked about this a lot in the past, but I'm just curious, are you seeing sort of any uptick in at least conversations around cyber insurance or demand? Because to Rob's point, having new logos grow year over year for the first time in a year and a half in this quarter in this IT spending environment is not only impressive, it's also very unique. Like you spoke about the origin of the strength of the CISOs. They've recognized they really need to protect identities in a more robust way. But what's the tactical catalyst to that happening other than some of the, I guess, breaches we've heard about out there? Is cyber insurance, because cyber insurance, to get cyber insurance at a decent price, you have to have PAM. And is that part of what's driving this sort of uniqueness?",
+    "quoted_compliment_GT": "Thank you. I'd like to follow up to Rob's question because, you know, the results here, as everyone is saying here, is impressive. But it's not only Matt, the CISOs that identify that have said, hey, identity is a priority here, but it's also cyber insurance companies. I know this you and I've talked about this a lot in the past, but I'm just curious, are you seeing sort of any uptick in at least conversations around cyber insurance or demand? Because to Rob's point, having new logos grow year over year for the first time in a year and a half in this quarter in this IT spending environment is not only impressive, it's also very unique. Like you spoke about the origin of the strength of the CISOs. They've recognized they really need to protect identities in a more robust way. But what's the tactical catalyst to that happening other than some of the, I guess, breaches we've heard about out there? Is cyber insurance, because cyber insurance, to get cyber insurance at a decent price, you have to have PAM. And is that part of what's driving this sort of uniqueness? OK, so it sounds like a lot of things are happening out there. OK, well, nice job, guys. Thank you. Thank you.___the results here, as everyone is saying here, is impressive",
+    "partial_name_match": false
+  },
+  {
+    "quarter": "2024_Q3",
+    "analyst_name": "Saket Kalia",
+    "analyst_name_GT": "Saket Kalia",
+    "level": 0,
+    "level_GT": 1,
+    "quoted_compliment": "",
+    "quoted_compliment_GT": "Great. Hey, guys, good morning, and thanks for taking my questions here. Josh, let me just start by saying I tip my cap to you, man, on just a heck of a run. Absolutely. Matt, maybe on to the business and what was a very strong quarter, maybe for you.___I tip my cap to you, man, on just a heck of a run. Absolutely. Matt, maybe on to the business and what was a very strong quarter",
+    "partial_name_match": false
+  },
+  {
+    "quarter": "2024_Q3",
+    "analyst_name": "Matt Hedberg",
+    "analyst_name_GT": "Matt Hedberg",
+    "level": 1,
+    "level_GT": 0,
+    "quoted_compliment": "Thanks, Matt. Great comprehensive answer. And then maybe just a quick housekeeping one for Josh or Erica. It looks like Venify is contributing about 160 million of ARR to the full year. I'm curious. You know, how quickly was Venify ARR growing, exiting kind of the Q3 quarter, and do you have a rough estimate of what that SAS mix was for Q3?",
+    "quoted_compliment_GT": "Great. Thanks for taking my questions, guys. And I'll offer my congrats as well to both Josh and Erica. You know, I wanted to ask a little bit about your workforce business. It's impressive to see it pass the $100 million ARR mark this quarter. I'm wondering if you could provide a little bit more context about how quickly that's actually growing in the base and maybe, you know, what percentage of the base is actually leveraging workforce? Thanks, guys. Best of luck.____I wanted to ask a little bit about your workforce business. It's impressive to see it pass the $100 million ARR mark this quarter.",
+    "partial_name_match": false
+  }
+]

@@ -1,0 +1,1055 @@
+{
+  "2020_Q1": {
+    "year": 2020,
+    "quarter": 1,
+    "date": "2020-04-29T08:00:00-04:00",
+    "compliments": [
+      {
+        "analyst_name": "David Lewis",
+        "level": 0,
+        "quoted_compliment": ""
+      },
+      {
+        "analyst_name": "Bob Hopkins",
+        "level": 0,
+        "quoted_compliment": ""
+      },
+      {
+        "analyst_name": "Robbie Marcus",
+        "level": 0,
+        "quoted_compliment": ""
+      },
+      {
+        "analyst_name": "Vijay Kumar",
+        "level": 0,
+        "quoted_compliment": ""
+      },
+      {
+        "analyst_name": "Joanne Winch",
+        "level": 0,
+        "quoted_compliment": ""
+      },
+      {
+        "analyst_name": "Josh Jennings",
+        "level": 0,
+        "quoted_compliment": ""
+      },
+      {
+        "analyst_name": "Jason Bedford",
+        "level": 0,
+        "quoted_compliment": ""
+      }
+    ]
+  },
+  "2020_Q2": {
+    "year": 2020,
+    "quarter": 2,
+    "date": "2020-07-29T08:00:00-04:00",
+    "compliments": [
+      {
+        "analyst_name": "Bob Hopkins",
+        "level": 0,
+        "quoted_compliment": ""
+      },
+      {
+        "analyst_name": "David Lewis",
+        "level": 0,
+        "quoted_compliment": ""
+      },
+      {
+        "analyst_name": "Larry Beagleson",
+        "level": 0,
+        "quoted_compliment": ""
+      },
+      {
+        "analyst_name": "Robbie Marcus",
+        "level": 0,
+        "quoted_compliment": ""
+      },
+      {
+        "analyst_name": "Rick Wise",
+        "level": 0,
+        "quoted_compliment": ""
+      },
+      {
+        "analyst_name": "Vijay Kumar",
+        "level": 0,
+        "quoted_compliment": ""
+      },
+      {
+        "analyst_name": "Matt Taylor",
+        "level": 0,
+        "quoted_compliment": ""
+      },
+      {
+        "analyst_name": "Joanne Winch",
+        "level": 0,
+        "quoted_compliment": ""
+      }
+    ]
+  },
+  "2020_Q3": {
+    "year": 2020,
+    "quarter": 3,
+    "date": "2020-10-28T08:00:00-04:00",
+    "compliments": [
+      {
+        "analyst_name": "David Lewis",
+        "level": 0,
+        "quoted_compliment": ""
+      },
+      {
+        "analyst_name": "Robert Hopkins",
+        "level": 0,
+        "quoted_compliment": ""
+      },
+      {
+        "analyst_name": "Vijay Kumar",
+        "level": 0,
+        "quoted_compliment": ""
+      },
+      {
+        "analyst_name": "Larry Eagleson",
+        "level": 0,
+        "quoted_compliment": ""
+      },
+      {
+        "analyst_name": "Joanne Lynch",
+        "level": 0,
+        "quoted_compliment": ""
+      },
+      {
+        "analyst_name": "Robbie Marcus",
+        "level": 0,
+        "quoted_compliment": ""
+      },
+      {
+        "analyst_name": "Rick Wise",
+        "level": 0,
+        "quoted_compliment": ""
+      },
+      {
+        "analyst_name": "Matt",
+        "level": 0,
+        "quoted_compliment": ""
+      },
+      {
+        "analyst_name": "Danielle Antelphi",
+        "level": 1,
+        "quoted_compliment": "congrats on a strong quarter"
+      }
+    ]
+  },
+  "2020_Q4": {
+    "year": 2020,
+    "quarter": 4,
+    "date": "2021-02-03T08:00:00-05:00",
+    "compliments": [
+      {
+        "analyst_name": "Bob Hopkins",
+        "level": 0,
+        "quoted_compliment": ""
+      },
+      {
+        "analyst_name": "David Lewis",
+        "level": 0,
+        "quoted_compliment": ""
+      },
+      {
+        "analyst_name": "Larry Beagleson",
+        "level": 0,
+        "quoted_compliment": ""
+      },
+      {
+        "analyst_name": "Joanne Winch",
+        "level": 0,
+        "quoted_compliment": ""
+      },
+      {
+        "analyst_name": "Robbie Marcus",
+        "level": 0,
+        "quoted_compliment": ""
+      },
+      {
+        "analyst_name": "Matt Taylor",
+        "level": 0,
+        "quoted_compliment": ""
+      }
+    ]
+  },
+  "2021_Q1": {
+    "year": 2021,
+    "quarter": 1,
+    "date": "2021-04-28T08:00:00-04:00",
+    "compliments": [
+      {
+        "analyst_name": "Bob Hopkins",
+        "level": 1,
+        "quoted_compliment": "congrats on a good start to the year"
+      },
+      {
+        "analyst_name": "Robbie Marcus",
+        "level": 1,
+        "quoted_compliment": "congrats on a really strong first quarter"
+      },
+      {
+        "analyst_name": "Larry Beagleson",
+        "level": 1,
+        "quoted_compliment": "congrats on the really nice quarter here"
+      },
+      {
+        "analyst_name": "Vijay Kumar",
+        "level": 1,
+        "quoted_compliment": "congrats on the nice brings here"
+      },
+      {
+        "analyst_name": "Kyla Kroom",
+        "level": 0,
+        "quoted_compliment": ""
+      },
+      {
+        "analyst_name": "Cecilia Furlong",
+        "level": 0,
+        "quoted_compliment": ""
+      },
+      {
+        "analyst_name": "Rick Wise",
+        "level": 0,
+        "quoted_compliment": ""
+      },
+      {
+        "analyst_name": "Matt Mixick",
+        "level": 0,
+        "quoted_compliment": ""
+      },
+      {
+        "analyst_name": "Josh Jennings",
+        "level": 0,
+        "quoted_compliment": ""
+      },
+      {
+        "analyst_name": "Danielle Antelfi",
+        "level": 1,
+        "quoted_compliment": "congrats on a really strong start to the year"
+      }
+    ]
+  },
+  "2021_Q2": {
+    "year": 2021,
+    "quarter": 2,
+    "date": "2021-07-27T08:00:00-04:00",
+    "compliments": [
+      {
+        "analyst_name": "Bob Hopkins",
+        "level": 1,
+        "quoted_compliment": "That's on the strong quarter and congrats to Lauren"
+      },
+      {
+        "analyst_name": "Robbie Marcus",
+        "level": 1,
+        "quoted_compliment": "congratulations on a really nice quarter"
+      },
+      {
+        "analyst_name": "Larry Beagleson",
+        "level": 1,
+        "quoted_compliment": "congrats on the quarter and congrats to Lauren"
+      },
+      {
+        "analyst_name": "BJ Kumar",
+        "level": 1,
+        "quoted_compliment": "Congrats on the quarter here"
+      },
+      {
+        "analyst_name": "Cecilia Furlong",
+        "level": 1,
+        "quoted_compliment": "Great. Good morning and thanks for taking our questions"
+      },
+      {
+        "analyst_name": "Peter Chickening",
+        "level": 1,
+        "quoted_compliment": "congrats on a nice quarter and also congrats to Lauren"
+      },
+      {
+        "analyst_name": "Joanne Wunsch",
+        "level": 1,
+        "quoted_compliment": "subtle market position"
+      },
+      {
+        "analyst_name": "Travis Steed",
+        "level": 1,
+        "quoted_compliment": "appreciate some of the longer-term comments you gave"
+      }
+    ]
+  },
+  "2021_Q3": {
+    "year": 2021,
+    "quarter": 3,
+    "date": "2021-10-27T08:00:00-04:00",
+    "compliments": [
+      {
+        "analyst_name": "Bob Hopkins",
+        "level": 0,
+        "quoted_compliment": ""
+      },
+      {
+        "analyst_name": "Robbie Marcus",
+        "level": 1,
+        "quoted_compliment": "The growth in Watchman was excellent"
+      },
+      {
+        "analyst_name": "Joanne Wench",
+        "level": 0,
+        "quoted_compliment": ""
+      },
+      {
+        "analyst_name": "Rick Wise",
+        "level": 0,
+        "quoted_compliment": ""
+      },
+      {
+        "analyst_name": "Vijay Kumar",
+        "level": 1,
+        "quoted_compliment": "I made a few comments before that, first of all, Watchman, the clinical results for Watchman Flex are extraordinarily good"
+      },
+      {
+        "analyst_name": "Danielle Antofi",
+        "level": 1,
+        "quoted_compliment": "There's no doubt about it"
+      },
+      {
+        "analyst_name": "Matthew O'Brien",
+        "level": 0,
+        "quoted_compliment": ""
+      },
+      {
+        "analyst_name": "Anthony Petroni",
+        "level": 1,
+        "quoted_compliment": "And the short answer is it varies by business, right?"
+      }
+    ]
+  },
+  "2021_Q4": {
+    "year": 2021,
+    "quarter": 4,
+    "date": "2022-02-02T08:00:00-05:00",
+    "compliments": [
+      {
+        "analyst_name": "Robbie Marcus",
+        "level": 0,
+        "quoted_compliment": ""
+      },
+      {
+        "analyst_name": "Larry Beagleson",
+        "level": 0,
+        "quoted_compliment": ""
+      },
+      {
+        "analyst_name": "Joanne Lynch",
+        "level": 0,
+        "quoted_compliment": ""
+      },
+      {
+        "analyst_name": "Vijay Kumar",
+        "level": 0,
+        "quoted_compliment": ""
+      },
+      {
+        "analyst_name": "Danielle Antalfi",
+        "level": 0,
+        "quoted_compliment": ""
+      },
+      {
+        "analyst_name": "Matt Mixick",
+        "level": 0,
+        "quoted_compliment": ""
+      },
+      {
+        "analyst_name": "Matt Taylor",
+        "level": 0,
+        "quoted_compliment": ""
+      },
+      {
+        "analyst_name": "Cecilia Furlong",
+        "level": 0,
+        "quoted_compliment": ""
+      },
+      {
+        "analyst_name": "Pito Chickering",
+        "level": 0,
+        "quoted_compliment": ""
+      }
+    ]
+  },
+  "2022_Q1": {
+    "year": 2022,
+    "quarter": 1,
+    "date": "2022-04-27T08:00:00-04:00",
+    "compliments": [
+      {
+        "analyst_name": "Robbie Marcus",
+        "level": 1,
+        "quoted_compliment": "congrats on a nice quarter"
+      },
+      {
+        "analyst_name": "Rick Wise",
+        "level": 0,
+        "quoted_compliment": ""
+      },
+      {
+        "analyst_name": "Joanne Winch",
+        "level": 0,
+        "quoted_compliment": ""
+      },
+      {
+        "analyst_name": "Larry Beagleson",
+        "level": 0,
+        "quoted_compliment": ""
+      },
+      {
+        "analyst_name": "Vijay Kumar",
+        "level": 1,
+        "quoted_compliment": "Congrats on a nice Q1 print share"
+      },
+      {
+        "analyst_name": "Travis Steed",
+        "level": 1,
+        "quoted_compliment": "Congrats on a good start to the year"
+      },
+      {
+        "analyst_name": "Danielle Antalfi",
+        "level": 1,
+        "quoted_compliment": "congrats on a really good quarter"
+      },
+      {
+        "analyst_name": "Cecilia Furlong",
+        "level": 0,
+        "quoted_compliment": ""
+      },
+      {
+        "analyst_name": "Matthew O'Brien",
+        "level": 0,
+        "quoted_compliment": ""
+      }
+    ]
+  },
+  "2022_Q2": {
+    "year": 2022,
+    "quarter": 2,
+    "date": "2022-07-27T08:00:00-04:00",
+    "compliments": [
+      {
+        "analyst_name": "Jason Bedford",
+        "level": 0,
+        "quoted_compliment": ""
+      },
+      {
+        "analyst_name": "Joanne Lynch",
+        "level": 1,
+        "quoted_compliment": "congratulations"
+      },
+      {
+        "analyst_name": "Robbie Marcus",
+        "level": 1,
+        "quoted_compliment": "I'll add my congratulations on a good quarter"
+      },
+      {
+        "analyst_name": "Larry Diegelson",
+        "level": 1,
+        "quoted_compliment": "congrats on a nice quarter"
+      },
+      {
+        "analyst_name": "Vijay Kumar",
+        "level": 1,
+        "quoted_compliment": "Congrats on the print share"
+      },
+      {
+        "analyst_name": "Rick Wise",
+        "level": 1,
+        "quoted_compliment": "Thanks for taking the questions"
+      },
+      {
+        "analyst_name": "Cecilia Furlong",
+        "level": 1,
+        "quoted_compliment": "thank you for taking the question"
+      },
+      {
+        "analyst_name": "Travis Steed",
+        "level": 1,
+        "quoted_compliment": "hey good morning congrats on a good quarter"
+      },
+      {
+        "analyst_name": "Pito Chickering",
+        "level": 0,
+        "quoted_compliment": ""
+      },
+      {
+        "analyst_name": "Josh Jennings",
+        "level": 0,
+        "quoted_compliment": ""
+      },
+      {
+        "analyst_name": "Richard Newiter",
+        "level": 0,
+        "quoted_compliment": ""
+      },
+      {
+        "analyst_name": "Shagun Singh",
+        "level": 0,
+        "quoted_compliment": ""
+      }
+    ]
+  },
+  "2022_Q3": {
+    "year": 2022,
+    "quarter": 3,
+    "date": "2022-10-26T08:00:00-04:00",
+    "compliments": [
+      {
+        "analyst_name": "Robbie Marcus",
+        "level": 1,
+        "quoted_compliment": "congrats on a great top-line quarter"
+      },
+      {
+        "analyst_name": "Larry Bigelson",
+        "level": 0,
+        "quoted_compliment": ""
+      },
+      {
+        "analyst_name": "Joanne Lynch",
+        "level": 0,
+        "quoted_compliment": ""
+      },
+      {
+        "analyst_name": "Vijay Kumar",
+        "level": 0,
+        "quoted_compliment": ""
+      },
+      {
+        "analyst_name": "Travis Seed",
+        "level": 0,
+        "quoted_compliment": ""
+      },
+      {
+        "analyst_name": "Cecilia Furlong",
+        "level": 0,
+        "quoted_compliment": ""
+      },
+      {
+        "analyst_name": "Rick Wise",
+        "level": 0,
+        "quoted_compliment": ""
+      },
+      {
+        "analyst_name": "Matthew O'Brien",
+        "level": 0,
+        "quoted_compliment": ""
+      },
+      {
+        "analyst_name": "Matt Taylor",
+        "level": 1,
+        "quoted_compliment": "congrats to Dr. Meredith."
+      },
+      {
+        "analyst_name": "Chris Pasquale",
+        "level": 0,
+        "quoted_compliment": ""
+      },
+      {
+        "analyst_name": "Matt Mixick",
+        "level": 1,
+        "quoted_compliment": "we would like to touch on the guidance again"
+      }
+    ]
+  },
+  "2022_Q4": {
+    "year": 2022,
+    "quarter": 4,
+    "date": "2023-02-01T08:00:00-05:00",
+    "compliments": [
+      {
+        "analyst_name": "Rick Wise",
+        "level": 1,
+        "quoted_compliment": "Great to see another excellent year from Boston Scientific"
+      },
+      {
+        "analyst_name": "Robbie Marcus",
+        "level": 1,
+        "quoted_compliment": "congrats on a nice quarter"
+      },
+      {
+        "analyst_name": "Larry Beagleson",
+        "level": 1,
+        "quoted_compliment": "congratulations on a strong end to the year here"
+      },
+      {
+        "analyst_name": "Joanne Lynch",
+        "level": 1,
+        "quoted_compliment": "congrats on a solid double-digit grower"
+      },
+      {
+        "analyst_name": "Vijay Kumar",
+        "level": 1,
+        "quoted_compliment": "just some cleanup questions here on the guidance assumptions"
+      },
+      {
+        "analyst_name": "Cecilia Furlong",
+        "level": 1,
+        "quoted_compliment": "thank you for taking the question"
+      },
+      {
+        "analyst_name": "Josh Jennings",
+        "level": 0,
+        "quoted_compliment": ""
+      }
+    ]
+  },
+  "2023_Q1": {
+    "year": 2023,
+    "quarter": 1,
+    "date": "2023-04-26T08:00:00-04:00",
+    "compliments": [
+      {
+        "analyst_name": "Robbie Marcus",
+        "level": 1,
+        "quoted_compliment": "congrats on a great quarter here"
+      },
+      {
+        "analyst_name": "Joanne Wench",
+        "level": 1,
+        "quoted_compliment": "congrats on a really strong quarter"
+      },
+      {
+        "analyst_name": "Rick Wise",
+        "level": 0,
+        "quoted_compliment": ""
+      },
+      {
+        "analyst_name": "Larry Bigelson",
+        "level": 1,
+        "quoted_compliment": "congrats on a great start to the year here"
+      },
+      {
+        "analyst_name": "Travis Speed",
+        "level": 0,
+        "quoted_compliment": ""
+      },
+      {
+        "analyst_name": "Vijay Kumar",
+        "level": 1,
+        "quoted_compliment": "congrats on the printing"
+      },
+      {
+        "analyst_name": "Danielle Antoloffi",
+        "level": 1,
+        "quoted_compliment": "congrats on a really strong quarter"
+      },
+      {
+        "analyst_name": "Cecilia Furlong",
+        "level": 1,
+        "quoted_compliment": "and also echoing my congrats on the quarter"
+      },
+      {
+        "analyst_name": "Matt Taylor",
+        "level": 1,
+        "quoted_compliment": "so, great result"
+      },
+      {
+        "analyst_name": "Matt Mixick",
+        "level": 0,
+        "quoted_compliment": ""
+      },
+      {
+        "analyst_name": "Chris Pasquale",
+        "level": 0,
+        "quoted_compliment": ""
+      }
+    ]
+  },
+  "2023_Q2": {
+    "year": 2023,
+    "quarter": 2,
+    "date": "2023-07-27T07:30:00-04:00",
+    "compliments": [
+      {
+        "analyst_name": "Robbie Marcus",
+        "level": 1,
+        "quoted_compliment": "congrats on a really nice quarter"
+      },
+      {
+        "analyst_name": "Rick Wise",
+        "level": 1,
+        "quoted_compliment": "congrats on a super strong quarter"
+      },
+      {
+        "analyst_name": "Joanne",
+        "level": 0,
+        "quoted_compliment": ""
+      },
+      {
+        "analyst_name": "Larry Pilsen",
+        "level": 1,
+        "quoted_compliment": "congratulations on another strong quarter here"
+      },
+      {
+        "analyst_name": "Travis Steed",
+        "level": 1,
+        "quoted_compliment": "congrats on the good quarter"
+      },
+      {
+        "analyst_name": "Danielle Antofi",
+        "level": 0,
+        "quoted_compliment": ""
+      },
+      {
+        "analyst_name": "Sam Kurtz",
+        "level": 1,
+        "quoted_compliment": "Congratulations and Thanks"
+      },
+      {
+        "analyst_name": "Matt Taylor",
+        "level": 0,
+        "quoted_compliment": ""
+      },
+      {
+        "analyst_name": "Marie",
+        "level": 1,
+        "quoted_compliment": "Nice quarter"
+      },
+      {
+        "analyst_name": "Patrick Wood",
+        "level": 1,
+        "quoted_compliment": "congrats on a great quarter and thank you"
+      },
+      {
+        "analyst_name": "Vijay Kumar",
+        "level": 1,
+        "quoted_compliment": "thanks for taking my question"
+      },
+      {
+        "analyst_name": "Jason Bedford",
+        "level": 0,
+        "quoted_compliment": ""
+      }
+    ]
+  },
+  "2023_Q3": {
+    "year": 2023,
+    "quarter": 3,
+    "date": "2023-10-26T08:00:00-04:00",
+    "compliments": [
+      {
+        "analyst_name": "Robin Marcus",
+        "level": 1,
+        "quoted_compliment": "congrats on a great quarter"
+      },
+      {
+        "analyst_name": "Joanne Wunsch",
+        "level": 0,
+        "quoted_compliment": ""
+      },
+      {
+        "analyst_name": "Rick Wise",
+        "level": 1,
+        "quoted_compliment": "Wonderful to see such an excellent quarter"
+      },
+      {
+        "analyst_name": "BJ Kumar",
+        "level": 1,
+        "quoted_compliment": "Congrats on the print"
+      },
+      {
+        "analyst_name": "Larry Bigleton",
+        "level": 1,
+        "quoted_compliment": "Congrats on the print"
+      },
+      {
+        "analyst_name": "Travis Steed",
+        "level": 1,
+        "quoted_compliment": "great question and nice quarter"
+      },
+      {
+        "analyst_name": "Daniel Antalfa",
+        "level": 1,
+        "quoted_compliment": "congrats on a great quarter and the data"
+      },
+      {
+        "analyst_name": "Matt Taylor",
+        "level": 0,
+        "quoted_compliment": ""
+      },
+      {
+        "analyst_name": "Josh Jennings",
+        "level": 1,
+        "quoted_compliment": "Congratulations on the strong results"
+      },
+      {
+        "analyst_name": "Chris Pascal",
+        "level": 0,
+        "quoted_compliment": ""
+      },
+      {
+        "analyst_name": "Michael Pollark",
+        "level": 0,
+        "quoted_compliment": ""
+      },
+      {
+        "analyst_name": "Matthew O'Brien",
+        "level": 1,
+        "quoted_compliment": "thanks for squeezing me in here"
+      }
+    ]
+  },
+  "2023_Q4": {
+    "year": 2023,
+    "quarter": 4,
+    "date": "2024-01-31T08:00:00-05:00",
+    "compliments": [
+      {
+        "analyst_name": "Robbie Marcus",
+        "level": 1,
+        "quoted_compliment": "congrats on a really good quarter"
+      },
+      {
+        "analyst_name": "Joanne Lynch",
+        "level": 0,
+        "quoted_compliment": ""
+      },
+      {
+        "analyst_name": "Larry Beagleson",
+        "level": 1,
+        "quoted_compliment": "congrats on a strong finish"
+      },
+      {
+        "analyst_name": "Vijay Kumar",
+        "level": 1,
+        "quoted_compliment": "congrats on a really strong finish"
+      },
+      {
+        "analyst_name": "Danielle Antelfi",
+        "level": 0,
+        "quoted_compliment": ""
+      },
+      {
+        "analyst_name": "Josh Jennings",
+        "level": 0,
+        "quoted_compliment": ""
+      },
+      {
+        "analyst_name": "Richard Newitter",
+        "level": 1,
+        "quoted_compliment": "congrats on a really strong finish"
+      },
+      {
+        "analyst_name": "Patrick Wood",
+        "level": 0,
+        "quoted_compliment": ""
+      },
+      {
+        "analyst_name": "Michael Pollark",
+        "level": 0,
+        "quoted_compliment": ""
+      }
+    ]
+  },
+  "2024_Q1": {
+    "year": 2024,
+    "quarter": 1,
+    "date": "2024-04-24T08:00:00-04:00",
+    "compliments": [
+      {
+        "analyst_name": "Robbie Marcus",
+        "level": 1,
+        "quoted_compliment": "congrats on a fantastic quarter"
+      },
+      {
+        "analyst_name": "Larry Beagleson",
+        "level": 1,
+        "quoted_compliment": "congratulations on a really strong quarter here"
+      },
+      {
+        "analyst_name": "Rick Wise",
+        "level": 0,
+        "quoted_compliment": ""
+      },
+      {
+        "analyst_name": "Joanne Winch",
+        "level": 1,
+        "quoted_compliment": "another nice quarter"
+      },
+      {
+        "analyst_name": "Vijay Kumar",
+        "level": 1,
+        "quoted_compliment": "congrats on a really solid print share"
+      },
+      {
+        "analyst_name": "Travis Steed",
+        "level": 1,
+        "quoted_compliment": "Congrats again on the good quarter"
+      },
+      {
+        "analyst_name": "Danielle Antelfi",
+        "level": 1,
+        "quoted_compliment": "congrats on a really strong quarter"
+      },
+      {
+        "analyst_name": "Josh Jennings",
+        "level": 0,
+        "quoted_compliment": ""
+      },
+      {
+        "analyst_name": "Chris Pasquale",
+        "level": 0,
+        "quoted_compliment": ""
+      },
+      {
+        "analyst_name": "Matthew O'Brien",
+        "level": 0,
+        "quoted_compliment": ""
+      },
+      {
+        "analyst_name": "Matt Taylor",
+        "level": 0,
+        "quoted_compliment": ""
+      },
+      {
+        "analyst_name": "Matt Mixick",
+        "level": 0,
+        "quoted_compliment": ""
+      },
+      {
+        "analyst_name": "Michael Pollack",
+        "level": 0,
+        "quoted_compliment": ""
+      }
+    ]
+  },
+  "2024_Q2": {
+    "year": 2024,
+    "quarter": 2,
+    "date": "2024-07-24T08:00:00-04:00",
+    "compliments": [
+      {
+        "analyst_name": "Robbie Marcus",
+        "level": 1,
+        "quoted_compliment": "congratulations on another fantastic quarter"
+      },
+      {
+        "analyst_name": "Joanne Wunsch",
+        "level": 1,
+        "quoted_compliment": "a very nice quarter"
+      },
+      {
+        "analyst_name": "Larry Beagleson",
+        "level": 1,
+        "quoted_compliment": "congrats on a really nice quarter here"
+      },
+      {
+        "analyst_name": "Rick Wise",
+        "level": 0,
+        "quoted_compliment": ""
+      },
+      {
+        "analyst_name": "Vijay Kumar",
+        "level": 1,
+        "quoted_compliment": "congratulations on my experience here"
+      },
+      {
+        "analyst_name": "David Roman",
+        "level": 0,
+        "quoted_compliment": ""
+      },
+      {
+        "analyst_name": "Patrick Wood",
+        "level": 0,
+        "quoted_compliment": ""
+      },
+      {
+        "analyst_name": "Travis Steed",
+        "level": 0,
+        "quoted_compliment": ""
+      },
+      {
+        "analyst_name": "Josh Jennings",
+        "level": 1,
+        "quoted_compliment": "congrats on the stellar results"
+      },
+      {
+        "analyst_name": "Danielle Antelfi",
+        "level": 1,
+        "quoted_compliment": "congrats on the really awesome quarter"
+      },
+      {
+        "analyst_name": "Matt Taylor",
+        "level": 1,
+        "quoted_compliment": "congrats on the great quarter"
+      }
+    ]
+  },
+  "2024_Q3": {
+    "year": 2024,
+    "quarter": 3,
+    "date": "2024-10-23T08:00:00-04:00",
+    "compliments": [
+      {
+        "analyst_name": "Robbie Marcus",
+        "level": 1,
+        "quoted_compliment": "congrats on another fantastic quarter"
+      },
+      {
+        "analyst_name": "Joanne Lynch",
+        "level": 1,
+        "quoted_compliment": "thank you for the question"
+      },
+      {
+        "analyst_name": "Larry Diegelson",
+        "level": 1,
+        "quoted_compliment": "my congratulations on a really phenomenal quarter"
+      },
+      {
+        "analyst_name": "Rick Wise",
+        "level": 0,
+        "quoted_compliment": ""
+      },
+      {
+        "analyst_name": "David Roman",
+        "level": 0,
+        "quoted_compliment": ""
+      },
+      {
+        "analyst_name": "Matt Mixick",
+        "level": 1,
+        "quoted_compliment": "thank you very much for taking my question"
+      },
+      {
+        "analyst_name": "Travis Steed",
+        "level": 0,
+        "quoted_compliment": ""
+      },
+      {
+        "analyst_name": "Danielle Antelfi",
+        "level": 1,
+        "quoted_compliment": "congrats on this amazing quarter"
+      },
+      {
+        "analyst_name": "Anthony Patron",
+        "level": 1,
+        "quoted_compliment": "congrats on a strong quarter"
+      },
+      {
+        "analyst_name": "Vijay Kumar",
+        "level": 1,
+        "quoted_compliment": "congrats on a nice quarter"
+      },
+      {
+        "analyst_name": "Josh Jennings",
+        "level": 1,
+        "quoted_compliment": "congratulations on another home run quarter"
+      },
+      {
+        "analyst_name": "Matthew O'Brien",
+        "level": 0,
+        "quoted_compliment": ""
+      }
+    ]
+  }
+}

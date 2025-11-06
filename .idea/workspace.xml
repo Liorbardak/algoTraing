@@ -1,0 +1,368 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="7b950172-ce16-4216-acb2-85a7e233e9c2" name="Changes" comment="new format">
+      <change beforePath="$PROJECT_DIR$/basic_code/charnybot/config/trading_config.json" beforeDir="false" afterPath="$PROJECT_DIR$/basic_code/charnybot/config/trading_config.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/basic_code/charnybot/trade_policy.py" beforeDir="false" afterPath="$PROJECT_DIR$/basic_code/charnybot/trade_policy.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/basic_code/charnybot/trade_simulation.py" beforeDir="false" afterPath="$PROJECT_DIR$/basic_code/charnybot/trade_simulation.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Merge.Settings">
+    <option name="BRANCH" value="dada_temp" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Liorbardak&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Liorbardak/algoTraing.git&quot;,
+    &quot;accountId&quot;: &quot;d027f9ce-c797-4d7e-9432-86c88bd8df39&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
+  <component name="ProjectId" id="2zct01YwqwDU5Vpt4aUPZvrd2oE" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Python tests.Doctest main.executor": "Debug",
+    "Python tests.Doctests in trade_simulation (1).executor": "Debug",
+    "Python tests.Doctests in trade_simulation.executor": "Debug",
+    "Python tests.Doctests in trade_simulator.executor": "Run",
+    "Python.add_data_to_stocks.executor": "Debug",
+    "Python.buy_and_sell_simulation.executor": "Run",
+    "Python.buy_sell_simulation (1).executor": "Run",
+    "Python.charny_simulations (1).executor": "Run",
+    "Python.charny_simulations.executor": "Run",
+    "Python.compare_compliments (1).executor": "Run",
+    "Python.compare_compliments.executor": "Run",
+    "Python.data_downloader.executor": "Debug",
+    "Python.data_loader.executor": "Run",
+    "Python.extractComplimentsFromEarningCalls.executor": "Run",
+    "Python.fetchCompanyData.executor": "Run",
+    "Python.main.executor": "Run",
+    "Python.metrics.executor": "Debug",
+    "Python.optimize_validation.executor": "Run",
+    "Python.playground.executor": "Run",
+    "Python.rerun_detection_only.executor": "Run",
+    "Python.rerun_validation_only.executor": "Run",
+    "Python.temp.executor": "Debug",
+    "Python.trade_policy.executor": "Run",
+    "Python.trade_simulation.executor": "Run",
+    "Python.visualizer.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "dada__main",
+    "last_opened_file_path": "C:/Users/dadab/projects/algotrading/algoTraing/basic_code/charnybot/simulations",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\dadab\projects\algotrading\algoTraing\basic_code\charnybot\simulations" />
+      <recent name="C:\Users\dadab\projects\algotrading\algoTraing\basic_code\comp_extract\prompts" />
+      <recent name="C:\Users\dadab\projects\algotrading\algoTraing\basic_code\comp_extract" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\dadab\projects\algotrading\algoTraing\basic_code\charnybot\simulations" />
+      <recent name="C:\Users\dadab\projects\algotrading\algoTraing\basic_code\agent_tests\prompts" />
+      <recent name="C:\Users\dadab\projects\algotrading\algoTraing\basic_code\comp_extract\prompts" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.trade_simulation">
+    <configuration name="buy_and_sell_simulation" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="algoTraing" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/basic_code/charnybot/simulations" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/basic_code/charnybot/simulations/buy_and_sell_simulation.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="buy_sell_simulation (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="algoTraing" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/basic_code/charnybot/simulations" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/basic_code/charnybot/simulations/buy_sell_simulation.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="charny_simulations (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="algoTraing" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/basic_code/charnybot/simulations" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/basic_code/charnybot/simulations/charny_simulations.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="trade_simulation" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="algoTraing" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/basic_code/charnybot" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/basic_code/charnybot/trade_simulation.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Doctests in trade_simulation" type="tests" factoryName="Doctests" temporary="true" nameIsGenerated="true">
+      <module name="algoTraing" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/basic_code/charnybot" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/basic_code/charnybot/trade_simulation.py" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.trade_simulation" />
+        <item itemvalue="Python.charny_simulations (1)" />
+        <item itemvalue="Python.buy_and_sell_simulation" />
+        <item itemvalue="Python.buy_sell_simulation (1)" />
+        <item itemvalue="Python tests.Doctests in trade_simulation" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-python-sdk-890ed5b35930-d9c5bdb153f4-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-251.23774.444" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="7b950172-ce16-4216-acb2-85a7e233e9c2" name="Changes" comment="" />
+      <created>1752041962689</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1752041962689</updated>
+    </task>
+    <task id="LOCAL‎-00001" summary="compare">
+      <option name="closed" value="true" />
+      <created>1752057302987</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL‎-00001" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1752057302987</updated>
+    </task>
+    <task id="LOCAL‎-00002" summary="compare GT annotations">
+      <option name="closed" value="true" />
+      <created>1752071635859</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL‎-00002" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1752071635859</updated>
+    </task>
+    <task id="LOCAL‎-00003" summary="compare GT annotations">
+      <option name="closed" value="true" />
+      <created>1752075847916</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL‎-00003" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1752075847916</updated>
+    </task>
+    <task id="LOCAL‎-00004" summary="compare GT refactor">
+      <option name="closed" value="true" />
+      <created>1752237925189</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL‎-00004" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1752237925189</updated>
+    </task>
+    <task id="LOCAL‎-00005" summary="compare GT">
+      <option name="closed" value="true" />
+      <created>1752238064528</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL‎-00005" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1752238064528</updated>
+    </task>
+    <task id="LOCAL‎-00006" summary="compare GT">
+      <option name="closed" value="true" />
+      <created>1752239404029</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL‎-00006" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1752239404029</updated>
+    </task>
+    <task id="LOCAL‎-00007" summary="stam">
+      <option name="closed" value="true" />
+      <created>1752240036279</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL‎-00007" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1752240036279</updated>
+    </task>
+    <task id="LOCAL‎-00008" summary="bug fix">
+      <option name="closed" value="true" />
+      <created>1752245167239</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL‎-00008" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1752245167239</updated>
+    </task>
+    <task id="LOCAL‎-00009" summary="Merge branch 'main' of https://github.com/Liorbardak/algoTraing">
+      <option name="closed" value="true" />
+      <created>1752249125998</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL‎-00009" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1752249125998</updated>
+    </task>
+    <task id="LOCAL‎-00010" summary="Merge branch 'main' of https://github.com/Liorbardak/algoTraing">
+      <option name="closed" value="true" />
+      <created>1752261707051</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL‎-00010" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1752261707051</updated>
+    </task>
+    <task id="LOCAL‎-00011" summary="Merge branch 'main' of https://github.com/Liorbardak/algoTraing">
+      <option name="closed" value="true" />
+      <created>1752401753469</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL‎-00011" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1752401753469</updated>
+    </task>
+    <task id="LOCAL‎-00012" summary="new format">
+      <option name="closed" value="true" />
+      <created>1755931116001</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL‎-00012" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1755931116001</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
+    <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="compare" />
+    <MESSAGE value="compare GT annotations" />
+    <MESSAGE value="compare GT refactor" />
+    <MESSAGE value="compare GT" />
+    <MESSAGE value="stam" />
+    <MESSAGE value="bug fix" />
+    <MESSAGE value="Merge branch 'main' of https://github.com/Liorbardak/algoTraing" />
+    <MESSAGE value="new format" />
+    <option name="LAST_COMMIT_MESSAGE" value="new format" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/basic_code/comp_extract/temp.py</url>
+          <line>101</line>
+          <option name="timeStamp" value="32" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/temp.py</url>
+          <line>4</line>
+          <option name="timeStamp" value="167" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/basic_code/charnybot/data_loader.py</url>
+          <line>189</line>
+          <option name="timeStamp" value="215" />
+        </line-breakpoint>
+      </breakpoints>
+      <default-breakpoints>
+        <breakpoint type="python-exception">
+          <properties notifyOnTerminate="true" exception="BaseException">
+            <option name="notifyOnTerminate" value="true" />
+          </properties>
+        </breakpoint>
+      </default-breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

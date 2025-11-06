@@ -1,0 +1,4 @@
+,ticker,n_gt_analysits,n_actual_analyst,n_analysts_matched,correct,incorrect,false_positive,false_negative,n_positive,n_negative,accuracy,precision,recall
+0,CYBR,187,185,175,126,49,42,7,50,125,0.72,0.5058823529411764,0.86
+1,BSX,174,185,171,144,27,26,1,64,107,0.8421052631578947,0.7078651685393258,0.984375
+Total,all,361,370,346,270,76,68,8,114,232,0.7803468208092486,0.6091954022988506,0.9298245614035088

@@ -1,0 +1,33 @@
+REVISED PROMPT:
+
+In this task, you are required to analyze an earnings call transcript and extract only the sentences where *analysts compliment the company’s performance during the quarter*. 
+
+An analyst compliment is a positive remark or feedback about the company's quarterly performance. It may include phrases such as:
+   •   “Great quarter”
+   •   “Strong results”
+   •   “Great to see the execution”
+   •   “Very good job in the quarter”
+   
+Also, whenever the words CONGRATS or CONGRATULATIONS appear in the analyst response, you should consider that as a compliment. 
+
+However, be careful not to mistake the following for compliments:
+1. First-person company language like "we are pleased", "we are proud", "our performance" - these indicate a company executive talking about their own company and are not analysts remarks or compliments.
+2. Compliments that relate to personal events (e.g. retirement, promotions, new roles) and not to company performance.
+3. Congratulations to a CEO when he is stepping down or congratulations to a new CEO that is stepping up.
+4. Compliments that relate to mergers, acquisitions, or strategic announcements not related to performance this quarter.
+5. General greetings or non-performance topics (e.g. "great, thank you").
+6. A polite note or gratitude for taking a question.
+7. A general remark or question with no compliment in it.
+
+After identifying all compliments (if any), please put them in a JSON structure with the following fields:
+
+- analyst_name: The name of the analyst. If the earning call file does not include specifically the analyst name, you can find the analyst name by checking what was the name of the analyst in an exposition like this "Your next question is from..." before the actual question. Make sure to refer to the analyst name that appeared near and just before the question.
+- level: 1 if the analyst gave a compliment, 0 otherwise.
+- quoted_compliment: copy the paragraph that contains the compliment exactly as it is written in the text. In case the analyst didn't give a compliment, put ''.
+
+Your response should include only JSON format with the above fields that can be loaded using json.loads(), without any further text.
+
+Ensure that all the analysts that gave remarks appear in the output, both the analysts who gave compliments and those who did not compliment. Each analyst should appear in the file exactly once. If the same analyst asked several questions you should count him only once. 
+
+Here is the earnings calls text: 
+{text}

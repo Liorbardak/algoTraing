@@ -1,0 +1,242 @@
+{
+    "2021_Q3": {
+        "year": 2021,
+        "quarter": 3,
+        "date": "2021-11-10T16:30:00-05:00",
+        "compliments": [
+            {
+                "analyst_name": "Kristen Kluska",
+                "level": 1,
+                "quoted_compliment": "Hi, everyone. Thanks for taking the questions, and congrats on a good revenue quarter and achieving this positive gross profit. So it looks like since last quarter you added another plasma collection facility under your umbrella. So maybe based off of the centers you have up and running now, in addition to those with FDA approval, what criteria has gone into finding and setting up the new locations for these centers to best maximize the value for you? And with the guidance of having 10 or more centers, what specifically will be the drivers in deciding whether You know, specifically how many beyond that 10 goal?"
+            },
+            {
+                "analyst_name": "Anthony Patron",
+                "level": 1,
+                "quoted_compliment": "Thanks, and good afternoon. I'll have one just on the quarter and then one on the announcements a couple of weeks ago. So on the quarter, certainly 20.7 ahead of our model, just trying to get a sense of the mix between Bivagam and Ascenev. And then specific to Bibigam, just to give us a sense maybe of sort of what changed here in the third quarter, you know, was it share gains in new infusion centers, or was it just excess purchasing from existing sites? And I'll have a follow-up."
+            },
+            {
+                "analyst_name": "Elliot Wilbur",
+                "level": 1,
+                "quoted_compliment": "Thanks. Good afternoon. Maybe just a couple from me here. First for Brian, just with respect to outlook for gross margin trends and ability to sort of maintain positive gross margin performance going forward, is it Fair to assume at this point that if revenue simply grows sequentially, that you'll be able to continue to generate positive gross margin, just trying to get a sense of how important or what the impact was of the conformance batches in the quarter."
+            }
+        ]
+    },
+    "2021_Q4": {
+        "year": 2021,
+        "quarter": 4,
+        "date": "2022-03-24T16:30:00-04:00",
+        "compliments": [
+            {
+                "analyst_name": "Elliot Wilber",
+                "level": 1,
+                "quoted_compliment": "Thanks. Good afternoon. Congratulations on all the progress made in business over the course of the year and continuation of strong underlying fundamental trends."
+            },
+            {
+                "analyst_name": "Christian Kleska",
+                "level": 1,
+                "quoted_compliment": "Hi, good afternoon, everybody. Thanks for taking the questions and congrats on a strong start of the year that you've had."
+            },
+            {
+                "analyst_name": "Zach Weiner",
+                "level": 1,
+                "quoted_compliment": "Thanks for taking the questions. Appreciate it. Congrats on the quarter."
+            }
+        ]
+    },
+    "2022_Q1": {
+        "year": 2022,
+        "quarter": 1,
+        "date": "2022-05-11T16:30:00-04:00",
+        "compliments": [
+            {
+                "analyst_name": "Elliot Wilbur",
+                "level": 0,
+                "quoted_compliment": ""
+            },
+            {
+                "analyst_name": "Kristen Kluska",
+                "level": 1,
+                "quoted_compliment": "Hi. Good afternoon, everybody. Thanks so much for taking the questions, and congrats on another strong quarter. Thank you."
+            }
+        ]
+    },
+    "2022_Q2": {
+        "year": 2022,
+        "quarter": 2,
+        "date": "2022-08-10T16:30:00-04:00",
+        "compliments": [
+            {
+                "analyst_name": "Elliot Wilber",
+                "level": 1,
+                "quoted_compliment": "Congrats on a strong quarter."
+            },
+            {
+                "analyst_name": "Kristen Kleska",
+                "level": 1,
+                "quoted_compliment": "Hi. Good afternoon, everyone. Thanks for taking my questions, and congrats on another strong quarter."
+            }
+        ]
+    },
+    "2022_Q3": {
+        "year": 2022,
+        "quarter": 3,
+        "date": "2022-11-09T16:30:00-05:00",
+        "compliments": [
+            {
+                "analyst_name": "Anthony Petroni",
+                "level": 1,
+                "quoted_compliment": "Hi, Adam. Hi, Brian. Hi, Skyler. First off, just congratulations on what really appears to be a milestone quarter for the company and the team and really the culmination of lots of hard work and heavy lifting through the pandemic. So congratulations to the team and everyone at ADMA."
+            },
+            {
+                "analyst_name": "Elliot Wilber",
+                "level": 1,
+                "quoted_compliment": "Thank you, Elliot, again for the congratulatory remarks as well. So to specifically answer your question, you're spot on. We expect the remaining 2200 liter batches that were produced up until the middle of 2021 to be depleted or meaning sold throughout the next couple quarters be completely sold by the middle of 2023. Substantially, we've already sold the majority of the 2200 to date. There's a couple of quarters to go that we feel, but the 4400 will be sold exclusively starting in the middle of 2023 at the higher margin production process, again, in the 20% to 30% range for the 4400 batch production leader process."
+            },
+            {
+                "analyst_name": "Kristen Kluska",
+                "level": 1,
+                "quoted_compliment": "Hi, good afternoon, everybody. Let me also add my congratulations to you on this quarter. Thank you."
+            }
+        ]
+    },
+    "2023_Q1": {
+        "year": 2023,
+        "quarter": 1,
+        "date": "2023-05-10T16:30:00-04:00",
+        "compliments": [
+            {
+                "analyst_name": "Elliot Wilbur",
+                "level": 1,
+                "quoted_compliment": "Hey, Elliot. Thanks. Good afternoon. Just wanted to extend my congratulations to management and the entire organization on all your accomplishments of the past couple of years. It's been a terrific journey and certainly I've enjoyed being a being able to observe it from my analyst's seat."
+            },
+            {
+                "analyst_name": "Anthony Petroni",
+                "level": 1,
+                "quoted_compliment": "How you doing, Anthony? Thanks, and congratulations again here on another strong quarter, strong start to the year 2023. Maybe, Adam, to start, we can talk a little bit just about hyperimmune globulin specifically. Certainly, there's momentum and incentive here. Your prepared remarks point towards stickiness, but also continued new patient volumes for incentive. And then your competitor and supplier, Griffles, also reported a very strong hyperimmune globulin number for their quarter and one Q of 23. So maybe just to level set us a little bit here on the state of hyperimmune globulins, And then specific to ADMA, just the tailwinds we're seeing in Ascentive, how sustainable is the momentum in new patient starts? And over time, how sticky can this prove to be on those patients as we continue to move ahead here? And then I'll have a couple of follow-ups. Thanks."
+            },
+            {
+                "analyst_name": "Kristen Kluska",
+                "level": 1,
+                "quoted_compliment": "Hi, good afternoon, everybody. Let me also add my congratulations to you on another great quarter and the pattern that we've really seen emerge over the last couple quarters here. So I wanted to ask you a bit more on incentive utilization. If I look at some of your publications, posters, et cetera, it really seems that the benefits are quite broad. I mean, the age of the patients, the underlying comorbidities, the time to treatment, it seems pretty diverse amongst the patients yet the benefits are all there. So curious if real time you're seeing that the effects represent a broad patient population or if there's a specific type that you've seen. And then can you talk about some of your plans maybe the next 12 months to collect and report on more of these case studies?"
+            },
+            {
+                "analyst_name": "Elliot Wilbur",
+                "level": 0,
+                "quoted_compliment": ""
+            },
+            {
+                "analyst_name": "Anthony Petroni",
+                "level": 0,
+                "quoted_compliment": ""
+            },
+            {
+                "analyst_name": "Kristen Kluska",
+                "level": 0,
+                "quoted_compliment": ""
+            }
+        ]
+    },
+    "2023_Q2": {
+        "year": 2023,
+        "quarter": 2,
+        "date": "2023-08-09T16:30:00-04:00",
+        "compliments": [
+            {
+                "analyst_name": "Gary Nachman",
+                "level": 1,
+                "quoted_compliment": "Hi, guys. Good afternoon. Nice quarter and raised guidance. Thanks very much."
+            },
+            {
+                "analyst_name": "Anthony Patron",
+                "level": 1,
+                "quoted_compliment": "Thanks. Hey, Adam. Thanks, and good afternoon, everyone. You guys, congrats here. Another great quarter, really kind of just looking at the history here. Now, I think six quarters of a beaten race, so it's great to see, and congratulations to the team. Maybe, Adam, we hosted an immunologist call a few weeks ago just exploring the use case for Ascentive, And a few interesting data points come out of that call. One is that in particular in this individual's practice, they are actually seeing, you know, benefits in these patients where, you know, they were quote unquote refractory to traditional immunoglobulins. So maybe from the company standpoint and anecdotally, when you think about these complex immune deficient patients that are susceptible to, you know, follow on respiratory infections, They're complex. They're not responding to immunoglobulins. You know, what are you hearing from a broader set of your immunologists that are treating these patients? So that would be the first question. And the second question is, you know, one of the data points that came out of that call is, you know, perhaps there needs to be more physician education around the benefits of Ascentive. in order to unlock really having this product reach more of these complex patients. And so what is the sort of go-to-market strategy here now that Ascentiv is sort of becoming a go-to solution here? Are you increasing the sales efforts to reach more of these patients? And I'll have a follow-up for Brian. Thanks."
+            },
+            {
+                "analyst_name": "Kristin Kluxa",
+                "level": 1,
+                "quoted_compliment": "Hi, everyone, and congratulations on another really solid quarter here. First question I have is, you know, maybe something I didn't really fully appreciate about the story is that the KOL community and treating physicians are a lot more tight-knit than I expected. So just given that you've continued to showcase your data and findings and just the word of mouth around these positive case studies, Wanted to ask how much of the treating community you estimate is aware of the added benefits that Ascentive is showing here? And then looking into the next two years or so, anything beyond your guidance that you're working on in terms of getting the word out more in terms of like conference appearances? And you talked about, you know, these potential patient representatives as well."
+            }
+        ]
+    },
+    "2024_Q1": {
+        "year": 2024,
+        "quarter": 1,
+        "date": "2024-05-09T16:30:00-04:00",
+        "compliments": [
+            {
+                "analyst_name": "Anthony Patron",
+                "level": 1,
+                "quoted_compliment": "Thank you. Hi, Anthony. Hi, Adam. And congratulations to the team. And the first thought in my head is, you know, are they paying attention yet to the performance here? But in looking ahead, I think one of the questions that we get, you know, from folks out there, and it seems like you touched on it, is, is where we are. And I think the, you know, the capacity utilization today of the business with the center of growing, you know, much faster than expected and ViviGam certainly looking like it's gaining steady market share in the, in the traditional IG market. So maybe just a little bit on where capacity utilization is today. And you spoke a little bit about the peak potential of this business. You know, you look at the guidance you put out there for 24 and 25 and When we do our math, there's a lot of room for variability, but we get to a number that's quite a bit higher than your 2025 number. But how should we be thinking about capacity utilization today and bracketing where the peak potential is for this business? And I'll have a couple of follow-ups."
+            },
+            {
+                "analyst_name": "Kristen Kluska",
+                "level": 1,
+                "quoted_compliment": "Hey, congrats on the quarter. And starting to sound like a broken record here, but once again, really impressive numbers and, you know, kind of beating all of our expectations so well done. As you have a very unique position giving you insight into forecasting revenues I wanted to ask at what point you might consider reinvesting some of this capital to either expand the business or improve things on the manufacturing front, or if there's anything else you're looking at. I know you've also guided on looking at other indications as well."
+            },
+            {
+                "analyst_name": "Kristen Kluska",
+                "level": 1,
+                "quoted_compliment": "Great. Thanks. Congrats again. Well done."
+            },
+            {
+                "analyst_name": "Gary Nockman",
+                "level": 1,
+                "quoted_compliment": "All right, great. Good afternoon, and my congrats as well on the quarter and all the progress, and thanks for that plug before on our conference, Adam. Appreciate that."
+            },
+            {
+                "analyst_name": "Gary Nockman",
+                "level": 1,
+                "quoted_compliment": "I think that i've demonstrated proof of concept i think with some of the notes that i've been getting from investors this afternoon very very congratulatory thank you all very much um it's better than the alternatives that you guys used to send me years ago but um what i'll say is that you know the demand is there and and i think i may have said this gary at your conference if not you know maybe someone's going to shoot me but it's it's like It's like Rolex demand. I have no idea if it's fabricated or not, but you can't walk into a store and buy one. I mean, incentive is all allocated out there. New patient starts are scheduled. We just have to make more product. I think the more we can make, and with our seven to 12-month production cycle time, that is shortening, but we've got the ability to, and we've said it all the time, we have tomorrow's newspaper. We know how much we're making. We know what we can forecast. And we would not be increasing guidance the way that we are, as strong as we are, if we did not think that we can meet these targets."
+            },
+            {
+                "analyst_name": "Gary Nockman",
+                "level": 1,
+                "quoted_compliment": "Awesome. All right. Great job, guys. Thanks. Okay."
+            }
+        ]
+    },
+    "2024_Q2": {
+        "year": 2024,
+        "quarter": 2,
+        "date": "2024-08-08T16:30:00-04:00",
+        "compliments": [
+            {
+                "analyst_name": "Anthony Patron",
+                "level": 1,
+                "quoted_compliment": "How are you doing, Anthony? Thank you, and congratulations, Adam, and to the rest of the ADMA Biologics team. Obviously, a very impressive performance. This is the first time I've seen in a press release plus 600% growth in adjusted EBITDA, so obviously a milestone quarter on the top and bottom line. Congratulations. Maybe... To start, we're counting now six consecutive quarters here of a beaten raise, Adam, and we're at the midpoint of 2024, and the company's been good in updating the two-year forward outlook for 2024 and 2025. If we back out the accrual of $12 million in the quarter, that base top-line rate is growing 58%. You're obviously levering the P&L to higher profitability levels. Give us a little bit of an idea of what maybe a longer-range plan looks like beyond 2025. How sustainable is the mix shift to Ascentiv? What do you think the sort of go-forward growth profile of this company could be? And if you have any thoughts on a peak margin potential, that would be helpful, and I'll have a follow-up."
+            },
+            {
+                "analyst_name": "Rick Miller",
+                "level": 1,
+                "quoted_compliment": "Hi, everyone. This is Rick Miller on for Kristen. Thanks for taking our questions and congrats on the quarter. On the biologic production yield enhancement you mentioned, can you sort of put this into context as it relates to the specific product mix that you're working with? Does this dovetail well specifically with the incentive product, or is there something that could boost yield across the pipeline? How are you thinking about this?"
+            },
+            {
+                "analyst_name": "Gary Matchman",
+                "level": 1,
+                "quoted_compliment": "Hi guys. And my congrats as well on the really, really great quarter. Very impressive. Yes. So back to the yield enhancements, I mean, given your history of conservatism, should we be thinking about 20% increase now as the max or could it be even higher than that over time with all your initiatives? and the analytics program that you talked about. And then just on the operating leverage, you know, it's really incredible what you're able to do keeping the expenses in check. But with the penetration of the Senate still less than 3%, it begs the question if it makes sense to invest more, or do you have to first, you know, wait to have enough supply before you would spend more in sales and marketing, if that's a consideration?"
+            }
+        ]
+    },
+    "2024_Q3": {
+        "year": 2024,
+        "quarter": 3,
+        "date": "2024-11-07T16:30:00-05:00",
+        "compliments": [
+            {
+                "analyst_name": "Kristen Kolska",
+                "level": 1,
+                "quoted_compliment": "Hi, everyone. Thanks for taking the questions, and congrats again on a great quarter. I'm not sure if I'm familiar with any company raising guidance five times in a year, so you may have the record on that one. So I saw in the press release this might be one of the first times I think you've put it in writing about the potential for this to be a billion-dollar revenue opportunity. So I was hoping you can maybe give us a little bit more color around some of the work that you've been doing to get more hyperimmune plasma as that's likely going to be the driver to get you to those numbers."
+            },
+            {
+                "analyst_name": "Anthony Petro",
+                "level": 1,
+                "quoted_compliment": "Thanks, and congratulations. Doing very well, Adam. Thanks again, and congratulations on another strong quarter year. Maybe I'll stick on the supply end of the equation, just a couple high-level ones. You know, when you think of just churn, is churn a big issue? Adam, are you actually losing any of these donors? It sounds like retention is actually quite high, so just a little bit on the churn. And then when you think of just how you're managing that inventory, are you fully at a level where you have enough safety stock that you're able to sort of supply these longer-term contracts? So that would be the first high-level one, and then I'll have a follow-up. Thanks."
+            },
+            {
+                "analyst_name": "Gary Nachman",
+                "level": 1,
+                "quoted_compliment": "Good afternoon, guys. My congrats as well on the strong quarter. So just back to the incentive supply availability, obviously the topic du jour. Adam, do you think you need any more plasma donor facilities of your own to have more plasma supply? Can those 10 facilities and then the third parties get you to the billion target? And is there any risk to you sharing the methods of screening for high RSV titers with third parties?"
+            }
+        ]
+    }
+}

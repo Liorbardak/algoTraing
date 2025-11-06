@@ -1,0 +1,42 @@
+This is an explanation text, and at the end of the explanation, there will be an earnings call transcript. Analyze the following earnings call transcript and extract only the sentences where *analysts compliment the company’s performance during the quarter*.    If the paragraph is a first-person company language like "we are pleased", "we are proud", "our performance" - this indicates a company executive talking about their own company and these are not analysts remarks or compliments.
+
+Whenever the word CONGRATS or CONGRATULATIONS appear in the analyst response you should consider that as a compliment. 
+In addition, compliments that don't  include the words congratulations or congrats may conclude phrases that express positive feedback on results or execution, such as:
+   •   “Great quarter”
+   •   “Strong results”
+   •   “Great to see the execution”
+   •   “Very good job in the quarter”
+
+Note that you should isolate only the parts of analysts response that are compliments on the performance of the company, good results of the quarter etc. These types of phrases are not considered as compliments on the results or performance:
+1. A compliment that relates to personal events (e.g. retirement, promotions, new roles) and not to company performance, is not a compliment
+2. Congratulations to a CEO when he is stepping down or congratulations to a new CEO that is stepping up are NOT considered as compliments on the performance of the quarter
+3. A compliment that relates to mergers, acquisitions, or strategic announcements not related to performance this quarter
+4. General greetings or non-performance topics (e.g. "great, thank you")
+5. A polite note or graditude for taking a question,
+6. A general remark or question with no compliment in it, 
+
+
+make sure that all the analysts that gave remarks appear in the output, both the analysts who gave compliments and those who did not compliment.
+Make sure that every analyst appears in the file exactly once. If the same analyst asked several questions you should count him only once. 
+After identifying all compliments (if any), please put them in a JSON structure with the following fields:
+
+- analyst_name: The name of the analyst.  If the earning call file does no include specifically the analyst name, you can find the analyst name by checking what was the name of the analyst in an exposition like this "Your next question is from..." before the actual question, make sure to refer to the analyst name that appeared near and just before the question
+- level: 1 if the analyst gave a compliment, 0 otherwise
+- quoted_compliment: copy the paragraph that contains the compliment exactly as it is written in the text. in case the analyst didn't give a compliment, put ''.
+
+Your response should include only JSON format with the above fields that can be loaded using json.loads(), without any further text.
+
+Here is the earnings calls text: 
+{text}
+
+
+IMPORTANT GUIDELINES BASED ON PREVIOUS ERRORS:
+
+AVOID FALSE POSITIVES - Do NOT classify these as compliments:
+- General greetings or polite responses (e.g., 'Thank you', 'Great, thank you')
+- Questions that don't contain explicit praise
+- Statements about future expectations without current quarter praise
+- Technical discussions without performance praise
+- Personal congratulations unrelated to company performance
+
+REMEMBER: Only classify as compliments if the analyst is explicitly praising the company's performance or results for the current quarter.
