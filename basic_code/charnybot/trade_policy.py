@@ -26,6 +26,7 @@ from copy import copy
 
 from config.config import ConfigManager
 from utils.protofolio import Portfolio
+from utils.general_utils import weighted_adjustment
 
 
 class TradingPolicy:
