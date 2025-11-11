@@ -4,7 +4,7 @@ import os
 import pylab as plt
 from utils.visualizer import plot_ticker, plot_overall, holding_per_time
 from utils.report_utils import HtmlReport
-
+from utils.general_utils import get_last_commit_info
 
 def tradesim_report(tickers_df, complement_df, snp_df,avg_df, trade_hist_df, outputdir ,
                     draw_per_tickers = 'in_portfolio'):
@@ -293,6 +293,11 @@ def tradesim_report(tickers_df, complement_df, snp_df,avg_df, trade_hist_df, out
 
     # Initialize HTML report generator
     report = HtmlReport()
+
+    message, commit_id = get_last_commit_info()
+
+    report.add_title('GIT commit')
+    report.add_line(str(commit_id))
 
     # Add performance summary table
     report.add_df('Performance Results', pd.DataFrame(performance_results))

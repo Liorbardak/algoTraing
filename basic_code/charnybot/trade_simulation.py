@@ -191,7 +191,7 @@ def main(
     Example:
         >>> main(
         ...     start_date='2020-01-01',
-        ...     end_date='2025-01-01',
+        ...     end_date='2025-10-01',
         ...     outputpath='./results/my_simulation'
         ... )
     """
@@ -208,7 +208,7 @@ def main(
         run_trading=run_trading,
         reload_all_data=reload_all_data
     )
-def run_main(output_name, complements_dir = None, START_DATE = '2021-01-01' ,    END_DATE = '2025-01-01',
+def run_main(output_name, complements_dir = None, START_DATE = '2021-01-01' ,    END_DATE = '2025-05-30',
              run_trading=True,
              reload_all_data=False,
              ):
@@ -262,7 +262,7 @@ if __name__ == "__main__":
 
 
 
-    run_main(output_name='all_data/rsi/reference_index_tt', complements_dir='fulldata2', run_trading=True, reload_all_data=False)
+    run_main(output_name='19_25/rsi/reference_index', complements_dir=['all_data','24_25'] , run_trading=False, reload_all_data=False)
 
 
     # run_main(output_name='set2', complements_dir='fulldata2',run_trading = True,reload_all_data= False )

@@ -37,15 +37,19 @@ class FinancialDataLoaderBase:
         :return: average stock price data frame
         '''
 
+
+
         # Check if we can perform simple averaging - all stocks appear in all dates
 
         # Calculate the average of all stocks by simple trading => can not preform simple average , since not all stocks are present in all times
-        trader = TradingPolicy.create("BasicPolicy", config=ConfigManager())
+        config = ConfigManager()
+        config.config_data['sell']['buy_with_sell_return'] = 'stocks'
+        trader = TradingPolicy.create("BasicPolicy", config= config)
         print('calculating average stock')
 
         avg_df_rows = []
         for date, tickers_df_per_date in all_df.sort_values('Date').groupby('Date'):
-
+            print(f'calculating average stock price {date}  #tickers {len(trader.portfolio.tickers())}')
             tickers = list(set(tickers_df_per_date.ticker))
 
             if len(avg_df_rows) == 0:
@@ -79,13 +83,28 @@ class FinancialDataLoaderBase:
                 if len(remove_tickers) > 0:
                     # sell stocks that are "not there " any more
                     for ticker in remove_tickers:
-                        current_price = tickers_df_per_date[tickers_df_per_date.ticker == ticker].Close.values[0]
+                        print(f"remove  {ticker}")
+                        tdf = all_df[all_df.ticker == ticker]
+                        tdf.to_csv('temp.csv')
+                        time_diff = (tdf.Date - date).abs()
+                        closest_idx = np.argmin(time_diff)
+                        current_price = tdf.Close.values[closest_idx]
+
                         shares_to_sell = trader.portfolio.positions[ticker].quantity
                         trader.portfolio.sell_stock(ticker, shares_to_sell, current_price, date)
 
                 if len(new_tickers) > 0:
                     # buy new tickers
-                    tickers_score = {new_ticker: 100 for new_ticker in new_tickers}
+                    base_ticker_score = {
+                        'weighted_score': 100,
+                        'price_based_score': 100,
+                        'complement_based_score': 100,
+                        'complement_date': '2021-01-01',
+                        'portfolio_based_score': 100,
+                        'portfolio_weight': 100
+                    }
+
+                    tickers_score = {new_ticker: base_ticker_score for new_ticker in new_tickers}
                     trader.buy(date, tickers_score, tickers_df_per_date, 1.0)
 
                 total_val = trader.portfolio.get_total_value()
@@ -145,37 +164,44 @@ class FinancialDataLoaderBase:
         """
         Load historical complements  data
         """
-        complements_dir = os.path.join(self.config.get_path("complements_base_dir"),self.config.get_path("complements_dir"))
-        if tickers is None:
-            # get all tickers that their earning has been analyzed
-            tickers = sorted(set([re.match(r'^([A-Za-z]+)', file).group(1).upper() for file in os.listdir(complements_dir)]))
-
+        if self.config.get_path("complements_dir") == str:
+            complements_dirs = [self.config.get_path("complements_dir")]
+        else:
+            complements_dirs = self.config.get_path("complements_dir")
         dfs = []
-        for ticker in tickers:
-            comp_file = os.path.join(complements_dir, ticker + '_compliment_summary.json')
-            if not os.path.isfile(comp_file):
-                print('No compliment data for ticker {}'.format(ticker))
-                continue
-            comps = json.load(open(comp_file))
-            df = pd.DataFrame(comps)
-            if len(df) == 0:
-                print('invalid compliment data for ticker {}'.format(ticker))
-                continue
 
-            df['Date'] = pd.to_datetime(df['date'], format='ISO8601' , utc=True)
+        for complements_path in complements_dirs:
+            complements_dir = os.path.join(self.config.get_path("complements_base_dir"),complements_path)
+            if tickers is None:
+                # get all tickers that their earning has been analyzed
+                tickers = sorted(set([re.match(r'^([A-Za-z]+)', file).group(1).upper() for file in os.listdir(complements_dir)]))
 
-            # Format converter
-            df['ticker'] = ticker
-            df['number_of_analysts_comp_1'] =  df['number_of_analysts_with_quote1_compliments']
-            df['number_of_analysts_comp_2'] = df['number_of_analysts_with_quote2_compliments']
-            df['number_of_analysts_comp_3'] = df['number_of_analysts_with_quote3_compliments']
-            df['number_of_analysts_comp'] =   df['number_of_analysts_with_compliments']
 
-            if min_max_dates is not None:
-                # Take only range in time
-                df = df[(df.Date >= pd.to_datetime(min_max_dates[0],utc=True)) & (df.Date <= pd.to_datetime(min_max_dates[1],utc=True))]
+            for ticker in tickers:
+                comp_file = os.path.join(complements_dir, ticker + '_compliment_summary.json')
+                if not os.path.isfile(comp_file):
+                    print('No compliment data for ticker {}'.format(ticker))
+                    continue
+                comps = json.load(open(comp_file))
+                df = pd.DataFrame(comps)
+                if len(df) == 0:
+                    print('invalid compliment data for ticker {}'.format(ticker))
+                    continue
 
-            dfs.append(df)
+                df['Date'] = pd.to_datetime(df['date'], format='ISO8601' , utc=True)
+
+                # Format converter
+                df['ticker'] = ticker
+                df['number_of_analysts_comp_1'] =  df['number_of_analysts_with_quote1_compliments']
+                df['number_of_analysts_comp_2'] = df['number_of_analysts_with_quote2_compliments']
+                df['number_of_analysts_comp_3'] = df['number_of_analysts_with_quote3_compliments']
+                df['number_of_analysts_comp'] =   df['number_of_analysts_with_compliments']
+
+                if min_max_dates is not None:
+                    # Take only range in time
+                    df = df[(df.Date >= pd.to_datetime(min_max_dates[0],utc=True)) & (df.Date <= pd.to_datetime(min_max_dates[1],utc=True))]
+                dfs.append(df)
+
         all_df = pd.concat(dfs)
         all_df.reset_index(drop=True, inplace=True)
         return all_df

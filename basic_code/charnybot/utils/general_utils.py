@@ -5,6 +5,8 @@ import pandas as pd
 import re
 import shutil
 import numpy as np
+import subprocess
+
 
 def compliment_format_converter(inpath , outpth):
     os.makedirs(outpth, exist_ok=True)
@@ -111,6 +113,32 @@ def weighted_decrease(values, weights, decrease_amount):
     """
     return weighted_adjustment(values, weights, -decrease_amount)
 
+
+
+
+def get_last_commit_info():
+    """Get the last commit message and ID"""
+    try:
+        # Get commit message
+        message = subprocess.run(
+            ['git', 'log', '-1', '--pretty=%s'],
+            capture_output=True,
+            text=True,
+            check=True
+        ).stdout.strip()
+
+        # Get commit ID (full SHA)
+        commit_id = subprocess.run(
+            ['git', 'log', '-1', '--pretty=%H'],
+            capture_output=True,
+            text=True,
+            check=True
+        ).stdout.strip()
+
+        return message, commit_id
+
+    except subprocess.CalledProcessError:
+        return None, None
 
 
 if __name__ == "__main__":

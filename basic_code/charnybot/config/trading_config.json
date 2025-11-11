@@ -20,7 +20,7 @@
     "min_complements_th2": 3,
     "complements_portion_th2": 0.5,
     "rsi_prec_buy": 20,
-    "new_buy_factor_of_average" : 2.0
+    "new_buy_factor_of_average" : 1.0
   },
   "sell": {
     "max_profit_to_sell": 1000000,

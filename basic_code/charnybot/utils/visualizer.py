@@ -87,21 +87,23 @@ def plot_ticker(ticker,stocks_df, complement_df , trade_df):
         #draw profit in middle of arc connecting buy and sell points
         # Get midpoint coordinates
         mid_date =  trade_df.Date.values[(buy_point+sell_point)//2]
-        mid_price = (ticker_sell_price + ticker_buy_price) / 2
+        plot_price = (ticker_sell_price + ticker_buy_price) / 2
+        plot_price = np.maximum(ticker_sell_price , ticker_buy_price)
 
         # Add some vertical offset for better visibility
         price_range = ticker_sell_price - ticker_buy_price
         offset = abs(price_range) * 0.1  # 10% offset
+        plot_price = plot_price + offset
 
         ax1.annotate(f'{profit}%',
-                     xy=(mid_date, mid_price + offset),
+                     xy=(mid_date, plot_price),
                      ha='center', va='bottom',
-                     fontsize=12, fontweight='bold',
-                     bbox=dict(boxstyle='round,pad=0.3', facecolor='yellow', alpha=0.7))
+                     fontsize=8, fontweight='bold',
+                     bbox=dict(boxstyle='round,pad=0.3', facecolor='yellow', alpha=0.3))
 
     # Plot 2: Portfolio Percentage
     if ticker in trade_df.keys():
-        portfolio_percentages = trade_df[ticker] /trade_df.total_value
+        portfolio_percentages = trade_df[ticker] /trade_df.total_value * 100
     else:
         portfolio_percentages = trade_df.total_value*0
 
@@ -111,9 +113,21 @@ def plot_ticker(ticker,stocks_df, complement_df , trade_df):
     ax2.plot(trade_df.Date,portfolio_percentages, 'darkblue', linewidth=1)
     ax2.set_ylabel('Portfolio %', fontsize=10)
     ax2.grid(True, alpha=0.3)
-    ax2.set_ylim(0, max(portfolio_percentages) * 1.1+0.1)
     ax2.legend(loc='upper right')
     ax2.grid(True)
+
+    # Plot 2: RSI ...
+    ax2_2 = ax2.twinx()
+    ax2_2.plot(stocks_df.Date, stocks_df.rsi_14, 'y', linewidth=2, label='RSI')
+    ax2_2.plot(stocks_df.Date, stocks_df.ma_rsi_14, 'c', linewidth=2, label='MA_RSI')
+    # Set y-axis limits to fill the graph
+    ax2.set_ylim([0, portfolio_percentages.max() * 1.05])
+    ax2_2.set_ylim([0, 100])
+    lines1, labels1 = ax2.get_legend_handles_labels()
+    lines2, labels2 = ax2_2.get_legend_handles_labels()
+    ax2.legend(lines1 + lines2, labels1 + labels2, loc='upper right')
+
+
 
     # Create stacked bar chart
     width = 15  # Width of bars in days

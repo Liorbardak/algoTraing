@@ -4,9 +4,11 @@ import os
 import numpy as np
 import pylab as plt
 stockdir =  'C:/Users/dadab/projects/algotrading/data/yahoo_tickers'
-
-
 stocks_to_run_on =  ['APPLE']
+
+data = pd.read_csv('C:/Users/dadab/projects/algotrading/data/complements/comp.csv')
+
+stocks_to_run_on = sorted(list(set(data.ticker)))
 
 start = '2019-01-02'
 end = '2025-10-01'
@@ -21,7 +23,8 @@ for k in ['High', 'Low','Open','Close', 'Volume']:
 bad_stocks = []
 
 for ticker in  stocks_to_run_on:
-
+    if os.path.isdir(os.path.join(stockdir, ticker)):
+         continue
     print(ticker)
 
     data = yf.download(ticker, start=start, end=end,auto_adjust=False)
