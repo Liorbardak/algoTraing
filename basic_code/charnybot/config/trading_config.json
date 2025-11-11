@@ -26,6 +26,7 @@
     "max_profit_to_sell": 1000000,
     "rsi_prec_sell": 20,
     "buy_with_sell_return": "reference_index",
-    "sell_return_cash_to_reference_index_ratio": 1.0
+    "sell_return_cash_to_reference_index_ratio": 0.3,
+    "cash_only_if_reference_index_is_bad" : true
   }
 }

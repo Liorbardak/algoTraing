@@ -640,9 +640,15 @@ class TradingPolicyBasicPolicy(TradingPolicy):
         # Put all/part of  remaining cash back into the default index
         # This ensures we're always fully invested
 
-        cash_reference_index_ratio = self.config.get_parameter('sell', 'sell_return_cash_to_reference_index_ratio')
+        if (daily_index_data.ma_200.values[0] > current_index_price) & self.config.get_parameter('sell',
+                                                                                                 'cash_only_if_reference_index_is_bad'):
+            #  buy less refence index  if it is lower than ma200
+            cash_reference_index_ratio = self.config.get_parameter('sell', 'sell_return_cash_to_reference_index_ratio')
+        else:
+            cash_reference_index_ratio = 1.0
 
-        self.portfolio.buy_default_index_with_free_cash(current_index_price, date , portion_to_buy=cash_reference_index_ratio)
+        self.portfolio.buy_default_index_with_free_cash(current_index_price, date,
+                                                        portion_to_buy=cash_reference_index_ratio)
 
         # Debug output for monitoring
         self.portfolio.print(date)
