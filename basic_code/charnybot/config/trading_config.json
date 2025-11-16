@@ -27,6 +27,6 @@
     "rsi_prec_sell": 20,
     "buy_with_sell_return": "reference_index",
     "sell_return_cash_to_reference_index_ratio": 0.3,
-    "cash_only_if_reference_index_is_bad" : true
+    "cash_only_if_reference_index_is_bad" : false
   }
 }

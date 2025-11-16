@@ -21,6 +21,7 @@ from trade_policy import TradingPolicy
 from data_loader import FinancialDataLoaderBase
 from metrics import tradesim_report
 import pickle
+from utils.general_utils import no_sleep
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
 class TrainingSimulator:
@@ -72,6 +73,7 @@ class TrainingSimulator:
             outputpath: Optional[str] = None,
             run_trading:bool = True,
             reload_all_data: bool = False,
+            get_average_stock=False
     ) -> None:
         """
         Execute the complete trading simulation pipeline.
@@ -108,7 +110,7 @@ class TrainingSimulator:
 
         if reload_all_data:
             print("Loading individual stock data and complements...")
-            tickers_df, complement_df,  avg_df = self.data_loader.load_all_data(min_max_dates = [start_date,end_date] ,get_average_stock = True )
+            tickers_df, complement_df,  avg_df = self.data_loader.load_all_data(min_max_dates = [start_date,end_date] ,get_average_stock = get_average_stock )
             if outputpath:
                 pickle.dump([tickers_df, complement_df,  avg_df ],
                             open(os.path.join(outputpath,'all_data.pickle'), "wb"))
@@ -175,6 +177,7 @@ def main(
         outputpath: Optional[str] = None,
         reload_all_data :bool = True,
         run_trading :bool = True,
+        get_average_stock :bool = True,
         config:  "ConfigManager" = None
 ) -> None:
     """
@@ -187,7 +190,7 @@ def main(
         start_date (Optional[str]): Simulation start date in 'YYYY-MM-DD' format
         end_date (Optional[str]): Simulation end date in 'YYYY-MM-DD' format
         outputpath (Optional[str]): Directory path for saving results
-
+         .....
     Example:
         >>> main(
         ...     start_date='2020-01-01',
@@ -206,17 +209,19 @@ def main(
         end_date=end_date,
         outputpath=outputpath,
         run_trading=run_trading,
-        reload_all_data=reload_all_data
+        reload_all_data=reload_all_data,
+        get_average_stock=get_average_stock
     )
-def run_main(output_name, complements_dir = None, START_DATE = '2021-01-01' ,    END_DATE = '2025-05-30',
+def run_main(output_name, complements_dir = None, START_DATE = '2021-01-01' ,    END_DATE = '2025-11-10',
              run_trading=True,
              reload_all_data=False,
              ):
     # Prevent sleep in windows
-    import ctypes
-    ES_CONTINUOUS = 0x80000000
-    ES_SYSTEM_REQUIRED = 0x00000001
-    ctypes.windll.kernel32.SetThreadExecutionState(ES_CONTINUOUS | ES_SYSTEM_REQUIRED)
+    no_sleep()
+    # import ctypes
+    # ES_CONTINUOUS = 0x80000000
+    # ES_SYSTEM_REQUIRED = 0x00000001
+    # ctypes.windll.kernel32.SetThreadExecutionState(ES_CONTINUOUS | ES_SYSTEM_REQUIRED)
 
 
     # Output directory for results (reports, charts, trade history)
@@ -262,7 +267,7 @@ if __name__ == "__main__":
 
 
 
-    run_main(output_name='19_25/rsi/reference_index', complements_dir=['all_data','24_25'] , run_trading=False, reload_all_data=False)
+    run_main(output_name='19_25/rsi/reference_index_cash_tt', complements_dir=['all_data','24_25'] , run_trading=True, reload_all_data=True)
 
 
     # run_main(output_name='set2', complements_dir='fulldata2',run_trading = True,reload_all_data= False )

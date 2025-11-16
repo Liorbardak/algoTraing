@@ -7,16 +7,15 @@ from tqdm import tqdm
 import copy
 import yfinance as yf
 from datetime import datetime, timedelta
-# At the top of your script
 import sys
 from pathlib import Path
 
 # Add parent package to path
 sys.path.insert(0, str(Path(__file__).parent.parent.parent.parent))
 
-# Now you can use absolute imports
 from basic_code.charnybot.utils.report_utils import HtmlReport
-#from ..utils.report_utils import HtmlReport
+from basic_code.charnybot.utils.general_utils import no_sleep
+
 import matplotlib.dates as mdates
 
 def plot_ticker(ticker,stocks_df, complement_df , trade_df):
@@ -116,15 +115,15 @@ def plot_ticker(ticker,stocks_df, complement_df , trade_df):
 
 
 
-def charny_sim1(inpath = "C:/Users/dadab/projects/algotrading/results/trading_sim/all_data/basealgo",
+def charny_sim1(inpath = "C:/Users/dadab/projects/algotrading/results/trading_sim",
                 sim_type = "in_portfolio"):
     np.random.seed(12345)
-
+    no_sleep()
 
 
     tickers_df, complement_df, avg_df = pickle.load(open(os.path.join(inpath, 'all_data.pickle'), "rb"))
 
-    trade_hist_df = pd.read_csv(os.path.join(inpath, 'trade_simulation_results.csv'))
+
 
     all_tickers = list(set(complement_df.ticker))
 
@@ -147,19 +146,30 @@ def charny_sim1(inpath = "C:/Users/dadab/projects/algotrading/results/trading_si
     ma_diff = np.diff(snp_df['ma_50'].values)
     snp_df['ma_50_slop'] = np.hstack((ma_diff[0], ma_diff))
 
-    # Choose tickers
-    tickers_that_were_in_portfolio = sorted([
-        ticker for ticker in trade_hist_df.keys()
-        if ticker in all_tickers
-    ])
 
 
 
     if sim_type ==  "all":
-        tickers = all_tickers
+        tickers = sorted(all_tickers)
     elif sim_type ==  "in_portfolio":
+
+        trade_hist_df = pd.read_csv(os.path.join(inpath, 'trade_simulation_results.csv'))
+        tickers_that_were_in_portfolio = sorted([
+            ticker for ticker in trade_hist_df.keys()
+            if ticker in all_tickers
+        ])
+
+
         tickers = sorted(tickers_that_were_in_portfolio)
+
     elif "not_in_portfolio":
+        trade_hist_df = pd.read_csv(os.path.join(inpath, 'trade_simulation_results.csv'))
+        tickers_that_were_in_portfolio = sorted([
+            ticker for ticker in trade_hist_df.keys()
+            if ticker in all_tickers
+        ])
+
+
         tickers_that_were_not_in_portfolio = list(set(all_tickers) - set(tickers_that_were_in_portfolio))
         tickers = sorted(tickers_that_were_not_in_portfolio)
     else:
@@ -450,9 +460,12 @@ def charny_sim1(inpath = "C:/Users/dadab/projects/algotrading/results/trading_si
                     #################################################################################
                     df_sell_by_rsi = df_ticker_buy_to_quarter_end[df_ticker_buy_to_quarter_end.rsi_14 > df_ticker_buy_to_quarter_end.ma_rsi_14 * (1 + prec_th / 100)]
                     row[f"days to rsi SELL"] = -1
+                    row[f"rsi SELL date"] = -1
                     row[f"IV at rsi SELL"] = -1
                     row[f"Price at rsi SELL"] = -1
+
                     if len(df_sell_by_rsi) > 0:
+                        row[f"rsi SELL date"] = str(df_sell_by_rsi.Date.values[0])[:10]
                         row[f"days to rsi SELL"]  = pd.Timedelta(df_sell_by_rsi.Date.values[0] - buying_point_date).days
                         row[f"IV at rsi SELL"] =  df_sell_by_rsi.hv.values[0]
                         row[f"Price at rsi SELL"] = df_sell_by_rsi.Close.values[0]
@@ -463,6 +476,7 @@ def charny_sim1(inpath = "C:/Users/dadab/projects/algotrading/results/trading_si
     df = pd.DataFrame(info_rows)
 
     df.to_csv(f'charny_{sim_type}.csv')
+    df[['ticker', 'buy criteria', 'buy date', 'date of complement', 'date of next complement', 'rsi SELL date']].to_csv(f'sim_{sim_type}.csv')
 
 def report_data(infile , inpath = "C:/Users/dadab/projects/algotrading/results/trading_sim/all_data"):
     tickers_df, complement_df, avg_df = pickle.load(open(os.path.join(inpath, 'all_data.pickle'), "rb"))

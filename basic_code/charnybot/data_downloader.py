@@ -11,7 +11,7 @@ data = pd.read_csv('C:/Users/dadab/projects/algotrading/data/complements/comp.cs
 stocks_to_run_on = sorted(list(set(data.ticker)))
 
 start = '2019-01-02'
-end = '2025-10-01'
+end = '2025-11-15'
 
 ticker = '^GSPC'
 data = yf.download('^GSPC', start=start, end=end ,auto_adjust=False )
@@ -19,12 +19,13 @@ snp_df = pd.DataFrame()
 snp_df['Date'] = data[('Close', ticker)].index
 for k in ['High', 'Low','Open','Close', 'Volume']:
     snp_df[k] = data[(k, ticker)].values
+snp_df.to_csv(os.path.join(os.path.join(stockdir, ticker, 'stockPrice.csv')))
 
 bad_stocks = []
 
 for ticker in  stocks_to_run_on:
-    if os.path.isdir(os.path.join(stockdir, ticker)):
-         continue
+    # if os.path.isdir(os.path.join(stockdir, ticker)):
+    #      continue
     print(ticker)
 
     data = yf.download(ticker, start=start, end=end,auto_adjust=False)
@@ -56,7 +57,3 @@ for ticker in  stocks_to_run_on:
     df.to_csv(os.path.join(os.path.join(stockdir, ticker, 'stockPrice.csv')))
 
 
-
-print('bad_stocks')
-print(bad_stocks)
-plt.show()
